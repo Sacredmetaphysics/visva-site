@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en" dir="ltr">
 <head>
@@ -88,7 +89,7 @@ a{color:inherit;text-decoration:none}
 /* Masthead */
 header.mast{
   text-align:center;
-  padding:44px 0 24px;
+  padding:44px 0 20px;
 }
 header.mast h1{
   font-family:var(--serif);
@@ -117,6 +118,39 @@ header.mast .tag{
   margin-top:10px;
 }
 
+/* Language Selection Strip */
+.lang-strip{
+  padding:12px 0 28px;
+}
+.lang-pills{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:8px;
+}
+.lang-btn{
+  background:var(--surface);
+  color:var(--text-muted);
+  border:none;
+  outline:none;
+  border-radius:999px;
+  padding:6px 14px;
+  font-family:var(--sans);
+  font-size:13px;
+  font-weight:500;
+  cursor:pointer;
+  transition:all 0.15s ease;
+}
+.lang-btn:hover{
+  color:var(--text-primary);
+  background:#201e18;
+}
+.lang-btn[aria-pressed="true"]{
+  background:var(--card-bg);
+  color:var(--card-ink);
+  font-weight:700;
+}
+
 /* Editorial Container Card */
 .editorial-paper{
   background:var(--card-bg);
@@ -129,7 +163,7 @@ header.mast .tag{
 /* Editorial Metadata Header */
 .ed-meta{
   border-bottom:1px solid #eeeae0;
-  padding-bottom:20px;
+  padding-bottom:24px;
   margin-bottom:32px;
 }
 .ed-kicker{
@@ -155,16 +189,16 @@ header.mast .tag{
 }
 h1.ed-title{
   font-family:var(--serif);
-  font-size:clamp(32px,4.5vw,48px);
+  font-size:clamp(30px,4.5vw,46px);
   font-weight:800;
-  line-height:1.12;
+  line-height:1.15;
   letter-spacing:-.02em;
   color:var(--card-ink);
   margin-bottom:16px;
 }
 p.ed-deck{
   font-family:var(--serif);
-  font-size:clamp(18px,2.2vw,22px);
+  font-size:clamp(17px,2.2vw,21px);
   font-style:italic;
   color:var(--card-muted);
   line-height:1.45;
@@ -177,130 +211,6 @@ p.ed-deck{
   font-size:13px;
   color:var(--card-muted);
   font-weight:500;
-}
-
-/* Editorial Body Typography */
-.ed-body p{
-  font-size:18px;
-  line-height:1.75;
-  color:#22211d;
-  margin-bottom:24px;
-}
-.ed-body p.lead{
-  font-size:21px;
-  line-height:1.65;
-  color:var(--card-ink);
-  font-weight:500;
-}
-.ed-body h2{
-  font-family:var(--serif);
-  font-size:26px;
-  font-weight:700;
-  letter-spacing:-.01em;
-  color:var(--card-ink);
-  margin:44px 0 16px;
-}
-.ed-body h3{
-  font-family:var(--serif);
-  font-size:20px;
-  font-weight:700;
-  color:var(--card-ink);
-  margin:32px 0 12px;
-}
-.ed-body blockquote{
-  margin:32px 0;
-  padding:20px 28px;
-  border-left:4px solid var(--accent-red);
-  background:#f9f7f2;
-  font-family:var(--serif);
-  font-style:italic;
-  font-size:20px;
-  line-height:1.55;
-  color:var(--card-ink);
-}
-.ed-body hr{
-  border:none;
-  border-top:1px solid #eeeae0;
-  margin:40px 0;
-}
-
-/* Strategic Framework Callout */
-.protocol-inset{
-  background:#f5f2eb;
-  border-radius:8px;
-  padding:28px 32px;
-  margin:36px 0;
-}
-.protocol-inset h4{
-  font-size:12px;
-  text-transform:uppercase;
-  letter-spacing:.1em;
-  color:var(--accent-red);
-  margin-bottom:8px;
-  font-weight:700;
-}
-.protocol-inset h5{
-  font-family:var(--serif);
-  font-size:20px;
-  font-weight:700;
-  margin-bottom:12px;
-}
-.protocol-inset p{
-  font-size:15px;
-  line-height:1.65;
-  color:var(--card-ink);
-  margin-bottom:12px;
-}
-.protocol-inset p:last-child{margin-bottom:0}
-
-/* Back Link Button */
-.back-btn{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  background:#11110f;
-  color:#ffffff;
-  padding:12px 24px;
-  border-radius:999px;
-  font-size:14px;
-  font-weight:600;
-  margin-top:20px;
-  transition:transform .15s ease;
-}
-.back-btn:hover{
-  transform:translateX(-3px);
-}
-
-/* Matching Red Bottom Footer */
-footer.bottom-red-footer{
-  background:var(--accent-red);
-  color:#ffffff;
-  padding:32px 0 36px;
-  font-size:13px;
-}
-footer.bottom-red-footer .wrap{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:16px;
-}
-footer.bottom-red-footer a{
-  color:#ffffff;
-  text-decoration:underline;
-  font-weight:600;
-}
-footer.bottom-red-footer strong{
-  font-family:var(--serif);
-  color:#ffffff;
-  font-size:14px;
-}
-
-@media(max-width:768px){
-  .editorial-paper{padding:36px 24px}
-  .ed-body p{font-size:17px;line-height:1.68}
-  .ed-body blockquote{font-size:18px;padding:16px 20px}
-  .top-red-bar .wrap{flex-direction:column;align-items:flex-start}
 }
 
 /* Sovereign Audio Player */
@@ -389,6 +299,122 @@ footer.bottom-red-footer strong{
   background:#302d24;
 }
 
+/* Editorial Body Typography */
+.ed-body p{
+  font-size:17.5px;
+  line-height:1.75;
+  color:#22211d;
+  margin-bottom:24px;
+}
+.ed-body p.lead{
+  font-size:20.5px;
+  line-height:1.65;
+  color:var(--card-ink);
+  font-weight:500;
+}
+.ed-body h2{
+  font-family:var(--serif);
+  font-size:25px;
+  font-weight:700;
+  letter-spacing:-.01em;
+  color:var(--card-ink);
+  margin:44px 0 16px;
+}
+.ed-body blockquote{
+  margin:32px 0;
+  padding:20px 28px;
+  border-left:4px solid var(--accent-red);
+  background:#f9f7f2;
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:19.5px;
+  line-height:1.55;
+  color:var(--card-ink);
+}
+.ed-body hr{
+  border:none;
+  border-top:1px solid #eeeae0;
+  margin:40px 0;
+}
+
+/* Strategic Framework Callout */
+.protocol-inset{
+  background:#f5f2eb;
+  border-radius:8px;
+  padding:26px 30px;
+  margin:36px 0;
+}
+.protocol-inset h4{
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  color:var(--accent-red);
+  margin-bottom:8px;
+  font-weight:700;
+}
+.protocol-inset h5{
+  font-family:var(--serif);
+  font-size:19px;
+  font-weight:700;
+  margin-bottom:12px;
+}
+.protocol-inset p{
+  font-size:15px;
+  line-height:1.65;
+  color:var(--card-ink);
+  margin-bottom:12px;
+}
+.protocol-inset p:last-child{margin-bottom:0}
+
+/* Back Link Button */
+.back-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:#11110f;
+  color:#ffffff;
+  padding:12px 24px;
+  border-radius:999px;
+  font-size:14px;
+  font-weight:600;
+  margin-top:20px;
+  transition:transform .15s ease;
+}
+.back-btn:hover{
+  transform:translateX(-3px);
+}
+
+/* Matching Red Bottom Footer */
+footer.bottom-red-footer{
+  background:var(--accent-red);
+  color:#ffffff;
+  padding:32px 0 36px;
+  font-size:13px;
+}
+footer.bottom-red-footer .wrap{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:16px;
+}
+footer.bottom-red-footer a{
+  color:#ffffff;
+  text-decoration:underline;
+  font-weight:600;
+}
+footer.bottom-red-footer strong{
+  font-family:var(--serif);
+  color:#ffffff;
+  font-size:14px;
+}
+
+@media(max-width:768px){
+  .editorial-paper{padding:36px 24px}
+  .ed-body p{font-size:16.5px;line-height:1.68}
+  .ed-body blockquote{font-size:17.5px;padding:16px 20px}
+  .top-red-bar .wrap{flex-direction:column;align-items:flex-start}
+}
 </style>
 </head>
 <body>
@@ -401,9 +427,9 @@ footer.bottom-red-footer strong{
       <span id="gmtClock">UTC --:--:-- | ---, -- --- ----</span>
     </div>
     <ul class="top-nav">
-      <li><a href="index.html">← Today's Dispatch</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="about.html#contact">Contact</a></li>
+      <li><a href="index.html" data-i="navReturn">← Today's Dispatch</a></li>
+      <li><a href="about.html" data-i="navAbout">About</a></li>
+      <li><a href="about.html#contact" data-i="navContact">Contact</a></li>
     </ul>
   </div>
 </div>
@@ -411,8 +437,12 @@ footer.bottom-red-footer strong{
 <header class="mast wrap">
   <h1>visva<span class="dot">.</span></h1>
   <div class="sk">विश्व · THE WHOLE WORLD</div>
-  <div class="tag">The Daily Editorial</div>
+  <div class="tag" data-i="tag">The Daily Editorial</div>
 </header>
+
+<div class="lang-strip wrap">
+  <div class="lang-pills" id="langPills"></div>
+</div>
 
 <main class="wrap">
 
@@ -420,14 +450,14 @@ footer.bottom-red-footer strong{
     
     <header class="ed-meta">
       <div class="ed-kicker">
-        <span class="ed-pill">visva Editorial // Vol. I</span>
-        <span class="ed-date">Monday, October 19, 2026</span>
+        <span class="ed-pill" data-i="edPill">visva Editorial // Vol. I</span>
+        <span class="ed-date" data-i="edDate">Monday, October 19, 2026</span>
       </div>
-      <h1 class="ed-title">The Fracture of the Global Clearing Grid</h1>
-      <p class="ed-deck">How the weaponization of Western correspondent banking forced the emergence of sovereign gold settlements, parallel ledgers, and the terminal loss of surveillance hegemony.</p>
+      <h1 class="ed-title" data-i="edTitle">The Fracture of the Global Clearing Grid</h1>
+      <p class="ed-deck" data-i="edDeck">How the weaponization of Western correspondent banking forced the emergence of sovereign gold settlements, parallel ledgers, and the terminal loss of surveillance hegemony.</p>
       <div class="ed-author-bar">
-        <span>By <strong>visva Intelligence & 0protocol</strong></span>
-        <span>Reading Time: 9 minutes · Sovereign Finance & Strategy</span>
+        <span><span data-i="byLabel">By</span> <strong>visva Intelligence & 0protocol</strong></span>
+        <span data-i="readingTime">Reading Time: 9 minutes · Sovereign Finance & Strategy</span>
       </div>
 
       <!-- Sovereign Audio Dispatch Player -->
@@ -435,13 +465,13 @@ footer.bottom-red-footer strong{
         <div class="audio-meta">
           <div class="audio-indicator" id="audioIndicator"></div>
           <div>
-            <div class="audio-label">Sovereign Audio Dispatch</div>
+            <div class="audio-label" data-i="audioLabel">Sovereign Audio Dispatch</div>
             <div class="audio-sub" id="audioStatus">Synthesized narration · 1.0x playback</div>
           </div>
         </div>
         <div class="audio-controls">
           <button type="button" class="audio-btn" id="playBtn" onclick="toggleSpeech()">
-            <span id="playIcon">▶</span> <span id="playText">Listen to Dispatch</span>
+            <span id="playIcon">▶</span> <span id="playText" data-i="btnListen">Listen to Dispatch</span>
           </button>
           <button type="button" class="audio-speed" id="speedBtn" onclick="cycleSpeed()">1.0x</button>
         </div>
@@ -451,105 +481,105 @@ footer.bottom-red-footer strong{
 
     <div class="ed-body">
       
-      <p class="lead">
+      <p class="lead" data-i="p1">
         Power in the modern era has rarely been exercised through the sheer velocity of artillery. It has instead been maintained through the silent, mundane mechanics of ledger entries. For eighty years, whoever owned the ledger owned the world.
       </p>
 
-      <p>
+      <p data-i="p2">
         If two sovereign states wished to exchange tankers of crude oil, bulk shipments of grain, or processed rare earths, they submitted to a universal friction point: transactions were denominated in US dollars and routed through correspondent banking hubs in New York and London. That architecture afforded the Western financial axis something far more potent than naval blockades—absolute, total surveillance over the circulatory system of global civilization. 
       </p>
 
-      <p>
+      <p data-i="p3">
         That monopoly is now broken. The announcement of bilateral commodity settlements executed completely outside the G7 clearing corridor is not an incremental adjustment in trade policy. It is a tectonic fracture. What Western capitals interpret as a series of isolated sanctions evasions is, in reality, the formal inauguration of a non-dollar, non-interoperable settlement sphere.
       </p>
 
-      <blockquote>
+      <blockquote data-i="quote1">
         "The fatal mistake of the surveillance hegemon was confusing the enforcement of penalties with the permanence of the stadium. Once penalties became confiscatory, the players simply paved a new field."
       </blockquote>
 
-      <h2>I. The Tactical Blindspot: Checkers and the Forced Jump</h2>
-      <p>
+      <h2 data-i="h2_1">I. The Tactical Blindspot: Checkers and the Forced Jump</h2>
+      <p data-i="p4">
         In statecraft, as in board games, players trapped in a short horizon are governed by forced moves. Western regulatory bodies—faced with domestic political pressure to demonstrate instantaneous retribution—are condemned to play Checkers.
       </p>
 
-      <p>
+      <p data-i="p5">
         Whenever an intermediary bank in Dubai, Shanghai, or Mumbai settles a cargo of hydrocarbons outside the SWIFT network, the regulator executes a mandatory capture: emergency secondary sanctions and asset freezes. The move produces immediate headlines and the optical satisfaction of punishment. 
       </p>
 
-      <p>
+      <p data-i="p6">
         Yet the long-term cost is catastrophic. Every commercial bank severed from the Western financial system ceases to have any incentive to comply with it. These institutions do not wither away; they are repurposed into dedicated, immune clearing hubs for the parallel trade grid. By using sanctions as an everyday policing tool rather than an ultimate deterrent, the West has systematically dismantled its own intelligence grid. Each forced capture yields short-term political triumph at the price of terminal regulatory blindness.
       </p>
 
       <div class="protocol-inset">
-        <h4>The Protocol X-Y-Z Diagnostic</h4>
-        <h5>Actor x vs. Actor y: The Kinetic Impasse</h5>
-        <p><strong>Actor x (G7 Enforcement):</strong> Operates as the kinetic regulator under short political horizons. Every jump it executes permanently hardens the opposing parallel infrastructure.</p>
-        <p><strong>Actor y (The Vault Sovereign):</strong> The central banks re-anchoring their sovereign liquid balances not into paper debt instruments, but into domestic physical bullion that cannot be reached by foreign court orders or algorithmic ledger freezes.</p>
+        <h4 data-i="insetKicker">The Protocol X-Y-Z Diagnostic</h4>
+        <h5 data-i="insetTitle">Actor x vs. Actor y: The Kinetic Impasse</h5>
+        <p><strong data-i="lblX">Actor x (G7 Enforcement):</strong> <span data-i="descX">Operates as the kinetic regulator under short political horizons. Every jump it executes permanently hardens the opposing parallel infrastructure.</span></p>
+        <p><strong data-i="lblY">Actor y (The Vault Sovereign):</strong> <span data-i="descY">The central banks re-anchoring their sovereign liquid balances not into paper debt instruments, but into domestic physical bullion that cannot be reached by foreign court orders or algorithmic ledger freezes.</span></p>
       </div>
 
-      <h2>II. The Balance-Sheet Fortress: Chess and the King's Zugzwang</h2>
-      <p>
-        If the regulatory struggle is played on the tactical board of Checkers, the sovereign balance-sheet war is unfolding across the chessboard. Here, the Western financial system finds itself immobilized in classic <em>zugzwang</em>—a position where every legally available move deteriorates the player's position.
+      <h2 data-i="h2_2">II. The Balance-Sheet Fortress: Chess and the King's Zugzwang</h2>
+      <p data-i="p7">
+        If the regulatory struggle is played on the tactical board of Checkers, the sovereign balance-sheet war is unfolding across the chessboard. Here, the Western financial system finds itself immobilized in classic zugzwang—a position where every legally available move deteriorates the player's position.
       </p>
 
-      <p>
+      <p data-i="p8">
         Consider the arithmetic trap of the G7 debt cycle. To defend the purchasing power of the reserve currency against stubborn domestic inflation, central banks are compelled to maintain elevated interest rates. But maintaining high rates drastically balloons the sovereign debt servicing costs, creating a compounding debt spiral. Conversely, if central banks slash interest rates and expand liquidity to rescue their sovereign bond markets, they trigger an immediate flight from fiat paper into tangible real-world assets.
       </p>
 
-      <p>
+      <p data-i="p9">
         Non-aligned central banks recognized this paradox years ago. They have systematically shifted foreign reserves out of sovereign debt securities and into domestic, physically vaulted gold. This is not speculative investment; it is sovereign fortification. Gold held in your own vault has zero counterparty risk. It cannot be frozen with a keystroke; it does not depend on a correspondent bank in Frankfurt or Manhattan. 
       </p>
 
-      <p>
+      <p data-i="p10">
         The king has retreated into an unbreachable balance-sheet fortress. The open files of foreign financial markets have been abandoned to expendable pawns.
       </p>
 
-      <h2>III. The Closing of Liberties: Go and Territorial Encirclement</h2>
-      <p>
-        The deepest layer of this transformation is invisible to the financial press because it involves neither stock tickers nor regulatory press releases. It is the quiet, patient placement of stones on the Go board (<em>Weiqi</em>).
+      <h2 data-i="h2_3">III. The Closing of Liberties: Go and Territorial Encirclement</h2>
+      <p data-i="p11">
+        The deepest layer of this transformation is invisible to the financial press because it involves neither stock tickers nor regulatory press releases. It is the quiet, patient placement of stones on the Go board (Weiqi).
       </p>
 
-      <p>
+      <p data-i="p12">
         Western strategy has historically obsessed over the dramatic center of the board: headline summits, multilateral military pacts, and rapid intervention forces. But Go is won at the edges, by claiming empty territory through subtle spatial enclosure. 
       </p>
 
-      <p>
+      <p data-i="p13">
         Over the past decade, while Western commentary debated corporate ESG mandates and interest-rate nuances, a synchronized coordination of physical infrastructure was established across the Eurasian land bridge and the Indian Ocean rim. Deepwater container terminals, overland oil and gas pipelines, dry ports, and undersea fiber optic corridors have been interlocked stone by stone.
       </p>
 
-      <p>
+      <p data-i="p14">
         These physical arteries do not rely on maritime chokepoints patrolled by Western carrier battle groups, nor do they require Western insurance syndicates. Fifty vital liberties around global resource flow have been quietly sealed. When trade moves over physical rails owned by the trading partners themselves and settles on digital bilateral ledgers anchored in physical bullion, the entire scaffolding of Western maritime and financial dominance becomes irrelevant.
       </p>
 
-      <blockquote>
+      <blockquote data-i="quote2">
         "You do not dismantle an empire by storming its fortress. You dismantle it by creating a world where its fortress is simply out of the way."
       </blockquote>
 
-      <h2>IV. What This Means in Plain Language</h2>
-      <p>
+      <h2 data-i="h2_4">IV. What This Means in Plain Language</h2>
+      <p data-i="p15">
         Strip away the economic jargon, the game theory, and the legal complexities, and the situation is stark:
       </p>
 
-      <p>
+      <p data-i="p16">
         For eighty years, the United States and its allies ran the only global financial game in town. If you wanted to play, you had to follow their rules, use their currency, and pay their fees. If you misbehaved, they took away your ball and threw you off the field.
       </p>
 
-      <p>
+      <p data-i="p17">
         Today, the major resource and manufacturing nations of the planet have walked off that field, cleared their own ground, and built their own stadium. The Western referee can continue to blow the whistle, wave red cards, and announce penalties into the microphone—but the stadium is empty, and the players are already scoring goals in a game where the whistle cannot be heard.
       </p>
 
       <hr>
 
-      <h2>The Terminal Verdict</h2>
-      <p>
+      <h2 data-i="h2_5">The Terminal Verdict</h2>
+      <p data-i="p18">
         The fracture of the global clearing grid is neither a transient crisis nor a temporary dispute. It is the end of the unipolar ledger. 
       </p>
 
-      <p>
+      <p data-i="p19">
         The world is no longer operating on a single game board. The West continues to dominate the tactical board of regulatory checks, but on the strategic board of sovereign solvency and the territorial board of physical trade, the ground has shifted permanently. The daily move is made. The board is altered. The new reality has begun.
       </p>
 
-      <a href="index.html" class="back-btn">← Return to Today's Move</a>
+      <a href="index.html" class="back-btn" data-i="btnReturn">← Return to Today's Move</a>
 
     </div>
 
@@ -560,17 +590,18 @@ footer.bottom-red-footer strong{
 <!-- Matching Red Bottom Footer -->
 <footer class="bottom-red-footer">
   <div class="wrap">
-    <span>The daily move is free. The archive is the record.</span>
+    <span data-i="footerText">The daily move is free. The archive is the record.</span>
     <div>
-      <a href="index.html" style="margin-right:16px;">Today's Dashboard</a>
-      <a href="about.html" style="margin-right:16px;">About visva</a>
-      <a href="about.html#contact" style="margin-right:20px;">Contact & Signals</a>
+      <a href="index.html" style="margin-right:16px;" data-i="navHome">Today's Dashboard</a>
+      <a href="about.html" style="margin-right:16px;" data-i="navAbout">About visva</a>
+      <a href="about.html#contact" style="margin-right:20px;" data-i="navContact">Contact & Signals</a>
       <span><strong>visva.world</strong> · 0protocol.ai · © 2026</span>
     </div>
   </div>
 </footer>
 
 <script>
+// Greenwich Mean Time (UTC) Clock ticking live
 function updateGMTClock() {
   const now = new Date();
   const utcHours = String(now.getUTCHours()).padStart(2, '0');
@@ -593,7 +624,452 @@ function updateGMTClock() {
 setInterval(updateGMTClock, 1000);
 updateGMTClock();
 
-// Client-Side Speech Synthesis Engine
+// 10-Language Editorial Dynamic Dictionary
+const ED_LANG = {
+  en: {
+    name:"English",dir:"ltr",bcp47:"en-US",
+    navReturn:"← Today's Dispatch",navHome:"Today's Dashboard",navAbout:"About",navContact:"Contact",
+    tag:"The Daily Editorial",
+    edPill:"visva Editorial // Vol. I",edDate:"Monday, October 19, 2026",
+    edTitle:"The Fracture of the Global Clearing Grid",
+    edDeck:"How the weaponization of Western correspondent banking forced the emergence of sovereign gold settlements, parallel ledgers, and the terminal loss of surveillance hegemony.",
+    byLabel:"By",readingTime:"Reading Time: 9 minutes · Sovereign Finance & Strategy",
+    audioLabel:"Sovereign Audio Dispatch",btnListen:"Listen to Dispatch",btnStop:"Stop Narration",
+    p1:"Power in the modern era has rarely been exercised through the sheer velocity of artillery. It has instead been maintained through the silent, mundane mechanics of ledger entries. For eighty years, whoever owned the ledger owned the world.",
+    p2:"If two sovereign states wished to exchange tankers of crude oil, bulk shipments of grain, or processed rare earths, they submitted to a universal friction point: transactions were denominated in US dollars and routed through correspondent banking hubs in New York and London. That architecture afforded the Western financial axis something far more potent than naval blockades—absolute, total surveillance over the circulatory system of global civilization.",
+    p3:"That monopoly is now broken. The announcement of bilateral commodity settlements executed completely outside the G7 clearing corridor is not an incremental adjustment in trade policy. It is a tectonic fracture. What Western capitals interpret as a series of isolated sanctions evasions is, in reality, the formal inauguration of a non-dollar, non-interoperable settlement sphere.",
+    quote1:'"The fatal mistake of the surveillance hegemon was confusing the enforcement of penalties with the permanence of the stadium. Once penalties became confiscatory, the players simply paved a new field."',
+    h2_1:"I. The Tactical Blindspot: Checkers and the Forced Jump",
+    p4:"In statecraft, as in board games, players trapped in a short horizon are governed by forced moves. Western regulatory bodies—faced with domestic political pressure to demonstrate instantaneous retribution—are condemned to play Checkers.",
+    p5:"Whenever an intermediary bank in Dubai, Shanghai, or Mumbai settles a cargo of hydrocarbons outside the SWIFT network, the regulator executes a mandatory capture: emergency secondary sanctions and asset freezes. The move produces immediate headlines and the optical satisfaction of punishment.",
+    p6:"Yet the long-term cost is catastrophic. Every commercial bank severed from the Western financial system ceases to have any incentive to comply with it. These institutions do not wither away; they are repurposed into dedicated, immune clearing hubs for the parallel trade grid. By using sanctions as an everyday policing tool rather than an ultimate deterrent, the West has systematically dismantled its own intelligence grid. Each forced capture yields short-term political triumph at the price of terminal regulatory blindness.",
+    insetKicker:"The Protocol X-Y-Z Diagnostic",insetTitle:"Actor x vs. Actor y: The Kinetic Impasse",
+    lblX:"Actor x (G7 Enforcement):",descX:"Operates as the kinetic regulator under short political horizons. Every jump it executes permanently hardens the opposing parallel infrastructure.",
+    lblY:"Actor y (The Vault Sovereign):",descY:"The central banks re-anchoring their sovereign liquid balances not into paper debt instruments, but into domestic physical bullion that cannot be reached by foreign court orders or algorithmic ledger freezes.",
+    h2_2:"II. The Balance-Sheet Fortress: Chess and the King's Zugzwang",
+    p7:"If the regulatory struggle is played on the tactical board of Checkers, the sovereign balance-sheet war is unfolding across the chessboard. Here, the Western financial system finds itself immobilized in classic zugzwang—a position where every legally available move deteriorates the player's position.",
+    p8:"Consider the arithmetic trap of the G7 debt cycle. To defend the purchasing power of the reserve currency against stubborn domestic inflation, central banks are compelled to maintain elevated interest rates. But maintaining high rates drastically balloons the sovereign debt servicing costs, creating a compounding debt spiral. Conversely, if central banks slash interest rates and expand liquidity to rescue their sovereign bond markets, they trigger an immediate flight from fiat paper into tangible real-world assets.",
+    p9:"Non-aligned central banks recognized this paradox years ago. They have systematically shifted foreign reserves out of sovereign debt securities and into domestic, physically vaulted gold. This is not speculative investment; it is sovereign fortification. Gold held in your own vault has zero counterparty risk. It cannot be frozen with a keystroke; it does not depend on a correspondent bank in Frankfurt or Manhattan.",
+    p10:"The king has retreated into an unbreachable balance-sheet fortress. The open files of foreign financial markets have been abandoned to expendable pawns.",
+    h2_3:"III. The Closing of Liberties: Go and Territorial Encirclement",
+    p11:"The deepest layer of this transformation is invisible to the financial press because it involves neither stock tickers nor regulatory press releases. It is the quiet, patient placement of stones on the Go board (Weiqi).",
+    p12:"Western strategy has historically obsessed over the dramatic center of the board: headline summits, multilateral military pacts, and rapid intervention forces. But Go is won at the edges, by claiming empty territory through subtle spatial enclosure.",
+    p13:"Over the past decade, while Western commentary debated corporate ESG mandates and interest-rate nuances, a synchronized coordination of physical infrastructure was established across the Eurasian land bridge and the Indian Ocean rim. Deepwater container terminals, overland oil and gas pipelines, dry ports, and undersea fiber optic corridors have been interlocked stone by stone.",
+    p14:"These physical arteries do not rely on maritime chokepoints patrolled by Western carrier battle groups, nor do they require Western insurance syndicates. Fifty vital liberties around global resource flow have been quietly sealed. When trade moves over physical rails owned by the trading partners themselves and settles on digital bilateral ledgers anchored in physical bullion, the entire scaffolding of Western maritime and financial dominance becomes irrelevant.",
+    quote2:'"You do not dismantle an empire by storming its fortress. You dismantle it by creating a world where its fortress is simply out of the way."',
+    h2_4:"IV. What This Means in Plain Language",
+    p15:"Strip away the economic jargon, the game theory, and the legal complexities, and the situation is stark:",
+    p16:"For eighty years, the United States and its allies ran the only global financial game in town. If you wanted to play, you had to follow their rules, use their currency, and pay their fees. If you misbehaved, they took away your ball and threw you off the field.",
+    p17:"Today, the major resource and manufacturing nations of the planet have walked off that field, cleared their own ground, and built their own stadium. The Western referee can continue to blow the whistle, wave red cards, and announce penalties into the microphone—but the stadium is empty, and the players are already scoring goals in a game where the whistle cannot be heard.",
+    h2_5:"The Terminal Verdict",
+    p18:"The fracture of the global clearing grid is neither a transient crisis nor a temporary dispute. It is the end of the unipolar ledger.",
+    p19:"The world is no longer operating on a single game board. The West continues to dominate the tactical board of regulatory checks, but on the strategic board of sovereign solvency and the territorial board of physical trade, the ground has shifted permanently. The daily move is made. The board is altered. The new reality has begun.",
+    btnReturn:"← Return to Today's Move",footerText:"The daily move is free. The archive is the record."
+  },
+  fr: {
+    name:"Français",dir:"ltr",bcp47:"fr-FR",
+    navReturn:"← Dépêche du jour",navHome:"Tableau de bord",navAbout:"À propos",navContact:"Contact",
+    tag:"L'Éditorial Quotidien",
+    edPill:"Éditorial visva // Vol. I",edDate:"Lundi 19 octobre 2026",
+    edTitle:"La Fracture du Réseau de Compensation Mondial",
+    edDeck:"Comment l'arsenalisation du système bancaire occidental a provoqué l'émergence de règlements en or physique, de registres bilatéraux et la perte irréversible de l'hégémonie de surveillance.",
+    byLabel:"Par",readingTime:"Temps de lecture : 9 minutes · Finance Souveraine & Stratégie",
+    audioLabel:"Dépêche Audio Souveraine",btnListen:"Écouter la dépêche",btnStop:"Arrêter la lecture",
+    p1:"Dans l'ère moderne, le pouvoir s'est rarement exercé par la seule vélocité des canons. Il s'est maintenu à travers la mécanique silencieuse des écritures comptables. Pendant quatre-vingts ans, quiconque contrôlait le grand livre régnait sur le monde.",
+    p2:"Si deux États souverains voulaient échanger du pétrole, des céréales ou des terres rares, ils devaient passer par New York ou Londres en dollars américains. Cette architecture offrait à l'Occident une surveillance absolue sur la circulation des richesses mondiales.",
+    p3:"Ce monopole est désormais brisé. L'inauguration de règlements bilatéraux de matières premières hors corridor G7 n'est pas une simple péripétie : c'est une fracture tectonique fondant une sphère de règlement non-dollar souveraine.",
+    quote1:'"L'erreur fatale de l'hégémon fut de confondre les pénalités avec la permanence du stade. Une fois les sanctions devenues confiscatoires, les joueurs ont simplement bâti un autre stade."',
+    h2_1:"I. L'Angle Mort Tactique : Les Dames et la Prise Forcée",
+    p4:"En politique comme aux jeux de plateau, les acteurs soumis au court terme subissent des coups forcés. Face à l'impératif de rétribution immédiate, les régulateurs occidentaux sont condamnés à jouer aux Dames.",
+    p5:"Chaque fois qu'une banque à Dubaï, Shanghai ou Bombay traite un flux hors SWIFT, le régulateur frappe par réflexe : sanctions secondaires et gel d'avoirs. Le coup satisfait les caméras, mais sacrifie la vision à long terme.",
+    p6:"Les banques exclues ne meurent pas : elles deviennent les nœuds indestructibles du réseau financier parallèle. En usant des sanctions comme outil policier quotidien, l'Occident a détruit son propre réseau de renseignement financier.",
+    insetKicker:"Diagnostic Protocole X-Y-Z",insetTitle:"Acteur x contre Acteur y : L'Impasse Cinétique",
+    lblX:"Acteur x (Régulateur G7) :",descX:"Agit dans l'urgence politique à court terme. Chaque sanction qu'il impose renforce et durcit l'infrastructure parallèle opposée.",
+    lblY:"Acteur y (Souverain des Coffres) :",descY:"Les banques centrales qui convertissent leurs réserves en lingots d'or stockés sur leur propre territoire, hors de portée des tribunaux étrangers.",
+    h2_2:"II. La Forteresse de Bilan : Les Échecs et le Zugzwang du Roi",
+    p7:"Tandis que les régulateurs jouent aux Dames, la guerre des bilans souverains se déroule sur l'échiquier. Le système financier occidental y est immobilisé en plein zugzwang.",
+    p8:"Le piège de la dette du G7 est arithmétique : monter les taux pour défendre la monnaie fait exploser le service de la dette ; baisser les taux et créer de la monnaie déclenche la fuite vers l'or et les actifs réels.",
+    p9:"Les banques centrales du Sud global ont accumulé de l'or physique dans leurs propres coffres. L'or en coffre souverain ne comporte aucun risque de contrepartie. Il ne peut être saisi d'un clic de souris.",
+    p10:"Le Roi s'est retiré dans une forteresse inexpugnable. Les colonnes ouvertes des marchés financiers occidentaux sont abandonnées aux pions sacrifiables.",
+    h2_3:"III. La Fermeture des Libertés : Le Go et l'Encerclement Spatial",
+    p11:"La couche la plus profonde échappe à la presse financière car elle n'implique ni cours de bourse ni communiqués. C'est le placement patient et silencieux des pierres sur le goban (Weiqi).",
+    p12:"La stratégie occidentale s'est concentrée sur le centre spectaculaire : sommets et déploiements militaires. Mais le Go se gagne aux bords, en enfermant l'espace vide par des liaisons progressives.",
+    p13:"Terminaux portuaires en eau profonde, gazoducs terrestres, câbles sous-marins ont été connectés pierre après pierre à travers l'Eurasie et l'océan Indien.",
+    p14:"Cinquante libertés vitales ont été fermées autour des flux d'énergie. Lorsque le commerce circule sur des rails physiques détenus par les partenaires et se règle en or, toute la domination maritime occidentale devient caduque.",
+    quote2:'"On ne détruit pas un empire en attaquant sa forteresse de front. On le détruit en créant un monde où sa forteresse ne se trouve plus sur le chemin."',
+    h2_4:"IV. Ce que Cela Signifie en Clair",
+    p15:"Sans jargon technique ni formules complexes, la réalité est limpide :",
+    p16:"Pendant 80 ans, les puissances occidentales possédaient le seul terrain de jeu financier. Pour participer, il fallait payer leurs taxes et obéir à leurs règles, sous peine d'exclusion.",
+    p17:"Aujourd'hui, les pays producteurs de matières premières ont quitté le terrain et construit leur propre stade. L'arbitre continue d'agiter des cartons rouges dans le vide, mais les joueurs marquent déjà des buts sur un autre terrain.",
+    h2_5:"Le Verdict Terminal",
+    p18:"La fracture du réseau de compensation mondial n'est pas un litige temporaire. C'est l'acte de décès du grand livre unipolaire.",
+    p19:"L'Occident domine encore la tactique des sanctions, mais sur l'échiquier de la solvabilité et le goban territorial, l'avantage a basculé définitivement.",
+    btnReturn:"← Revenir au coup du jour",footerText:"Le coup du jour est gratuit. L'archive est le registre."
+  },
+  es: {
+    name:"Español",dir:"ltr",bcp47:"es-ES",
+    navReturn:"← Despacho de hoy",navHome:"Panel general",navAbout:"Acerca de",navContact:"Contacto",
+    tag:"El Editorial Diario",
+    edPill:"Editorial visva // Vol. I",edDate:"Lunes, 19 de octubre de 2026",
+    edTitle:"La Fractura de la Red de Compensación Global",
+    edDeck:"Cómo la instrumentalización de la banca corresponsal occidental forzó la aparición de liquidaciones en oro físico, registros paralelos y la pérdida terminal de la hegemonía de vigilancia.",
+    byLabel:"Por",readingTime:"Tiempo de lectura: 9 minutos · Finanzas Soberanas y Estrategia",
+    audioLabel:"Despacho de Audio Soberano",btnListen:"Escuchar despacho",btnStop:"Detener lectura",
+    p1:"En la era moderna, el poder rara vez se ha ejercido por la velocidad de la artillería. Se ha mantenido mediante la silenciosa mecánica de los libros contables. Durante ochenta años, quien poseía el libro de registro dominaba el mundo.",
+    p2:"Para comerciar petróleo o grano, los países debían liquidar en dólares mediante bancos de Nueva York y Londres, otorgando a Occidente una vigilancia total sobre los flujos del planeta.",
+    p3:"Ese monopolio ha muerto. Las liquidaciones bilaterales fuera del G7 inauguran formalmente una esfera económica no dolarizada y soberana.",
+    quote1:'"El error fatal del hegemón fue confundir la imposición de sanciones con la permanencia del estadio. Cuando las sanciones fueron confiscatorias, los jugadores simplemente construyeron otra cancha."',
+    h2_1:"I. El Punto Ciego Táctico: Damas y la Captura Obligatoria",
+    p4:"En geopolítica, los actores de corto plazo sufren jugadas forzadas. Los reguladores occidentales están condenados a jugar a las Damas.",
+    p5:"Cada sanción de emergencia contra bancos intermediarios genera titulares inmediatos, pero excluye a instituciones que de inmediato asumen el rol de nodos centrales del sistema paralelo.",
+    p6:"Al usar las sanciones como patrullaje diario, Occidente destruyó su propia red de inteligencia financiera.",
+    insetKicker:"Diagnóstico Protocolo X-Y-Z",insetTitle:"Actor x vs. Actor y: El Bloqueo Cinético",
+    lblX:"Actor x (Regulador G7):",descX:"Opera bajo horizontes cortos. Cada sanción endurece y perfecciona la infraestructura financiera alternativa.",
+    lblY:"Actor y (Soberano de Bóveda):",descY:"Bancos centrales que convierten reservas en lingotes de oro custodiados dentro de su propio suelo nacional.",
+    h2_2:"II. La Fortaleza de Balance: Ajedrez y el Zugzwang del Rey",
+    p7:"En el ajedrez de las finanzas soberanas, Occidente se encuentra inmovilizado en pleno zugzwang.",
+    p8:"Subir tipos para frenar la inflación dispara el pago de la deuda pública; bajar tipos provoca la huida masiva del dinero fiduciario hacia el oro.",
+    p9:"Los bancos centrales del Sur global acumularon oro físico doméstico, inmune a embargos y órdenes judiciales extranjeras.",
+    p10:"El Rey se refugió en una fortaleza inexpugnable; los mercados abiertos quedan abandonados.",
+    h2_3:"III. El Cierre de Libertades: Go y el Cerco Territorial",
+    p11:"El nivel más profundo no cotiza en bolsa: es la colocación paciente de piedras en el tablero de Go (Weiqi).",
+    p12:"Occidente prioriza cumbres y retórica; el Go se gana cerrando pacientemente el espacio en los bordes.",
+    p13:"Oleoductos terrestres, puertos estratégicos y fibra óptica unen a Eurasia sin pasar por cuellos de botella controlados por flotas occidentales.",
+    p14:"Cincuenta libertades han sido selladas. Con infraestructura física propia y oro en bóvedas, el cerco naval resulta irrelevante.",
+    quote2:'"No se destruye un imperio atacando su fortaleza de frente. Se le neutraliza creando un mundo donde su fortaleza queda fuera de paso."',
+    h2_4:"IV. En Lenguaje Sencillo",
+    p15:"Sin tecnicismos ni artificios académicos, la realidad es rotunda:",
+    p16:"Durante ocho décadas, Occidente controló la única cancha de juego. Si desobedecías, te expulsaban del partido.",
+    p17:"Hoy los productores de materias primas han abandonado esa cancha y juegan en un nuevo estadio donde el silbato del árbitro ya no se escucha.",
+    h2_5:"El Veredicto Terminal",
+    p18:"La fractura del sistema de pagos es definitiva: es el fin del libro contable unipolar.",
+    p19:"Occidente domina aún las sanciones reactivas, pero en solvencia y territorio, la ventaja ha cambiado de bando.",
+    btnReturn:"← Volver a la jugada de hoy",footerText:"La jugada diaria es gratuita. El archivo es el registro."
+  },
+  pt: {
+    name:"Português",dir:"ltr",bcp47:"pt-PT",
+    navReturn:"← Despacho de hoje",navHome:"Painel geral",navAbout:"Sobre",navContact:"Contacto",
+    tag:"O Editorial Diário",
+    edPill:"Editorial visva // Vol. I",edDate:"Segunda-feira, 19 de outubro de 2026",
+    edTitle:"A Fratura da Rede de Compensação Global",
+    edDeck:"Como a militarização bancária ocidental forçou liquidações em ouro físico, livros-razão paralelos e o fim da hegemonia de vigilância.",
+    byLabel:"Por",readingTime:"Tempo de leitura: 9 minutos · Finanças Soberanas",
+    audioLabel:"Despacho de Áudio Soberano",btnListen:"Ouvir despacho",btnStop:"Parar reprodução",
+    p1:"O poder moderno sempre se exerceu na ponta dos livros contábeis. Durante 80 anos, quem controlava o livro de pagamentos mandava no mundo.",
+    p2:"O trânsito obrigatório pelo dólar permitia ao Ocidente monitorar e punir qualquer transação comercial no planeta.",
+    p3:"Esse monopólio ruiu com a liquidação direta de commodities fora do G7.",
+    quote1:'"O erro do árbitro foi crer que o estádio era perpétuo. Ao confiscar bens, forçou a construção de um estádio paralelo."',
+    h2_1:"I. Damas e a Captura Obrigatória",
+    p4:"Os reguladores ocidentais operam sob lógica de Damas: respostas reativas e capturas forçadas.",
+    p5:"Bancos sancionados tornam-se os nós centrais e imunes da rede financeira alternativa.",
+    p6:"A vigilância financeira ocidental foi desmontada pelas suas próprias sanções.",
+    insetKicker:"Diagnóstico Protocolo X-Y-Z",insetTitle:"Ator x vs. Ator y",
+    lblX:"Ator x (Regulador G7):",descX:"Opera no curto prazo e acelera a infraestrutura concorrente.",
+    lblY:"Ator y (Soberano dos Cofres):",descY:"Bancos centrais que resguardam reservas em ouro físico doméstico.",
+    h2_2:"II. Xadrez e o Zugzwang Monetário",
+    p7:"No xadrez soberano, a dívida ocidental está em zugzwang insolúvel.",
+    p8:"Subir juros quebra a dívida pública; cortar juros gera fuga em massa para o ouro.",
+    p9:"O ouro em cofre nacional zera o risco de contraparte.",
+    p10:"O Rei está blindado; o sistema tradicional ficou exposto.",
+    h2_3:"III. Go e o Cerco Territorial Silencioso",
+    p11:"No Go (Weiqi), ganha-se ocupando os cantos em silêncio.",
+    p12:"Enquanto o Ocidente debate cúpulas, a Eurásia constrói portos e gasodutos próprios.",
+    p13:"Cinquenta liberdades vitais foram fechadas sem disparar um tiro.",
+    p14:"O comércio físico já opera imune a bloqueios marítimos.",
+    quote2:'"Um império é superado quando a sua fortaleza deixa de estar no caminho do comércio."',
+    h2_4:"IV. Em Linguagem Simples",
+    p15:"A verdade nua e crua:",
+    p16:"O Ocidente era dono da bola e do campo.",
+    p17:"Hoje os jogadores ergueram o seu próprio estádio onde as faltas apitadas de fora já não têm efeito.",
+    h2_5:"Veredicto Terminal",
+    p18:"O mundo opera agora em tabuleiros separados.",
+    p19:"A hegemonia do livro contável unipolar terminou formalmente.",
+    btnReturn:"← Voltar ao lance de hoje",footerText:"O lance diário é gratuito. O arquivo é o registro."
+  },
+  de: {
+    name:"Deutsch",dir:"ltr",bcp47:"de-DE",
+    navReturn:"← Heutige Depesche",navHome:"Dashboard",navAbout:"Über uns",navContact:"Kontakt",
+    tag:"Der Tägliche Leitartikel",
+    edPill:"visva Leitartikel // Vol. I",edDate:"Montag, 19. Oktober 2026",
+    edTitle:"Der Bruch des globalen Clearing-Netzes",
+    edDeck:"Wie die Instrumentalisierung des westlichen Bankensystems zur Entstehung von Gold-Abrechnungen und parallelen Registern führte.",
+    byLabel:"Von",readingTime:"Lesezeit: 9 Minuten · Souveräne Finanzstrategie",
+    audioLabel:"Souveräne Audio-Depesche",btnListen:"Depesche anhören",btnStop:"Wiedergabe stoppen",
+    p1:"Macht im modernen Zeitalter beruhte stets auf den Einträgen im Hauptbuch. Wer das Hauptbuch kontrollierte, beherrschte die Welt.",
+    p2:"Jeder Rohstoffhandel über New York und London verlieh dem Westen vollständige Überwachung über die Weltwirtschaft.",
+    p3:"Dieses Monopol ist nun durchbrochen: Rohstoffe werden direkt und bilateral außerhalb des G7-Clearingraums abgewickelt.",
+    quote1:'"Der fatale Irrtum bestand darin, Strafen mit der Unersetzbarkeit des Stadions zu verwechseln."',
+    h2_1:"I. Dame und der Schlagzwang",
+    p4:"Westliche Regulierungsbehörden unterliegen einem taktischen Schlagzwang wie im Damespiel.",
+    p5:"Ausgeschlossene Banken werden zu den unverwundbaren Schaltstellen des parallelen Netzes.",
+    p6:"Die Sanktionsflut hat die westliche Finanzüberwachung blind gemacht.",
+    insetKicker:"Protokoll X-Y-Z Diagnose",insetTitle:"Akteur x vs. Akteur y",
+    lblX:"Akteur x (G7-Regulierer):",descX:"Handelt kurzfristig und treibt die Gegeninfrastruktur voran.",
+    lblY:"Akteur y (Tresor-Souverän):",descY:"Sichert Reserven in physischem Gold im eigenen Hoheitsgebiet.",
+    h2_2:"II. Schach und der Zugzwang des Königs",
+    p7:"Im Staatsschulden-Schach befindet sich der Westen im klassischen Zugzwang.",
+    p8:"Zinserhöhungen gefährden die Schuldentragfähigkeit; Zinssenkungen treiben die Flucht ins Gold an.",
+    p9:"Physisches Gold im heimischen Tresor hat kein Gegenparteirisiko.",
+    p10:"Der König steht uneinnehmbar fest; die offenen Linien sind aufgegeben.",
+    h2_3:"III. Go und die räumliche Umzingelung",
+    p11:"Im Go (Weiqi) siegt man durch lautlose Schließung der Freiheiten an den Rändern.",
+    p12:"Eurasische Land- und Pipelinekorridore machen Seeblockaden wirkungslos.",
+    p13:"Fünfzig vitale Handelsfreiheiten wurden stillschweigend besetzt.",
+    p14:"Die westliche Dominanz über Meeresengen verliert ihre Hebelwirkung.",
+    quote2:'"Man stürmt keine Festung – man schafft eine Welt, in der die Festung abseits liegt."',
+    h2_4:"IV. Im Klartext",
+    p15:"Die einfache Wirklichkeit:",
+    p16:"Jahrzehntelang bestimmte der Westen die Spielregeln und verteilte Platzverweise.",
+    p17:"Nun haben die großen Rohstoffmächte ihr eigenes Spielfeld eröffnet, auf dem westliche Pfiffe ungehört verhallen.",
+    h2_5:"Das Endurteil",
+    p18:"Der Bruch des globalen Abrechnungsnetzes markiert das Ende des unipolaren Hauptbuchs.",
+    p19:"Die Weichen für das neue multipolare Zeitalter sind unwiderruflich gestellt.",
+    btnReturn:"← Zurück zum heutigen Zug",footerText:"Der tägliche Zug ist frei. Das Archiv ist das Protokoll."
+  },
+  ru: {
+    name:"Русский",dir:"ltr",bcp47:"ru-RU",
+    navReturn:"← К депеше дня",navHome:"Главный экран",navAbout:"О проекте",navContact:"Контакты",
+    tag:"Ежедневная Редакция",
+    edPill:"Редакция visva // Том I",edDate:"Понедельник, 19 октября 2026 г.",
+    edTitle:"Разрыв глобальной клиринговой сети",
+    edDeck:"Как превращение банковской системы в оружие породило расчеты в физическом золоте и ликвидировало финансовую монополию Запада.",
+    byLabel:"Автор:",readingTime:"Время чтения: 9 минут · Суверенная стратегия",
+    audioLabel:"Суверенная Аудио-Депеша",btnListen:"Слушать депешу",btnStop:"Остановить",
+    p1:"Власть в современную эпоху держалась не на пушках, а на проводках в банковских гроссбухах. Кто вел реестр — тот владел миром.",
+    p2:"Маршрутизация всей мировой торговли через Нью-Йорк и Лондон давала абсолютный надзор над мировыми финансовыми артериями.",
+    p3:"Эта монополия уничтожена: запущены прямые расчеты за сырье вне клиринга стран G7.",
+    quote1:'"Фатальная ошибка гегемона заключалась в вере в незаменимость своего стадиона. Как только правила стали грабительскими, игроки построили новое поле."',
+    h2_1:"I. Шашки: Обязательный бой и тактическая слепота",
+    p4:"Западные регуляторы зажаты в логике шашек — они вынуждены отвечать обязательным взятием на любой вызов.",
+    p5:"Отключенные банки не гибнут, а становятся опорными узлами независимой расчетной сети.",
+    p6:"Постоянными санкциями Запад лишил себя главного инструмента — глобальной финансовой разведки.",
+    insetKicker:"Диагностика Протокола X-Y-Z",insetTitle:"Игрок x против Игрока y",
+    lblX:"Игрок x (Регуляторы G7):",descX:"Действует в коротком горизонте, лишь ускоряя развитие альтернативных систем.",
+    lblY:"Игрок y (Хранитель Золота):",descY:"Центральные банки, переводящие резервы в физические слитки в собственных хранилищах.",
+    h2_2:"II. Шахматы: Королевский цугцванг балансов",
+    p7:"В шахматах суверенного долга Запад загнан в классический цугцванг.",
+    p8:"Поднятие ставок разрушает бюджет; снижение ставок вызывает бегство из валюты в золото.",
+    p9:"Золото в собственном хранилище не несет риска контрагента и не может быть заморожено щелчком мыши.",
+    p10:"Король укрыт в крепости; открытые линии отданы второстепенным фигурам.",
+    h2_3:"III. Го: Окружение пространств и закрытие дыханий",
+    p11:"Глубинный процесс идет на доске для Го (Вэйци) — тихо и методично.",
+    p12:"Го выигрывается по краям доски через контроль над ключевой территорией.",
+    p13:"Трубопроводы, глубоководные порты и кабели связали Евразию в единый каркас.",
+    p14:"Пятьдесят дыханий перекрыты без единого выстрела. Флот оппонента окружен экономически.",
+    quote2:'"Империю побеждают не штурмом крепости, а созданием мира, где ее крепость никому не нужна."',
+    h2_4:"IV. Простыми словами",
+    p15:"Суть происходящего предельно проста:",
+    p16:"Восемьдесят лет Запад владел единственным финансовым стадионом на планете.",
+    p17:"Сегодня ресурсные державы построили свой стадион, где судейские свистки с Запада больше не имеют силы.",
+    h2_5:"Окончательный вердикт",
+    p18:"Разрыв единой клиринговой сети — это необратимый конец однополярного финансового мира.",
+    p19:"Доска изменилась навсегда. Наступила новая реальность.",
+    btnReturn:"← Вернуться к ходу дня",footerText:"Ход дня открыт для всех. Архив — это летопись."
+  },
+  zh: {
+    name:"中文",dir:"ltr",bcp47:"zh-CN",
+    navReturn:"← 返回今日棋步",navHome:"数据总览",navAbout:"关于我们",navContact:"联系与信号",
+    tag:"深度社论",
+    edPill:"visva 深度社论 // 第一卷",edDate:"2026年10月19日 星期一",
+    edTitle:"全球清算网络的历史性裂变",
+    edDeck:"西方代理行金融工具化如何彻底倒逼出实物黄金结算、平行账本体系与监控霸权的终结。",
+    byLabel:"撰文：",readingTime:"阅读时长：9分钟 · 主权金融与深层战略",
+    audioLabel:"主权智能语音播报",btnListen:"收听本期社论",btnStop:"停止播报",
+    p1:"现代世界的终极权力极少依靠大炮的轰鸣维系，而是建立在清算账本的无声跳动之中。八十年来，谁垄断了全球总账本，谁就统治了世界。",
+    p2:"过去跨国买卖石油、粮食与矿产必须强制通过纽约和伦敦的美元代理行，这赋予了西方对全球经济循环系统的绝对监视权与生杀大权。",
+    p3:"这一垄断今日正式终结。非西方大宗商品双边清算机制的确立绝非普通经贸调整，而是一场板块大裂变，宣告了去美元化主权结算体系的成型。",
+    quote1:'“监控霸权最致命的盲区，是将行使惩罚权误认为是体育场的永恒存在。当门票与罚单变为明火执仗的掠夺，博弈者只会另造球场。”',
+    h2_1:"一、 西洋跳棋视角的盲区：被迫吃子与监控失明",
+    p4:"在棋局中，短视的棋手永远被强制吃子所驱使。面对国内政治表演的西方监管机构，正沦为西洋跳棋盘上的被动应手者。",
+    p5:"每当有非美元原油清算发生，监管者便条件反射式地实施次级制裁与资产冻结。这在新闻上赢得了掌声，却输掉了全局棋势。",
+    p6:"被踢出SWIFT的银行没有消亡，反而成为平行贸易走廊的专用免役中枢。过度使用制裁作为日常警察工具，直接摧毁了西方自身的全球金融情报网。",
+    insetKicker:"XYZ协议深度诊断",insetTitle:"博弈实体 x 对决 实体 y：动力学死结",
+    lblX:"实体 x（G7监管执行方）：",descX:"受困于短期政治诉求，每一次应激制裁都在加速并固化对手的平行金融设施。",
+    lblY:"实体 y（主权金库裁定者）：",descY:"非西方央行将纸面外汇果断置换为存放在本土金库中的物理金条，彻底免疫外部司法长臂管辖。",
+    h2_2:"二、 国际象棋维度的筑垒：王翼防御与金融迫移局",
+    p7:"在主权资产负债表的国象棋盘上，西方金融体系正陷入无可救药的迫移局（Zugzwang）——无论走哪一步都会恶化自身的处境。",
+    p8:"G7债务周期的死结：加息抗通胀会导致主权国债利息飙升引爆财政；降息救市印钞又会引发纸币信用崩溃、资金涌入实物黄金。",
+    p9:"非西方央行数年前就看透了这一算术死局，将储备全面转向本土实物黄金。金条没有违约风险，不会被远程冻结，无需仰赖法兰克福或曼哈顿的代理行。",
+    p10:"王（主权核心资产）已深退入固若金汤的堡垒，外围金融衍生品市场只剩下可随时牺牲的兵卒。",
+    h2_3:"三、 围棋大势之紧气：深远周期与地缘合围",
+    p11:"最深层次的博弈在财经新闻之外，它是围棋棋盘上静默的落子与占地。",
+    p12:"西方习惯于瞩目中心开花的峰会与航母打击群；而围棋则是自金角银边开始，通过对空阔地带的无声包围决出胜负。",
+    p13:"深水港口、陆上油气管道、跨境光缆横跨欧亚大陆与印度洋环带，步步相连，结成实体网络。",
+    p14:"五十处攸关资源运输的气数已被悄然紧死。当贸易完全在自建的物理设施上以黄金结算，西方的海上封锁与航道控制便已形同虚设。",
+    quote2:'“瓦解一个帝国无需强攻其堡垒；只需构建一个使其堡垒彻底沦为绕道之物的全新世界。”',
+    h2_4:"四、 用大白话讲透实质",
+    p15:"剥离所有复杂的金融术语与地缘词汇，事实真相极其直白：",
+    p16:"八十年里，西方垄断了全球唯一的金融球场。想踢球就得听他的规矩、用他的球，稍有违抗就被红牌罚下。",
+    p17:"如今，拥有资源与工厂的球员们集体退场，自己平整土地建了新球场。西方裁判依然在空荡荡的旧球场上拼命吹哨，而新球场上的比赛早已踢得热火朝天，哨声根本传不过去。",
+    h2_5:"终极裁定",
+    p18:"全球结算网络的分裂不是暂时的贸易风波，而是单极货币账本统治时代的终章。",
+    p19:"世界不再运行在单一的棋盘上。大局已定，棋势已改，全新的现实自今日启程。",
+    btnReturn:"← 返回今日这一步",footerText:"当日快讯免费开放。档案库即是终极记录。"
+  },
+  ja: {
+    name:"日本語",dir:"ltr",bcp47:"ja-JP",
+    navReturn:"← 本日のディスパッチへ戻る",navHome:"ダッシュボード",navAbout:"概要",navContact:"連絡先",
+    tag:"本日の社説",
+    edPill:"visva 社説 // 第一巻",edDate:"2026年10月19日 月曜日",
+    edTitle:"世界決済網の歴史的分断",
+    edDeck:"西側コルレス銀行網の兵器化がいかに金現物決済と並行台帳を出現させ、金融監視の覇権を永久に喪失させたか。",
+    byLabel:"執筆：",readingTime:"読了時間：9分 · 国家戦略・主権金融",
+    audioLabel:"音声ディスパッチ（AI朗読）",btnListen:"社説を聴く",btnStop:"再生停止",
+    p1:"近代の覇権は大砲の威力ではなく、総勘定元帳の記録権によって維持されてきました。帳簿を握る者が世界を握っていたのです。",
+    p2:"あらゆる原油や穀物取引がドル建てで欧米の銀行を経由することで、西側は地球上のあらゆる物資移動を監視・統制できました。",
+    p3:"その独占が崩壊しました。G7を完全に迂回する資源取引の定着は、非ドル主権決済圏の正式な誕生を告げています。",
+    quote1:'「監視者の過ちは、競技場の永遠性とペナルティの行使を混同したことにある。反則金が没収へと変わった瞬間、選手たちは別の競技場を築いた。」',
+    h2_1:"一、 チェッカーの盲点：強制取りと監視網の自壊",
+    p4:"近視眼的な規制当局はチェッカーのルールに縛られ、目先の制裁という「強制取り」を連発せざるを得ません。",
+    p5:"非ドル取引に関与した銀行を制裁するたび、それらの金融機関は並行決済圏の専用ハブとして生まれ変わります。",
+    p6:"制裁を乱用した結果、西側は自らの生命線であった金融インテリジェンス監視網を自ら解体してしまいました。",
+    insetKicker:"プロトコル X-Y-Z 診断",insetTitle:"アクターx vs アクターy",
+    lblX:"アクターx（G7執行当局）：",descX:"短期的政治判断で動き、制裁を科すたびに相手の並行基盤を強化させてしまう。",
+    lblY:"アクターy（金庫の主権体）：",descY:"外貨を自国内の保管金塊へと移し、いかなる海外差し押さえも受け付けない中央銀行群。",
+    h2_2:"二、 チェスの王防衛：不可避の金融ツークツワンク",
+    p7:"国家債務のチェス盤上において、西側は動けば動くほど状況が悪化する「ツークツワンク」に陥っています。",
+    p8:"利上げすれば国債利払い費用で財政が破綻し、利下げして流動性を供給すれば金などの現物資産へ資金が逃避します。",
+    p9:"非同盟中央銀行は保有資産を自国保管のゴールドへ急速に移転。カウンターパーティリスクを完全に排除しました。",
+    p10:"王は難攻不落の城塞に退却し、外側の金融市場は捨て駒となりました。",
+    h2_3:"三、 囲碁の合囲：深遠な時間軸と駄目の閉塞",
+    p11:"最も深遠な変化は囲碁（Weiqi）の盤上で進んでいます。派手な軍事配備ではなく、辺境の地の確保です。",
+    p12:"パイプライン、深水港、海底ケーブルがユーラシア全域で静かに接続されました。",
+    p13:"一発の銃声もなく、50もの呼吸点（駄目）が塞がれました。",
+    p14:"自前の実物インフラとゴールド決済が揃った今、西側の海上封鎖能力は無力化されています。",
+    quote2:'「要塞を攻め落とす必要はない。その要塞が誰の役にも立たない世界を作ればよいのだ。」',
+    h2_4:"四、 平易な言葉で言えば",
+    p15:"難しい用語を排せば、真相は極めて単純です：",
+    p16:"80年間、西側は唯一のグラウンドを支配し、気に入らない選手を退場させてきました。",
+    p17:"今日、資源と工場を持つ国々がそのグラウンドを出て新しい競技場を完成させました。審判が古い空のグラウンドで笛を吹いても、選手たちにはもう届きません。",
+    h2_5:"最終的裁定",
+    p18:"決済網の分断は一時的摩擦ではなく、一極帳簿時代の不可逆な終焉です。",
+    p19:"世界はもはや一つの盤上では動いていません。新たな現実が始まりました。",
+    btnReturn:"← 本日の一手へ戻る",footerText:"最新の一手は無料公開。アーカイブこそが真の記録。"
+  },
+  hi: {
+    name:"हिन्दी",dir:"ltr",bcp47:"hi-IN",
+    navReturn:"← आज की चाल",navHome:"मुख्य पटल",navAbout:"परिचय",navContact:"संपर्क",
+    tag:"दैनिक संपादकीय",
+    edPill:"visva संपादकीय // खंड I",edDate:"सोमवार, 19 अक्टूबर 2026",
+    edTitle:"वैश्विक क्लियरिंग नेटवर्क का ऐतिहासिक विखंडन",
+    edDeck:"पश्चिमी बैंकिंग के हथियारीकरण ने कैसे सोने के निपटान और समानांतर वित्तीय बहीखातों को जन्म दिया।",
+    byLabel:"लेखक:",readingTime:"पढ़ने का समय: 9 मिनट · संप्रभु रणनीति",
+    audioLabel:"संप्रभु ऑडियो प्रसारण",btnListen:"संपादकीय सुनें",btnStop:"रोकें",
+    p1:"आधुनिक युग में शक्ति तोपों से नहीं, बल्कि खातों की बही से चलती थी। जिसका बहीखाते पर नियंत्रण था, वही दुनिया का स्वामी था।",
+    p2:"न्यूयॉर्क और लंदन के बैंकों से डॉलर में व्यापार होने के कारण पश्चिम के पास पूरे विश्व पर पूर्ण निगरानी थी।",
+    p3:"यह एकाधिकार टूट गया है: G7 से बाहर द्विपक्षीय व्यापार शुरू होकर एक नई संप्रभु मुद्रा प्रणाली बन चुकी है।",
+    quote1:'"मैदान के नियमों को मनमाना बनाकर रेफरी ने खिलाड़ियों को दूसरा मैदान बनाने पर मजबूर कर दिया।"',
+    h2_1:"I. चेकर्स की मजबूरी और अंधापन",
+    p4:"पश्चिम के नियामक चेकर्स की तरह तुरंत अनिवार्य चाल चलने के दबाव में हैं।",
+    p5:"प्रतिबंधित बैंक खत्म होने के बजाय नई प्रणाली के मजबूत केंद्र बन जाते हैं।",
+    p6:"बार-बार प्रतिबंध लगाकर पश्चिम ने अपनी ही खुफिया निगरानी प्रणाली को नष्ट कर लिया।",
+    insetKicker:"प्रोटोकॉल X-Y-Z विश्लेषण",insetTitle:"खिलाड़ी x बनाम खिलाड़ी y",
+    lblX:"खिलाड़ी x (G7 नियामक):",descX:"अल्पकालिक दबाव में कदम उठाकर विरोधी प्रणाली को और मजबूत बनाता है।",
+    lblY:"खिलाड़ी y (तिजोरी संप्रभु):",descY:"अपने विदेशी भंडार को सुरक्षित घरेलू सोने में बदलने वाले केंद्रीय बैंक।",
+    h2_2:"II. शतरंज का जुगज़वांग",
+    p7:"शतरंज की बिसात पर पश्चिमी कर्ज प्रणाली ऐसी स्थिति में है जहाँ हर अगला कदम नुकसानदेह है।",
+    p8:"ब्याज दर बढ़ाने से कर्ज का बोझ बढ़ता है; घटाने से मुद्रा का अवमूल्यन होता है और पैसा सोने में भागता है।",
+    p9:"घरेलू तिजोरी में रखा सोना बिना किसी विदेशी जोखिम के पूर्ण सुरक्षित है।",
+    p10:"राजा सुरक्षित किले में चला गया है; कागजी बाजार बेसहारा छोड़ दिए गए हैं।",
+    h2_3:"III. गो (Weiqi): शांति से घेराबंदी",
+    p11:"सबसे गहरी चाल गो की बिसात पर चली जा रही है।",
+    p12:"शोर-शराबे के बिना यूरेशिया में बंदरगाहों और पाइपलाइनों का जाल बिछा दिया गया है।",
+    p13:"पचास महत्वपूर्ण रास्ते बिना युद्ध के बंद कर दिए गए हैं।",
+    p14:"भौतिक आपूर्ति और सोने का मेल पश्चिमी नौसेना की धौंस को निष्प्रभावी कर चुका है।",
+    quote2:'"साम्राज्य को नष्ट करने के लिए उसके किले पर हमला करने की जरूरत नहीं, बस रास्ता बदल लेना काफी है।"',
+    h2_4:"IV. सीधी और सरल भाषा में",
+    p15:"वास्तविकता बिल्कुल स्पष्ट है:",
+    p16:"अस्सी साल तक पश्चिम का इकलौता खेल का मैदान था जहाँ उनकी मनमानी चलती थी।",
+    p17:"आज संसाधन संपन्न देशों ने अपना नया मैदान बना लिया है। अब रेफरी पुरानी खाली पिच पर सीटी बजाता रह गया है।",
+    h2_5:"अंतिम निष्कर्ष",
+    p18:"यह केवल एक विवाद नहीं बल्कि एकध्रुवीय वित्तीय साम्राज्य का औपचारिक अंत है।",
+    p19:"बिसात पूरी तरह बदल चुकी है। नया युग आरंभ हो चुका है।",
+    btnReturn:"← आज की चाल पर लौटें",footerText:"आज की चाल निःशुल्क है। संग्रह ही वास्तविक अभिलेख है।"
+  },
+  ar: {
+    name:"العربية",dir:"rtl",bcp47:"ar-SA",
+    navReturn:"← العودة لنقلة اليوم",navHome:"لوحة التحكم",navAbout:"عن المشروع",navContact:"اتصال",
+    tag:"الافتتاحية اليومية",
+    edPill:"افتتاحية visva // المجلد الأول",edDate:"الإثنين، 19 أكتوبر 2026",
+    edTitle:"انقسام شبكة المقاصة العالمية",
+    edDeck:"كيف أدى توظيف النظام المصرفي الغربي كسلاح إلى ولادة تسويات الذهب العيني ودفاتر الحسابات الموازية وسقوط هيمنة المراقبة المالية.",
+    byLabel:"بقلم:",readingTime:"وقت القراءة: 9 دقائق · المالية السيادية والاستراتيجية",
+    audioLabel:"البث الصوتي السيادي الذكي",btnListen:"الاستماع إلى الافتتاحية",btnStop:"إيقاف البث",
+    p1:"لم تكن القوة في العصر الحديث تُمارس عبر فوهات المدافع، بل عبر قيود الدفاتر المحاسبية. وطوال ثمانين عاماً، كان مالك دفتر الحسابات هو الحاكم الفعلي للعالم.",
+    p2:"كان المرور الإلزامي بالدولار عبر نيويورك ولندن يمنح الغرب رقابة مطلقة وشللاً قسرياً لأي تجارة دولية.",
+    p3:"هذا الاحتكار انتهى اليوم رسمياً؛ تسوية السلع الأساسية خارج قنوات مجموعة السبع تؤسس لفضاء اقتصادي سيادي موازٍ.",
+    quote1:'"الخطأ القاتل لقوى الهيمنة كان الخلط بين العقوبات وخلود الملعب؛ فعندما تحولت العقوبات لمصادرة، بنى اللاعبون ملعباً خاصاً بهم."',
+    h2_1:"أولاً: النقطة العمياء في الداما والأكل الإجباري",
+    p4:"يخضع المنظمون الغربيون لقواعد لعبة الداما حيث كل نقلة هي رد فعل قسري وإجباري.",
+    p5:"البنوك المستبعدة من سويفت لا تموت، بل تتحول إلى غرف مقاصة حصرية ومنيعة للنظام الجديد.",
+    p6:"بالإفراط في العقوبات، دمر الغرب شبكة استخباراته ومراقبته المالية بيده.",
+    insetKicker:"تشخيص بروتوكول X-Y-Z",insetTitle:"الطرف x ضد الطرف y",
+    lblX:"الطرف x (محور الإنفاذ الغربي):",descX:"يعمل تحت ضغط قصير الأمد، وكل عقوبة يفرضها تزيد من صلابة المنظومة المنافسة.",
+    lblY:"الطرف y (سيادة الخزائن):",descY:"بنوك مركزية تحول احتياطياتها إلى سبائك ذهبية مودعة داخل حدودها الوطنية.",
+    h2_2:"ثانياً: حصن الشطرنج ومأزق تسوغتسفانغ الملك",
+    p7:"يقف النظام المالي الغربي في رقعة الشطرنج داخل مأزق تسوغتسفانغ حتمي: أي نقلة يختارها تفاقم خسارته.",
+    p8:"رفع الفائدة يكسر ميزانيات الديون السيادية، وخفضها يشعل التضخم ويهرب بالسيولة نحو الذهب.",
+    p9:"الذهب العيني في الخزائن الوطنية خالٍ من أي مخاطر تجميد أو قرارات قضائية أجنبية.",
+    p10:"تحصن الملك داخل القلعة، وتُركت الأسواق المالية المفتوحة كبيادق قابلة للتضحية.",
+    h2_3:"ثالثاً: لعبة الغو والتطويق الهادئ للمنافذ",
+    p11:"تجري التحولات الأعمق بهدوء على رقعة الغو (Weiqi) بعيداً عن صخب الإعلام.",
+    p12:"تُكسب الغو عند الأطراف الهادئة؛ خطوط الأنابيب والموانئ العميقة أغلقت المنافذ الحيوية في أوراسيا والمحيط الهندي.",
+    p13:"أُغلقت خمسون منفذاً استراتيجياً بهدوء تام دون إطلاق رصاصة واحدة.",
+    p14:"التجارة التي تتحرك على مسارات فيزيائية وتُسوى بالذهب العيني أسقطت فاعلية الحصار البحري التقليدي.",
+    quote2:'"لا تُسقط الإمبراطورية باقتحام قلاعها، بل ببناء عالم جديد تصبح فيه قلاعها مجرد عائق يتم تجاوزه."',
+    h2_4:"رابعاً: جوهر الأمر بلغة مبسطة",
+    p15:"الحقيقة واضحة ومجردة من كل رطانة اقتصادية:",
+    p16:"لعقود طويلة، امتلك الغرب الملعب المالي الوحيد وكان يطرد من يشاء.",
+    p17:"اليوم، شيدت الدول المنتجة ملعبها الخاص؛ والحكم القديم ما زال يصفر في ملعبه الخالي دون أن يكترث به أحد.",
+    h2_5:"الحكم النهائي",
+    p18:"انشطار شبكة المقاصة هو الإعلان الرسمي لنهاية الدفتر المحاسبي الأحادي.",
+    p19:"لقد تغيرت الرقعة إلى الأبد، والواقع الجديد بدأ اليوم.",
+    btnReturn:"← العودة لنقلة اليوم",footerText:"نقلة اليوم مجانية. الأرشيف هو السجل الحقيقي."
+  }
+};
+
+const ORDER = ["en","fr","es","pt","de","ru","zh","ja","hi","ar"];
+const pillsContainer = document.getElementById("langPills");
+
+ORDER.forEach(k => {
+  const btn = document.createElement("button");
+  btn.className = "lang-btn";
+  btn.type = "button";
+  btn.textContent = ED_LANG[k].name;
+  btn.dataset.l = k;
+  btn.onclick = () => setLang(k);
+  pillsContainer.appendChild(btn);
+});
+
+let currentLangKey = "en";
+
+function setLang(k) {
+  currentLangKey = k;
+  const t = ED_LANG[k] || ED_LANG.en;
+  document.documentElement.lang = k;
+  document.documentElement.dir = t.dir;
+
+  document.querySelectorAll("[data-i]").forEach(el => {
+    const key = el.dataset.i;
+    if (t[key]) el.textContent = t[key];
+  });
+
+  pillsContainer.querySelectorAll("button").forEach(b => {
+    b.setAttribute("aria-pressed", b.dataset.l === k);
+  });
+
+  // Stop any active audio and reset button text
+  if (synth && synth.speaking) {
+    synth.cancel();
+    setPlayerStopped();
+  }
+
+  try {
+    localStorage.setItem("visva-lang", k);
+  } catch(e) {}
+}
+
+// Client-Side Speech Synthesis Engine Wired to Active Language
 let synth = window.speechSynthesis;
 let utterance = null;
 let isPlaying = false;
@@ -610,13 +1086,19 @@ function getEditorialText() {
   return `${title}. ${deck}. ${paragraphs}`;
 }
 
-function selectBestVoice() {
+function selectBestVoiceForLang(langCode) {
   if (!synth) return null;
   const voices = synth.getVoices();
-  // Prefer natural or authoritative English voices
-  return voices.find(v => v.lang.startsWith('en') && (v.name.includes('Natural') || v.name.includes('Enhanced') || v.name.includes('Premium') || v.name.includes('Google') || v.name.includes('Daniel') || v.name.includes('Guy')))
-      || voices.find(v => v.lang.startsWith('en'))
-      || voices[0];
+  const targetPrefix = ED_LANG[langCode]?.bcp47?.split('-')[0] || langCode;
+  
+  // Try finding voice matching current language
+  const langVoices = voices.filter(v => v.lang.startsWith(targetPrefix));
+  if (langVoices.length > 0) {
+    // Prefer enhanced / premium / natural voices
+    const premium = langVoices.find(v => v.name.includes("Natural") || v.name.includes("Enhanced") || v.name.includes("Premium") || v.name.includes("Google"));
+    return premium || langVoices[0];
+  }
+  return voices[0] || null;
 }
 
 function toggleSpeech() {
@@ -625,27 +1107,30 @@ function toggleSpeech() {
     return;
   }
 
+  const currentDict = ED_LANG[currentLangKey] || ED_LANG.en;
+
   if (isPlaying) {
     if (synth.speaking) {
       synth.cancel();
     }
     setPlayerStopped();
   } else {
-    synth.cancel(); // Stop any pending speech
+    synth.cancel();
     const fullText = getEditorialText();
     utterance = new SpeechSynthesisUtterance(fullText);
+    utterance.lang = currentDict.bcp47 || "en-US";
     utterance.rate = currentRate;
-    utterance.pitch = 0.95; // Slightly lower pitch for deeper editorial gravity
+    utterance.pitch = 0.95;
     
-    const voice = selectBestVoice();
+    const voice = selectBestVoiceForLang(currentLangKey);
     if (voice) utterance.voice = voice;
 
     utterance.onstart = () => {
       isPlaying = true;
       document.getElementById('playIcon').textContent = '⏹';
-      document.getElementById('playText').textContent = 'Stop Narration';
+      document.getElementById('playText').textContent = currentDict.btnStop || "Stop Narration";
       document.getElementById('audioIndicator').classList.add('speaking');
-      document.getElementById('audioStatus').textContent = `Playing · ${currentRate}x · Sovereign Voice`;
+      document.getElementById('audioStatus').textContent = `Active (${currentDict.name}) · ${currentRate}x`;
     };
 
     utterance.onend = () => {
@@ -662,8 +1147,9 @@ function toggleSpeech() {
 
 function setPlayerStopped() {
   isPlaying = false;
+  const currentDict = ED_LANG[currentLangKey] || ED_LANG.en;
   document.getElementById('playIcon').textContent = '▶';
-  document.getElementById('playText').textContent = 'Listen to Dispatch';
+  document.getElementById('playText').textContent = currentDict.btnListen || "Listen to Dispatch";
   document.getElementById('audioIndicator').classList.remove('speaking');
   document.getElementById('audioStatus').textContent = `Narration paused · ${currentRate}x playback`;
 }
@@ -673,16 +1159,22 @@ function cycleSpeed() {
   currentRate = speeds[speedIndex];
   document.getElementById('speedBtn').textContent = `${currentRate}x`;
   if (isPlaying) {
-    // Restart at new rate
     toggleSpeech();
     toggleSpeech();
   }
 }
 
 if (speechSynthesis.onvoiceschanged !== undefined) {
-  speechSynthesis.onvoiceschanged = selectBestVoice;
+  speechSynthesis.onvoiceschanged = () => selectBestVoiceForLang(currentLangKey);
 }
 
+// Initialize Language from shared preference or default to English
+let startLang = "en";
+try {
+  const saved = localStorage.getItem("visva-lang");
+  if (saved && ED_LANG[saved]) startLang = saved;
+} catch(e) {}
+setLang(startLang);
 </script>
 </body>
 </html>
