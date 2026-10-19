@@ -981,6 +981,12 @@ function setLang(k) {
     if (t[key]) el.placeholder = t[key];
   });
 
+  // Update Editorial button to forward the selected language parameter
+  const edBtn = document.querySelector(".editorial-btn");
+  if (edBtn) {
+    edBtn.href = `editorial-2026-10-19.html?lang=${k}`;
+  }
+
   pillsContainer.querySelectorAll("button").forEach(b => {
     b.setAttribute("aria-pressed", b.dataset.l === k);
   });

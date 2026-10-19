@@ -1168,13 +1168,21 @@ if (speechSynthesis.onvoiceschanged !== undefined) {
   speechSynthesis.onvoiceschanged = () => selectBestVoiceForLang(currentLangKey);
 }
 
-// Initialize Language from shared preference or default to English
+// URL param check + localStorage
+const urlParams = new URLSearchParams(window.location.search);
+const langParam = urlParams.get('lang');
 let startLang = "en";
-try {
-  const saved = localStorage.getItem("visva-lang");
-  if (saved && ED_LANG[saved]) startLang = saved;
-} catch(e) {}
+
+if (langParam && ED_LANG[langParam]) {
+  startLang = langParam;
+} else {
+  try {
+    const saved = localStorage.getItem("visva-lang");
+    if (saved && ED_LANG[saved]) startLang = saved;
+  } catch(e) {}
+}
 setLang(startLang);
+
 </script>
 </body>
 </html>
