@@ -1,0 +1,688 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Fracture of the Global Clearing Grid — visva Editorial</title>
+<meta name="description" content="A daily geopolitical editorial on the structural displacement of the G7 financial architecture, sovereign gold vaults, and parallel trade corridors.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a08;
+  --surface:#151410;
+  --card-bg:#ffffff;
+  --card-ink:#11110f;
+  --card-muted:#5e5a50;
+  --text-primary:#eeeae0;
+  --text-muted:#8e887b;
+  --accent-red:#b3261e;
+  --serif:"Fraunces",Georgia,serif;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:var(--bg);
+  color:var(--text-primary);
+  font-family:var(--sans);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{
+  max-width:880px;
+  margin:0 auto;
+  padding:0 24px;
+}
+a{color:inherit;text-decoration:none}
+
+/* Top Red Header Bar with Live UTC/GMT Clock */
+.top-red-bar{
+  background:var(--accent-red);
+  color:#ffffff;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:.02em;
+}
+.top-red-bar .wrap{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  min-height:42px;
+  flex-wrap:wrap;
+  gap:12px;
+  padding-top:4px;
+  padding-bottom:4px;
+}
+.gmt-clock-wrap{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-feature-settings:"tnum";
+  font-variant-numeric:tabular-nums;
+}
+.gmt-clock-wrap .live-indicator{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#ffffff;
+  animation:blink 1.8s infinite;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
+.top-nav{
+  display:flex;
+  align-items:center;
+  gap:22px;
+  list-style:none;
+}
+.top-nav a{
+  color:#ffffff;
+  transition:opacity .15s ease;
+  font-weight:600;
+}
+.top-nav a:hover{
+  opacity:0.8;
+  text-decoration:underline;
+}
+
+/* Masthead */
+header.mast{
+  text-align:center;
+  padding:44px 0 24px;
+}
+header.mast h1{
+  font-family:var(--serif);
+  font-weight:800;
+  font-size:clamp(44px,7vw,76px);
+  letter-spacing:-.04em;
+  line-height:0.9;
+  color:var(--text-primary);
+}
+header.mast h1 .dot{
+  color:var(--accent-red);
+}
+header.mast .sk{
+  font-family:var(--serif);
+  color:var(--text-muted);
+  font-size:13px;
+  letter-spacing:.14em;
+  margin-top:10px;
+  text-transform:uppercase;
+}
+header.mast .tag{
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:clamp(16px,2vw,20px);
+  color:var(--text-primary);
+  margin-top:10px;
+}
+
+/* Editorial Container Card */
+.editorial-paper{
+  background:var(--card-bg);
+  color:var(--card-ink);
+  border-radius:12px;
+  padding:56px 64px;
+  margin-bottom:48px;
+}
+
+/* Editorial Metadata Header */
+.ed-meta{
+  border-bottom:1px solid #eeeae0;
+  padding-bottom:20px;
+  margin-bottom:32px;
+}
+.ed-kicker{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:14px;
+}
+.ed-pill{
+  background:#11110f;
+  color:#ffffff;
+  font-size:11px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  padding:4px 10px;
+  border-radius:4px;
+}
+.ed-date{
+  font-size:13px;
+  color:var(--card-muted);
+  font-weight:500;
+}
+h1.ed-title{
+  font-family:var(--serif);
+  font-size:clamp(32px,4.5vw,48px);
+  font-weight:800;
+  line-height:1.12;
+  letter-spacing:-.02em;
+  color:var(--card-ink);
+  margin-bottom:16px;
+}
+p.ed-deck{
+  font-family:var(--serif);
+  font-size:clamp(18px,2.2vw,22px);
+  font-style:italic;
+  color:var(--card-muted);
+  line-height:1.45;
+  margin-bottom:20px;
+}
+.ed-author-bar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:13px;
+  color:var(--card-muted);
+  font-weight:500;
+}
+
+/* Editorial Body Typography */
+.ed-body p{
+  font-size:18px;
+  line-height:1.75;
+  color:#22211d;
+  margin-bottom:24px;
+}
+.ed-body p.lead{
+  font-size:21px;
+  line-height:1.65;
+  color:var(--card-ink);
+  font-weight:500;
+}
+.ed-body h2{
+  font-family:var(--serif);
+  font-size:26px;
+  font-weight:700;
+  letter-spacing:-.01em;
+  color:var(--card-ink);
+  margin:44px 0 16px;
+}
+.ed-body h3{
+  font-family:var(--serif);
+  font-size:20px;
+  font-weight:700;
+  color:var(--card-ink);
+  margin:32px 0 12px;
+}
+.ed-body blockquote{
+  margin:32px 0;
+  padding:20px 28px;
+  border-left:4px solid var(--accent-red);
+  background:#f9f7f2;
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:20px;
+  line-height:1.55;
+  color:var(--card-ink);
+}
+.ed-body hr{
+  border:none;
+  border-top:1px solid #eeeae0;
+  margin:40px 0;
+}
+
+/* Strategic Framework Callout */
+.protocol-inset{
+  background:#f5f2eb;
+  border-radius:8px;
+  padding:28px 32px;
+  margin:36px 0;
+}
+.protocol-inset h4{
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  color:var(--accent-red);
+  margin-bottom:8px;
+  font-weight:700;
+}
+.protocol-inset h5{
+  font-family:var(--serif);
+  font-size:20px;
+  font-weight:700;
+  margin-bottom:12px;
+}
+.protocol-inset p{
+  font-size:15px;
+  line-height:1.65;
+  color:var(--card-ink);
+  margin-bottom:12px;
+}
+.protocol-inset p:last-child{margin-bottom:0}
+
+/* Back Link Button */
+.back-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  background:#11110f;
+  color:#ffffff;
+  padding:12px 24px;
+  border-radius:999px;
+  font-size:14px;
+  font-weight:600;
+  margin-top:20px;
+  transition:transform .15s ease;
+}
+.back-btn:hover{
+  transform:translateX(-3px);
+}
+
+/* Matching Red Bottom Footer */
+footer.bottom-red-footer{
+  background:var(--accent-red);
+  color:#ffffff;
+  padding:32px 0 36px;
+  font-size:13px;
+}
+footer.bottom-red-footer .wrap{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:16px;
+}
+footer.bottom-red-footer a{
+  color:#ffffff;
+  text-decoration:underline;
+  font-weight:600;
+}
+footer.bottom-red-footer strong{
+  font-family:var(--serif);
+  color:#ffffff;
+  font-size:14px;
+}
+
+@media(max-width:768px){
+  .editorial-paper{padding:36px 24px}
+  .ed-body p{font-size:17px;line-height:1.68}
+  .ed-body blockquote{font-size:18px;padding:16px 20px}
+  .top-red-bar .wrap{flex-direction:column;align-items:flex-start}
+}
+
+/* Sovereign Audio Player */
+.audio-dispatch-bar{
+  background:#11110f;
+  color:#ffffff;
+  border-radius:10px;
+  padding:16px 20px;
+  margin-top:22px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  flex-wrap:wrap;
+}
+.audio-meta{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.audio-indicator{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:var(--accent-red);
+  box-shadow:0 0 8px rgba(179,38,30,0.8);
+}
+.audio-indicator.speaking{
+  background:#4ade80;
+  box-shadow:0 0 10px rgba(74,222,128,0.9);
+  animation:audioPulse 1.2s infinite;
+}
+@keyframes audioPulse{
+  0%,100%{transform:scale(1);opacity:1}
+  50%{transform:scale(1.25);opacity:0.7}
+}
+.audio-label{
+  font-family:var(--serif);
+  font-size:15px;
+  font-weight:700;
+  letter-spacing:-.01em;
+}
+.audio-sub{
+  font-size:12px;
+  color:var(--text-muted);
+}
+.audio-controls{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.audio-btn{
+  background:var(--card-bg);
+  color:var(--card-ink);
+  border:none;
+  outline:none;
+  border-radius:999px;
+  padding:8px 18px;
+  font-family:var(--sans);
+  font-size:13px;
+  font-weight:700;
+  cursor:pointer;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  transition:all .15s ease;
+}
+.audio-btn:hover{
+  background:#f5f2eb;
+  transform:translateY(-1px);
+}
+.audio-speed{
+  background:#201e18;
+  color:var(--text-primary);
+  border:1px solid #333;
+  outline:none;
+  border-radius:999px;
+  padding:7px 12px;
+  font-family:var(--sans);
+  font-size:12px;
+  font-weight:600;
+  cursor:pointer;
+  transition:background .15s ease;
+}
+.audio-speed:hover{
+  background:#302d24;
+}
+
+</style>
+</head>
+<body>
+
+<!-- Top Red Header Bar with Live GMT Clock & Navigation -->
+<div class="top-red-bar">
+  <div class="wrap">
+    <div class="gmt-clock-wrap">
+      <span class="live-indicator"></span>
+      <span id="gmtClock">UTC --:--:-- | ---, -- --- ----</span>
+    </div>
+    <ul class="top-nav">
+      <li><a href="index.html">← Today's Dispatch</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="about.html#contact">Contact</a></li>
+    </ul>
+  </div>
+</div>
+
+<header class="mast wrap">
+  <h1>visva<span class="dot">.</span></h1>
+  <div class="sk">विश्व · THE WHOLE WORLD</div>
+  <div class="tag">The Daily Editorial</div>
+</header>
+
+<main class="wrap">
+
+  <article class="editorial-paper">
+    
+    <header class="ed-meta">
+      <div class="ed-kicker">
+        <span class="ed-pill">visva Editorial // Vol. I</span>
+        <span class="ed-date">Monday, October 19, 2026</span>
+      </div>
+      <h1 class="ed-title">The Fracture of the Global Clearing Grid</h1>
+      <p class="ed-deck">How the weaponization of Western correspondent banking forced the emergence of sovereign gold settlements, parallel ledgers, and the terminal loss of surveillance hegemony.</p>
+      <div class="ed-author-bar">
+        <span>By <strong>visva Intelligence & 0protocol</strong></span>
+        <span>Reading Time: 9 minutes · Sovereign Finance & Strategy</span>
+      </div>
+
+      <!-- Sovereign Audio Dispatch Player -->
+      <div class="audio-dispatch-bar" id="audioPlayer">
+        <div class="audio-meta">
+          <div class="audio-indicator" id="audioIndicator"></div>
+          <div>
+            <div class="audio-label">Sovereign Audio Dispatch</div>
+            <div class="audio-sub" id="audioStatus">Synthesized narration · 1.0x playback</div>
+          </div>
+        </div>
+        <div class="audio-controls">
+          <button type="button" class="audio-btn" id="playBtn" onclick="toggleSpeech()">
+            <span id="playIcon">▶</span> <span id="playText">Listen to Dispatch</span>
+          </button>
+          <button type="button" class="audio-speed" id="speedBtn" onclick="cycleSpeed()">1.0x</button>
+        </div>
+      </div>
+
+    </header>
+
+    <div class="ed-body">
+      
+      <p class="lead">
+        Power in the modern era has rarely been exercised through the sheer velocity of artillery. It has instead been maintained through the silent, mundane mechanics of ledger entries. For eighty years, whoever owned the ledger owned the world.
+      </p>
+
+      <p>
+        If two sovereign states wished to exchange tankers of crude oil, bulk shipments of grain, or processed rare earths, they submitted to a universal friction point: transactions were denominated in US dollars and routed through correspondent banking hubs in New York and London. That architecture afforded the Western financial axis something far more potent than naval blockades—absolute, total surveillance over the circulatory system of global civilization. 
+      </p>
+
+      <p>
+        That monopoly is now broken. The announcement of bilateral commodity settlements executed completely outside the G7 clearing corridor is not an incremental adjustment in trade policy. It is a tectonic fracture. What Western capitals interpret as a series of isolated sanctions evasions is, in reality, the formal inauguration of a non-dollar, non-interoperable settlement sphere.
+      </p>
+
+      <blockquote>
+        "The fatal mistake of the surveillance hegemon was confusing the enforcement of penalties with the permanence of the stadium. Once penalties became confiscatory, the players simply paved a new field."
+      </blockquote>
+
+      <h2>I. The Tactical Blindspot: Checkers and the Forced Jump</h2>
+      <p>
+        In statecraft, as in board games, players trapped in a short horizon are governed by forced moves. Western regulatory bodies—faced with domestic political pressure to demonstrate instantaneous retribution—are condemned to play Checkers.
+      </p>
+
+      <p>
+        Whenever an intermediary bank in Dubai, Shanghai, or Mumbai settles a cargo of hydrocarbons outside the SWIFT network, the regulator executes a mandatory capture: emergency secondary sanctions and asset freezes. The move produces immediate headlines and the optical satisfaction of punishment. 
+      </p>
+
+      <p>
+        Yet the long-term cost is catastrophic. Every commercial bank severed from the Western financial system ceases to have any incentive to comply with it. These institutions do not wither away; they are repurposed into dedicated, immune clearing hubs for the parallel trade grid. By using sanctions as an everyday policing tool rather than an ultimate deterrent, the West has systematically dismantled its own intelligence grid. Each forced capture yields short-term political triumph at the price of terminal regulatory blindness.
+      </p>
+
+      <div class="protocol-inset">
+        <h4>The Protocol X-Y-Z Diagnostic</h4>
+        <h5>Actor x vs. Actor y: The Kinetic Impasse</h5>
+        <p><strong>Actor x (G7 Enforcement):</strong> Operates as the kinetic regulator under short political horizons. Every jump it executes permanently hardens the opposing parallel infrastructure.</p>
+        <p><strong>Actor y (The Vault Sovereign):</strong> The central banks re-anchoring their sovereign liquid balances not into paper debt instruments, but into domestic physical bullion that cannot be reached by foreign court orders or algorithmic ledger freezes.</p>
+      </div>
+
+      <h2>II. The Balance-Sheet Fortress: Chess and the King's Zugzwang</h2>
+      <p>
+        If the regulatory struggle is played on the tactical board of Checkers, the sovereign balance-sheet war is unfolding across the chessboard. Here, the Western financial system finds itself immobilized in classic <em>zugzwang</em>—a position where every legally available move deteriorates the player's position.
+      </p>
+
+      <p>
+        Consider the arithmetic trap of the G7 debt cycle. To defend the purchasing power of the reserve currency against stubborn domestic inflation, central banks are compelled to maintain elevated interest rates. But maintaining high rates drastically balloons the sovereign debt servicing costs, creating a compounding debt spiral. Conversely, if central banks slash interest rates and expand liquidity to rescue their sovereign bond markets, they trigger an immediate flight from fiat paper into tangible real-world assets.
+      </p>
+
+      <p>
+        Non-aligned central banks recognized this paradox years ago. They have systematically shifted foreign reserves out of sovereign debt securities and into domestic, physically vaulted gold. This is not speculative investment; it is sovereign fortification. Gold held in your own vault has zero counterparty risk. It cannot be frozen with a keystroke; it does not depend on a correspondent bank in Frankfurt or Manhattan. 
+      </p>
+
+      <p>
+        The king has retreated into an unbreachable balance-sheet fortress. The open files of foreign financial markets have been abandoned to expendable pawns.
+      </p>
+
+      <h2>III. The Closing of Liberties: Go and Territorial Encirclement</h2>
+      <p>
+        The deepest layer of this transformation is invisible to the financial press because it involves neither stock tickers nor regulatory press releases. It is the quiet, patient placement of stones on the Go board (<em>Weiqi</em>).
+      </p>
+
+      <p>
+        Western strategy has historically obsessed over the dramatic center of the board: headline summits, multilateral military pacts, and rapid intervention forces. But Go is won at the edges, by claiming empty territory through subtle spatial enclosure. 
+      </p>
+
+      <p>
+        Over the past decade, while Western commentary debated corporate ESG mandates and interest-rate nuances, a synchronized coordination of physical infrastructure was established across the Eurasian land bridge and the Indian Ocean rim. Deepwater container terminals, overland oil and gas pipelines, dry ports, and undersea fiber optic corridors have been interlocked stone by stone.
+      </p>
+
+      <p>
+        These physical arteries do not rely on maritime chokepoints patrolled by Western carrier battle groups, nor do they require Western insurance syndicates. Fifty vital liberties around global resource flow have been quietly sealed. When trade moves over physical rails owned by the trading partners themselves and settles on digital bilateral ledgers anchored in physical bullion, the entire scaffolding of Western maritime and financial dominance becomes irrelevant.
+      </p>
+
+      <blockquote>
+        "You do not dismantle an empire by storming its fortress. You dismantle it by creating a world where its fortress is simply out of the way."
+      </blockquote>
+
+      <h2>IV. What This Means in Plain Language</h2>
+      <p>
+        Strip away the economic jargon, the game theory, and the legal complexities, and the situation is stark:
+      </p>
+
+      <p>
+        For eighty years, the United States and its allies ran the only global financial game in town. If you wanted to play, you had to follow their rules, use their currency, and pay their fees. If you misbehaved, they took away your ball and threw you off the field.
+      </p>
+
+      <p>
+        Today, the major resource and manufacturing nations of the planet have walked off that field, cleared their own ground, and built their own stadium. The Western referee can continue to blow the whistle, wave red cards, and announce penalties into the microphone—but the stadium is empty, and the players are already scoring goals in a game where the whistle cannot be heard.
+      </p>
+
+      <hr>
+
+      <h2>The Terminal Verdict</h2>
+      <p>
+        The fracture of the global clearing grid is neither a transient crisis nor a temporary dispute. It is the end of the unipolar ledger. 
+      </p>
+
+      <p>
+        The world is no longer operating on a single game board. The West continues to dominate the tactical board of regulatory checks, but on the strategic board of sovereign solvency and the territorial board of physical trade, the ground has shifted permanently. The daily move is made. The board is altered. The new reality has begun.
+      </p>
+
+      <a href="index.html" class="back-btn">← Return to Today's Move</a>
+
+    </div>
+
+  </article>
+
+</main>
+
+<!-- Matching Red Bottom Footer -->
+<footer class="bottom-red-footer">
+  <div class="wrap">
+    <span>The daily move is free. The archive is the record.</span>
+    <div>
+      <a href="index.html" style="margin-right:16px;">Today's Dashboard</a>
+      <a href="about.html" style="margin-right:16px;">About visva</a>
+      <a href="about.html#contact" style="margin-right:20px;">Contact & Signals</a>
+      <span><strong>visva.world</strong> · 0protocol.ai · © 2026</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function updateGMTClock() {
+  const now = new Date();
+  const utcHours = String(now.getUTCHours()).padStart(2, '0');
+  const utcMinutes = String(now.getUTCMinutes()).padStart(2, '0');
+  const utcSeconds = String(now.getUTCSeconds()).padStart(2, '0');
+  
+  const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  
+  const dayName = days[now.getUTCDay()];
+  const dayNum = String(now.getUTCDate()).padStart(2, '0');
+  const monthName = months[now.getUTCMonth()];
+  const year = now.getUTCFullYear();
+  
+  const clockEl = document.getElementById("gmtClock");
+  if (clockEl) {
+    clockEl.textContent = `GMT/UTC ${utcHours}:${utcMinutes}:${utcSeconds} | ${dayName}, ${dayNum} ${monthName} ${year}`;
+  }
+}
+setInterval(updateGMTClock, 1000);
+updateGMTClock();
+
+// Client-Side Speech Synthesis Engine
+let synth = window.speechSynthesis;
+let utterance = null;
+let isPlaying = false;
+let currentRate = 1.0;
+const speeds = [1.0, 1.25, 1.5, 0.9];
+let speedIndex = 0;
+
+function getEditorialText() {
+  const title = document.querySelector('.ed-title') ? document.querySelector('.ed-title').innerText : '';
+  const deck = document.querySelector('.ed-deck') ? document.querySelector('.ed-deck').innerText : '';
+  const paragraphs = Array.from(document.querySelectorAll('.ed-body p, .ed-body h2, .ed-body blockquote'))
+    .map(el => el.innerText)
+    .join('. ');
+  return `${title}. ${deck}. ${paragraphs}`;
+}
+
+function selectBestVoice() {
+  if (!synth) return null;
+  const voices = synth.getVoices();
+  // Prefer natural or authoritative English voices
+  return voices.find(v => v.lang.startsWith('en') && (v.name.includes('Natural') || v.name.includes('Enhanced') || v.name.includes('Premium') || v.name.includes('Google') || v.name.includes('Daniel') || v.name.includes('Guy')))
+      || voices.find(v => v.lang.startsWith('en'))
+      || voices[0];
+}
+
+function toggleSpeech() {
+  if (!synth) {
+    alert("Audio speech synthesis is not supported on this browser.");
+    return;
+  }
+
+  if (isPlaying) {
+    if (synth.speaking) {
+      synth.cancel();
+    }
+    setPlayerStopped();
+  } else {
+    synth.cancel(); // Stop any pending speech
+    const fullText = getEditorialText();
+    utterance = new SpeechSynthesisUtterance(fullText);
+    utterance.rate = currentRate;
+    utterance.pitch = 0.95; // Slightly lower pitch for deeper editorial gravity
+    
+    const voice = selectBestVoice();
+    if (voice) utterance.voice = voice;
+
+    utterance.onstart = () => {
+      isPlaying = true;
+      document.getElementById('playIcon').textContent = '⏹';
+      document.getElementById('playText').textContent = 'Stop Narration';
+      document.getElementById('audioIndicator').classList.add('speaking');
+      document.getElementById('audioStatus').textContent = `Playing · ${currentRate}x · Sovereign Voice`;
+    };
+
+    utterance.onend = () => {
+      setPlayerStopped();
+    };
+
+    utterance.onerror = () => {
+      setPlayerStopped();
+    };
+
+    synth.speak(utterance);
+  }
+}
+
+function setPlayerStopped() {
+  isPlaying = false;
+  document.getElementById('playIcon').textContent = '▶';
+  document.getElementById('playText').textContent = 'Listen to Dispatch';
+  document.getElementById('audioIndicator').classList.remove('speaking');
+  document.getElementById('audioStatus').textContent = `Narration paused · ${currentRate}x playback`;
+}
+
+function cycleSpeed() {
+  speedIndex = (speedIndex + 1) % speeds.length;
+  currentRate = speeds[speedIndex];
+  document.getElementById('speedBtn').textContent = `${currentRate}x`;
+  if (isPlaying) {
+    // Restart at new rate
+    toggleSpeech();
+    toggleSpeech();
+  }
+}
+
+if (speechSynthesis.onvoiceschanged !== undefined) {
+  speechSynthesis.onvoiceschanged = selectBestVoice;
+}
+
+</script>
+</body>
+</html>
