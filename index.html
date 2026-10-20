@@ -85,10 +85,25 @@ a{color:inherit;text-decoration:none}
   text-decoration:underline;
 }
 
+/* Site Banner / Hero Graphic */
+.site-banner-wrap{
+  max-width:1080px;
+  margin:24px auto 0;
+  padding:0 20px;
+}
+.site-banner{
+  width:100%;
+  height:auto;
+  border-radius:12px;
+  display:block;
+  box-shadow:0 12px 32px rgba(0,0,0,0.5);
+  border:1px solid #22201c;
+}
+
 /* Masthead */
 header.mast{
   text-align:center;
-  padding:44px 0 20px;
+  padding:36px 0 20px;
 }
 header.mast a{
   display:inline-block;
@@ -543,6 +558,11 @@ footer.bottom-red-footer strong{
   </div>
 </div>
 
+<!-- Banner Graphic Container -->
+<div class="site-banner-wrap">
+  <img src="banner.jpg" alt="visva.world Three Boards Banner" class="site-banner">
+</div>
+
 <header class="mast wrap">
   <a href="index.html" title="visva.world Home">
     <h1>visva<span class="dot">.</span></h1>
@@ -849,7 +869,7 @@ const UI_CHROME = {
   zh: { name:"中文", dir:"ltr", navToday:"今日", navAbout:"关于我们", navContact:"联系与信号", tag:"一个世界。一步棋。每一天。", searchTitle:"检索历史记录", searchPlaceholder:"搜索快讯、参与者...", searchBtn:"搜索", quickFilters:"快捷分类：", calMonth:"2026年 10月", calLegend:"● 今日棋步", xyzTitle:"XYZ协议：核心博弈实体", badgeX:"x · 战术驱动方", badgeY:"y · 主权支点", badgeZ:"z · 地面实体主权", regTitle:"地缘区域敞口与战略摩擦", thRegion:"地缘区域", thRole:"协议角色", thImpact:"运营影响", vecX:"向量 x", vecY:"向量 y", vecZ:"向量 z", beatsTitle:"每日一步的解构", b1t:"为何重要", b2t:"博弈基底", b3t:"这一步", b4t:"关注什么", boardsTitle:"三种棋盘审视全局", lblMove:"棋步：", lblCost:"代价：", lblPos:"局面：", plainKicker:"通俗解读 // 这究竟意味着什么", plainBadge:"剥离术语的实质真相", plainTitle:"用大白话讲透实质", verdictHead:"终极裁定", readEditorialBtn:"阅读今日深度社论", footerText:"当日快讯免费开放。档案库即是终极记录。" },
   ja: { name:"日本語", dir:"ltr", navToday:"今日", navAbout:"概要", navContact:"連絡先", tag:"ひとつの世界。ひとつの一手。毎日。", searchTitle:"アーカイブ検索", searchPlaceholder:"ディスパッチ、プレイヤーを検索...", searchBtn:"検索", quickFilters:"クイック抽出:", calMonth:"2026年 10月", calLegend:"● 本日の一手", xyzTitle:"プロトコル X-Y-Z：中核プレイヤー", badgeX:"x · 戦術ドライバー", badgeY:"y · 主権の支点", badgeZ:"z · 物理的現実", regTitle:"地域別エクスポージャーと摩擦", thRegion:"地縁ブロック", thRole:"ベクトル", thImpact:"実質的影響", vecX:"ベクトル x", vecY:"ベクトル y", vecZ:"ベクトル z", beatsTitle:"一手のアナトミー", b1t:"なぜ重要か", b2t:"盤の選択", b3t:"今の一手", b4t:"注目点", boardsTitle:"三つの盤で読み解く", lblMove:"一手:", lblCost:"代償:", lblPos:"局面:", plainKicker:"平易な言葉で // これが意味する本質", plainBadge:"専門用語を排した現実", plainTitle:"核心をわかりやすく", verdictHead:"最終的裁定", readEditorialBtn:"本日の社説を読む", footerText:"最新の一手は無料公開。アーカイブこそが真の記録。" },
   hi: { name:"हिन्दी", dir:"ltr", navToday:"आज", navAbout:"परिचय", navContact:"संपर्क", tag:"एक विश्व। एक चाल। हर दिन।", searchTitle:"अभिलेख में खोजें", searchPlaceholder:"खोजें...", searchBtn:"खोजें", quickFilters:"त्वरित फ़िल्टर:", calMonth:"अक्टूबर 2026", calLegend:"● आज की चाल", xyzTitle:"प्रोटोकॉल X-Y-Z: प्रमुख रणनीतिक खिलाड़ी", badgeX:"x · सामरिक चालक", badgeY:"y · संप्रभु धुरी", badgeZ:"z · जमीनी हकीकत", regTitle:"क्षेत्रीय प्रभाव और रणनीतिक घर्षण", thRegion:"क्षेत्र", thRole:"भूमिका", thImpact:"परिणाम", vecX:"वेक्टर x", vecY:"वेक्टर y", vecZ:"वेक्टर z", beatsTitle:"दैनिक चाल का विश्लेषण", b1t:"यह क्यों मायने रखता है", b2t:"बिसात", b3t:"चाल", b4t:"किस पर नज़र रखें", boardsTitle:"तीन बिसातों पर विश्लेषण", lblMove:"चाल:", lblCost:"लागत:", lblPos:"स्थिति:", plainKicker:"सरल भाषा में // इसका वास्तविक अर्थ क्या है", plainBadge:"तकनीकी शब्दों से परे यथार्थ", plainTitle:"सीधी और स्पष्ट बात", verdictHead:"अंतिम निष्कर्ष", readEditorialBtn:"आज का संपादकीय पढ़ें", footerText:"आज की चाल निःशुल्क है। संग्रह ही वास्तविक अभिलेख है।" },
-  ar: { name:"العربية", dir:"rtl", navToday:"اليوم", navAbout:"عن المشروع", navContact:"اتصال", tag:"عالم واحد. نقلة واحدة. كل يوم.", searchTitle:"البحث في السجل", searchPlaceholder:"ابحث...", searchBtn:"بحث", quickFilters:"تصفية سريعة:", calMonth:"أكتوبر 2026", calLegend:"● نقلة اليوم", xyzTitle:"بروتوكول X-Y-Z: اللاعبون الفاعلون", badgeX:"x · المحرك التكتيكي", badgeY:"y · المرتكز السيادي", badgeZ:"z · الواقع الميداني", regTitle:"الانكشاف الإقليمي والاحتكاك الاستراتيجي", thRegion:"الحوض الجيوسياسي", thRole:"المسار", thImpact:"الأثر التشغيلي", vecX:"المتجه x", vecY:"المتجه y", vecZ:"المتجه z", beatsTitle:"تشريح النقلة اليومية", b1t:"لماذا يهم", b2t:"الرقعة", b3t:"النقلة", b4t:"ما يجب مراقبته", boardsTitle:"قراءة عبر ثلاث رقع", lblMove:"النقلة:", lblCost:"الثمن:", lblPos:"الوضعية:", plainKicker:"بلغة مبسطة // ماذا يعني هذا عملياً", plainBadge:"الواقع مجرداً من التعقيد التقني", plainTitle:"جوهر الأمر بدون مصطلحات معقدة", verdictHead:"الحكم النهائي", readEditorialBtn:"قراءة الافتتاحية اليومية", footerText:"نقلة اليوم مجانية. الأرشيف هو السجل الحقيقي." }
+  ar: { name:"العربية", dir:"rtl", navToday:"اليوم", navAbout:"عن المشروع", navContact:"اتصال", tag:"عالم واحد. نقلة واحدة. كل يوم.", searchTitle:"البحث في السجل", searchPlaceholder:"ابحث...", searchBtn:"بحث", quickFilters:"تصفية سريعة:", calMonth:"October 2026", calLegend:"● نقلة اليوم", xyzTitle:"بروتوكول X-Y-Z: اللاعبون الفاعلون", badgeX:"x · المحرك التكتيكي", badgeY:"y · المرتكز السيادي", badgeZ:"z · الواقع الميداني", regTitle:"الانكشاف الإقليمي والاحتكاك الاستراتيجي", thRegion:"الحوض الجيوسياسي", thRole:"المسار", thImpact:"الأثر التشغيلي", vecX:"المتجه x", vecY:"المتجه y", vecZ:"المتجه z", beatsTitle:"تشريح النقلة اليومية", b1t:"لماذا يهم", b2t:"الرقعة", b3t:"النقلة", b4t:"ما يجب مراقبته", boardsTitle:"قراءة عبر ثلاث رقع", lblMove:"النقلة:", lblCost:"الثمن:", lblPos:"الوضعية:", plainKicker:"بلغة مبسطة // ماذا يعني هذا عملياً", plainBadge:"الواقع مجرداً من التعقيد التقني", plainTitle:"جوهر الأمر بدون مصطلحات معقدة", verdictHead:"الحكم النهائي", readEditorialBtn:"قراءة الافتتاحية اليومية", footerText:"نقلة اليوم مجانية. الأرشيف هو السجل الحقيقي." }
 };
 
 // Multi-Language Dispatches Store for Both Active Editions (19 & 20)
@@ -1238,11 +1258,11 @@ const DISPATCHES_I18N = {
       b2d:"Execução simultânea nos três tabuleiros: interceptações aéreas, capital soberano e cerco de fibra submarina.",
       b3d:"Implantação permanente de cabos sensoriais de uso duplo e estações de radar autônomas.",
       b4d:"Reivindicações marítimas revisionistas enfrentam exclusão estrutural antes do degelo sazonal.",
-      board1Title:"Damas: Interceptação em Alta Latitude", board1Sub:"Curto prazo · Captura obrigatória · Fricção",
+      board1Title:"Damas: Interceptação em Alta Latitude", board1Sub:"Curto prazo · Captura obligatória · Fricción",
       cMove:"Comandos aliados acionam caças de interceptação após varreduras sensoriais no mar de Beaufort.",
       cCost:"Troca tática reativa que consome patrulhas caras contra intrusões não tripuladas de baixo custo.",
       board2Title:"Xadrez: A Fortaleza Circumpolar", board2Sub:"Fortaleza de balanço · Zugzwang",
-      chMove:"Canadá e aliados nórdicos realocam capital soberano em portos profundos e frotas de quebra-gelos.",
+      chMove:"Canadá e aliados nordicos realocam capital soberano em portos profundos e frotas de quebra-gelos.",
       chPos:"Forças revisionistas entram em zugzwang logístico insustentável sob condições de congelamento.",
       board3Title:"Go (Weiqi): O Perímetro do Leito Marinho", board3Sub:"Tempo profundo · Fechamento de liberdades",
       goMove:"Implantação silenciosa de cabos ópticos submarinos e matrizes acústicas na Passagem do Noroeste.",
@@ -1371,9 +1391,9 @@ const DISPATCHES_I18N = {
       xName:"सामरिक वायु और सतह इंटरसेप्ट", xDesc:"ध्रुवीय सीमाओं पर ग्रे-ज़ोन टोही गतिविधियों का मुकाबला करने के लिए त्वरित अलर्ट पर काम करने वाले वायु रक्षा बेड़े।",
       yName:"संप्रभु आर्कटिक पूंजी आवंटक", yDesc:"आइसब्रेकर, गहरे पानी के बंदरगाहों और महत्वपूर्ण खनिज प्रसंस्करण केंद्रों में दीर्घकालिक पूंजी लगाने वाले संप्रभु बैंक।",
       zName:"ध्रुवीय जमीन और समुद्र-तल नेटवर्क", zDesc:"भौतिक सेंसर नेटवर्क: समुद्र के नीचे फाइबर, रडार और स्थायी उत्तरी चौकियां जो भौतिक रास्तों को सील करती हैं।",
-      r1Name:"ध्रुवीय नाटो फ्लैंक", r1Text:"आर्कटिक निगरानी ग्रिड का एकीकरण और उत्तरी समुद्री रोकथाम की तैयारी।",
-      r2Name:"नॉर्थवेस्ट पैसेज / ब्यूफोर्ट", r2Text:"समुद्र-तल की चट्टानों से राष्ट्रीय संप्रभुता को जोड़ने वाला सबसी फाइबर नेटवर्क।",
-      r3Name:"नॉर्डिक और बैरेंट्स बेसिन", r3Text:"अनिगरानीकृत आर्कटिक समुद्री मार्गों को बंद करने वाले गहरे पानी के लॉजिस्टिक्स केंद्र।",
+      r1Name:"ध्रुवीय नाटो फ्लैंक", r1Text:"आर्कटिक निगरानी ग्रिड का एकीकरण और उत्तरी समुद्री रोकथाम की तैयारी。",
+      r2Name:"नॉर्थवेस्ट पैसेज / ब्यूफोर्ट", r2Text:"समुद्र-तल की चट्टानों से राष्ट्रीय संप्रभुता को जोड़ने वाला सबसी फाइबर नेटवर्क。",
+      r3Name:"नॉर्डिक और बैरेंट्स बेसिन", r3Text:"अनिगरानीकृत आर्कटिक समुद्री मार्गों को बंद करने वाले गहरे पानी के लॉजिस्टिक्स केंद्र。",
       b1d:"सुदूर उत्तर एक जमे हुए बफर ज़ोन से बदलकर एक सक्रिय, संप्रभु-सुरक्षित बुनियादी ढांचा गलियारा बन गया है।",
       b2d:"तीनों बिसातों पर एक साथ कार्रवाई: सामरिक हवाई इंटरसेप्ट, संप्रभु पूंजी आवंटन और समुद्र-तल फाइबर घेराबंदी।",
       b3d:"ध्रुवीय परिधि के साथ दोहरे उपयोग वाले संवेदी केबल और स्वायत्त रडार स्टेशनों की स्थायी तैनाती।",
@@ -1397,7 +1417,7 @@ const DISPATCHES_I18N = {
       todayTitle:"المحيط السيادي للقطب الشمالي: كندا والحلفاء الشماليون يغلقون الممر البصري والدفاعي القطبي",
       todayLede:"التفويضات السيادية القطبية المشتركة تنشر بنية تحتية للألياف الضوئية المحصنة وشبكات مراقبة ذاتية ومراكز لوجستية للمعادن عبر أقصى الشمال.",
       xName:"الاعتراض التكتيكي الجوي والسطحي", xDesc:"أسراب الدفاع الجوي تعمل بدورات إنذار قصيرة لمواجهة استطلاعات المنطقة الرمادية على طول الحدود القطبية.",
-      yName:"المخصص السيادي لرأس المال القطبي", yDesc:"الميزانيات السيادية وبنوك البنية التحتية تخصص رؤوس أموال طويلة الأمد لكاسحات الجليد والموانئ العميقة مزدوجة الاستخدام.",
+      yName:"المخصص السيادي لرأس المال القطبي", xDesc:"الميزانيات السيادية وبنوك البنية التحتية تخصص رؤوس أموال طويلة الأمد لكاسحات الجليد والموانئ العميقة مزدوجة الاستخدام.",
       zName:"مصفوفة القطب الشمالي الأرضية وتحت البحرية", zDesc:"شبكة الاستشعار المادية: ألياف ضوئية بحرية، ومصفوفات رادار، وحاميات شمالية دائمة تغلق الممرات المادية عبر الزمن العميق.",
       r1Name:"الجناح القطبي لحلف الناتو", r1Text:"توحيد شبكة المراقبة القطبية والجاهزية للاعتراض البحري الشمالي.",
       r2Name:"الممر الشمالي الغربي / بحر بوفورت", r2Text:"مد الألياف البحرية لترسيخ السيادة الوطنية مباشرة في صخور قاع البحر.",
@@ -1407,7 +1427,7 @@ const DISPATCHES_I18N = {
       b3d:"نشر دائم لكابلات الاستشعار مزدوجة الاستخدام ومحطات الرادار الذاتية على طول المحيط القطبي.",
       b4d:"تواجه المطالبات البحرية المراجعة إقصاءً هيكلياً قبل أن يسمح ذوبان الجليد الموسمي بعبور الأساطيل.",
       board1Title:"الداما: الاعتراض في العروض العليا", board1Sub:"أفق قصير · أكل إجباري · احتكاك فوري",
-      cMove:"القيادات الجوية الحليفة تطلق طلعات اعتراض سريعة عقب مسح استشعاري غير معلن على حافة بحر بوفورت ومجال غرينلاند.",
+      cMove:"القيادات الجوية الحليفة tطلق طلعات اعتراض سريعة عقب مسح استشعاري غير معلن على حافة بحر بوفورت ومجال غرينلاند.",
       cCost:"تبادل تكتيكي انفعالي يستهلك دوريات عالية التكلفة مقابل اختراقات غير مأهولة منخفضة التكلفة.",
       board2Title:"الشطرنج: القلعة القطبية", board2Sub:"إعادة هيكلة الميزانيات · قلعة سيادية · مسار كش ملك",
       chMove:"كندا والحلفاء الشماليون يعيدون توجيه رؤوس الأموال السيادية نحو الموانئ العميقة المحصنة وتحديث أساطيل كاسحات الجليد.",
