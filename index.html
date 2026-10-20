@@ -43,6 +43,7 @@ a{color:inherit;text-decoration:none}
   font-size:13px;
   font-weight:600;
   letter-spacing:.02em;
+  margin-bottom:24px;
 }
 .top-red-bar .wrap{
   display:flex;
@@ -88,7 +89,7 @@ a{color:inherit;text-decoration:none}
 /* Site Banner / Hero Graphic */
 .site-banner-wrap{
   max-width:1080px;
-  margin:24px auto 0;
+  margin:0 auto 20px;
   padding:0 20px;
 }
 .site-banner{
@@ -100,46 +101,9 @@ a{color:inherit;text-decoration:none}
   border:1px solid #22201c;
 }
 
-/* Masthead */
-header.mast{
-  text-align:center;
-  padding:36px 0 20px;
-}
-header.mast a{
-  display:inline-block;
-  color:inherit;
-  text-decoration:none;
-}
-header.mast h1{
-  font-family:var(--serif);
-  font-weight:800;
-  font-size:clamp(52px,10vw,105px);
-  letter-spacing:-.04em;
-  line-height:0.9;
-  color:var(--text-primary);
-}
-header.mast h1 .dot{
-  color:var(--accent-red);
-}
-header.mast .sk{
-  font-family:var(--serif);
-  color:var(--text-muted);
-  font-size:14px;
-  letter-spacing:.12em;
-  margin-top:10px;
-  text-transform:uppercase;
-}
-header.mast .tag{
-  font-family:var(--serif);
-  font-style:italic;
-  font-size:clamp(17px,2.2vw,22px);
-  color:var(--text-primary);
-  margin-top:12px;
-}
-
 /* Language Selection Strip */
 .lang-strip{
-  padding:16px 0 28px;
+  padding:12px 0 28px;
 }
 .lang-pills{
   display:flex;
@@ -563,14 +527,7 @@ footer.bottom-red-footer strong{
   <img src="banner.jpg" alt="visva.world Three Boards Banner" class="site-banner">
 </div>
 
-<header class="mast wrap">
-  <a href="index.html" title="visva.world Home">
-    <h1>visva<span class="dot">.</span></h1>
-  </a>
-  <div class="sk">विश्व · THE WHOLE WORLD</div>
-  <div class="tag" data-i="tag">One world. One move. Every day.</div>
-</header>
-
+<!-- Restored Language Selection Strip -->
 <div class="lang-strip wrap">
   <div class="lang-pills" id="langPills"></div>
 </div>
@@ -860,19 +817,19 @@ updateGMTClock();
 
 // Shared UI Chrome Translations across 10 Languages
 const UI_CHROME = {
-  en: { name:"English", dir:"ltr", navToday:"Today", navAbout:"About", navContact:"Contact", tag:"One world. One move. Every day.", searchTitle:"Search the Record", searchPlaceholder:"Search dispatches, moves, or players...", searchBtn:"Search", quickFilters:"Quick filters:", calMonth:"October 2026", calLegend:"● Live Move", xyzTitle:"Protocol X-Y-Z: The Operational Players", badgeX:"x · Tactical Driver", badgeY:"y · Sovereign Fulcrum", badgeZ:"z · Ground Reality", regTitle:"Regional Exposure & Strategic Friction", thRegion:"Geopolitical Basin", thRole:"Vector Role", thImpact:"Operational Impact", vecX:"Vector x", vecY:"Vector y", vecZ:"Vector z", beatsTitle:"Anatomy of the Daily Move", b1t:"Why It Matters", b2t:"The Substrate", b3t:"The Move", b4t:"What to Watch", boardsTitle:"Read Across Three Boards", lblMove:"The Move:", lblCost:"The Cost:", lblPos:"The Position:", plainKicker:"In Plain Language // What This Actually Means", plainBadge:"The Non-Technical Reality", plainTitle:"Stripping Away the Jargon", verdictHead:"Terminal Verdict", readEditorialBtn:"Read The Daily Editorial", footerText:"The daily move is free. The archive is the record." },
-  fr: { name:"Français", dir:"ltr", navToday:"Aujourd'hui", navAbout:"À propos", navContact:"Contact", tag:"Un monde. Un coup. Chaque jour.", searchTitle:"Consulter le registre", searchPlaceholder:"Rechercher dépêches, acteurs, mouvements...", searchBtn:"Rechercher", quickFilters:"Filtres rapides :", calMonth:"Octobre 2026", calLegend:"● Coup du jour", xyzTitle:"Protocole X-Y-Z : Les Acteurs Opérationnels", badgeX:"x · Vecteur Tactique", badgeY:"y · Pivot Souverain", badgeZ:"z · Réalité du Terrain", regTitle:"Exposition Régionale & Friction Stratégique", thRegion:"Bassin Géopolitique", thRole:"Rôle Vectoriel", thImpact:"Impact Opérationnel", vecX:"Vecteur x", vecY:"Vecteur y", vecZ:"Vecteur z", beatsTitle:"Anatomie du coup quotidien", b1t:"Pourquoi c'est important", b2t:"Le substrat", b3t:"Le coup", b4t:"À surveiller", boardsTitle:"Lecture sur trois plateaux", lblMove:"Le coup :", lblCost:"Le coût :", lblPos:"La position :", plainKicker:"En clair // Ce que cela signifie vraiment", plainBadge:"La réalité sans jargon", plainTitle:"Dépouillé de tout vocabulaire technique", verdictHead:"Verdict Terminal", readEditorialBtn:"Lire l'éditorial quotidien", footerText:"Le coup du jour est gratuit. L'archive est le registre." },
-  es: { name:"Español", dir:"ltr", navToday:"Hoy", navAbout:"Acerca de", navContact:"Contacto", tag:"Un mundo. Una jugada. Cada día.", searchTitle:"Buscar en el registro", searchPlaceholder:"Buscar despachos, jugadores...", searchBtn:"Buscar", quickFilters:"Filtros rápidos:", calMonth:"Octubre 2026", calLegend:"● Jugada del día", xyzTitle:"Protocolo X-Y-Z: Jugadores Operativos", badgeX:"x · Impulsor Táctico", badgeY:"y · Fulcro Soberano", badgeZ:"z · Realidad Terrestre", regTitle:"Exposición Regional y Fricción Estratégica", thRegion:"Cuenca Geopolítica", thRole:"Rol Vectorial", thImpact:"Impacto Operacional", vecX:"Vector x", vecY:"Vector y", vecZ:"Vector z", beatsTitle:"Anatomía de la jugada diaria", b1t:"Por qué importa", b2t:"El sustrato", b3t:"La jugada", b4t:"Qué vigilar", boardsTitle:"Lectura en tres tableros", lblMove:"La jugada:", lblCost:"El coste:", lblPos:"La posición:", plainKicker:"En lenguaje sencillo // Qué significa realmente", plainBadge:"La realidad sin tecnicismos", plainTitle:"Sin rodeos ni jerga", verdictHead:"Veredicto Terminal", readEditorialBtn:"Leer el editorial diario", footerText:"La jugada diaria es gratuita. El archivo es el registro." },
-  pt: { name:"Português", dir:"ltr", navToday:"Hoje", navAbout:"Sobre", navContact:"Contacto", tag:"Um mundo. Um lance. Todos os dias.", searchTitle:"Consultar o registo", searchPlaceholder:"Pesquisar despachos...", searchBtn:"Pesquisar", quickFilters:"Filtros rápidos:", calMonth:"Outubro 2026", calLegend:"● Lance do dia", xyzTitle:"Protocolo X-Y-Z: Intervenientes Operacionais", badgeX:"x · Motor Tático", badgeY:"y · Fulcro Soberano", badgeZ:"z · Realidade Física", regTitle:"Exposição Regional & Fricção Estratégica", thRegion:"Bacia Geopolítica", thRole:"Função Vetorial", thImpact:"Impacto Operacional", vecX:"Vetor x", vecY:"Vetor y", vecZ:"Vetor z", beatsTitle:"Anatomia do lance diário", b1t:"Por que importa", b2t:"O tabuleiro", b3t:"O lance", b4t:"O que observar", boardsTitle:"Leitura nos Três Tabuleiros", lblMove:"O lance:", lblCost:"O custo:", lblPos:"A posição:", plainKicker:"Em linguagem simples // O que isto significa na prática", plainBadge:"A realidade sem termos técnicos", plainTitle:"Direto ao ponto", verdictHead:"Veredicto Terminal", readEditorialBtn:"Ler o editorial do dia", footerText:"O lance do dia é gratuito. O arquivo é o registro." },
-  de: { name:"Deutsch", dir:"ltr", navToday:"Heute", navAbout:"Über uns", navContact:"Kontakt", tag:"Eine Welt. Ein Zug. Jeden Tag.", searchTitle:"Archiv durchsuchen", searchPlaceholder:"Depeschen, Akteure...", searchBtn:"Suchen", quickFilters:"Schnellfilter:", calMonth:"Oktober 2026", calLegend:"● Zug des Tages", xyzTitle:"Protokoll X-Y-Z: Die Akteure", badgeX:"x · Taktischer Treiber", badgeY:"y · Souveräner Angelpunkt", badgeZ:"z · Bodenrealität", regTitle:"Regionale Exposition & Reibung", thRegion:"Geopolitischer Raum", thRole:"Vektor", thImpact:"Operative Wirkung", vecX:"Vektor x", vecY:"Vektor y", vecZ:"Vektor z", beatsTitle:"Anatomie des täglichen Zuges", b1t:"Warum es zählt", b2t:"Das Brett", b3t:"Der Zug", b4t:"Worauf zu achten ist", boardsTitle:"Auf drei Brettern gelesen", lblMove:"Der Zug:", lblCost:"Die Kosten:", lblPos:"Die Stellung:", plainKicker:"Im Klartext // Was das wirklich bedeutet", plainBadge:"Ohne Fachjargon", plainTitle:"Die einfache Wahrheit", verdictHead:"Terminales Urteil", readEditorialBtn:"Den Leitartikel des Tages lesen", footerText:"Der tägliche Zug ist frei. Das Archiv ist das Protokoll." },
-  ru: { name:"Русский", dir:"ltr", navToday:"Сегодня", navAbout:"О проекте", navContact:"Контакты", tag:"Один мир. Один ход. Каждый день.", searchTitle:"Поиск по летописи", searchPlaceholder:"Поиск депеш, игроков...", searchBtn:"Найти", quickFilters:"Фильтры:", calMonth:"Октябрь 2026", calLegend:"● Ход дня", xyzTitle:"Протокол X-Y-Z: Действующие Силы", badgeX:"x · Тактический Драйвер", badgeY:"y · Суверенный Опорный Пункт", badgeZ:"z · Реальность на Земле", regTitle:"Региональное Влияние и Трение", thRegion:"Геополитический Бассейн", thRole:"Вектор", thImpact:"Практический Итог", vecX:"Вектор x", vecY:"Вектор y", vecZ:"Вектор z", beatsTitle:"Анатомия ежедневного хода", b1t:"Почему это важно", b2t:"Среда", b3t:"Ход", b4t:"За чем следить", boardsTitle:"Чтение по трем доскам", lblMove:"Ход:", lblCost:"Цена:", lblPos:"Позиция:", plainKicker:"Простыми словами // Что это значит на самом деле", plainBadge:"Суть без сложной терминологии", plainTitle:"Очищено от финансового жаргона", verdictHead:"Окончательный Вердикт", readEditorialBtn:"Читать редакционную статью", footerText:"Ход дня открыт для всех. Архив — это летопись." },
-  zh: { name:"中文", dir:"ltr", navToday:"今日", navAbout:"关于我们", navContact:"联系与信号", tag:"一个世界。一步棋。每一天。", searchTitle:"检索历史记录", searchPlaceholder:"搜索快讯、参与者...", searchBtn:"搜索", quickFilters:"快捷分类：", calMonth:"2026年 10月", calLegend:"● 今日棋步", xyzTitle:"XYZ协议：核心博弈实体", badgeX:"x · 战术驱动方", badgeY:"y · 主权支点", badgeZ:"z · 地面实体主权", regTitle:"地缘区域敞口与战略摩擦", thRegion:"地缘区域", thRole:"协议角色", thImpact:"运营影响", vecX:"向量 x", vecY:"向量 y", vecZ:"向量 z", beatsTitle:"每日一步的解构", b1t:"为何重要", b2t:"博弈基底", b3t:"这一步", b4t:"关注什么", boardsTitle:"三种棋盘审视全局", lblMove:"棋步：", lblCost:"代价：", lblPos:"局面：", plainKicker:"通俗解读 // 这究竟意味着什么", plainBadge:"剥离术语的实质真相", plainTitle:"用大白话讲透实质", verdictHead:"终极裁定", readEditorialBtn:"阅读今日深度社论", footerText:"当日快讯免费开放。档案库即是终极记录。" },
-  ja: { name:"日本語", dir:"ltr", navToday:"今日", navAbout:"概要", navContact:"連絡先", tag:"ひとつの世界。ひとつの一手。毎日。", searchTitle:"アーカイブ検索", searchPlaceholder:"ディスパッチ、プレイヤーを検索...", searchBtn:"検索", quickFilters:"クイック抽出:", calMonth:"2026年 10月", calLegend:"● 本日の一手", xyzTitle:"プロトコル X-Y-Z：中核プレイヤー", badgeX:"x · 戦術ドライバー", badgeY:"y · 主権の支点", badgeZ:"z · 物理的現実", regTitle:"地域別エクスポージャーと摩擦", thRegion:"地縁ブロック", thRole:"ベクトル", thImpact:"実質的影響", vecX:"ベクトル x", vecY:"ベクトル y", vecZ:"ベクトル z", beatsTitle:"一手のアナトミー", b1t:"なぜ重要か", b2t:"盤の選択", b3t:"今の一手", b4t:"注目点", boardsTitle:"三つの盤で読み解く", lblMove:"一手:", lblCost:"代償:", lblPos:"局面:", plainKicker:"平易な言葉で // これが意味する本質", plainBadge:"専門用語を排した現実", plainTitle:"核心をわかりやすく", verdictHead:"最終的裁定", readEditorialBtn:"本日の社説を読む", footerText:"最新の一手は無料公開。アーカイブこそが真の記録。" },
-  hi: { name:"हिन्दी", dir:"ltr", navToday:"आज", navAbout:"परिचय", navContact:"संपर्क", tag:"एक विश्व। एक चाल। हर दिन।", searchTitle:"अभिलेख में खोजें", searchPlaceholder:"खोजें...", searchBtn:"खोजें", quickFilters:"त्वरित फ़िल्टर:", calMonth:"अक्टूबर 2026", calLegend:"● आज की चाल", xyzTitle:"प्रोटोकॉल X-Y-Z: प्रमुख रणनीतिक खिलाड़ी", badgeX:"x · सामरिक चालक", badgeY:"y · संप्रभु धुरी", badgeZ:"z · जमीनी हकीकत", regTitle:"क्षेत्रीय प्रभाव और रणनीतिक घर्षण", thRegion:"क्षेत्र", thRole:"भूमिका", thImpact:"परिणाम", vecX:"वेक्टर x", vecY:"वेक्टर y", vecZ:"वेक्टर z", beatsTitle:"दैनिक चाल का विश्लेषण", b1t:"यह क्यों मायने रखता है", b2t:"बिसात", b3t:"चाल", b4t:"किस पर नज़र रखें", boardsTitle:"तीन बिसातों पर विश्लेषण", lblMove:"चाल:", lblCost:"लागत:", lblPos:"स्थिति:", plainKicker:"सरल भाषा में // इसका वास्तविक अर्थ क्या है", plainBadge:"तकनीकी शब्दों से परे यथार्थ", plainTitle:"सीधी और स्पष्ट बात", verdictHead:"अंतिम निष्कर्ष", readEditorialBtn:"आज का संपादकीय पढ़ें", footerText:"आज की चाल निःशुल्क है। संग्रह ही वास्तविक अभिलेख है।" },
-  ar: { name:"العربية", dir:"rtl", navToday:"اليوم", navAbout:"عن المشروع", navContact:"اتصال", tag:"عالم واحد. نقلة واحدة. كل يوم.", searchTitle:"البحث في السجل", searchPlaceholder:"ابحث...", searchBtn:"بحث", quickFilters:"تصفية سريعة:", calMonth:"October 2026", calLegend:"● نقلة اليوم", xyzTitle:"بروتوكول X-Y-Z: اللاعبون الفاعلون", badgeX:"x · المحرك التكتيكي", badgeY:"y · المرتكز السيادي", badgeZ:"z · الواقع الميداني", regTitle:"الانكشاف الإقليمي والاحتكاك الاستراتيجي", thRegion:"الحوض الجيوسياسي", thRole:"المسار", thImpact:"الأثر التشغيلي", vecX:"المتجه x", vecY:"المتجه y", vecZ:"المتجه z", beatsTitle:"تشريح النقلة اليومية", b1t:"لماذا يهم", b2t:"الرقعة", b3t:"النقلة", b4t:"ما يجب مراقبته", boardsTitle:"قراءة عبر ثلاث رقع", lblMove:"النقلة:", lblCost:"الثمن:", lblPos:"الوضعية:", plainKicker:"بلغة مبسطة // ماذا يعني هذا عملياً", plainBadge:"الواقع مجرداً من التعقيد التقني", plainTitle:"جوهر الأمر بدون مصطلحات معقدة", verdictHead:"الحكم النهائي", readEditorialBtn:"قراءة الافتتاحية اليومية", footerText:"نقلة اليوم مجانية. الأرشيف هو السجل الحقيقي." }
+  en: { name:"English", dir:"ltr", navToday:"Today", navAbout:"About", navContact:"Contact", searchTitle:"Search the Record", searchPlaceholder:"Search dispatches, moves, or players...", searchBtn:"Search", quickFilters:"Quick filters:", calMonth:"October 2026", calLegend:"● Live Move", xyzTitle:"Protocol X-Y-Z: The Operational Players", badgeX:"x · Tactical Driver", badgeY:"y · Sovereign Fulcrum", badgeZ:"z · Ground Reality", regTitle:"Regional Exposure & Strategic Friction", thRegion:"Geopolitical Basin", thRole:"Vector Role", thImpact:"Operational Impact", vecX:"Vector x", vecY:"Vector y", vecZ:"Vector z", beatsTitle:"Anatomy of the Daily Move", b1t:"Why It Matters", b2t:"The Substrate", b3t:"The Move", b4t:"What to Watch", boardsTitle:"Read Across Three Boards", lblMove:"The Move:", lblCost:"The Cost:", lblPos:"The Position:", plainKicker:"In Plain Language // What This Actually Means", plainBadge:"The Non-Technical Reality", plainTitle:"Stripping Away the Jargon", verdictHead:"Terminal Verdict", readEditorialBtn:"Read The Daily Editorial", footerText:"The daily move is free. The archive is the record." },
+  fr: { name:"Français", dir:"ltr", navToday:"Aujourd'hui", navAbout:"À propos", navContact:"Contact", searchTitle:"Consulter le registre", searchPlaceholder:"Rechercher dépêches, acteurs, mouvements...", searchBtn:"Rechercher", quickFilters:"Filtres rapides :", calMonth:"Octobre 2026", calLegend:"● Coup du jour", xyzTitle:"Protocole X-Y-Z : Les Acteurs Opérationnels", badgeX:"x · Vecteur Tactique", badgeY:"y · Pivot Souverain", badgeZ:"z · Réalité du Terrain", regTitle:"Exposition Régionale & Friction Stratégique", thRegion:"Bassin Géopolitique", thRole:"Rôle Vectoriel", thImpact:"Impact Opérationnel", vecX:"Vecteur x", vecY:"Vecteur y", vecZ:"Vecteur z", beatsTitle:"Anatomie du coup quotidien", b1t:"Pourquoi c'est important", b2t:"Le substrat", b3t:"Le coup", b4t:"À surveiller", boardsTitle:"Lecture sur trois plateaux", lblMove:"Le coup :", lblCost:"Le coût :", lblPos:"La position :", plainKicker:"En clair // Ce que cela signifie vraiment", plainBadge:"La réalité sans jargon", plainTitle:"Dépouillé de tout vocabulaire technique", verdictHead:"Verdict Terminal", readEditorialBtn:"Lire l'éditorial quotidien", footerText:"Le coup du jour est gratuit. L'archive est le registre." },
+  es: { name:"Español", dir:"ltr", navToday:"Hoy", navAbout:"Acerca de", navContact:"Contacto", searchTitle:"Buscar en el registro", searchPlaceholder:"Buscar despachos, jugadores...", searchBtn:"Buscar", quickFilters:"Filtros rápidos:", calMonth:"Octubre 2026", calLegend:"● Jugada del día", xyzTitle:"Protocolo X-Y-Z: Jugadores Operativos", badgeX:"x · Impulsor Táctico", badgeY:"y · Fulcro Soberano", badgeZ:"z · Realidad Terrestre", regTitle:"Exposición Regional y Fricción Estratégica", thRegion:"Cuenca Geopolítica", thRole:"Rol Vectorial", thImpact:"Impacto Operacional", vecX:"Vector x", vecY:"Vector y", vecZ:"Vector z", beatsTitle:"Anatomía de la jugada diaria", b1t:"Por qué importa", b2t:"El sustrato", b3t:"La jugada", b4t:"Qué vigilar", boardsTitle:"Lectura en tres tableros", lblMove:"La jugada:", lblCost:"El coste:", lblPos:"La posición:", plainKicker:"En lenguaje sencillo // Qué significa realmente", plainBadge:"La realidad sin tecnicismos", plainTitle:"Sin rodeos ni jerga", verdictHead:"Veredicto Terminal", readEditorialBtn:"Leer el editorial diario", footerText:"La jugada diaria es gratuita. El archivo es el registro." },
+  pt: { name:"Português", dir:"ltr", navToday:"Hoje", navAbout:"Sobre", navContact:"Contacto", searchTitle:"Consultar o registo", searchPlaceholder:"Pesquisar despachos...", searchBtn:"Pesquisar", quickFilters:"Filtros rápidos:", calMonth:"Outubro 2026", calLegend:"● Lance do dia", xyzTitle:"Protocolo X-Y-Z: Intervenientes Operacionais", badgeX:"x · Motor Tático", badgeY:"y · Fulcro Soberano", badgeZ:"z · Realidade Física", regTitle:"Exposição Regional & Fricção Estratégica", thRegion:"Bacia Geopolítica", thRole:"Função Vetorial", thImpact:"Impacto Operacional", vecX:"Vetor x", vecY:"Vetor y", vecZ:"Vetor z", beatsTitle:"Anatomia do lance diário", b1t:"Por que importa", b2t:"O tabuleiro", b3t:"O lance", b4t:"O que observar", boardsTitle:"Leitura nos Três Tabuleiros", lblMove:"O lance:", lblCost:"O custo:", lblPos:"A posição:", plainKicker:"Em linguagem simples // O que isto significa na prática", plainBadge:"A realidade sem termos técnicos", plainTitle:"Direto ao ponto", verdictHead:"Veredicto Terminal", readEditorialBtn:"Ler o editorial do dia", footerText:"O lance do dia é gratuito. O arquivo é o registro." },
+  de: { name:"Deutsch", dir:"ltr", navToday:"Heute", navAbout:"Über uns", navContact:"Kontakt", searchTitle:"Archiv durchsuchen", searchPlaceholder:"Depeschen, Akteure...", searchBtn:"Suchen", quickFilters:"Schnellfilter:", calMonth:"Oktober 2026", calLegend:"● Zug des Tages", xyzTitle:"Protokoll X-Y-Z: Die Akteure", badgeX:"x · Taktischer Treiber", badgeY:"y · Souveräner Angelpunkt", badgeZ:"z · Bodenrealität", regTitle:"Regionale Exposition & Reibung", thRegion:"Geopolitischer Raum", thRole:"Vektor", thImpact:"Operative Wirkung", vecX:"Vektor x", vecY:"Vektor y", vecZ:"Vektor z", beatsTitle:"Anatomie des täglichen Zuges", b1t:"Warum es zählt", b2t:"Das Brett", b3t:"Der Zug", b4t:"Worauf zu achten ist", boardsTitle:"Auf drei Brettern gelesen", lblMove:"Der Zug:", lblCost:"Die Kosten:", lblPos:"Die Stellung:", plainKicker:"Im Klartext // Was das wirklich bedeutet", plainBadge:"Ohne Fachjargon", plainTitle:"Die einfache Wahrheit", verdictHead:"Terminales Urteil", readEditorialBtn:"Den Leitartikel des Tages lesen", footerText:"Der tägliche Zug ist frei. Das Archiv ist das Protokoll." },
+  ru: { name:"Русский", dir:"ltr", navToday:"Сегодня", navAbout:"О проекте", navContact:"Контакты", searchTitle:"Поиск по летописи", searchPlaceholder:"Поиск депеш, игроков...", searchBtn:"Найти", quickFilters:"Фильтры:", calMonth:"Октябрь 2026", calLegend:"● Ход дня", xyzTitle:"Протокол X-Y-Z: Действующие Силы", badgeX:"x · Тактический Драйвер", badgeY:"y · Суверенный Опорный Пункт", badgeZ:"z · Реальность на Земле", regTitle:"Региональное Влияние и Трение", thRegion:"Геополитический Бассейн", thRole:"Вектор", thImpact:"Практический Итог", vecX:"Вектор x", vecY:"Вектор y", vecZ:"Вектор z", beatsTitle:"Анатомия ежедневного хода", b1t:"Почему это важно", b2t:"Среда", b3t:"Ход", b4t:"За чем следить", boardsTitle:"Чтение по трем доскам", lblMove:"Ход:", lblCost:"Цена:", lblPos:"Позиция:", plainKicker:"Простыми словами // Что это значит на самом деле", plainBadge:"Суть без сложной терминологии", plainTitle:"Очищено от финансового жаргона", verdictHead:"Окончательный Вердикт", readEditorialBtn:"Читать редакционную статью", footerText:"Ход дня открыт для всех. Архив — это летопись." },
+  zh: { name:"中文", dir:"ltr", navToday:"今日", navAbout:"关于我们", navContact:"联系与信号", searchTitle:"检索历史记录", searchPlaceholder:"搜索快讯、参与者...", searchBtn:"搜索", quickFilters:"快捷分类：", calMonth:"2026年 10月", calLegend:"● 今日棋步", xyzTitle:"XYZ协议：核心博弈实体", badgeX:"x · 战术驱动方", badgeY:"y · 主权支点", badgeZ:"z · 地面实体主权", regTitle:"地缘区域敞口与战略摩擦", thRegion:"地缘区域", thRole:"协议角色", thImpact:"运营影响", vecX:"向量 x", vecY:"向量 y", vecZ:"向量 z", beatsTitle:"每日一步的解构", b1t:"为何重要", b2t:"博弈基底", b3t:"这一步", b4t:"关注什么", boardsTitle:"三种棋盘审视全局", lblMove:"棋步：", lblCost:"代价：", lblPos:"局面：", plainKicker:"通俗解读 // 这究竟意味着什么", plainBadge:"剥离术语的实质真相", plainTitle:"用大白话讲透实质", verdictHead:"终极裁定", readEditorialBtn:"阅读今日深度社论", footerText:"当日快讯免费开放。档案库即是终极记录。" },
+  ja: { name:"日本語", dir:"ltr", navToday:"今日", navAbout:"概要", navContact:"連絡先", searchTitle:"アーカイブ検索", searchPlaceholder:"ディスパッチ、プレイヤーを検索...", searchBtn:"検索", quickFilters:"クイック抽出:", calMonth:"2026年 10月", calLegend:"● 本日の一手", xyzTitle:"プロトコル X-Y-Z：中核プレイヤー", badgeX:"x · 戦術ドライバー", badgeY:"y · 主権の支点", badgeZ:"z · 物理的現実", regTitle:"地域別エクスポージャーと摩擦", thRegion:"地縁ブロック", thRole:"ベクトル", thImpact:"実質的影響", vecX:"ベクトル x", vecY:"ベクトル y", vecZ:"ベクトル z", beatsTitle:"一手のアナトミー", b1t:"なぜ重要か", b2t:"盤の選択", b3t:"今の一手", b4t:"注目点", boardsTitle:"三つの盤で読み解く", lblMove:"一手:", lblCost:"代償:", lblPos:"局面:", plainKicker:"平易な言葉で // これが意味する本質", plainBadge:"専門用語を排した現実", plainTitle:"核心をわかりやすく", verdictHead:"最終的裁定", readEditorialBtn:"本日の社説を読む", footerText:"最新の一手は無料公開。アーカイブこそが真の記録。" },
+  hi: { name:"हिन्दी", dir:"ltr", navToday:"आज", navAbout:"परिचय", navContact:"संपर्क", searchTitle:"अभिलेख में खोजें", searchPlaceholder:"खोजें...", searchBtn:"खोजें", quickFilters:"त्वरित फ़िल्टर:", calMonth:"अक्टूबर 2026", calLegend:"● आज की चाल", xyzTitle:"प्रोटोकॉल X-Y-Z: प्रमुख रणनीतिक खिलाड़ी", badgeX:"x · सामरिक चालक", badgeY:"y · संप्रभु धुरी", badgeZ:"z · जमीनी हकीकत", regTitle:"क्षेत्रीय प्रभाव और रणनीतिक घर्षण", thRegion:"क्षेत्र", thRole:"भूमिका", thImpact:"परिणाम", vecX:"वेक्टर x", vecY:"वेक्टर y", vecZ:"वेक्टर z", beatsTitle:"दैनिक चाल का विश्लेषण", b1t:"यह क्यों मायने रखता है", b2t:"बिसात", b3t:"चाल", b4t:"किस पर नज़र रखें", boardsTitle:"तीन बिसातों पर विश्लेषण", lblMove:"चाल:", lblCost:"लागत:", lblPos:"स्थिति:", plainKicker:"सरल भाषा में // इसका वास्तविक अर्थ क्या है", plainBadge:"तकनीकी शब्दों से परे यथार्थ", plainTitle:"सीधी और स्पष्ट बात", verdictHead:"अंतिम निष्कर्ष", readEditorialBtn:"आज का संपादकीय पढ़ें", footerText:"आज की चाल निःशुल्क है। संग्रह ही वास्तविक अभिलेख है।" },
+  ar: { name:"العربية", dir:"rtl", navToday:"اليوم", navAbout:"عن المشروع", navContact:"اتصال", searchTitle:"البحث في السجل", searchPlaceholder:"ابحث...", searchBtn:"بحث", quickFilters:"تصفية سريعة:", calMonth:"أكتوبر 2026", calLegend:"● نقلة اليوم", xyzTitle:"بروتوكول X-Y-Z: اللاعبون الفاعلون", badgeX:"x · المحرك التكتيكي", badgeY:"y · المرتكز السيادي", badgeZ:"z · الواقع الميداني", regTitle:"الانكشاف الإقليمي والاحتكاك الاستراتيجي", thRegion:"الحوض الجيوسياسي", thRole:"المسار", thImpact:"الأثر التشغيلي", vecX:"المتجه x", vecY:"المتجه y", vecZ:"المتجه z", beatsTitle:"تشريح النقلة اليومية", b1t:"لماذا يهم", b2t:"الرقعة", b3t:"النقلة", b4t:"ما يجب مراقبته", boardsTitle:"قراءة عبر ثلاث رقع", lblMove:"النقلة:", lblCost:"الثمن:", lblPos:"الوضعية:", plainKicker:"بلغة مبسطة // ماذا يعني هذا عملياً", plainBadge:"الواقع مجرداً من التعقيد التقني", plainTitle:"جوهر الأمر بدون مصطلحات معقدة", verdictHead:"الحكم النهائي", readEditorialBtn:"قراءة الافتتاحية اليومية", footerText:"نقلة اليوم مجانية. الأرشيف هو السجل الحقيقي." }
 };
 
-// Multi-Language Dispatches Store for Both Active Editions (19 & 20)
+// Multi-Language Dispatches Store
 const DISPATCHES_I18N = {
   "2026-10-19": {
     editorial_url: "editorial-2026-10-19.html",
@@ -1074,7 +1031,7 @@ const DISPATCHES_I18N = {
     },
     ja: {
       todayDate:"2026年10月19日 月曜日 · GMT 00:00 サイクル · 第1号",
-      todayKicker:"本日の一手 // 第1号 · 2026年10月19日",
+      todayKicker:"本日の一手 // 第1号 · 202610月19日",
       todayTitle:"世界決済網の分断：コモディティがG7金融レールを離脱",
       todayLede:"中央銀行が西側のコルレス銀行を経由しない二国間デジタル決済回廊を稼働。金現物とエネルギー直接交換をXYZプロトコルと三盤で読み解く。",
       xName:"G7規制・執行軸", xDesc:"短期的視界で強制応手を強いられる戦術主勢力。制裁を科すたびに並行網に対する監視能力を永久に喪失する。",
@@ -1108,8 +1065,8 @@ const DISPATCHES_I18N = {
       xName:"G7 विनियामक धुरी", xDesc:"मजबूर प्रतिक्रिया में फंसा तंत्र, जो नए प्रतिबंध लगाकर दीर्घकालिक निगरानी क्षमता खो रहा है।",
       yName:"द्विपक्षीय तिजोरी संरक्षक", yDesc:"अमरीकी ऋण से निकलकर घरेलू भौतिक सोने में तरलता सुरक्षित करने वाले केंद्रीय बैंक।",
       zName:"यूरेशियाई गलियारा प्रभुत्व", zDesc:"जमीन पर पाइपलाइन और बंदरगाहों के नियंत्रण से पश्चिमी नेटवर्क को निष्प्रभावी बनाने वाली शक्तियां।",
-      r1Name:"अटलांटिक / G7 धुरी", r1Text:"प्रतिबंधों की विफलता और समानांतर व्यापार से पूर्ण अनभिज्ञता।",
-      r2Name:"हिंद महासागर क्षेत्र", r2Text:"भौतिक सोने में तरलता वृद्धि और प्रत्यक्ष द्विपक्षीय व्यापार का विस्तार।",
+      r1Name:"अटलांटिक / G7 धुरी", r1Text:"प्रतिबंधों की विफलता और समानांतर व्यापार से पूर्ण अनभिज्ञता。",
+      r2Name:"हिंद महासागर क्षेत्र", r2Text:"भौतिक सोने में तरलता वृद्धि और प्रत्यक्ष द्विपक्षीय व्यापार का विस्तार。",
       r3Name:"यूरेशियाई भूमि सेतु", r3Text:"ऊर्जा गलियारों का भूमिगत घेराव, समुद्री नाकेबंदी का प्रभाव शून्य।",
       b1d:"विश्व की वित्तीय प्रणाली दो स्वतंत्र गलियारों में विभाजित हो चुकी है।",
       b2d:"चेकर्स, शतरंज और गो का एक साथ संचालन।",
@@ -1269,7 +1226,7 @@ const DISPATCHES_I18N = {
       goPos:"Cinquenta liberdades marítimas estratégicas no Alto Norte são silenciosamente ocupadas.",
       plainP1:"Por décadas, o Ártico foi tratado como uma barreira congelada distante que não precisava de policiamento ativo.",
       plainP2:"O movimento de hoje significa que o Canadá e seus aliados ocuparam fisicamente as rotas com cabos submarinos, portos e radares.",
-      verdictBody:"A verdadeira batalha pelo Alto Norte é vencida por quem ancora a fibra na rocha e coloca a pedra acústica na rota de trânsito."
+      verdictBody:"A verdadeira batalha pelo Alto Norte is vencida por quem ancora a fibra na rocha e coloca a pedra acústica na rota de trânsito."
     },
     de: {
       todayDate:"Dienstag, 20. Oktober 2026 · GMT 00:00 Zyklus · Ausgabe 2",
@@ -1394,8 +1351,8 @@ const DISPATCHES_I18N = {
       r1Name:"ध्रुवीय नाटो फ्लैंक", r1Text:"आर्कटिक निगरानी ग्रिड का एकीकरण और उत्तरी समुद्री रोकथाम की तैयारी。",
       r2Name:"नॉर्थवेस्ट पैसेज / ब्यूफोर्ट", r2Text:"समुद्र-तल की चट्टानों से राष्ट्रीय संप्रभुता को जोड़ने वाला सबसी फाइबर नेटवर्क。",
       r3Name:"नॉर्डिक और बैरेंट्स बेसिन", r3Text:"अनिगरानीकृत आर्कटिक समुद्री मार्गों को बंद करने वाले गहरे पानी के लॉजिस्टिक्स केंद्र。",
-      b1d:"सुदूर उत्तर एक जमे हुए बफर ज़ोन से बदलकर एक सक्रिय, संप्रभु-सुरक्षित बुनियादी ढांचा गलियारा बन गया है।",
-      b2d:"तीनों बिसातों पर एक साथ कार्रवाई: सामरिक हवाई इंटरसेप्ट, संप्रभु पूंजी आवंटन और समुद्र-तल फाइबर घेराबंदी।",
+      b1d:"सुदूर उत्तर एक जमे हुए बफर ज़ोन से बदलकर एक सक्रिय, संप्रभु-सुरक्षित बुनियादी ढांचा गलियारा बन गया है。",
+      b2d:"तीनों बिसातों पर एक साथ कार्रवाई: सामरिक हवाई इंटरसेप्ट, संप्रभु पूंजी आवंटन और समुद्र-तल फाइबर घेराबंदी。",
       b3d:"ध्रुवीय परिधि के साथ दोहरे उपयोग वाले संवेदी केबल और स्वायत्त रडार स्टेशनों की स्थायी तैनाती।",
       b4d:"मौसमी बर्फ पिघलने से पहले ही संशोधनवादी समुद्री दावों को संरचनात्मक रूप से बाहर कर दिया गया है।",
       board1Title:"चेकर्स: उच्च-अक्षांश इंटरसेप्ट", board1Sub:"अल्पकालिक क्षितिज · अनिवार्य चाल · तत्काल घर्षण",
