@@ -579,10 +579,11 @@ footer.bottom-red-footer strong{
   <section class="control-hub">
     <div class="hub-card">
       <h3 data-i="searchTitle">Search the Record</h3>
-      <form class="search-form" onsubmit="event.preventDefault();">
-        <input type="text" class="search-input" id="searchInput" data-i-placeholder="searchPlaceholder" placeholder="Search dispatches, moves, or players...">
+      <form class="search-form" onsubmit="event.preventDefault(); executeSearchSubmit();">
+        <input type="text" class="search-input" id="searchInput" data-i-placeholder="searchPlaceholder" placeholder="Search dispatches, moves, or players..." autocomplete="off">
         <button type="submit" class="search-btn" data-i="searchBtn">Search</button>
       </form>
+      <div id="searchResults" style="display:none;background:#ffffff;border:1px solid #e5e0d3;border-radius:8px;margin-top:8px;max-height:260px;overflow-y:auto;box-shadow:0 8px 24px rgba(0,0,0,0.12);z-index:99;position:relative;"></div>
       <div class="search-hints">
         <span data-i="quickFilters">Quick filters:</span>
         <span class="search-tag" onclick="filterBy('checkers')">Checkers</span>
@@ -625,11 +626,11 @@ footer.bottom-red-footer strong{
         <div class="cal-cell">13</div>
         <div class="cal-cell">14</div>
         <div class="cal-cell">15</div>
-        <div class="cal-cell has-dispatch" title="Dispatch: Oct 16">16</div>
-        <div class="cal-cell has-dispatch" title="Dispatch: Oct 17">17</div>
-        <div class="cal-cell has-dispatch" title="Dispatch: Oct 18">18</div>
-        <div class="cal-cell has-dispatch" title="Dispatch: Oct 19" onclick="location.href='dispatch-2026-10-19.html'">19</div>
-        <div class="cal-cell today" title="Today's Dispatch" onclick="window.scrollTo({top:document.getElementById('report').offsetTop - 60, behavior:'smooth'})">20</div>
+        <div class="cal-cell has-dispatch" data-date="2026-10-16" title="Dispatch: Oct 16 (Hormuz Asymmetric Standoff)" onclick="selectDate('2026-10-16')">16</div>
+        <div class="cal-cell has-dispatch" data-date="2026-10-17" title="Dispatch: Oct 17 (Continental Rail Compact)" onclick="selectDate('2026-10-17')">17</div>
+        <div class="cal-cell has-dispatch" data-date="2026-10-18" title="Dispatch: Oct 18 (AI Hardware Embargo)" onclick="selectDate('2026-10-18')">18</div>
+        <div class="cal-cell has-dispatch" data-date="2026-10-19" title="Dispatch: Oct 19 (Fracture of Global Clearing Grid)" onclick="selectDate('2026-10-19')">19</div>
+        <div class="cal-cell today" data-date="2026-10-20" title="Dispatch: Oct 20 (The Arctic Sovereign Perimeter)" onclick="selectDate('2026-10-20')">20</div>
         <div class="cal-cell">21</div>
         <div class="cal-cell">22</div>
         <div class="cal-cell">23</div>
@@ -648,12 +649,12 @@ footer.bottom-red-footer strong{
   <!-- Lead Report Header -->
   <article class="box" id="report">
     <div class="kicker-row">
-      <span class="kicker" data-i="todayKicker">The Move of the Day // October 20, 2026</span>
-      <span class="date-badge" id="todayDate">Tuesday, October 20, 2026 · GMT 00:00 Cycle</span>
+      <span class="kicker" data-i="todayKicker">The Move of the Day // October 19, 2026</span>
+      <span class="date-badge" id="todayDate">Monday, October 19, 2026 · GMT 00:00 Cycle</span>
     </div>
-    <h2 class="report-title" data-i="todayTitle">The Arctic Sovereign Perimeter: Canada and Nordic Allies Close the Circumpolar Optical & Defense Corridor</h2>
-    <p class="report-lede" data-i="todayLede">Joint circumpolar sovereign mandates deploy hardened fiber infrastructure, autonomous surveillance grids, and mineral logistics hubs across the High North, preempting maritime transit contestation. Read through Protocol X-Y-Z and across three boards.</p>
-    <a href="editorial-2026-10-20.html" class="editorial-btn"><span data-i="readEditorialBtn">Read The Daily Editorial</span> →</a>
+    <h2 class="report-title" data-i="todayTitle">The Fracture of the Global Clearing Grid: Bilateral Commodities Settle Outside the G7 Rail</h2>
+    <p class="report-lede" data-i="todayLede">Central bank digital clearing corridors bypass Western correspondent banking, anchoring new settlement liquidity in vaulted gold and direct bilateral energy swaps. Read through Protocol X-Y-Z and across three boards.</p>
+    <a href="editorial-2026-10-19.html" class="editorial-btn"><span data-i="readEditorialBtn">Read The Daily Editorial</span> →</a>
   </article>
 
   <!-- Protocol X-Y-Z Players Section -->
@@ -661,21 +662,21 @@ footer.bottom-red-footer strong{
   <section class="matrix-grid">
     <div class="matrix-card">
       <span class="matrix-badge badge-x">x · Tactical Driver</span>
-      <h4 data-i="xName">Tactical Air & Surface Scramble</h4>
-      <p data-i="xDesc">Air defense interception wings operating on short tactical notification cycles, expending alert sorties to counter gray-zone reconnaissance along circumpolar boundaries.</p>
+      <h4 data-i="xName">G7 Regulatory Axis</h4>
+      <p data-i="xDesc">The enforcement rail operating under short horizons. Trapped in mandatory response cycles, forced to deploy emergency secondary sanctions that cause immediate friction but forfeit long-term surveillance visibility.</p>
     </div>
 
     <div class="matrix-card">
       <span class="matrix-badge badge-y">y · Sovereign Fulcrum</span>
-      <h4 data-i="yName">The Sovereign Arctic Capital Allocator</h4>
-      <p data-i="yDesc">Sovereign balance sheets and infrastructure banks allocating multi-decade capital to icebreakers, dual-use deepwater berths, and critical mineral processing hubs.</p>
+      <h4 data-i="yName">Bilateral Vault Arbiters</h4>
+      <p data-i="yDesc">Central bank reserve managers and sovereign vaults across the Indian Ocean rim. Absorbing volatility by re-anchoring liquid balances into domestic physical bullion and direct local-currency energy clearing.</p>
       <a href="dispatch-carney-jackson-hole.html" style="display:inline-block;margin-top:10px;font-size:12px;font-weight:700;color:var(--accent-red);text-transform:uppercase;letter-spacing:.05em;">Read Carney Dossier: Actor y Mechanics →</a>
     </div>
 
     <div class="matrix-card">
       <span class="matrix-badge badge-z">z · Ground Reality</span>
-      <h4 data-i="zName">Circumpolar Ground & Seabed Array</h4>
-      <p data-i="zDesc">The physical sensor network: subsea fiber, radar arrays, and permanent northern garrisons sealing the physical passages across deep time.</p>
+      <h4 data-i="zName">Eurasian Corridor Sovereign</h4>
+      <p data-i="zDesc">The physical infrastructure powers: port terminals, overland pipeline operators, and critical mineral cartels. Closing physical liberties across space and deep time without relying on Western banking rails.</p>
     </div>
   </section>
 
@@ -749,7 +750,7 @@ footer.bottom-red-footer strong{
         <circle cx="45" cy="27" r="7" fill="#fff"/>
       </svg>
       <div>
-        <h3 data-i="board1Title">Checkers: The High-Latitude Intercept</h3>
+        <h3 data-i="board1Title">Checkers: The Tactical Forced Jump</h3>
         <div class="sub" data-i="board1Sub">Short horizons · Mandatory capture · Immediate friction</div>
       </div>
     </div>
@@ -777,7 +778,7 @@ footer.bottom-red-footer strong{
         <text x="36" y="48" text-anchor="middle" font-size="34" fill="#11110f" font-family="serif">♚</text>
       </svg>
       <div>
-        <h3 data-i="board2Title">Chess: The Circumpolar Fortress</h3>
+        <h3 data-i="board2Title">Chess: The Strategic King Maneuver</h3>
         <div class="sub" data-i="board2Sub">Positional restructuring · Balance-sheet fortress · Checkmate trajectory</div>
       </div>
     </div>
@@ -803,7 +804,7 @@ footer.bottom-red-footer strong{
         <circle cx="36" cy="50" r="6" fill="#11110f"/>
       </svg>
       <div>
-        <h3 data-i="board3Title">Go (Weiqi): The Seabed Perimeter</h3>
+        <h3 data-i="board3Title">Go (Weiqi): The Encirclement of Territory</h3>
         <div class="sub" data-i="board3Sub">Deep time · Closing of liberties · Silent spatial hegemony</div>
       </div>
     </div>
@@ -876,13 +877,13 @@ const L = {
     tag:"One world. One move. Every day.",
     searchTitle:"Search the Record",searchPlaceholder:"Search dispatches, moves, or players...",searchBtn:"Search",quickFilters:"Quick filters:",
     calMonth:"October 2026",calLegend:"● Live Move",
-    todayKicker:"The Move of the Day // October 20, 2026",
-    todayTitle:"The Arctic Sovereign Perimeter: Canada and Nordic Allies Close the Circumpolar Optical & Defense Corridor",
-    todayLede:"Joint circumpolar sovereign mandates deploy hardened fiber infrastructure, autonomous surveillance grids, and mineral logistics hubs across the High North, preempting maritime transit contestation. Read through Protocol X-Y-Z and across three boards.",
+    todayKicker:"The Move of the Day // October 19, 2026",
+    todayTitle:"The Fracture of the Global Clearing Grid: Bilateral Commodities Settle Outside the G7 Rail",
+    todayLede:"Central bank digital clearing corridors bypass Western correspondent banking, anchoring new settlement liquidity in vaulted gold and direct bilateral energy swaps. Read through Protocol X-Y-Z and across three boards.",
     xyzTitle:"Protocol X-Y-Z: The Operational Players",
-    xName:"Tactical Air & Surface Scramble",xDesc:"Air defense interception wings operating on short tactical notification cycles, expending alert sorties to counter gray-zone reconnaissance along circumpolar boundaries.",
-    yName:"The Sovereign Arctic Capital Allocator",yDesc:"Sovereign balance sheets and infrastructure banks allocating multi-decade capital to icebreakers, dual-use deepwater berths, and critical mineral processing hubs.",
-    zName:"Circumpolar Ground & Seabed Array",zDesc:"The physical sensor network: subsea fiber, radar arrays, and permanent northern garrisons sealing the physical passages across deep time.",
+    xName:"G7 Regulatory Axis",xDesc:"The enforcement rail operating under short horizons. Trapped in mandatory response cycles, forced to deploy emergency secondary sanctions that cause immediate friction but forfeit long-term surveillance visibility.",
+    yName:"Bilateral Vault Arbiters",yDesc:"Central bank reserve managers and sovereign vaults across the Indian Ocean rim. Absorbing volatility by re-anchoring liquid balances into domestic physical bullion and direct local-currency energy clearing.",
+    zName:"Eurasian Corridor Sovereign",zDesc:"The physical infrastructure powers: port terminals, overland pipeline operators, and critical mineral cartels. Closing physical liberties across space and deep time without relying on Western banking rails.",
     regTitle:"Regional Exposure & Strategic Friction",thRegion:"Geopolitical Basin",thRole:"Vector Role",thImpact:"Operational Impact",
     r1Text:"Secondary sanctions exhaustion, diminishing clearing leverage, and permanent blindness to parallel trade volumes.",
     r2Text:"Massive liquidity capture in physical bullion vaults and rapid expansion of bilateral digital ledger clearing.",
@@ -893,19 +894,19 @@ const L = {
     b3t:"The Move",b3d:"Multilateral central bank corridors activate instant bilateral asset settlement collateralized directly by vaulted bullion and long-term hydrocarbon delivery contracts.",
     b4t:"What to Watch",b4d:"Accelerated sovereign reserve repatriation, secondary banking freezes that fail to bite, and the onset of institutional balance-sheet zugzwang.",
     boardsTitle:"Read Across Three Boards",
-    board1Title:"Checkers: The High-Latitude Intercept",board1Sub:"Short horizons · Mandatory capture · Immediate friction",
-    board2Title:"Chess: The Circumpolar Fortress",board2Sub:"Positional restructuring · Balance-sheet fortress · Checkmate trajectory",
-    board3Title:"Go (Weiqi): The Seabed Perimeter",board3Sub:"Deep time · Closing of liberties · Silent spatial hegemony",
+    board1Title:"Checkers: The Tactical Forced Jump",board1Sub:"Short horizons · Mandatory capture · Immediate friction",
+    board2Title:"Chess: The Strategic King Maneuver",board2Sub:"Positional restructuring · Balance-sheet fortress · Checkmate trajectory",
+    board3Title:"Go (Weiqi): The Encirclement of Territory",board3Sub:"Deep time · Closing of liberties · Silent spatial hegemony",
     lblMove:"The Move:",lblCost:"The Cost:",lblPos:"The Position:",
-    cMove:"Allied air commands scramble rapid interception sorties following unannounced high-altitude sensory sweeps along the Beaufort Sea rim and Greenland airspace.",
-    cCost:"A reactive tactical exchange. Surface defense interceptors fire high-cost patrol cycles for low-cost unmanned intrusions, creating short-term tactical alert fatigue while missing the permanent seabed fiber deployment beneath the ice.",
-    chMove:"Canada and Nordic allies reallocate sovereign sovereign-wealth capital into hardened dual-use deepwater ports and icebreaker fleet recapitalization, locking Arctic logistics directly to sovereign balance sheets.",
-    chPos:"Strategic pieces shift to defend the northern flank. The opposing revisionist forces face zugzwang: contesting sovereign circumpolar jurisdiction requires unsustainable naval logistics in freeze-up conditions, while standing down ratifies allied perimeter hegemony.",
-    goMove:"A synchronized, silent deployment of sovereign optical subsea cables and seabed acoustic arrays anchoring the Northwest Passage directly to the North Atlantic defense loop.",
-    goPos:"Fifty strategic maritime liberties across the circumpolar high north are quietly occupied. Territory is held by physical fiber, deep berths, and unjammable seabed acoustic nodes long before international navigational disputes reach legal tribunals.",
+    cMove:"Western financial authorities announce immediate emergency sanctions and secondary asset freezes against intermediary commercial banks facilitating non-dollar local-currency oil and rare earth settlements.",
+    cCost:"A classic forced jump. Under domestic political theater, the regulator has no legal or optic alternative but to strike the jumping square. However, the mandatory capture sacrifices long-term strategic visibility: every institution frozen out of the SWIFT/CHIPS clearing system is permanently converted into a dedicated clearing hub for the parallel corridor. The move offers short-term political posturing at the expense of terminal regulatory blindness.",
+    chMove:"Non-aligned central banks reallocate liquid foreign exchange reserves away from sovereign debt instruments and into vaulted physical bullion held strictly within domestic territorial borders.",
+    chPos:"The rooks and knights of sovereign finance are shifted from active offensive deployment in foreign money markets back to an unbreachable defensive castle. The opposing side enters zugzwang: any hike in interest rates to defend currency purchasing power deteriorates sovereign debt valuations, while expanding liquidity further accelerates bullion flight. The king is insulated; the pieces in the open file are expendable.",
+    goMove:"A quiet multilateral coordination linking deepwater port concessions, pipeline terminal nodes, and undersea fiber optic cable landings across the Indian Ocean rim and Eurasian land bridge.",
+    goPos:"No pieces were captured; no public ultimatums were broadcast on television. Yet fifty subtle liberties were closed around maritime chokepoints and physical trade conduits. By securing the physical perimeter of energy flow, the opposing naval carrier battle-groups find themselves floating in territory that has already been economically enclosed without a shot being fired.",
     verdictHead:"Terminal Verdict",
-    verdictBody:"The true battle for the High North is not waged through rhetorical diplomatic communiqués or symbolic icebreaker flags. It is won by whoever anchors the fiber to the bedrock and places the acoustic stone where the transit route must navigate.",
-    plainKicker:"In Plain Language // What This Actually Means",plainBadge:"The Non-Technical Reality",plainTitle:"Stripping Away the Jargon",plainP1:"For decades, the Arctic was treated as a frozen, remote buffer that countries didn't need to actively police. As ice recedes and international superpowers eye northern trade shortcuts and untapped minerals, the Arctic has suddenly become the most contested frontier on Earth.",plainP2:"Today's move means Canada and its northern allies have permanently activated a combined network of subsea cables, deepwater ports, and radar barriers. Instead of arguing about who owns the waters, they have physically occupied the routes with infrastructure. The door to the Arctic is locked from the inside.",readEditorialBtn:"Read The Daily Editorial",footerText:"The daily move is free. The archive is the record."
+    verdictBody:"What the western news cycle reports as a tactical sanctions dispute is, on the deep board, the terminal loss of geographic and settlement liberties. You do not win Go by shouting on the television; you win it by quietly placing the stone where the opponent will eventually need to breathe.",
+    plainKicker:"In Plain Language // What This Actually Means",plainBadge:"The Non-Technical Reality",plainTitle:"Stripping Away the Jargon",plainP1:"For decades, whenever two countries wanted to buy or sell oil, metals, or grain, they were practically forced to trade in US dollars and clear the money through Western banks. Because all those payments flowed through computers in New York and Europe, Western governments could flip a switch, freeze anyone's bank account, and stop trade in its tracks.",plainP2:"Today's move means major resource and industrial powers have officially activated a parallel digital payment system backed by real, vaulted gold and direct barter rather than dollars. When Western regulators try to punish these intermediaries, the new system keeps operating untouched. The referee is still blowing the whistle, but the players have moved to an entirely different field where the whistle cannot be heard.",readEditorialBtn:"Read The Daily Editorial",footerText:"The daily move is free. The archive is the record."
   },
   fr:{
     name:"Français",dir:"ltr",
@@ -913,7 +914,7 @@ const L = {
     tag:"Un monde. Un coup. Chaque jour.",
     searchTitle:"Consulter le registre",searchPlaceholder:"Rechercher dépêches, acteurs, mouvements...",searchBtn:"Rechercher",quickFilters:"Filtres rapides :",
     calMonth:"Octobre 2026",calLegend:"● Coup du jour",
-    todayKicker:"Le coup du jour // 20 octobre 2026",
+    todayKicker:"Le coup du jour // 19 octobre 2026",
     todayTitle:"Fracture du réseau de compensation mondial : les matières premières se règlent hors G7",
     todayLede:"Les banques centrales ouvrent des corridors numériques sans passer par les banques correspondantes occidentales, adossés à l'or physique et aux swaps énergétiques.",
     xyzTitle:"Protocole X-Y-Z : Les Acteurs Opérationnels",
@@ -944,14 +945,14 @@ const L = {
     verdictBody:"Ce que les médias occidentaux traitent comme une dispute de sanctions est en réalité la perte définitive des libertés territoriales. On ne gagne pas au Go par le bruit, mais en occupant l'espace où l'adversaire devra respirer.",
     plainKicker:"En clair // Ce que cela signifie vraiment",plainBadge:"La réalité sans jargon",plainTitle:"Dépouillé de tout vocabulaire technique",plainP1:"Pendant des décennies, pour acheter ou vendre du pétrole ou des métaux, les pays devaient presque obligatoirement payer en dollars via des banques occidentales. Comme tout transitait par New York ou l'Europe, les gouvernements occidentaux pouvaient bloquer n'importe quel compte d'un simple clic.",plainP2:"Ce coup signifie que de grandes puissances ont activé un réseau de paiement parallèle adossé à de l'or physique et à des échanges directs. Les sanctions occidentales n'ont plus de prise : l'arbitre continue de siffler, mais les joueurs sont partis jouer sur un autre terrain où le coup de sifflet ne s'entend plus.",readEditorialBtn:"Lire l'éditorial quotidien",footerText:"Le coup du jour est gratuit. L'archive est le registre."
   },
-  es:{name:"Español",dir:"ltr",navToday:"Hoy",navAbout:"Acerca de",navContact:"Contacto",tag:"Un mundo. Una jugada. Cada día.",searchTitle:"Buscar en el registro",searchPlaceholder:"Buscar despachos, jugadores...",searchBtn:"Buscar",quickFilters:"Filtros rápidos:",calMonth:"Octubre 2026",calLegend:"● Jugada del día",todayKicker:"La jugada del día // 20 de octubre de 2026",todayTitle:"Fractura de la red de compensación global: materias primas liquidadas fuera del G7",todayLede:"Los bancos centrales abren corredores digitales directos eludiendo la banca corresponsal occidental, respaldados por oro en bóvedas y canjes energéticos.",xyzTitle:"Protocolo X-Y-Z: Jugadores Operativos",xName:"Eje Regulador G7",xDesc:"Vector reactivo bajo horizontes cortos forzado a aplicar sanciones secundarias que sacrifican la visibilidad de vigilancia a largo plazo.",yName:"Árbitros de Cámaras Bilaterales",yDesc:"Bancos centrales que convierten deuda fiduciaria en bóvedas de lingotes de oro físicos dentro de su propio suelo soberano.",zName:"Soberano del Corredor Euroasiático",zDesc:"Operadores de oleoductos y puertos cerrando libertades territoriales físicas con total independencia de las redes occidentales.",regTitle:"Exposición Regional y Fricción Estratégica",thRegion:"Cuenca Geopolítica",thRole:"Rol Vectorial",thImpact:"Impacto Operacional",r1Text:"Agotamiento de sanciones, ceguera total ante volúmenes comerciales paralelos.",r2Text:"Captación masiva de liquidez física en oro y expansión de liquidación bilateral.",r3Text:"Cierre de corredores terrestres de energía; inmunización de suministros ante bloqueos navales.",beatsTitle:"Anatomía de la jugada diaria",b1t:"Por qué importa",b1d:"La red de pagos global se fractura formalmente en dos bloques no interoperables.",b2t:"El sustrato",b2d:"Divergencia simultánea en Damas, Ajedrez y Go.",b3t:"La jugada",b3d:"Activación de pagos bilaterales directos respaldados por contratos físicos de energía y oro.",b4t:"Qué vigilar",b4d:"Repatriación de reservas de oro y jaque por agotamiento de deuda soberana.",boardsTitle:"Lectura en tres tableros",board1Title:"Damas: Captura obligatoria",board1Sub:"Corto plazo · Fricción inmediata",board2Title:"Ajedrez: Maniobra de Rey",board2Sub:"Fortaleza de balance · Zugzwang",board3Title:"Go: Cerco de territorio",board3Sub:"Tiempo profundo · Cierre de libertades",lblMove:"La jugada:",lblCost:"El coste:",lblPos:"La posición:",cMove:"Sanciones de emergencia contra bancos intermediarios que liquidan petróleo fuera del dólar.",cCost:"Captura forzada. Cada institución excluida se convierte en núcleo del nuevo sistema paralelo.",chMove:"Bancos centrales transfieren reservas a oro en custodia física doméstica.",chPos:"El oponente entra en zugzwang monetario irresoluble.",goMove:"Coordinación de concesiones portuarias y cables marítimos en el eje euroasiático.",goPos:"Cincuenta libertades selladas alrededor del comercio físico sin disparar un tiro.",verdictHead:"Veredicto Terminal",verdictBody:"En Go no se vence gritando en los medios; se vence ocupando el espacio donde el adversario necesitará respirar.",plainKicker:"En lenguaje sencillo // Qué significa realmente",plainBadge:"La realidad sin tecnicismos",plainTitle:"Sin rodeos ni jerga",plainP1:"Durante décadas, para comprar o vender petróleo o trigo, los países se veían forzados a usar dólares y bancos occidentales. Como el dinero pasaba por Nueva York o Europa, Occidente podía congelar cuentas y paralizar el comercio al instante.",plainP2:"La jugada de hoy significa que grandes potencias han activado su propia red de pagos respaldada en oro físico y trueques directos. Las sanciones ya no surten efecto: el árbitro sigue pitando la falta, pero el partido se juega en otra cancha donde el silbato no se oye.",readEditorialBtn:"Leer el editorial diario",footerText:"La jugada diaria es gratuita. El archivo es el registro."},
-  pt:{name:"Português",dir:"ltr",navToday:"Hoje",navAbout:"Sobre",navContact:"Contacto",tag:"Um mundo. Um lance. Todos os dias.",searchTitle:"Consultar o registo",searchPlaceholder:"Pesquisar despachos...",searchBtn:"Pesquisar",quickFilters:"Filtros rápidos:",calMonth:"Outubro 2026",calLegend:"● Lance do dia",todayKicker:"O lance do dia // 20 de outubro de 2026",todayTitle:"Fratura da rede de compensação global: matérias-primas liquidadas fora do G7",todayLede:"Bancos centrais contornam a intermediação ocidental com canais digitais bilaterais lastreados em ouro e swaps de energia direta.",xyzTitle:"Protocolo X-Y-Z: Intervenientes Operacionais",xName:"Eixo Regulatório G7",xDesc:"Vetor tático forçado a capturas mandatárias que encobrem a visão do mercado real.",yName:"Árbitros dos Cofres Bilaterais",yDesc:"Gestores de reservas convertendo liquidez volátil em custódia soberana de ouro.",zName:"Soberano do Corredor Euroasiático",zDesc:"Domínio da infraestrutura física terrestre e marítima alheio aos trilhos ocidentais.",regTitle:"Exposição Regional & Fricção Estratégica",thRegion:"Bacia Geopolítica",thRole:"Função Vetorial",thImpact:"Impacto Operacional",r1Text:"Desgaste de sanções secundárias e perda de hegemonia de compensação.",r2Text:"Captação maciça de reservas em ouro físico e liquidação direta de energia.",r3Text:"Isolamento total de rotas terrestres contra qualquer intervenção marítima.",beatsTitle:"Anatomia do lance diário",b1t:"Por que importa",b1d:"O sistema financeiro mundial fragmenta-se em duas esferas irreconciliáveis.",b2t:"O tabuleiro",b2d:"Ação em cadeia: salto tático em Damas, refúgio no Xadrez, cerco no Go.",b3t:"O lance",b3d:"Ativação de corredores digitais lastreados em ouro e petróleo.",b4t:"O que observar",b4d:"Esgotamento das sanções e avanço do zugzwang nas dívidas soberanas.",boardsTitle:"Leitura nos Três Tabuleiros",board1Title:"Damas: Captura obrigatória",board1Sub:"Curto prazo · Fricção",board2Title:"Xadrez: A Manobra do Rei",board2Sub:"Fortaleza de balanço · Zugzwang",board3Title:"Go: O Cerco Territorial",board3Sub:"Tempo profundo · Fechamento de liberdades",lblMove:"O lance:",lblCost:"O custo:",lblPos:"A posição:",cMove:"Sanções de emergência contra bancos intermediários do comércio não-dólar.",cCost:"Captura forçada: os bancos banidos viram os nós centrais do novo trilho.",chMove:"Bancos centrais acumulam reservas sob a forma de barras de ouro físicas domésticas.",chPos:"O adversário entra em zugzwang estrutural sem saída monetária.",goMove:"Articulação silenciosa de portos e rotas terrestres na Eurásia.",goPos:"Cinquenta liberdades vitais fechadas sem recurso à retórica pública.",verdictHead:"Veredicto Terminal",verdictBody:"Não se vence no Go pelo espetáculo, mas colocando a pedra no local exato de onde dependerá o ar do adversário.",plainKicker:"Em linguagem simples // O que isto significa na prática",plainBadge:"A realidade sem termos técnicos",plainTitle:"Direto ao ponto",plainP1:"Durante décadas, o comércio de petróleo e matérias-primas dependia obrigatoriamente do dólar e de bancos ocidentais. Bastava um comando em Nova Iorque ou na Europa para congelar fundos e bloquear negócios globais.",plainP2:"O movimento de hoje marca a ativação de um sistema alternativo lastreado em barras de ouro e trocas diretas. O árbitro continua a apitar, mas o jogo agora decorre noutro estádio onde o apito não tem alcance.",readEditorialBtn:"Ler o editorial do dia",footerText:"O lance do dia é gratuito. O arquivo é o registro."},
-  de:{name:"Deutsch",dir:"ltr",navToday:"Heute",navAbout:"Über uns",navContact:"Kontakt",tag:"Eine Welt. Ein Zug. Jeden Tag.",searchTitle:"Archiv durchsuchen",searchPlaceholder:"Depeschen, Akteure...",searchBtn:"Suchen",quickFilters:"Schnellfilter:",calMonth:"Oktober 2026",calLegend:"● Zug des Tages",todayKicker:"Der Zug des Tages // 20. Oktober 2026",todayTitle:"Bruch des globalen Clearing-Netzes: Rohstoffhandel löst sich von G7-Schienen",todayLede:"Zentralbanken aktivieren bilaterale digitale Korridore außerhalb westlicher Korrespondenzbanken, gestützt auf physisches Gold und Energie-Swaps.",xyzTitle:"Protokoll X-Y-Z: Die Akteure",xName:"G7-Regulierungsachse",xDesc:"Reaktiver taktischer Akteur unter Schlagzwang, der mit Notfallsanktionen reagiert und langfristige Kontrolle einbüßt.",yName:"Bilaterale Tresor-Schlichter",yDesc:"Währungsreserven-Manager, die Liquidität in heimisches physisches Gold umschichten.",zName:"Eurasischer Korridor-Souverän",zDesc:"Infrastrukturmächte, die Pipelinenetze und Häfen außerhalb westlicher Schienen sichern.",regTitle:"Regionale Exposition & Reibung",thRegion:"Geopolitischer Raum",thRole:"Vektor",thImpact:"Operative Wirkung",r1Text:"Sanktionsermüdung und vollständige Blindheit gegenüber parallelen Handelsströmen.",r2Text:"Massive Goldzuflüsse und Etablierung bilateraler Energie-Abrechnungen.",r3Text:"Schutz physischer Versorgungsketten vor maritimen Sanktionshebeln.",beatsTitle:"Anatomie des täglichen Zuges",b1t:"Warum es zählt",b1d:"Das globale Finanzsystem spaltet sich unumkehrbar in zwei Sphären.",b2t:"Das Brett",b2d:"Dreifache Divergenz in Dame, Schach und Go.",b3t:"Der Zug",b3d:"Aktivierung gold- und rohstoffunterlegter digitaler Zahlungskorridore.",b4t:"Worauf zu achten ist",b4d:"Zunehmender Zugzwang westlicher Zins- und Verschuldungsmodelle.",boardsTitle:"Auf drei Brettern gelesen",board1Title:"Dame: Der Schlagzwang",board1Sub:"Kurzer Horizont · Reibung",board2Title:"Schach: Die Rochade des Königs",board2Sub:"Bilanzfestung · Zugzwang",board3Title:"Go: Die Umzingelung des Raums",board3Sub:"Tiefe Zeit · Schließen der Freiheiten",lblMove:"Der Zug:",lblCost:"Die Kosten:",lblPos:"Die Stellung:",cMove:"Erlass von Notfallsanktionen gegen Clearingbanken außerhalb des Dollarsystems.",cCost:"Klassischer Schlagzwang: Die ausgeschlossenen Banken werden zum Rückgrat des neuen Systems.",chMove:"Umschichtung von Währungsreserven in heimisch gelagertes Gold.",chPos:"Der Gegner gerät in unauflösbaren Zins- und Schulden-Zugzwang.",goMove:"Strategische Sicherung von eurasischen Terminals und Tiefseehäfen.",goPos:"Fünfzig Freiheiten lautlos besetzt, ohne einen Schuss abzugeben.",verdictHead:"Terminales Urteil",verdictBody:"Man gewinnt im Go nicht durch mediale Lautstärke, sondern indem man still den Stein dorthin setzt, wo dem Gegner der Atem ausgeht.",plainKicker:"Im Klartext // Was das wirklich bedeutet",plainBadge:"Ohne Fachjargon",plainTitle:"Die einfache Wahrheit",plainP1:"Jahrzehntelang mussten Staaten Rohstoffe zwingend in US-Dollar über westliche Banken abwickeln. Da alle Zahlungen über New York oder Europa liefen, konnte der Westen jedes Konto per Knopfdruck sperren.",plainP2:"Der heutige Schritt bedeutet: Große Rohstoff- und Industrieländer haben ein paralleles Bezahlsystem gestartet, das auf echtem Gold und direkten Tauschgeschäften basiert. Der Schiedsrichter pfeift zwar weiter, aber die Mannschaften spielen längst auf einem anderen Platz.",readEditorialBtn:"Den Leitartikel des Tages lesen",footerText:"Der tägliche Zug ist frei. Das Archiv ist das Protokoll."},
-  ru:{name:"Русский",dir:"ltr",navToday:"Сегодня",navAbout:"О проекте",navContact:"Контакты",tag:"Один мир. Один ход. Каждый день.",searchTitle:"Поиск по летописи",searchPlaceholder:"Поиск депеш, игроков...",searchBtn:"Найти",quickFilters:"Фильтры:",calMonth:"Октябрь 2026",calLegend:"● Ход дня",todayKicker:"Ход дня // 20 октября 2026",todayTitle:"Разрыв глобальной клиринговой сети: сырьевые расчеты вне каналов G7",todayLede:"Центральные банки запускают прямые цифровые шлюзы в обход западных банков-корреспондентов с опорой на золото и прямые энергосвопы.",xyzTitle:"Протокол X-Y-Z: Действующие Силы",xName:"Регуляторная ось G7",xDesc:"Тактический вектор обязательного взятия в шашках: вводит вторичные санкции, теряя контроль над теневым объемом.",yName:"Арбитры Двусторонних Хранилищ",yDesc:"Центробанки, конвертирующие бумажные обязательства в физические золотые слитки в собственных юрисдикциях.",zName:"Суверен Евразийского Коридора",zDesc:"Владельцы физической инфраструктуры труб и терминалов, замыкающие пространство вне долларовой зоны.",regTitle:"Региональное Влияние и Трение",thRegion:"Геополитический Бассейн",thRole:"Вектор",thImpact:"Практический Итог",r1Text:"Исчерпание санкционного ресурса и полная слепота к параллельным потокам.",r2Text:"Накопление золотой ликвидности и двусторонних клиринговых реестров.",r3Text:"Защита континентальных поставок сырья от морской блокады.",beatsTitle:"Анатомия ежедневного хода",b1t:"Почему это важно",b1d:"Мировая финансовая система необратимо раскололась на две зоны.",b2t:"Среда",b2d:"Развитие событий одновременно в Шашках, Шахматах и Го.",b3t:"Ход",b3d:"Прямые цифровые расчеты под залог физического золота и нефти.",b4t:"За чем следить",b4d:"Репатриация резервов и переход оппонента в состояние цугцванга.",boardsTitle:"Чтение по трем доскам",board1Title:"Шашки: Обязательный бой",board1Sub:"Короткий горизонт · Трение",board2Title:"Шахматы: Маневр Короля",board2Sub:"Крепость баланса · Цугцванг",board3Title:"Го: Окружение пространства",board3Sub:"Глубокое время · Закрытие дыханий",lblMove:"Ход:",lblCost:"Цена:",lblPos:"Позиция:",cMove:"Санкции против банков, проводящих платежи за сырье в национальных валютах.",cCost:"Вынужденный ход: отключенные банки становятся опорными узлами нового коридора.",chMove:"Перевод резервов ЦБ в физическое золото в суверенных хранилищах.",chPos:"Противник загнан в долговой цугцванг.",goMove:"Контроль над портами и кабельными линиями на евразийском пространстве.",goPos:"Перекрыто 50 дыханий без единого выстрела и публичного шума.",verdictHead:"Окончательный Вердикт",verdictBody:"В Го не побеждают криком с трибун — побеждают тихой постановкой камня в точку, где противник не сможет дышать.",plainKicker:"Простыми словами // Что это значит на самом деле",plainBadge:"Суть без сложной терминологии",plainTitle:"Очищено от финансового жаргона",plainP1:"Десятилетиями мировая торговля нефтью и металлами шла в долларах через западные банки. Это давало США и Европе возможность одним нажатием кнопки заблокировать платежи и заморозить счета любой неугодной страны.",plainP2:"Сегодняшний ход означает, что ключевые ресурсные державы запустили независимую систему расчетов на основе физического золота и прямого обмена. Санкции перестают работать: судья по привычке свистит в свисток, но игра уже идет на другом поле, где его свистка никто не слышит.",readEditorialBtn:"Читать редакционную статью",footerText:"Ход дня открыт для всех. Архив — это летопись."},
-  zh:{name:"中文",dir:"ltr",navToday:"今日",navAbout:"关于我们",navContact:"联系与信号",tag:"一个世界。一步棋。每一天。",searchTitle:"检索历史记录",searchPlaceholder:"搜索快讯、参与者...",searchBtn:"搜索",quickFilters:"快捷分类：",calMonth:"2026年 10月",calLegend:"● 今日棋步",todayKicker:"今日这一步 // 2026年10月20日",todayTitle:"全球清算网络分裂：大宗商品脱离西方G7通道结算",todayLede:"多国央行绕过西方代理行网络启用直接数字清算走廊，以实物黄金及双边能源直接结算。依循XYZ协议及三盘棋洞察全局。",xyzTitle:"XYZ协议：核心博弈实体",xName:"G7监管执行轴心",xDesc:"短周期战术受困者：被逼发起次级制裁，表面展示强硬，实则彻底丧失对平行清算网的监控权。",yName:"双边实物金库枢纽",yDesc:"非西方央行储备管理者：将纸面债务迅速置换为境内实物黄金，搭建去美元能源直接兑换走廊。",zName:"欧亚陆桥实体主权",zDesc:"深水港口与管道运营方：在空间和漫长周期中步步围拢，脱离西方金融航道直接掌控实体资源。",regTitle:"地缘区域敞口与战略摩擦",thRegion:"地缘区域",thRole:"协议角色",thImpact:"运营影响",r1Text:"次级制裁效力衰竭，对平行能源与资源结算彻底失明。",r2Text:"实物黄金储备巨幅吸筹，双边账本直接清算体系成型。",r3Text:"欧亚陆路管网闭环，彻底免疫海上封锁风险。",beatsTitle:"每日一步的解构",b1t:"为何重要",b1d:"全球结算网络正式裂变为两个不可互通的平行世界。",b2t:"博弈基底",b2d:"跳棋被迫吃子、国象王翼堡垒与围棋大势合围同步显现。",b3t:"这一步",b3d:"多边央行启动由实物黄金与原油对冲的即时清算系统。",b4t:"关注什么",b4d:"黄金储备回流与西方国债体系陷入无可挽回的迫移局（Zugzwang）。",boardsTitle:"三种棋盘审视全局",board1Title:"西洋跳棋：战术被迫吃子",board1Sub:"短视 · 必吃 · 即时损耗",board2Title:"国际象棋：王翼战略筑垒",board2Sub:"资产重整 · 迫移局",board3Title:"围棋：领地与气数合围",board3Sub:"深远周期 · 紧气 · 空间定式",lblMove:"棋步：",lblCost:"代价：",lblPos:"局面：",cMove:"西方监管机构对经手本币结算石油的中间银行实施次级资产冻结。",cCost:"标准的被迫吃子：被剔除出SWIFT的机构瞬间转型为平行走廊的专用清算总行。",chMove:"多国央行抛售主权债务凭证，将清算资产转为国内实物金条。",chPos:"对手陷入加息贬值债券、降息黄金外流的两难迫移局面。",goMove:"悄然整合印度洋至欧亚走廊的深水港特许权与海底光缆节点。",goPos:"不鸣一枪，不置一词，对手舰队所浮弋的海域已在经济气数上被合围。",verdictHead:"终极裁定",verdictBody:"在喧嚣中你赢不了围棋；唯有将棋子静静落在对手维系呼吸的要害之位。",plainKicker:"通俗解读 // 这究竟意味着什么",plainBadge:"剥离术语的实质真相",plainTitle:"用大白话讲透实质",plainP1:"几十年来，全球买卖石油、粮食和矿产几乎都必须使用美元并通过西方银行清算。因为所有资金都要经过纽约和欧洲的服务器，西方政府随时可以一键冻结账户、切断贸易。",plainP2:"今日这一步意味着资源和大国正式启用了由实物黄金与以货易货支撑的平行数字通道。当外部再挥舞制裁大棒时已无法奏效：裁判依然在拼命吹哨，但博弈者早就换到了一个听不见哨声的新球场。",readEditorialBtn:"阅读今日深度社论",footerText:"当日快讯免费开放。档案库即是终极记录。"},
-  ja:{name:"日本語",dir:"ltr",navToday:"今日",navAbout:"概要",navContact:"連絡先",tag:"ひとつの世界。ひとつの一手。毎日。",searchTitle:"アーカイブ検索",searchPlaceholder:"ディスパッチ、プレイヤーを検索...",searchBtn:"検索",quickFilters:"クイック抽出:",calMonth:"2026年 10月",calLegend:"● 本日の一手",todayKicker:"本日の一手 // 2026年10月20日",todayTitle:"世界決済網の分断：コモディティがG7金融レールを離脱",todayLede:"中央銀行が西側のコルレス銀行を経由しない二国間デジタル決済回廊を稼働。金現物とエネルギー直接交換をXYZプロトコルと三盤で読み解く。",xyzTitle:"プロトコル X-Y-Z：中核プレイヤー",xName:"G7規制・執行軸",xDesc:"短期的視界で強制応手を強いられる戦術主勢力。制裁を科すたびに並行網に対する監視能力を永久に喪失する。",yName:"二国間金庫の裁定者",yDesc:"流動性を自国内の実物金塊と現地通貨決済へと組み換える非同盟中央銀行群。",zName:"ユーラシア回廊の主権体",zDesc:"パイプラインと港湾インフラを物理的に押さえ、西側金融レールを介さず空間を支配する勢力。",regTitle:"地域別エクスポージャーと摩擦",thRegion:"地縁ブロック",thRole:"ベクトル",thImpact:"実質的影響",r1Text:"二次制裁の疲弊と、並行貿易に対する監視能力の完全な消失。",r2Text:"実物ゴールド金庫への流動性集中と二国間台帳決済の確立。",r3Text:"陸上エネルギー網の完結による海上封鎖リスクの無力化。",beatsTitle:"一手のアナトミー",b1t:"なぜ重要か",b1d:"世界の金融基盤が不可逆的に二つの並行世界へと断絶した。",b2t:"盤の選択",b2d:"チェッカーの強制取り、チェスの王防御、囲碁の合囲が同時に進行。",b3t:"今の一手",b3d:"実物ゴールドと長期炭化水素供給に裏打ちされた即時決済回廊の稼働。",b4t:"注目点",b4d:"金現物の本国送還とソブリン債務モデルのツークツワンク突入。",boardsTitle:"三つの盤で読み解く",board1Title:"チェッカー：強制取りの罠",board1Sub:"近視眼的 · 強制着手",board2Title:"チェス：キングの防壁構築",board2Sub:"資産再編 · ツークツワンク",board3Title:"囲碁：領域と駄目の合囲",board3Sub:"深遠な時間 · 駄目を詰める",lblMove:"一手:",lblCost:"代償:",lblPos:"局面:",cMove:"非ドル原油決済に関与した中間銀行に対する二次資産凍結の発動。",cCost:"強制取りの代償：制裁された金融機関がそのまま並行網の専用ハブへと恒久化。",chMove:"中央銀行が保有外貨を自国内の保管金塊へと急速シフト。",chPos:"利上げしても利下げしても自滅する金融ツークツワンクの完成。",goMove:"インド洋からユーラシアに跨る深水港と光海底ケーブルの静かな掌握。",goPos:"一発の銃声もなく、相手艦隊が展開する海域の背後にある補給空間を囲い込んだ。",verdictHead:"最終的裁定",verdictBody:"テレビで叫んでも囲碁には勝てない。相手が呼吸を必要とする急所に、静かに石を打つ者だけが勝つ。",plainKicker:"平易な言葉で // これが意味する本質",plainBadge:"専門用語を排した現実",plainTitle:"核心をわかりやすく",plainP1:"何十年もの間、国家間で原油や鉱物を取引する際は、ドルを使い西側の銀行を経由せざるを得ませんでした。そのため、ニューヨークや欧州のスイッチ一つで決済を止められ、資金を凍結されてきました。",plainP2:"今日の一手は、ドルを介さず実物ゴールドと直接交換で動く独自の決済網が実働したことを意味します。いくら西側が制裁を科しても機能し続けます。審判は笛を吹いていますが、選手たちはすでに笛の音が届かない別の競技場へ移動しています。",readEditorialBtn:"本日の社説を読む",footerText:"最新の一手は無料公開。アーカイブこそが真の記録。"},
-  hi:{name:"हिन्दी",dir:"ltr",navToday:"आज",navAbout:"परिचय",navContact:"संपर्क",tag:"एक विश्व। एक चाल। हर दिन।",searchTitle:"अभिलेख में खोजें",searchPlaceholder:"खोजें...",searchBtn:"खोजें",quickFilters:"त्वरित फ़िल्टर:",calMonth:"अक्टूबर 2026",calLegend:"● आज की चाल",todayKicker:"आज की चाल // 20 अक्टूबर 2026",todayTitle:"वैश्विक क्लियरिंग नेटवर्क का विखंडन: वस्तु व्यापार G7 तंत्र से बाहर",todayLede:"केंद्रीय बैंकों ने पश्चिमी बैंकों को दरकिनार करते हुए स्वर्ण और ऊर्जा आधारित द्विपक्षीय प्रत्यक्ष गलियारे सक्रिय किए।",xyzTitle:"प्रोटोकॉल X-Y-Z: प्रमुख रणनीतिक खिलाड़ी",xName:"G7 विनियामक धुरी",xDesc:"मजबूर प्रतिक्रिया में फंसा तंत्र, जो नए प्रतिबंध लगाकर दीर्घकालिक निगरानी क्षमता खो रहा है।",yName:"द्विपक्षीय तिजोरी संरक्षक",yDesc:"अमरीकी ऋण से निकलकर घरेलू भौतिक सोने में तरलता सुरक्षित करने वाले केंद्रीय बैंक।",zName:"यूरेशियाई गलियारा प्रभुत्व",zDesc:"जमीन पर पाइपलाइन और बंदरगाहों के नियंत्रण से पश्चिमी नेटवर्क को निष्प्रभावी बनाने वाली शक्तियां।",regTitle:"क्षेत्रीय प्रभाव और रणनीतिक घर्षण",thRegion:"क्षेत्र",thRole:"भूमिका",thImpact:"परिणाम",r1Text:"प्रतिबंधों की विफलता और समानांतर व्यापार से पूर्ण अनभिज्ञता।",r2Text:"भौतिक सोने में तरलता वृद्धि और प्रत्यक्ष द्विपक्षीय व्यापार का विस्तार।",r3Text:"ऊर्जा गलियारों का भूमिगत घेराव, समुद्री नाकेबंदी का प्रभाव शून्य।",beatsTitle:"दैनिक चाल का विश्लेषण",b1t:"यह क्यों मायने रखता है",b1d:"विश्व की वित्तीय प्रणाली दो स्वतंत्र गलियारों में विभाजित हो चुकी है।",b2t:"बिसात",b2d:"चेकर्स, शतरंज और गो का एक साथ संचालन।",b3t:"चाल",b3d:"सोने और तेल पर आधारित डिजिटल द्विपक्षीय भुगतान की शुरुआत।",b4t:"किस पर नज़र रखें",b4d:"स्वर्ण वापसी और विरोधी खेमे की वित्तीय लाचारी।",boardsTitle:"तीन बिसातों पर विश्लेषण",board1Title:"चेकर्स: अनिवार्य चाल",board1Sub:"मजबूरी · तत्काल घर्षण",board2Title:"शतरंज: राजा की किलेबंदी",board2Sub:"संपत्ति पुनर्गठन · जुगज़वांग",board3Title:"गो: क्षेत्र की घेराबंदी",board3Sub:"दीर्घकाल · शांति से घेराव",lblMove:"चाल:",lblCost:"लागत:",lblPos:"स्थिति:",cMove:"गैर-डॉलर व्यापार करने वाले बैंकों पर प्रतिबंध।",cCost:"बहिष्कृत बैंक समानांतर तंत्र की मुख्य धुरी बन गए।",chMove:"विदेशी ऋणपत्रों से निकलकर भौतिक स्वर्ण में संचित भंडार।",chPos:"विरोधी ऐसी स्थिति में जहां हर अगला कदम नुकसानदेह है।",goMove:"बंदरगाहों और रणनीतिक गलियारों का शांतिपूर्ण समन्वय।",goPos:"बिना किसी शोर के विपक्षी जहाजों के इर्द-गिर्द का आर्थिक दायरा घेर लिया गया।",verdictHead:"अंतिम निष्कर्ष",verdictBody:"गो की बाजी शोर मचाकर नहीं, बल्कि उस स्थान पर पत्थर रखकर जीती जाती है जहां विरोधी को सांस लेनी है।",plainKicker:"सरल भाषा में // इसका वास्तविक अर्थ क्या है",plainBadge:"तकनीकी शब्दों से परे यथार्थ",plainTitle:"सीधी और स्पष्ट बात",plainP1:"दशकों से तेल या खनिजों का व्यापार अमेरिकी डॉलर और पश्चिमी बैंकों के ज़रिये करने की मजबूरी थी। इसका मतलब था कि पश्चिमी देश जब चाहें एक बटन दबाकर किसी भी खाते को फ्रीज़ कर व्यापार रोक सकते थे।",plainP2:"आज की चाल का सीधा अर्थ है कि प्रमुख देशों ने सोने और प्रत्यक्ष वस्तु विनिमय पर आधारित अपना स्वतंत्र भुगतान तंत्र चालू कर दिया है। अब प्रतिबंध बेअसर हैं: रेफरी सीटी बजाता रह गया, और खिलाड़ी उस मैदान पर चले गए जहां सीटी की आवाज़ ही नहीं पहुंचती।",readEditorialBtn:"आज का संपादकीय पढ़ें",footerText:"आज की चाल निःशुल्क है। संग्रह ही वास्तविक अभिलेख है।"},
-  ar:{name:"العربية",dir:"rtl",navToday:"اليوم",navAbout:"عن المشروع",navContact:"اتصال",tag:"عالم واحد. نقلة واحدة. كل يوم.",searchTitle:"البحث في السجل",searchPlaceholder:"ابحث...",searchBtn:"بحث",quickFilters:"تصفية سريعة:",calMonth:"أكتوبر 2026",calLegend:"● نقلة اليوم",todayKicker:"نقلة اليوم // 20 أكتوبر 2026",todayTitle:"انقسام شبكة المقاصة العالمية: تسوية السلع الأساسية خارج قنوات مجموعة السبع",todayLede:"البنوك المركزية تفعل ممرات رقمية ثنائية متجاوزة البنوك المراسلة الغربية، مرتكزة على الذهب العيني ومبادلات الطاقة المباشرة وفق بروتوكول X-Y-Z.",xyzTitle:"بروتوكول X-Y-Z: اللاعبون الفاعلون",xName:"محور مجموعة السبع التنظيمي",xDesc:"المحرك التكتيكي الخاضع للأكل الإجباري: يفرض عقوبات فورية تفقده الرقابة طويلة الأمد على المسارات الموازية.",yName:"وسطاء الخزائن الثنائية",yDesc:"مديرو الاحتياطيات الذين يستبدلون الديون الورقية بسبائك الذهب العيني داخل حدودهم الوطنية.",zName:"سيادة الممر الأوراسي",zDesc:"قوى البنية التحتية والموانئ التي تحكم إغلاق المنافذ الحيوية متجاهلة المنظومة المالية الغربية.",regTitle:"الانكشاف الإقليمي والاحتكاك الاستراتيجي",thRegion:"الحوض الجيوسياسي",thRole:"المسار",thImpact:"الأثر التشغيلي",r1Text:"استنزاف سلاح العقوبات والعمى التام عن أحجام التجارة الموازية.",r2Text:"جذب سيولة هائلة نحو خزائن الذهب وتسريع الدفاتر المباشرة.",r3Text:"إحكام السيطرة على خطوط الطاقة البرية وتحصينها ضد أي حصار بحري.",beatsTitle:"تشريح النقلة اليومية",b1t:"لماذا يهم",b1d:"انشطرت الشبكة المالية العالمية رسمياً إلى منطقتين مستقلتين تماماً.",b2t:"الرقعة",b2d:"حركة ثلاثية: أكلٌ إلزامي في الداما، تحصينٌ في الشطرنج، وتطويقٌ صامت في الغو.",b3t:"النقلة",b3d:"تفعيل تسويات رقمية فورية مدعومة بالذهب العيني والنفط.",b4t:"ما يجب مراقبته",b4d:"تسارع استعادة الذهب ودخول الديون الغربية في حالة شلل تسعيري حتمي.",boardsTitle:"قراءة عبر ثلاث رقع",board1Title:"الداما: الأكل الإجباري",board1Sub:"أفق قصير · احتكاك مباشر",board2Title:"الشطرنج: تحصين الملك",board2Sub:"إعادة هيكلة الميزانيات · تسوغتسفانغ",board3Title:"الغو: تطويق الأرض",board3Sub:"زمن عميق · خنق المنافذ",lblMove:"النقلة:",lblCost:"الثمن:",lblPos:"الوضعية:",cMove:"عقوبات غربية طارئة وتجميد أصول للمصارف الوسيطة في تجارة النفط غير الدولارية.",cCost:"أكل إجباري: المؤسسات المستبعدة تتحول فوراً إلى مراكز تسوية حصرية للنظام الجديد.",chMove:"تحويل الاحتياطيات النقدية السيادية إلى سبائك ذهبية مودعة محلياً.",chPos:"الطرف الآخر عالق في مأزق مالي حتمي: رفع الفائدة يكسر سنداته، وخفضها يهرب بالذهب.",goMove:"تنسيق موانئ المياه العميقة وخطوط الأنابيب عبر المحيط الهندي وأوراسيا.",goPos:"إغلاق 50 منفذاً حيوياً بهدوء تام دون إطلاق رصاصة أو ضجيج تلفزيوني.",verdictHead:"الحكم النهائي",verdictBody:"لا تفوز في لعبة الغو بالصراخ أمام الكاميرات؛ بل بوضع الحجر بصمت في المكان الذي سيختنق فيه الخصم غداً.",plainKicker:"بلغة مبسطة // ماذا يعني هذا عملياً",plainBadge:"الواقع مجرداً من التعقيد التقني",plainTitle:"جوهر الأمر بدون مصطلحات معقدة",plainP1:"لعقود طويلة، كان شراء النفط والسلع الأساسية يستلزم حصراً استخدام الدولار والمرور عبر البنوك الغربية. وبما أن كل الأموال تمر عبر نيويورك وأوروبا، كان بإمكان الحكومات الغربية تجميد أي حساب وإيقاف التجارة بكبسة زر.",plainP2:"نقلة اليوم تعني أن دولاً كبرى فعّلت رسمياً نظام تسوية موازياً يستند إلى سبائك الذهب العيني والمبادلة المباشرة. لم تعد العقوبات ذات جدوى: الحكم ما زال يطلق صافرته، لكن اللاعبين انتقلوا بالفعل إلى ملعب آخر لا تصل إليه الصافرة.",readEditorialBtn:"قراءة الافتتاحية اليومية",footerText:"نقلة اليوم مجانية. الأرشيف هو السجل الحقيقي."}
+  es:{name:"Español",dir:"ltr",navToday:"Hoy",navAbout:"Acerca de",navContact:"Contacto",tag:"Un mundo. Una jugada. Cada día.",searchTitle:"Buscar en el registro",searchPlaceholder:"Buscar despachos, jugadores...",searchBtn:"Buscar",quickFilters:"Filtros rápidos:",calMonth:"Octubre 2026",calLegend:"● Jugada del día",todayKicker:"La jugada del día // 19 de octubre de 2026",todayTitle:"Fractura de la red de compensación global: materias primas liquidadas fuera del G7",todayLede:"Los bancos centrales abren corredores digitales directos eludiendo la banca corresponsal occidental, respaldados por oro en bóvedas y canjes energéticos.",xyzTitle:"Protocolo X-Y-Z: Jugadores Operativos",xName:"Eje Regulador G7",xDesc:"Vector reactivo bajo horizontes cortos forzado a aplicar sanciones secundarias que sacrifican la visibilidad de vigilancia a largo plazo.",yName:"Árbitros de Cámaras Bilaterales",yDesc:"Bancos centrales que convierten deuda fiduciaria en bóvedas de lingotes de oro físicos dentro de su propio suelo soberano.",zName:"Soberano del Corredor Euroasiático",zDesc:"Operadores de oleoductos y puertos cerrando libertades territoriales físicas con total independencia de las redes occidentales.",regTitle:"Exposición Regional y Fricción Estratégica",thRegion:"Cuenca Geopolítica",thRole:"Rol Vectorial",thImpact:"Impacto Operacional",r1Text:"Agotamiento de sanciones, ceguera total ante volúmenes comerciales paralelos.",r2Text:"Captación masiva de liquidez física en oro y expansión de liquidación bilateral.",r3Text:"Cierre de corredores terrestres de energía; inmunización de suministros ante bloqueos navales.",beatsTitle:"Anatomía de la jugada diaria",b1t:"Por qué importa",b1d:"La red de pagos global se fractura formalmente en dos bloques no interoperables.",b2t:"El sustrato",b2d:"Divergencia simultánea en Damas, Ajedrez y Go.",b3t:"La jugada",b3d:"Activación de pagos bilaterales directos respaldados por contratos físicos de energía y oro.",b4t:"Qué vigilar",b4d:"Repatriación de reservas de oro y jaque por agotamiento de deuda soberana.",boardsTitle:"Lectura en tres tableros",board1Title:"Damas: Captura obligatoria",board1Sub:"Corto plazo · Fricción inmediata",board2Title:"Ajedrez: Maniobra de Rey",board2Sub:"Fortaleza de balance · Zugzwang",board3Title:"Go: Cerco de territorio",board3Sub:"Tiempo profundo · Cierre de libertades",lblMove:"La jugada:",lblCost:"El coste:",lblPos:"La posición:",cMove:"Sanciones de emergencia contra bancos intermediarios que liquidan petróleo fuera del dólar.",cCost:"Captura forzada. Cada institución excluida se convierte en núcleo del nuevo sistema paralelo.",chMove:"Bancos centrales transfieren reservas a oro en custodia física doméstica.",chPos:"El oponente entra en zugzwang monetario irresoluble.",goMove:"Coordinación de concesiones portuarias y cables marítimos en el eje euroasiático.",goPos:"Cincuenta libertades selladas alrededor del comercio físico sin disparar un tiro.",verdictHead:"Veredicto Terminal",verdictBody:"En Go no se vence gritando en los medios; se vence ocupando el espacio donde el adversario necesitará respirar.",plainKicker:"En lenguaje sencillo // Qué significa realmente",plainBadge:"La realidad sin tecnicismos",plainTitle:"Sin rodeos ni jerga",plainP1:"Durante décadas, para comprar o vender petróleo o trigo, los países se veían forzados a usar dólares y bancos occidentales. Como el dinero pasaba por Nueva York o Europa, Occidente podía congelar cuentas y paralizar el comercio al instante.",plainP2:"La jugada de hoy significa que grandes potencias han activado su propia red de pagos respaldada en oro físico y trueques directos. Las sanciones ya no surten efecto: el árbitro sigue pitando la falta, pero el partido se juega en otra cancha donde el silbato no se oye.",readEditorialBtn:"Leer el editorial diario",footerText:"La jugada diaria es gratuita. El archivo es el registro."},
+  pt:{name:"Português",dir:"ltr",navToday:"Hoje",navAbout:"Sobre",navContact:"Contacto",tag:"Um mundo. Um lance. Todos os dias.",searchTitle:"Consultar o registo",searchPlaceholder:"Pesquisar despachos...",searchBtn:"Pesquisar",quickFilters:"Filtros rápidos:",calMonth:"Outubro 2026",calLegend:"● Lance do dia",todayKicker:"O lance do dia // 19 de outubro de 2026",todayTitle:"Fratura da rede de compensação global: matérias-primas liquidadas fora do G7",todayLede:"Bancos centrais contornam a intermediação ocidental com canais digitais bilaterais lastreados em ouro e swaps de energia direta.",xyzTitle:"Protocolo X-Y-Z: Intervenientes Operacionais",xName:"Eixo Regulatório G7",xDesc:"Vetor tático forçado a capturas mandatárias que encobrem a visão do mercado real.",yName:"Árbitros dos Cofres Bilaterais",yDesc:"Gestores de reservas convertendo liquidez volátil em custódia soberana de ouro.",zName:"Soberano do Corredor Euroasiático",zDesc:"Domínio da infraestrutura física terrestre e marítima alheio aos trilhos ocidentais.",regTitle:"Exposição Regional & Fricção Estratégica",thRegion:"Bacia Geopolítica",thRole:"Função Vetorial",thImpact:"Impacto Operacional",r1Text:"Desgaste de sanções secundárias e perda de hegemonia de compensação.",r2Text:"Captação maciça de reservas em ouro físico e liquidação direta de energia.",r3Text:"Isolamento total de rotas terrestres contra qualquer intervenção marítima.",beatsTitle:"Anatomia do lance diário",b1t:"Por que importa",b1d:"O sistema financeiro mundial fragmenta-se em duas esferas irreconciliáveis.",b2t:"O tabuleiro",b2d:"Ação em cadeia: salto tático em Damas, refúgio no Xadrez, cerco no Go.",b3t:"O lance",b3d:"Ativação de corredores digitais lastreados em ouro e petróleo.",b4t:"O que observar",b4d:"Esgotamento das sanções e avanço do zugzwang nas dívidas soberanas.",boardsTitle:"Leitura nos Três Tabuleiros",board1Title:"Damas: Captura obrigatória",board1Sub:"Curto prazo · Fricção",board2Title:"Xadrez: A Manobra do Rei",board2Sub:"Fortaleza de balanço · Zugzwang",board3Title:"Go: O Cerco Territorial",board3Sub:"Tempo profundo · Fechamento de liberdades",lblMove:"O lance:",lblCost:"O custo:",lblPos:"A posição:",cMove:"Sanções de emergência contra bancos intermediários do comércio não-dólar.",cCost:"Captura forçada: os bancos banidos viram os nós centrais do novo trilho.",chMove:"Bancos centrais acumulam reservas sob a forma de barras de ouro físicas domésticas.",chPos:"O adversário entra em zugzwang estrutural sem saída monetária.",goMove:"Articulação silenciosa de portos e rotas terrestres na Eurásia.",goPos:"Cinquenta liberdades vitais fechadas sem recurso à retórica pública.",verdictHead:"Veredicto Terminal",verdictBody:"Não se vence no Go pelo espetáculo, mas colocando a pedra no local exato de onde dependerá o ar do adversário.",plainKicker:"Em linguagem simples // O que isto significa na prática",plainBadge:"A realidade sem termos técnicos",plainTitle:"Direto ao ponto",plainP1:"Durante décadas, o comércio de petróleo e matérias-primas dependia obrigatoriamente do dólar e de bancos ocidentais. Bastava um comando em Nova Iorque ou na Europa para congelar fundos e bloquear negócios globais.",plainP2:"O movimento de hoje marca a ativação de um sistema alternativo lastreado em barras de ouro e trocas diretas. O árbitro continua a apitar, mas o jogo agora decorre noutro estádio onde o apito não tem alcance.",readEditorialBtn:"Ler o editorial do dia",footerText:"O lance do dia é gratuito. O arquivo é o registro."},
+  de:{name:"Deutsch",dir:"ltr",navToday:"Heute",navAbout:"Über uns",navContact:"Kontakt",tag:"Eine Welt. Ein Zug. Jeden Tag.",searchTitle:"Archiv durchsuchen",searchPlaceholder:"Depeschen, Akteure...",searchBtn:"Suchen",quickFilters:"Schnellfilter:",calMonth:"Oktober 2026",calLegend:"● Zug des Tages",todayKicker:"Der Zug des Tages // 19. Oktober 2026",todayTitle:"Bruch des globalen Clearing-Netzes: Rohstoffhandel löst sich von G7-Schienen",todayLede:"Zentralbanken aktivieren bilaterale digitale Korridore außerhalb westlicher Korrespondenzbanken, gestützt auf physisches Gold und Energie-Swaps.",xyzTitle:"Protokoll X-Y-Z: Die Akteure",xName:"G7-Regulierungsachse",xDesc:"Reaktiver taktischer Akteur unter Schlagzwang, der mit Notfallsanktionen reagiert und langfristige Kontrolle einbüßt.",yName:"Bilaterale Tresor-Schlichter",yDesc:"Währungsreserven-Manager, die Liquidität in heimisches physisches Gold umschichten.",zName:"Eurasischer Korridor-Souverän",zDesc:"Infrastrukturmächte, die Pipelinenetze und Häfen außerhalb westlicher Schienen sichern.",regTitle:"Regionale Exposition & Reibung",thRegion:"Geopolitischer Raum",thRole:"Vektor",thImpact:"Operative Wirkung",r1Text:"Sanktionsermüdung und vollständige Blindheit gegenüber parallelen Handelsströmen.",r2Text:"Massive Goldzuflüsse und Etablierung bilateraler Energie-Abrechnungen.",r3Text:"Schutz physischer Versorgungsketten vor maritimen Sanktionshebeln.",beatsTitle:"Anatomie des täglichen Zuges",b1t:"Warum es zählt",b1d:"Das globale Finanzsystem spaltet sich unumkehrbar in zwei Sphären.",b2t:"Das Brett",b2d:"Dreifache Divergenz in Dame, Schach und Go.",b3t:"Der Zug",b3d:"Aktivierung gold- und rohstoffunterlegter digitaler Zahlungskorridore.",b4t:"Worauf zu achten ist",b4d:"Zunehmender Zugzwang westlicher Zins- und Verschuldungsmodelle.",boardsTitle:"Auf drei Brettern gelesen",board1Title:"Dame: Der Schlagzwang",board1Sub:"Kurzer Horizont · Reibung",board2Title:"Schach: Die Rochade des Königs",board2Sub:"Bilanzfestung · Zugzwang",board3Title:"Go: Die Umzingelung des Raums",board3Sub:"Tiefe Zeit · Schließen der Freiheiten",lblMove:"Der Zug:",lblCost:"Die Kosten:",lblPos:"Die Stellung:",cMove:"Erlass von Notfallsanktionen gegen Clearingbanken außerhalb des Dollarsystems.",cCost:"Klassischer Schlagzwang: Die ausgeschlossenen Banken werden zum Rückgrat des neuen Systems.",chMove:"Umschichtung von Währungsreserven in heimisch gelagertes Gold.",chPos:"Der Gegner gerät in unauflösbaren Zins- und Schulden-Zugzwang.",goMove:"Strategische Sicherung von eurasischen Terminals und Tiefseehäfen.",goPos:"Fünfzig Freiheiten lautlos besetzt, ohne einen Schuss abzugeben.",verdictHead:"Terminales Urteil",verdictBody:"Man gewinnt im Go nicht durch mediale Lautstärke, sondern indem man still den Stein dorthin setzt, wo dem Gegner der Atem ausgeht.",plainKicker:"Im Klartext // Was das wirklich bedeutet",plainBadge:"Ohne Fachjargon",plainTitle:"Die einfache Wahrheit",plainP1:"Jahrzehntelang mussten Staaten Rohstoffe zwingend in US-Dollar über westliche Banken abwickeln. Da alle Zahlungen über New York oder Europa liefen, konnte der Westen jedes Konto per Knopfdruck sperren.",plainP2:"Der heutige Schritt bedeutet: Große Rohstoff- und Industrieländer haben ein paralleles Bezahlsystem gestartet, das auf echtem Gold und direkten Tauschgeschäften basiert. Der Schiedsrichter pfeift zwar weiter, aber die Mannschaften spielen längst auf einem anderen Platz.",readEditorialBtn:"Den Leitartikel des Tages lesen",footerText:"Der tägliche Zug ist frei. Das Archiv ist das Protokoll."},
+  ru:{name:"Русский",dir:"ltr",navToday:"Сегодня",navAbout:"О проекте",navContact:"Контакты",tag:"Один мир. Один ход. Каждый день.",searchTitle:"Поиск по летописи",searchPlaceholder:"Поиск депеш, игроков...",searchBtn:"Найти",quickFilters:"Фильтры:",calMonth:"Октябрь 2026",calLegend:"● Ход дня",todayKicker:"Ход дня // 19 октября 2026",todayTitle:"Разрыв глобальной клиринговой сети: сырьевые расчеты вне каналов G7",todayLede:"Центральные банки запускают прямые цифровые шлюзы в обход западных банков-корреспондентов с опорой на золото и прямые энергосвопы.",xyzTitle:"Протокол X-Y-Z: Действующие Силы",xName:"Регуляторная ось G7",xDesc:"Тактический вектор обязательного взятия в шашках: вводит вторичные санкции, теряя контроль над теневым объемом.",yName:"Арбитры Двусторонних Хранилищ",yDesc:"Центробанки, конвертирующие бумажные обязательства в физические золотые слитки в собственных юрисдикциях.",zName:"Суверен Евразийского Коридора",zDesc:"Владельцы физической инфраструктуры труб и терминалов, замыкающие пространство вне долларовой зоны.",regTitle:"Региональное Влияние и Трение",thRegion:"Геополитический Бассейн",thRole:"Вектор",thImpact:"Практический Итог",r1Text:"Исчерпание санкционного ресурса и полная слепота к параллельным потокам.",r2Text:"Накопление золотой ликвидности и двусторонних клиринговых реестров.",r3Text:"Защита континентальных поставок сырья от морской блокады.",beatsTitle:"Анатомия ежедневного хода",b1t:"Почему это важно",b1d:"Мировая финансовая система необратимо раскололась на две зоны.",b2t:"Среда",b2d:"Развитие событий одновременно в Шашках, Шахматах и Го.",b3t:"Ход",b3d:"Прямые цифровые расчеты под залог физического золота и нефти.",b4t:"За чем следить",b4d:"Репатриация резервов и переход оппонента в состояние цугцванга.",boardsTitle:"Чтение по трем доскам",board1Title:"Шашки: Обязательный бой",board1Sub:"Короткий горизонт · Трение",board2Title:"Шахматы: Маневр Короля",board2Sub:"Крепость баланса · Цугцванг",board3Title:"Го: Окружение пространства",board3Sub:"Глубокое время · Закрытие дыханий",lblMove:"Ход:",lblCost:"Цена:",lblPos:"Позиция:",cMove:"Санкции против банков, проводящих платежи за сырье в национальных валютах.",cCost:"Вынужденный ход: отключенные банки становятся опорными узлами нового коридора.",chMove:"Перевод резервов ЦБ в физическое золото в суверенных хранилищах.",chPos:"Противник загнан в долговой цугцванг.",goMove:"Контроль над портами и кабельными линиями на евразийском пространстве.",goPos:"Перекрыто 50 дыханий без единого выстрела и публичного шума.",verdictHead:"Окончательный Вердикт",verdictBody:"В Го не побеждают криком с трибун — побеждают тихой постановкой камня в точку, где противник не сможет дышать.",plainKicker:"Простыми словами // Что это значит на самом деле",plainBadge:"Суть без сложной терминологии",plainTitle:"Очищено от финансового жаргона",plainP1:"Десятилетиями мировая торговля нефтью и металлами шла в долларах через западные банки. Это давало США и Европе возможность одним нажатием кнопки заблокировать платежи и заморозить счета любой неугодной страны.",plainP2:"Сегодняшний ход означает, что ключевые ресурсные державы запустили независимую систему расчетов на основе физического золота и прямого обмена. Санкции перестают работать: судья по привычке свистит в свисток, но игра уже идет на другом поле, где его свистка никто не слышит.",readEditorialBtn:"Читать редакционную статью",footerText:"Ход дня открыт для всех. Архив — это летопись."},
+  zh:{name:"中文",dir:"ltr",navToday:"今日",navAbout:"关于我们",navContact:"联系与信号",tag:"一个世界。一步棋。每一天。",searchTitle:"检索历史记录",searchPlaceholder:"搜索快讯、参与者...",searchBtn:"搜索",quickFilters:"快捷分类：",calMonth:"2026年 10月",calLegend:"● 今日棋步",todayKicker:"今日这一步 // 2026年10月19日",todayTitle:"全球清算网络分裂：大宗商品脱离西方G7通道结算",todayLede:"多国央行绕过西方代理行网络启用直接数字清算走廊，以实物黄金及双边能源直接结算。依循XYZ协议及三盘棋洞察全局。",xyzTitle:"XYZ协议：核心博弈实体",xName:"G7监管执行轴心",xDesc:"短周期战术受困者：被逼发起次级制裁，表面展示强硬，实则彻底丧失对平行清算网的监控权。",yName:"双边实物金库枢纽",yDesc:"非西方央行储备管理者：将纸面债务迅速置换为境内实物黄金，搭建去美元能源直接兑换走廊。",zName:"欧亚陆桥实体主权",zDesc:"深水港口与管道运营方：在空间和漫长周期中步步围拢，脱离西方金融航道直接掌控实体资源。",regTitle:"地缘区域敞口与战略摩擦",thRegion:"地缘区域",thRole:"协议角色",thImpact:"运营影响",r1Text:"次级制裁效力衰竭，对平行能源与资源结算彻底失明。",r2Text:"实物黄金储备巨幅吸筹，双边账本直接清算体系成型。",r3Text:"欧亚陆路管网闭环，彻底免疫海上封锁风险。",beatsTitle:"每日一步的解构",b1t:"为何重要",b1d:"全球结算网络正式裂变为两个不可互通的平行世界。",b2t:"博弈基底",b2d:"跳棋被迫吃子、国象王翼堡垒与围棋大势合围同步显现。",b3t:"这一步",b3d:"多边央行启动由实物黄金与原油对冲的即时清算系统。",b4t:"关注什么",b4d:"黄金储备回流与西方国债体系陷入无可挽回的迫移局（Zugzwang）。",boardsTitle:"三种棋盘审视全局",board1Title:"西洋跳棋：战术被迫吃子",board1Sub:"短视 · 必吃 · 即时损耗",board2Title:"国际象棋：王翼战略筑垒",board2Sub:"资产重整 · 迫移局",board3Title:"围棋：领地与气数合围",board3Sub:"深远周期 · 紧气 · 空间定式",lblMove:"棋步：",lblCost:"代价：",lblPos:"局面：",cMove:"西方监管机构对经手本币结算石油的中间银行实施次级资产冻结。",cCost:"标准的被迫吃子：被剔除出SWIFT的机构瞬间转型为平行走廊的专用清算总行。",chMove:"多国央行抛售主权债务凭证，将清算资产转为国内实物金条。",chPos:"对手陷入加息贬值债券、降息黄金外流的两难迫移局面。",goMove:"悄然整合印度洋至欧亚走廊的深水港特许权与海底光缆节点。",goPos:"不鸣一枪，不置一词，对手舰队所浮弋的海域已在经济气数上被合围。",verdictHead:"终极裁定",verdictBody:"在喧嚣中你赢不了围棋；唯有将棋子静静落在对手维系呼吸的要害之位。",plainKicker:"通俗解读 // 这究竟意味着什么",plainBadge:"剥离术语的实质真相",plainTitle:"用大白话讲透实质",plainP1:"几十年来，全球买卖石油、粮食和矿产几乎都必须使用美元并通过西方银行清算。因为所有资金都要经过纽约和欧洲的服务器，西方政府随时可以一键冻结账户、切断贸易。",plainP2:"今日这一步意味着资源和大国正式启用了由实物黄金与以货易货支撑的平行数字通道。当外部再挥舞制裁大棒时已无法奏效：裁判依然在拼命吹哨，但博弈者早就换到了一个听不见哨声的新球场。",readEditorialBtn:"阅读今日深度社论",footerText:"当日快讯免费开放。档案库即是终极记录。"},
+  ja:{name:"日本語",dir:"ltr",navToday:"今日",navAbout:"概要",navContact:"連絡先",tag:"ひとつの世界。ひとつの一手。毎日。",searchTitle:"アーカイブ検索",searchPlaceholder:"ディスパッチ、プレイヤーを検索...",searchBtn:"検索",quickFilters:"クイック抽出:",calMonth:"2026年 10月",calLegend:"● 本日の一手",todayKicker:"本日の一手 // 2026年10月19日",todayTitle:"世界決済網の分断：コモディティがG7金融レールを離脱",todayLede:"中央銀行が西側のコルレス銀行を経由しない二国間デジタル決済回廊を稼働。金現物とエネルギー直接交換をXYZプロトコルと三盤で読み解く。",xyzTitle:"プロトコル X-Y-Z：中核プレイヤー",xName:"G7規制・執行軸",xDesc:"短期的視界で強制応手を強いられる戦術主勢力。制裁を科すたびに並行網に対する監視能力を永久に喪失する。",yName:"二国間金庫の裁定者",yDesc:"流動性を自国内の実物金塊と現地通貨決済へと組み換える非同盟中央銀行群。",zName:"ユーラシア回廊の主権体",zDesc:"パイプラインと港湾インフラを物理的に押さえ、西側金融レールを介さず空間を支配する勢力。",regTitle:"地域別エクスポージャーと摩擦",thRegion:"地縁ブロック",thRole:"ベクトル",thImpact:"実質的影響",r1Text:"二次制裁の疲弊と、並行貿易に対する監視能力の完全な消失。",r2Text:"実物ゴールド金庫への流動性集中と二国間台帳決済の確立。",r3Text:"陸上エネルギー網の完結による海上封鎖リスクの無力化。",beatsTitle:"一手のアナトミー",b1t:"なぜ重要か",b1d:"世界の金融基盤が不可逆的に二つの並行世界へと断絶した。",b2t:"盤の選択",b2d:"チェッカーの強制取り、チェスの王防御、囲碁の合囲が同時に進行。",b3t:"今の一手",b3d:"実物ゴールドと長期炭化水素供給に裏打ちされた即時決済回廊の稼働。",b4t:"注目点",b4d:"金現物の本国送還とソブリン債務モデルのツークツワンク突入。",boardsTitle:"三つの盤で読み解く",board1Title:"チェッカー：強制取りの罠",board1Sub:"近視眼的 · 強制着手",board2Title:"チェス：キングの防壁構築",board2Sub:"資産再編 · ツークツワンク",board3Title:"囲碁：領域と駄目の合囲",board3Sub:"深遠な時間 · 駄目を詰める",lblMove:"一手:",lblCost:"代償:",lblPos:"局面:",cMove:"非ドル原油決済に関与した中間銀行に対する二次資産凍結の発動。",cCost:"強制取りの代償：制裁された金融機関がそのまま並行網の専用ハブへと恒久化。",chMove:"中央銀行が保有外貨を自国内の保管金塊へと急速シフト。",chPos:"利上げしても利下げしても自滅する金融ツークツワンクの完成。",goMove:"インド洋からユーラシアに跨る深水港と光海底ケーブルの静かな掌握。",goPos:"一発の銃声もなく、相手艦隊が展開する海域の背後にある補給空間を囲い込んだ。",verdictHead:"最終的裁定",verdictBody:"テレビで叫んでも囲碁には勝てない。相手が呼吸を必要とする急所に、静かに石を打つ者だけが勝つ。",plainKicker:"平易な言葉で // これが意味する本質",plainBadge:"専門用語を排した現実",plainTitle:"核心をわかりやすく",plainP1:"何十年もの間、国家間で原油や鉱物を取引する際は、ドルを使い西側の銀行を経由せざるを得ませんでした。そのため、ニューヨークや欧州のスイッチ一つで決済を止められ、資金を凍結されてきました。",plainP2:"今日の一手は、ドルを介さず実物ゴールドと直接交換で動く独自の決済網が実働したことを意味します。いくら西側が制裁を科しても機能し続けます。審判は笛を吹いていますが、選手たちはすでに笛の音が届かない別の競技場へ移動しています。",readEditorialBtn:"本日の社説を読む",footerText:"最新の一手は無料公開。アーカイブこそが真の記録。"},
+  hi:{name:"हिन्दी",dir:"ltr",navToday:"आज",navAbout:"परिचय",navContact:"संपर्क",tag:"एक विश्व। एक चाल। हर दिन।",searchTitle:"अभिलेख में खोजें",searchPlaceholder:"खोजें...",searchBtn:"खोजें",quickFilters:"त्वरित फ़िल्टर:",calMonth:"अक्टूबर 2026",calLegend:"● आज की चाल",todayKicker:"आज की चाल // 19 अक्टूबर 2026",todayTitle:"वैश्विक क्लियरिंग नेटवर्क का विखंडन: वस्तु व्यापार G7 तंत्र से बाहर",todayLede:"केंद्रीय बैंकों ने पश्चिमी बैंकों को दरकिनार करते हुए स्वर्ण और ऊर्जा आधारित द्विपक्षीय प्रत्यक्ष गलियारे सक्रिय किए।",xyzTitle:"प्रोटोकॉल X-Y-Z: प्रमुख रणनीतिक खिलाड़ी",xName:"G7 विनियामक धुरी",xDesc:"मजबूर प्रतिक्रिया में फंसा तंत्र, जो नए प्रतिबंध लगाकर दीर्घकालिक निगरानी क्षमता खो रहा है।",yName:"द्विपक्षीय तिजोरी संरक्षक",yDesc:"अमरीकी ऋण से निकलकर घरेलू भौतिक सोने में तरलता सुरक्षित करने वाले केंद्रीय बैंक।",zName:"यूरेशियाई गलियारा प्रभुत्व",zDesc:"जमीन पर पाइपलाइन और बंदरगाहों के नियंत्रण से पश्चिमी नेटवर्क को निष्प्रभावी बनाने वाली शक्तियां।",regTitle:"क्षेत्रीय प्रभाव और रणनीतिक घर्षण",thRegion:"क्षेत्र",thRole:"भूमिका",thImpact:"परिणाम",r1Text:"प्रतिबंधों की विफलता और समानांतर व्यापार से पूर्ण अनभिज्ञता।",r2Text:"भौतिक सोने में तरलता वृद्धि और प्रत्यक्ष द्विपक्षीय व्यापार का विस्तार।",r3Text:"ऊर्जा गलियारों का भूमिगत घेराव, समुद्री नाकेबंदी का प्रभाव शून्य।",beatsTitle:"दैनिक चाल का विश्लेषण",b1t:"यह क्यों मायने रखता है",b1d:"विश्व की वित्तीय प्रणाली दो स्वतंत्र गलियारों में विभाजित हो चुकी है।",b2t:"बिसात",b2d:"चेकर्स, शतरंज और गो का एक साथ संचालन।",b3t:"चाल",b3d:"सोने और तेल पर आधारित डिजिटल द्विपक्षीय भुगतान की शुरुआत।",b4t:"किस पर नज़र रखें",b4d:"स्वर्ण वापसी और विरोधी खेमे की वित्तीय लाचारी।",boardsTitle:"तीन बिसातों पर विश्लेषण",board1Title:"चेकर्स: अनिवार्य चाल",board1Sub:"मजबूरी · तत्काल घर्षण",board2Title:"शतरंज: राजा की किलेबंदी",board2Sub:"संपत्ति पुनर्गठन · जुगज़वांग",board3Title:"गो: क्षेत्र की घेराबंदी",board3Sub:"दीर्घकाल · शांति से घेराव",lblMove:"चाल:",lblCost:"लागत:",lblPos:"स्थिति:",cMove:"गैर-डॉलर व्यापार करने वाले बैंकों पर प्रतिबंध।",cCost:"बहिष्कृत बैंक समानांतर तंत्र की मुख्य धुरी बन गए।",chMove:"विदेशी ऋणपत्रों से निकलकर भौतिक स्वर्ण में संचित भंडार।",chPos:"विरोधी ऐसी स्थिति में जहां हर अगला कदम नुकसानदेह है।",goMove:"बंदरगाहों और रणनीतिक गलियारों का शांतिपूर्ण समन्वय।",goPos:"बिना किसी शोर के विपक्षी जहाजों के इर्द-गिर्द का आर्थिक दायरा घेर लिया गया।",verdictHead:"अंतिम निष्कर्ष",verdictBody:"गो की बाजी शोर मचाकर नहीं, बल्कि उस स्थान पर पत्थर रखकर जीती जाती है जहां विरोधी को सांस लेनी है।",plainKicker:"सरल भाषा में // इसका वास्तविक अर्थ क्या है",plainBadge:"तकनीकी शब्दों से परे यथार्थ",plainTitle:"सीधी और स्पष्ट बात",plainP1:"दशकों से तेल या खनिजों का व्यापार अमेरिकी डॉलर और पश्चिमी बैंकों के ज़रिये करने की मजबूरी थी। इसका मतलब था कि पश्चिमी देश जब चाहें एक बटन दबाकर किसी भी खाते को फ्रीज़ कर व्यापार रोक सकते थे।",plainP2:"आज की चाल का सीधा अर्थ है कि प्रमुख देशों ने सोने और प्रत्यक्ष वस्तु विनिमय पर आधारित अपना स्वतंत्र भुगतान तंत्र चालू कर दिया है। अब प्रतिबंध बेअसर हैं: रेफरी सीटी बजाता रह गया, और खिलाड़ी उस मैदान पर चले गए जहां सीटी की आवाज़ ही नहीं पहुंचती।",readEditorialBtn:"आज का संपादकीय पढ़ें",footerText:"आज की चाल निःशुल्क है। संग्रह ही वास्तविक अभिलेख है।"},
+  ar:{name:"العربية",dir:"rtl",navToday:"اليوم",navAbout:"عن المشروع",navContact:"اتصال",tag:"عالم واحد. نقلة واحدة. كل يوم.",searchTitle:"البحث في السجل",searchPlaceholder:"ابحث...",searchBtn:"بحث",quickFilters:"تصفية سريعة:",calMonth:"أكتوبر 2026",calLegend:"● نقلة اليوم",todayKicker:"نقلة اليوم // 19 أكتوبر 2026",todayTitle:"انقسام شبكة المقاصة العالمية: تسوية السلع الأساسية خارج قنوات مجموعة السبع",todayLede:"البنوك المركزية تفعل ممرات رقمية ثنائية متجاوزة البنوك المراسلة الغربية، مرتكزة على الذهب العيني ومبادلات الطاقة المباشرة وفق بروتوكول X-Y-Z.",xyzTitle:"بروتوكول X-Y-Z: اللاعبون الفاعلون",xName:"محور مجموعة السبع التنظيمي",xDesc:"المحرك التكتيكي الخاضع للأكل الإجباري: يفرض عقوبات فورية تفقده الرقابة طويلة الأمد على المسارات الموازية.",yName:"وسطاء الخزائن الثنائية",yDesc:"مديرو الاحتياطيات الذين يستبدلون الديون الورقية بسبائك الذهب العيني داخل حدودهم الوطنية.",zName:"سيادة الممر الأوراسي",zDesc:"قوى البنية التحتية والموانئ التي تحكم إغلاق المنافذ الحيوية متجاهلة المنظومة المالية الغربية.",regTitle:"الانكشاف الإقليمي والاحتكاك الاستراتيجي",thRegion:"الحوض الجيوسياسي",thRole:"المسار",thImpact:"الأثر التشغيلي",r1Text:"استنزاف سلاح العقوبات والعمى التام عن أحجام التجارة الموازية.",r2Text:"جذب سيولة هائلة نحو خزائن الذهب وتسريع الدفاتر المباشرة.",r3Text:"إحكام السيطرة على خطوط الطاقة البرية وتحصينها ضد أي حصار بحري.",beatsTitle:"تشريح النقلة اليومية",b1t:"لماذا يهم",b1d:"انشطرت الشبكة المالية العالمية رسمياً إلى منطقتين مستقلتين تماماً.",b2t:"الرقعة",b2d:"حركة ثلاثية: أكلٌ إلزامي في الداما، تحصينٌ في الشطرنج، وتطويقٌ صامت في الغو.",b3t:"النقلة",b3d:"تفعيل تسويات رقمية فورية مدعومة بالذهب العيني والنفط.",b4t:"ما يجب مراقبته",b4d:"تسارع استعادة الذهب ودخول الديون الغربية في حالة شلل تسعيري حتمي.",boardsTitle:"قراءة عبر ثلاث رقع",board1Title:"الداما: الأكل الإجباري",board1Sub:"أفق قصير · احتكاك مباشر",board2Title:"الشطرنج: تحصين الملك",board2Sub:"إعادة هيكلة الميزانيات · تسوغتسفانغ",board3Title:"الغو: تطويق الأرض",board3Sub:"زمن عميق · خنق المنافذ",lblMove:"النقلة:",lblCost:"الثمن:",lblPos:"الوضعية:",cMove:"عقوبات غربية طارئة وتجميد أصول للمصارف الوسيطة في تجارة النفط غير الدولارية.",cCost:"أكل إجباري: المؤسسات المستبعدة تتحول فوراً إلى مراكز تسوية حصرية للنظام الجديد.",chMove:"تحويل الاحتياطيات النقدية السيادية إلى سبائك ذهبية مودعة محلياً.",chPos:"الطرف الآخر عالق في مأزق مالي حتمي: رفع الفائدة يكسر سنداته، وخفضها يهرب بالذهب.",goMove:"تنسيق موانئ المياه العميقة وخطوط الأنابيب عبر المحيط الهندي وأوراسيا.",goPos:"إغلاق 50 منفذاً حيوياً بهدوء تام دون إطلاق رصاصة أو ضجيج تلفزيوني.",verdictHead:"الحكم النهائي",verdictBody:"لا تفوز في لعبة الغو بالصراخ أمام الكاميرات؛ بل بوضع الحجر بصمت في المكان الذي سيختنق فيه الخصم غداً.",plainKicker:"بلغة مبسطة // ماذا يعني هذا عملياً",plainBadge:"الواقع مجرداً من التعقيد التقني",plainTitle:"جوهر الأمر بدون مصطلحات معقدة",plainP1:"لعقود طويلة، كان شراء النفط والسلع الأساسية يستلزم حصراً استخدام الدولار والمرور عبر البنوك الغربية. وبما أن كل الأموال تمر عبر نيويورك وأوروبا، كان بإمكان الحكومات الغربية تجميد أي حساب وإيقاف التجارة بكبسة زر.",plainP2:"نقلة اليوم تعني أن دولاً كبرى فعّلت رسمياً نظام تسوية موازياً يستند إلى سبائك الذهب العيني والمبادلة المباشرة. لم تعد العقوبات ذات جدوى: الحكم ما زال يطلق صافرته، لكن اللاعبين انتقلوا بالفعل إلى ملعب آخر لا تصل إليه الصافرة.",readEditorialBtn:"قراءة الافتتاحية اليومية",footerText:"نقلة اليوم مجانية. الأرشيف هو السجل الحقيقي."}
 };
 
 const ORDER = ["en","fr","es","pt","de","ru","zh","ja","hi","ar"];
@@ -985,7 +986,7 @@ function setLang(k) {
   // Update Editorial button to forward the selected language parameter
   const edBtn = document.querySelector(".editorial-btn");
   if (edBtn) {
-    edBtn.href = `editorial-2026-10-20.html?lang=${k}`;
+    edBtn.href = `editorial-2026-10-19.html?lang=${k}`;
   }
 
   pillsContainer.querySelectorAll("button").forEach(b => {
@@ -1009,6 +1010,442 @@ try {
   if (saved && L[saved]) startLang = saved;
 } catch(e) {}
 setLang(startLang);
+</script>
+<script>
+
+// Embedded Sovereign Dispatch Database for Interactive Calendar & Live Search
+const DISPATCHES = {
+  "2026-10-20": {
+    "date_str": "Tuesday, October 20, 2026",
+    "cycle": "Tuesday, October 20, 2026 \u00b7 GMT 00:00 Cycle",
+    "day_num": 20,
+    "kicker": "The Move of the Day // October 20, 2026",
+    "title": "The Arctic Sovereign Perimeter: Canada and Nordic Allies Close the Circumpolar Optical & Defense Corridor",
+    "lede": "Joint circumpolar sovereign mandates deploy hardened fiber infrastructure, autonomous surveillance grids, and mineral logistics hubs across the High North, preempting maritime transit contestation. Read through Protocol X-Y-Z and across three boards.",
+    "editorial_url": "editorial-2026-10-20.html",
+    "xyz": {
+      "x_name": "Tactical Air & Surface Scramble",
+      "x_desc": "Air defense interception wings operating on short tactical notification cycles, expending alert sorties to counter gray-zone reconnaissance along circumpolar boundaries.",
+      "y_name": "The Sovereign Arctic Capital Allocator",
+      "y_desc": "Sovereign balance sheets and infrastructure banks allocating multi-decade capital to icebreakers, dual-use deepwater berths, and critical mineral processing hubs.",
+      "z_name": "Circumpolar Ground & Seabed Array",
+      "z_desc": "The physical sensor network: subsea fiber, radar arrays, and permanent northern garrisons sealing the physical passages across deep time."
+    },
+    "regions": {
+      "r1": "Circumpolar NATO Flank: Arctic surveillance grid consolidation and northern maritime interdiction readiness.",
+      "r2": "Northwest Passage / Beaufort: Subsea fiber deployment anchoring domestic sovereignty to physical seabed bedrock.",
+      "r3": "Nordic & Barents Basin: Forward dual-use deepwater logistics hubs closing unmonitored Arctic surface lanes."
+    },
+    "beats": {
+      "b1": "The High North has transitioned from an unmonitored frozen buffer into an active, sovereign-secured infrastructure corridor.",
+      "b2": "Simultaneous execution across three boards: tactical air intercepts, sovereign infrastructure capital allocation, and seabed fiber enclosure.",
+      "b3": "Permanent deployment of dual-use sensory cables and autonomous radar stations along the circumpolar perimeter.",
+      "b4": "Revisionist maritime claims face structural exclusion before seasonal ice melt permits surface fleet transit."
+    },
+    "boards": {
+      "b1_title": "Checkers: The High-Latitude Intercept",
+      "b1_sub": "Short horizons \u00b7 Mandatory capture \u00b7 Immediate friction",
+      "b1_move": "Allied air commands scramble rapid interception sorties following unannounced high-altitude sensory sweeps along the Beaufort Sea rim and Greenland airspace.",
+      "b1_cost": "A reactive tactical exchange. Surface defense interceptors fire high-cost patrol cycles for low-cost unmanned intrusions, creating short-term tactical alert fatigue while missing the permanent seabed fiber deployment beneath the ice.",
+      "b2_title": "Chess: The Circumpolar Fortress",
+      "b2_sub": "Positional restructuring \u00b7 Balance-sheet fortress \u00b7 Checkmate trajectory",
+      "b2_move": "Canada and Nordic allies reallocate sovereign sovereign-wealth capital into hardened dual-use deepwater ports and icebreaker fleet recapitalization, locking Arctic logistics directly to sovereign balance sheets.",
+      "b2_cost": "Strategic pieces shift to defend the northern flank. The opposing revisionist forces face zugzwang: contesting sovereign circumpolar jurisdiction requires unsustainable naval logistics in freeze-up conditions, while standing down ratifies allied perimeter hegemony.",
+      "b3_title": "Go (Weiqi): The Seabed Perimeter",
+      "b3_sub": "Deep time \u00b7 Closing of liberties \u00b7 Silent spatial hegemony",
+      "b3_move": "A synchronized, silent deployment of sovereign optical subsea cables and seabed acoustic arrays anchoring the Northwest Passage directly to the North Atlantic defense loop.",
+      "b3_cost": "Fifty strategic maritime liberties across the circumpolar high north are quietly occupied. Territory is held by physical fiber, deep berths, and unjammable seabed acoustic nodes long before international navigational disputes reach legal tribunals."
+    },
+    "plain": {
+      "p1": "For decades, the Arctic was treated as a frozen, remote buffer that countries didn't need to actively police. As ice recedes and international superpowers eye northern trade shortcuts and untapped minerals, the Arctic has suddenly become the most contested frontier on Earth.",
+      "p2": "Today's move means Canada and its northern allies have permanently activated a combined network of subsea cables, deepwater ports, and radar barriers. Instead of arguing about who owns the waters, they have physically occupied the routes with infrastructure. The door to the Arctic is locked from the inside."
+    },
+    "verdict": "The true battle for the High North is not waged through rhetorical diplomatic communiqu\u00e9s or symbolic icebreaker flags. It is won by whoever anchors the fiber to the bedrock and places the acoustic stone where the transit route must navigate."
+  },
+  "2026-10-19": {
+    "date_str": "Monday, October 19, 2026",
+    "cycle": "Monday, October 19, 2026 \u00b7 GMT 00:00 Cycle",
+    "day_num": 19,
+    "kicker": "The Move of the Day // October 19, 2026",
+    "title": "The Fracture of the Global Clearing Grid: Bilateral Commodities Settle Outside the G7 Rail",
+    "lede": "Central bank digital clearing corridors bypass Western correspondent banking, anchoring new settlement liquidity in vaulted gold and direct bilateral energy swaps. Read through Protocol X-Y-Z and across three boards.",
+    "editorial_url": "editorial-2026-10-19.html",
+    "xyz": {
+      "x_name": "G7 Regulatory Axis",
+      "x_desc": "The enforcement rail operating under short horizons. Trapped in mandatory response cycles, forced to deploy emergency secondary sanctions that cause immediate friction but forfeit long-term surveillance visibility.",
+      "y_name": "Bilateral Vault Arbiters",
+      "y_desc": "Central bank reserve managers and sovereign vaults across the Indian Ocean rim. Absorbing volatility by re-anchoring liquid balances into domestic physical bullion and direct local-currency energy clearing.",
+      "z_name": "Eurasian Corridor Sovereign",
+      "z_desc": "The physical infrastructure powers: port terminals, overland pipeline operators, and critical mineral cartels. Closing physical liberties across space and deep time without relying on Western banking rails."
+    },
+    "regions": {
+      "r1": "Atlantic / G7 Axis: Secondary sanctions exhaustion, diminishing clearing leverage, and permanent blindness to parallel trade volumes.",
+      "r2": "Indian Ocean Rim: Massive liquidity capture in physical bullion vaults and rapid expansion of bilateral digital ledger clearing.",
+      "r3": "Eurasian Land Bridge: Total enclosure of overland hydrocarbon corridors; immunizing physical supply chains against maritime disruption."
+    },
+    "beats": {
+      "b1": "The global financial grid has officially fractured into two non-interoperable settlement zones. Bilateral commodities clearing without Western correspondent banking ceases to be an ideological experiment and becomes an everyday commercial reality.",
+      "b2": "A simultaneous divergence across all three boards: a forced tactical jump in sanctions enforcement, structural sovereign reserve repositioning, and deep-time physical logistics encirclement.",
+      "b3": "Multilateral central bank corridors activate instant bilateral asset settlement collateralized directly by vaulted bullion and long-term hydrocarbon delivery contracts.",
+      "b4": "Accelerated sovereign reserve repatriation, secondary banking freezes that fail to bite, and the onset of institutional balance-sheet zugzwang."
+    },
+    "boards": {
+      "b1_title": "Checkers: The Tactical Forced Jump",
+      "b1_sub": "Short horizons \u00b7 Mandatory capture \u00b7 Immediate friction",
+      "b1_move": "Western financial authorities announce immediate emergency sanctions and secondary asset freezes against intermediary commercial banks facilitating non-dollar local-currency oil and rare earth settlements.",
+      "b1_cost": "A classic forced jump. Under domestic political theater, the regulator has no legal or optic alternative but to strike the jumping square. However, the mandatory capture sacrifices long-term strategic visibility: every institution frozen out of the SWIFT/CHIPS clearing system is permanently converted into a dedicated clearing hub for the parallel corridor. The move offers short-term political posturing at the expense of terminal regulatory blindness.",
+      "b2_title": "Chess: The Strategic King Maneuver",
+      "b2_sub": "Positional restructuring \u00b7 Balance-sheet fortress \u00b7 Checkmate trajectory",
+      "b2_move": "Non-aligned central banks reallocate liquid foreign exchange reserves away from sovereign debt instruments and into vaulted physical bullion held strictly within domestic territorial borders.",
+      "b2_cost": "The rooks and knights of sovereign finance are shifted from active offensive deployment in foreign money markets back to an unbreachable defensive castle. The opposing side enters zugzwang: any hike in interest rates to defend currency purchasing power deteriorates sovereign debt valuations, while expanding liquidity further accelerates bullion flight. The king is insulated; the pieces in the open file are expendable.",
+      "b3_title": "Go (Weiqi): The Encirclement of Territory",
+      "b3_sub": "Deep time \u00b7 Closing of liberties \u00b7 Silent spatial hegemony",
+      "b3_move": "A quiet multilateral coordination linking deepwater port concessions, pipeline terminal nodes, and undersea fiber optic cable landings across the Indian Ocean rim and Eurasian land bridge.",
+      "b3_cost": "No pieces were captured; no public ultimatums were broadcast on television. Yet fifty subtle liberties were closed around maritime chokepoints and physical trade conduits. By securing the physical perimeter of energy flow, the opposing naval carrier battle-groups find themselves floating in territory that has already been economically enclosed without a shot being fired."
+    },
+    "plain": {
+      "p1": "For decades, whenever two countries wanted to buy or sell oil, metals, or grain, they were practically forced to trade in US dollars and clear the money through Western banks. Because all those payments flowed through computers in New York and Europe, Western governments could flip a switch, freeze anyone's bank account, and stop trade in its tracks.",
+      "p2": "Today's move means major resource and industrial powers have officially activated a parallel digital payment system backed by real, vaulted gold and direct barter rather than dollars. When Western regulators try to punish these intermediaries, the new system keeps operating untouched. The referee is still blowing the whistle, but the players have moved to an entirely different field where the whistle cannot be heard."
+    },
+    "verdict": "What the western news cycle reports as a tactical sanctions dispute is, on the deep board, the terminal loss of geographic and settlement liberties. You do not win Go by shouting on the television; you win it by quietly placing the stone where the opponent will eventually need to breathe."
+  },
+  "2026-10-18": {
+    "date_str": "Sunday, October 18, 2026",
+    "cycle": "Sunday, October 18, 2026 \u00b7 GMT 00:00 Cycle",
+    "day_num": 18,
+    "kicker": "The Move of the Day // October 18, 2026",
+    "title": "The Sovereign AI Hardware Embargo: Domestic Silicon Fabrication Enters Strategic Zugzwang",
+    "lede": "Allied export controls freeze extreme-ultraviolet component maintenance while alternative foundries deploy sovereign multi-die packaging to maintain autonomous computing clusters. Read across three boards.",
+    "editorial_url": "editorial-2026-10-19.html",
+    "xyz": {
+      "x_name": "Export Enforcement Directives",
+      "x_desc": "Tactical bureaucratic freezes attempting to halt component spares at container ports, causing friction while driving accelerated reverse engineering.",
+      "y_name": "Sovereign Foundry Capital",
+      "y_desc": "State-backed sovereign investment funds financing parallel semiconductor fabrication lines and domestic EDA software stacks.",
+      "z_name": "Rare Earth Refining Nodes",
+      "z_desc": "Physical processing facilities for gallium, germanium, and refined silicon controlling the essential atomic inputs of advanced computation."
+    },
+    "regions": {
+      "r1": "East Asia Semiconductor Arc: High-yield fabrication lines operating under continuous allied export monitoring.",
+      "r2": "North American Compute Hubs: Hyperscale data center buildouts straining sovereign power grids and nuclear baseload.",
+      "r3": "Mineral Refining Basins: Export licensing bottlenecks restricting raw semiconductor materials to allied manufacturing chains."
+    },
+    "beats": {
+      "b1": "Advanced artificial intelligence compute has become the primary sovereign strategic commodity of the twenty-first century.",
+      "b2": "The hardware choke point is shifting from wafer fabrication tooling to raw material refining and advanced packaging architectures.",
+      "b3": "Sovereign technology programs achieve functional compute independence through modular multi-chip clustering.",
+      "b4": "Allied technology containment policies face terminal enforcement limits as domestic production matures."
+    },
+    "boards": {
+      "b1_title": "Checkers: Port Inspections & Seizures",
+      "b1_sub": "Tactical seizures \u00b7 Immediate friction \u00b7 Customs delays",
+      "b1_move": "Customs authorities impound high-end GPU accelerator shipments at maritime transit hubs.",
+      "b1_cost": "Short-term supply disruptions create immediate black-market premiums while expediting sovereign domestic chip substitutions.",
+      "b2_title": "Chess: Foundry Capital Allocation",
+      "b2_sub": "Capital concentration \u00b7 Subsidized foundries \u00b7 Strategic zugzwang",
+      "b2_move": "National strategic investment funds underwrite twenty-billion-dollar domestic lithography development consortia.",
+      "b2_cost": "Capital is permanently committed to domestic manufacturing sovereignty, insulating the industrial base from foreign embargoes.",
+      "b3_title": "Go: Atomic Material Enclosure",
+      "b3_sub": "Raw material chokepoints \u00b7 Deep supply chains \u00b7 Silent monopoly",
+      "b3_move": "Refining cartels coordinate multi-year contracts for critical optical and dielectric gases across Eurasia.",
+      "b3_cost": "The foundational chemical inputs for silicon fabrication are enclosed, making offshore factories vulnerable to silent supply interruptions."
+    },
+    "plain": {
+      "p1": "Every advanced computer chip in modern phones, missiles, and AI data centers relies on a tiny handful of specialized machines and rare chemical elements.",
+      "p2": "When western powers tried to cut off competitors from buying these finished chips, competitors responded by taking control of the rare minerals needed to build them and funding their own factories. The tech race is now a fight over physical dirt and electricity."
+    },
+    "verdict": "You cannot monopolize intelligence by locking the software drawer when the opponent holds the physical minerals required to power the machine."
+  },
+  "2026-10-17": {
+    "date_str": "Saturday, October 17, 2026",
+    "cycle": "Saturday, October 17, 2026 \u00b7 GMT 00:00 Cycle",
+    "day_num": 17,
+    "kicker": "The Move of the Day // October 17, 2026",
+    "title": "The Continental Rail Compact: Central Asian Mineral Transit Decouples from Maritime Insurance",
+    "lede": "New overland multimodal freight arteries establish sovereign reinsurance pools, completely bypassing London and European maritime underwriters for bulk mineral flows.",
+    "editorial_url": "editorial-2026-10-19.html",
+    "xyz": {
+      "x_name": "Maritime Underwriting Cartels",
+      "x_desc": "Western insurance syndicates refusing risk coverage on non-compliant tanker and bulk carrier fleets.",
+      "y_name": "Sovereign Reinsurance Funds",
+      "y_desc": "Central bank backstops providing state guarantees for continental rail freight and inland waterway barges.",
+      "z_name": "Gauge-Break Rail Terminals",
+      "z_desc": "Automated container transfer stations along the Eurasian land bridge locking in overland freight speeds."
+    },
+    "regions": {
+      "r1": "North Sea Insurance Hubs: Loss of premium fee revenue as sovereign rail corridors capture dry-bulk transit volume.",
+      "r2": "Central Asian Steppe: Transformation into the primary heavy logistics turnpike between resource basins and industrial factories.",
+      "r3": "Pacific Terminals: Shifting container logistics from maritime sea lanes directly to inland multimodal rail heads."
+    },
+    "beats": {
+      "b1": "Overland rail transport combined with state-backed reinsurance neutralizes maritime sanctions entirely.",
+      "b2": "Maritime shipping choke points (Malacca, Suez) lose leverage over landlocked bulk trade.",
+      "b3": "Dry-bulk transit times between major industrial hubs are cut by sixty percent compared to ocean shipping.",
+      "b4": "Sovereign mutual guarantee pools replace centuries-old European maritime risk underwriting."
+    },
+    "boards": {
+      "b1_title": "Checkers: Maritime Vessel Detentions",
+      "b1_sub": "Port state control \u00b7 Inspection mandates \u00b7 Flag state disputes",
+      "b1_move": "Maritime authorities issue safety detentions against uninsured coastal cargo vessels.",
+      "b1_cost": "Shippers permanently divert cargo off the water and onto overland high-speed rail lines.",
+      "b2_title": "Chess: State Reinsurance Reserves",
+      "b2_sub": "Balance-sheet guarantees \u00b7 Capital fortification",
+      "b2_move": "Allied central banks establish a shared gold-backed mutual reinsurance fund for cross-border freight.",
+      "b2_cost": "Risk is socialized across sovereign balance sheets, rendering private Western insurance bans completely ineffective.",
+      "b3_title": "Go: Steel on Ground Corridor",
+      "b3_sub": "Physical rail lines \u00b7 Permanent connectivity",
+      "b3_move": "Completion of double-tracked standard gauge rail spurs connecting remote mineral pits to processing plants.",
+      "b3_cost": "The physical geography of trade is permanently anchored to the dirt, immune to naval carrier groups."
+    },
+    "plain": {
+      "p1": "Most global trade travels on giant ships, and almost all of those ships have to buy insurance from companies in London or Europe. If those companies refuse to insure a ship, it cannot enter ports.",
+      "p2": "Countries have solved this problem by moving their cargo off ships and onto high-speed trains running directly across the land, backed by government-guaranteed insurance. You cannot blockade a train moving through the middle of a continent."
+    },
+    "verdict": "Trade that travels on steel rails through the heartland cannot be governed by rules written for the sea."
+  },
+  "2026-10-16": {
+    "date_str": "Friday, October 16, 2026",
+    "cycle": "Friday, October 16, 2026 \u00b7 GMT 00:00 Cycle",
+    "day_num": 16,
+    "kicker": "The Move of the Day // October 16, 2026",
+    "title": "The Strait of Hormuz Asymmetric Standoff: Surface Escort Friction vs. Undersea Liberty Closures",
+    "lede": "Naval escort coalitions face asymmetric drone swarms while regional coastal defense arrays lock down the narrow shipping lanes of the Persian Gulf.",
+    "editorial_url": "editorial-2026-10-19.html",
+    "xyz": {
+      "x_name": "Naval Task Force Command",
+      "x_desc": "High-cost Aegis air defense destroyers intercepting low-cost loitering munitions to keep commercial tanker lanes open.",
+      "y_name": "Energy Risk Re-Pricers",
+      "y_desc": "Commodity desks and tanker charterers pricing war-risk premiums into every barrel passing through the strait.",
+      "z_name": "Shore-Based Missile Batteries",
+      "z_desc": "Mobile anti-ship cruise missile launchers hidden in coastal mountain redoubts overlooking the maritime passage."
+    },
+    "regions": {
+      "r1": "Persian Gulf Chokepoints: Extreme risk premiums on crude and LNG transit through the Strait of Hormuz.",
+      "r2": "European Energy Import Hubs: Heightened vulnerability to spot-market energy supply interruptions.",
+      "r3": "East Asian Refining Centers: Accelerated reliance on overland pipeline contracts to diversify away from Gulf crude."
+    },
+    "beats": {
+      "b1": "The cost curve of air defense has inverted: million-dollar interceptors are consumed by twenty-thousand-dollar drones.",
+      "b2": "Commercial shipping companies refuse transit without sovereign military convoys, cutting effective tanker throughput.",
+      "b3": "Overland pipeline bypasses (East-West pipelines) operate at maximum physical capacity.",
+      "b4": "Asymmetric coastal defense weapons achieve regional sea denial without deploying a conventional navy."
+    },
+    "boards": {
+      "b1_title": "Checkers: Drone Swarm Interceptions",
+      "b1_sub": "Tactical missile firings \u00b7 Munition depletion \u00b7 Optical skirmishes",
+      "b1_move": "Allied destroyers expend surface-to-air missiles against waves of autonomous strike drones.",
+      "b1_cost": "Severe naval stockpile exhaustion: high-end guided missiles are expended far faster than defense industrial factories can produce them.",
+      "b2_title": "Chess: Crude Transit Reinsurance",
+      "b2_sub": "Surging insurance rates \u00b7 Tanker routing",
+      "b2_move": "Underwriters raise war risk premiums by four hundred percent, freezing unescorted merchant shipping.",
+      "b2_cost": "Global shipping costs spike, transmitting immediate inflationary shocks into consumer economies.",
+      "b3_title": "Go: Coastal Missile Redoubts",
+      "b3_sub": "Territorial sea denial \u00b7 Chokepoint enclosure",
+      "b3_move": "Deployment of hardened mobile anti-ship batteries along every dominant promontory of the strait.",
+      "b3_cost": "The waterway is permanently held under physical artillery crosshairs, establishing total asymmetric sea denial."
+    },
+    "plain": {
+      "p1": "A huge portion of the world's daily oil and gas supply must squeeze through a narrow body of water called the Strait of Hormuz.",
+      "p2": "Small, cheap drones and shore missiles can now threaten billion-dollar aircraft carriers and cargo ships. Even though powerful warships are in the area, shooting down endless waves of cheap drones costs too much money and ammunition. The entire trade route has become too dangerous for ordinary ships."
+    },
+    "verdict": "When a ten-thousand-dollar drone forces a two-million-dollar missile into the sky, the player launching the missile is losing the war of economic attrition."
+  }
+};
+
+let activeDate = "2026-10-20";
+
+function selectDate(dateKey, shouldScroll = true) {
+  if (!DISPATCHES[dateKey]) return;
+  activeDate = dateKey;
+  const d = DISPATCHES[dateKey];
+
+  // 1. Update Calendar Cell active styles
+  document.querySelectorAll('.cal-cell[data-date]').forEach(cell => {
+    if (cell.dataset.date === dateKey) {
+      cell.className = "cal-cell today";
+    } else {
+      cell.className = "cal-cell has-dispatch";
+    }
+  });
+
+  // 2. Update Main Report Header
+  const kickerEl = document.querySelector('[data-i="todayKicker"]') || document.querySelector('.kicker');
+  if (kickerEl) kickerEl.textContent = d.kicker;
+  
+  const dateEl = document.getElementById('todayDate');
+  if (dateEl) dateEl.textContent = d.cycle;
+  
+  const titleEl = document.querySelector('[data-i="todayTitle"]') || document.querySelector('.report-title');
+  if (titleEl) titleEl.textContent = d.title;
+  
+  const ledeEl = document.querySelector('[data-i="todayLede"]') || document.querySelector('.report-lede');
+  if (ledeEl) ledeEl.textContent = d.lede;
+
+  const edBtn = document.querySelector('.editorial-btn');
+  if (edBtn) {
+    const currentLang = document.documentElement.lang || "en";
+    edBtn.href = `${d.editorial_url}?lang=${currentLang}`;
+  }
+
+  // 3. Update Protocol X-Y-Z
+  const xName = document.querySelector('[data-i="xName"]');
+  if (xName) xName.textContent = d.xyz.x_name;
+  const xDesc = document.querySelector('[data-i="xDesc"]');
+  if (xDesc) xDesc.textContent = d.xyz.x_desc;
+
+  const yName = document.querySelector('[data-i="yName"]');
+  if (yName) yName.textContent = d.xyz.y_name;
+  const yDesc = document.querySelector('[data-i="yDesc"]');
+  if (yDesc) yDesc.textContent = d.xyz.y_desc;
+
+  const zName = document.querySelector('[data-i="zName"]');
+  if (zName) zName.textContent = d.xyz.z_name;
+  const zDesc = document.querySelector('[data-i="zDesc"]');
+  if (zDesc) zDesc.textContent = d.xyz.z_desc;
+
+  // 4. Update Regional Friction
+  const r1 = document.querySelector('[data-i="r1Text"]');
+  if (r1) r1.textContent = d.regions.r1;
+  const r2 = document.querySelector('[data-i="r2Text"]');
+  if (r2) r2.textContent = d.regions.r2;
+  const r3 = document.querySelector('[data-i="r3Text"]');
+  if (r3) r3.textContent = d.regions.r3;
+
+  // 5. Update Four Beats
+  const b1 = document.querySelector('[data-i="b1d"]');
+  if (b1) b1.textContent = d.beats.b1;
+  const b2 = document.querySelector('[data-i="b2d"]');
+  if (b2) b2.textContent = d.beats.b2;
+  const b3 = document.querySelector('[data-i="b3d"]');
+  if (b3) b3.textContent = d.beats.b3;
+  const b4 = document.querySelector('[data-i="b4d"]');
+  if (b4) b4.textContent = d.beats.b4;
+
+  // 6. Update Three Boards Deep Dive
+  const b1Title = document.querySelector('[data-i="board1Title"]');
+  if (b1Title) b1Title.textContent = d.boards.b1_title;
+  const b1Sub = document.querySelector('[data-i="board1Sub"]');
+  if (b1Sub) b1Sub.textContent = d.boards.b1_sub;
+  const cMove = document.querySelector('[data-i="cMove"]');
+  if (cMove) cMove.textContent = d.boards.b1_move;
+  const cCost = document.querySelector('[data-i="cCost"]');
+  if (cCost) cCost.textContent = d.boards.b1_cost;
+
+  const b2Title = document.querySelector('[data-i="board2Title"]');
+  if (b2Title) b2Title.textContent = d.boards.b2_title;
+  const b2Sub = document.querySelector('[data-i="board2Sub"]');
+  if (b2Sub) b2Sub.textContent = d.boards.b2_sub;
+  const chMove = document.querySelector('[data-i="chMove"]');
+  if (chMove) chMove.textContent = d.boards.b2_move;
+  const chPos = document.querySelector('[data-i="chPos"]');
+  if (chPos) chPos.textContent = d.boards.b2_cost;
+
+  const b3Title = document.querySelector('[data-i="board3Title"]');
+  if (b3Title) b3Title.textContent = d.boards.b3_title;
+  const b3Sub = document.querySelector('[data-i="board3Sub"]');
+  if (b3Sub) b3Sub.textContent = d.boards.b3_sub;
+  const goMove = document.querySelector('[data-i="goMove"]');
+  if (goMove) goMove.textContent = d.boards.b3_move;
+  const goPos = document.querySelector('[data-i="goPos"]');
+  if (goPos) goPos.textContent = d.boards.b3_cost;
+
+  // 7. Update Plain Language & Verdict
+  const p1 = document.querySelector('[data-i="plainP1"]');
+  if (p1) p1.textContent = d.plain.p1;
+  const p2 = document.querySelector('[data-i="plainP2"]');
+  if (p2) p2.textContent = d.plain.p2;
+
+  const verdict = document.querySelector('[data-i="verdictBody"]');
+  if (verdict) verdict.textContent = d.verdict;
+
+  // 8. Update URL hash
+  if (history.replaceState) {
+    history.replaceState(null, null, '#' + dateKey);
+  } else {
+    location.hash = '#' + dateKey;
+  }
+
+  // 9. Smooth Scroll
+  if (shouldScroll) {
+    const target = document.getElementById('report');
+    if (target) {
+      window.scrollTo({ top: target.offsetTop - 60, behavior: 'smooth' });
+    }
+  }
+}
+
+// Live Search Engine
+function handleSearch(query) {
+  const q = (query || "").trim().toLowerCase();
+  const searchResultsEl = document.getElementById("searchResults");
+  if (!searchResultsEl) return;
+
+  if (!q) {
+    searchResultsEl.style.display = "none";
+    searchResultsEl.innerHTML = "";
+    return;
+  }
+
+  const matches = [];
+  for (const [key, item] of Object.entries(DISPATCHES)) {
+    const fullHaystack = `${item.title} ${item.lede} ${item.xyz.x_name} ${item.xyz.y_name} ${item.xyz.z_name} ${item.boards.b1_title} ${item.boards.b2_title} ${item.boards.b3_title}`.toLowerCase();
+    if (fullHaystack.includes(q)) {
+      matches.push({ key, item });
+    }
+  }
+
+  if (matches.length === 0) {
+    searchResultsEl.style.display = "block";
+    searchResultsEl.innerHTML = `<div style="padding:12px;color:var(--card-muted);font-size:13px;">No dispatches found matching "${query}".</div>`;
+    return;
+  }
+
+  searchResultsEl.style.display = "block";
+  searchResultsEl.innerHTML = matches.map(m => `
+    <div class="search-result-item" onclick="selectDate('${m.key}'); document.getElementById('searchResults').style.display='none';" style="padding:10px 14px;border-bottom:1px solid #eeeae0;cursor:pointer;transition:background .15s ease;">
+      <div style="font-size:11px;color:var(--accent-red);font-weight:700;text-transform:uppercase;">${m.item.date_str}</div>
+      <div style="font-family:var(--serif);font-size:15px;font-weight:700;color:var(--card-ink);margin:2px 0;">${m.item.title}</div>
+      <div style="font-size:12px;color:var(--card-muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${m.item.lede}</div>
+    </div>
+  `).join('');
+}
+
+function executeSearchSubmit() {
+  const input = document.getElementById("searchInput");
+  const q = input.value.trim().toLowerCase();
+  if (!q) return;
+
+  for (const [key, item] of Object.entries(DISPATCHES)) {
+    const fullHaystack = `${item.title} ${item.lede} ${item.xyz.x_name} ${item.xyz.y_name} ${item.xyz.z_name}`.toLowerCase();
+    if (fullHaystack.includes(q)) {
+      selectDate(key);
+      const res = document.getElementById("searchResults");
+      if (res) res.style.display = "none";
+      return;
+    }
+  }
+}
+
+// Initialize on Load (Hash / Date Check)
+window.addEventListener("DOMContentLoaded", () => {
+  const searchInput = document.getElementById("searchInput");
+  if (searchInput) {
+    searchInput.addEventListener("input", (e) => handleSearch(e.target.value));
+  }
+
+  // Check URL hash (e.g. #2026-10-19) or search query (?date=2026-10-19)
+  const hash = window.location.hash.replace('#', '').trim();
+  const urlParams = new URLSearchParams(window.location.search);
+  const paramDate = urlParams.get('date');
+
+  const targetDate = hash || paramDate;
+  if (targetDate && DISPATCHES[targetDate]) {
+    selectDate(targetDate, false);
+  } else {
+    selectDate("2026-10-20", false);
+  }
+});
+
 </script>
 </body>
 </html>
