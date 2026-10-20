@@ -629,8 +629,8 @@ footer.bottom-red-footer strong{
         <div class="cal-cell">16</div>
         <div class="cal-cell">17</div>
         <div class="cal-cell">18</div>
-        <div class="cal-cell has-dispatch" data-date="2026-10-19" title="Edition 1 // Oct 19: The Fracture of the Global Clearing Grid" onclick="selectDate('2026-10-19')">19</div>
-        <div class="cal-cell today" data-date="2026-10-20" title="Edition 2 // Oct 20: The Arctic Sovereign Perimeter" onclick="selectDate('2026-10-20')">20</div>
+        <div class="cal-cell has-dispatch" data-date="2026-10-19" title="Edition 1 // Oct 19: The Fracture of the Global Clearing Grid" style="cursor:pointer;">19</div>
+        <div class="cal-cell today" data-date="2026-10-20" title="Edition 2 // Oct 20: The Arctic Sovereign Perimeter" style="cursor:pointer;">20</div>
         <div class="cal-cell">21</div>
         <div class="cal-cell">22</div>
         <div class="cal-cell">23</div>
@@ -1115,28 +1115,26 @@ let activeDate = "2026-10-20";
 
 function selectDate(dateKey, shouldScroll = true) {
   if (!DISPATCHES[dateKey]) return;
-  activeDate = dateKey;
   const d = DISPATCHES[dateKey];
 
-  // 1. Update Calendar Cell active styles
+  // 1. Toggle Calendar Styles cleanly via classList
   document.querySelectorAll('.cal-cell[data-date]').forEach(cell => {
     if (cell.dataset.date === dateKey) {
-      cell.className = "cal-cell today";
+      cell.classList.remove('has-dispatch');
+      cell.classList.add('today');
     } else {
-      cell.className = "cal-cell has-dispatch";
+      cell.classList.remove('today');
+      cell.classList.add('has-dispatch');
     }
   });
 
-  // 2. Update Main Report Header
+  // 2. Update Header & Lead
   const kickerEl = document.querySelector('[data-i="todayKicker"]') || document.querySelector('.kicker');
   if (kickerEl) kickerEl.textContent = d.kicker;
-  
   const dateEl = document.getElementById('todayDate');
   if (dateEl) dateEl.textContent = d.cycle;
-  
   const titleEl = document.querySelector('[data-i="todayTitle"]') || document.querySelector('.report-title');
   if (titleEl) titleEl.textContent = d.title;
-  
   const ledeEl = document.querySelector('[data-i="todayLede"]') || document.querySelector('.report-lede');
   if (ledeEl) ledeEl.textContent = d.lede;
 
@@ -1147,164 +1145,81 @@ function selectDate(dateKey, shouldScroll = true) {
   }
 
   // 3. Update Protocol X-Y-Z
-  const xName = document.querySelector('[data-i="xName"]');
-  if (xName) xName.textContent = d.xyz.x_name;
-  const xDesc = document.querySelector('[data-i="xDesc"]');
-  if (xDesc) xDesc.textContent = d.xyz.x_desc;
+  const xName = document.querySelector('[data-i="xName"]'); if (xName) xName.textContent = d.xyz.x_name;
+  const xDesc = document.querySelector('[data-i="xDesc"]'); if (xDesc) xDesc.textContent = d.xyz.x_desc;
+  const yName = document.querySelector('[data-i="yName"]'); if (yName) yName.textContent = d.xyz.y_name;
+  const yDesc = document.querySelector('[data-i="yDesc"]'); if (yDesc) yDesc.textContent = d.xyz.y_desc;
+  const zName = document.querySelector('[data-i="zName"]'); if (zName) zName.textContent = d.xyz.z_name;
+  const zDesc = document.querySelector('[data-i="zDesc"]'); if (zDesc) zDesc.textContent = d.xyz.z_desc;
 
-  const yName = document.querySelector('[data-i="yName"]');
-  if (yName) yName.textContent = d.xyz.y_name;
-  const yDesc = document.querySelector('[data-i="yDesc"]');
-  if (yDesc) yDesc.textContent = d.xyz.y_desc;
+  // 4. Update Regions
+  const r1 = document.querySelector('[data-i="r1Text"]'); if (r1) r1.textContent = d.regions.r1;
+  const r2 = document.querySelector('[data-i="r2Text"]'); if (r2) r2.textContent = d.regions.r2;
+  const r3 = document.querySelector('[data-i="r3Text"]'); if (r3) r3.textContent = d.regions.r3;
 
-  const zName = document.querySelector('[data-i="zName"]');
-  if (zName) zName.textContent = d.xyz.z_name;
-  const zDesc = document.querySelector('[data-i="zDesc"]');
-  if (zDesc) zDesc.textContent = d.xyz.z_desc;
+  // 5. Update Beats
+  const b1 = document.querySelector('[data-i="b1d"]'); if (b1) b1.textContent = d.beats.b1;
+  const b2 = document.querySelector('[data-i="b2d"]'); if (b2) b2.textContent = d.beats.b2;
+  const b3 = document.querySelector('[data-i="b3d"]'); if (b3) b3.textContent = d.beats.b3;
+  const b4 = document.querySelector('[data-i="b4d"]'); if (b4) b4.textContent = d.beats.b4;
 
-  // 4. Update Regional Friction
-  const r1 = document.querySelector('[data-i="r1Text"]');
-  if (r1) r1.textContent = d.regions.r1;
-  const r2 = document.querySelector('[data-i="r2Text"]');
-  if (r2) r2.textContent = d.regions.r2;
-  const r3 = document.querySelector('[data-i="r3Text"]');
-  if (r3) r3.textContent = d.regions.r3;
+  // 6. Update Boards
+  const b1Title = document.querySelector('[data-i="board1Title"]'); if (b1Title) b1Title.textContent = d.boards.b1_title;
+  const b1Sub = document.querySelector('[data-i="board1Sub"]'); if (b1Sub) b1Sub.textContent = d.boards.b1_sub;
+  const cMove = document.querySelector('[data-i="cMove"]'); if (cMove) cMove.textContent = d.boards.b1_move;
+  const cCost = document.querySelector('[data-i="cCost"]'); if (cCost) cCost.textContent = d.boards.b1_cost;
 
-  // 5. Update Four Beats
-  const b1 = document.querySelector('[data-i="b1d"]');
-  if (b1) b1.textContent = d.beats.b1;
-  const b2 = document.querySelector('[data-i="b2d"]');
-  if (b2) b2.textContent = d.beats.b2;
-  const b3 = document.querySelector('[data-i="b3d"]');
-  if (b3) b3.textContent = d.beats.b3;
-  const b4 = document.querySelector('[data-i="b4d"]');
-  if (b4) b4.textContent = d.beats.b4;
+  const b2Title = document.querySelector('[data-i="board2Title"]'); if (b2Title) b2Title.textContent = d.boards.b2_title;
+  const b2Sub = document.querySelector('[data-i="board2Sub"]'); if (b2Sub) b2Sub.textContent = d.boards.b2_sub;
+  const chMove = document.querySelector('[data-i="chMove"]'); if (chMove) chMove.textContent = d.boards.b2_move;
+  const chPos = document.querySelector('[data-i="chPos"]'); if (chPos) chPos.textContent = d.boards.b2_cost;
 
-  // 6. Update Three Boards Deep Dive
-  const b1Title = document.querySelector('[data-i="board1Title"]');
-  if (b1Title) b1Title.textContent = d.boards.b1_title;
-  const b1Sub = document.querySelector('[data-i="board1Sub"]');
-  if (b1Sub) b1Sub.textContent = d.boards.b1_sub;
-  const cMove = document.querySelector('[data-i="cMove"]');
-  if (cMove) cMove.textContent = d.boards.b1_move;
-  const cCost = document.querySelector('[data-i="cCost"]');
-  if (cCost) cCost.textContent = d.boards.b1_cost;
-
-  const b2Title = document.querySelector('[data-i="board2Title"]');
-  if (b2Title) b2Title.textContent = d.boards.b2_title;
-  const b2Sub = document.querySelector('[data-i="board2Sub"]');
-  if (b2Sub) b2Sub.textContent = d.boards.b2_sub;
-  const chMove = document.querySelector('[data-i="chMove"]');
-  if (chMove) chMove.textContent = d.boards.b2_move;
-  const chPos = document.querySelector('[data-i="chPos"]');
-  if (chPos) chPos.textContent = d.boards.b2_cost;
-
-  const b3Title = document.querySelector('[data-i="board3Title"]');
-  if (b3Title) b3Title.textContent = d.boards.b3_title;
-  const b3Sub = document.querySelector('[data-i="board3Sub"]');
-  if (b3Sub) b3Sub.textContent = d.boards.b3_sub;
-  const goMove = document.querySelector('[data-i="goMove"]');
-  if (goMove) goMove.textContent = d.boards.b3_move;
-  const goPos = document.querySelector('[data-i="goPos"]');
-  if (goPos) goPos.textContent = d.boards.b3_cost;
+  const b3Title = document.querySelector('[data-i="board3Title"]'); if (b3Title) b3Title.textContent = d.boards.b3_title;
+  const b3Sub = document.querySelector('[data-i="board3Sub"]'); if (b3Sub) b3Sub.textContent = d.boards.b3_sub;
+  const goMove = document.querySelector('[data-i="goMove"]'); if (goMove) goMove.textContent = d.boards.b3_move;
+  const goPos = document.querySelector('[data-i="goPos"]'); if (goPos) goPos.textContent = d.boards.b3_cost;
 
   // 7. Update Plain Language & Verdict
-  const p1 = document.querySelector('[data-i="plainP1"]');
-  if (p1) p1.textContent = d.plain.p1;
-  const p2 = document.querySelector('[data-i="plainP2"]');
-  if (p2) p2.textContent = d.plain.p2;
+  const p1 = document.querySelector('[data-i="plainP1"]'); if (p1) p1.textContent = d.plain.p1;
+  const p2 = document.querySelector('[data-i="plainP2"]'); if (p2) p2.textContent = d.plain.p2;
+  const verdict = document.querySelector('[data-i="verdictBody"]'); if (verdict) verdict.textContent = d.verdict;
 
-  const verdict = document.querySelector('[data-i="verdictBody"]');
-  if (verdict) verdict.textContent = d.verdict;
-
-  // 8. Update URL hash
+  // 8. Sync URL Hash
   if (history.replaceState) {
     history.replaceState(null, null, '#' + dateKey);
   } else {
     location.hash = '#' + dateKey;
   }
 
-  // 9. Smooth Scroll
   if (shouldScroll) {
     const target = document.getElementById('report');
-    if (target) {
-      window.scrollTo({ top: target.offsetTop - 60, behavior: 'smooth' });
-    }
+    if (target) window.scrollTo({ top: target.offsetTop - 60, behavior: 'smooth' });
   }
 }
 
-// Live Search Engine
-function handleSearch(query) {
-  const q = (query || "").trim().toLowerCase();
-  const searchResultsEl = document.getElementById("searchResults");
-  if (!searchResultsEl) return;
-
-  if (!q) {
-    searchResultsEl.style.display = "none";
-    searchResultsEl.innerHTML = "";
-    return;
+// Global Event Listener for Calendar Clicks (handles unlimited back-and-forth clicks)
+document.addEventListener("DOMContentLoaded", () => {
+  const calGrid = document.getElementById("calGrid");
+  if (calGrid) {
+    calGrid.addEventListener("click", (e) => {
+      const cell = e.target.closest(".cal-cell[data-date]");
+      if (cell && cell.dataset.date) {
+        selectDate(cell.dataset.date, true);
+      }
+    });
   }
 
-  const matches = [];
-  for (const [key, item] of Object.entries(DISPATCHES)) {
-    const fullHaystack = `${item.title} ${item.lede} ${item.xyz.x_name} ${item.xyz.y_name} ${item.xyz.z_name} ${item.boards.b1_title} ${item.boards.b2_title} ${item.boards.b3_title}`.toLowerCase();
-    if (fullHaystack.includes(q)) {
-      matches.push({ key, item });
-    }
-  }
-
-  if (matches.length === 0) {
-    searchResultsEl.style.display = "block";
-    searchResultsEl.innerHTML = `<div style="padding:12px;color:var(--card-muted);font-size:13px;">No dispatches found matching "${query}".</div>`;
-    return;
-  }
-
-  searchResultsEl.style.display = "block";
-  searchResultsEl.innerHTML = matches.map(m => `
-    <div class="search-result-item" onclick="selectDate('${m.key}'); document.getElementById('searchResults').style.display='none';" style="padding:10px 14px;border-bottom:1px solid #eeeae0;cursor:pointer;transition:background .15s ease;">
-      <div style="font-size:11px;color:var(--accent-red);font-weight:700;text-transform:uppercase;">${m.item.date_str}</div>
-      <div style="font-family:var(--serif);font-size:15px;font-weight:700;color:var(--card-ink);margin:2px 0;">${m.item.title}</div>
-      <div style="font-size:12px;color:var(--card-muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${m.item.lede}</div>
-    </div>
-  `).join('');
-}
-
-function executeSearchSubmit() {
-  const input = document.getElementById("searchInput");
-  const q = input.value.trim().toLowerCase();
-  if (!q) return;
-
-  for (const [key, item] of Object.entries(DISPATCHES)) {
-    const fullHaystack = `${item.title} ${item.lede} ${item.xyz.x_name} ${item.xyz.y_name} ${item.xyz.z_name}`.toLowerCase();
-    if (fullHaystack.includes(q)) {
-      selectDate(key);
-      const res = document.getElementById("searchResults");
-      if (res) res.style.display = "none";
-      return;
-    }
-  }
-}
-
-// Initialize on Load (Hash / Date Check)
-window.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.getElementById("searchInput");
   if (searchInput) {
     searchInput.addEventListener("input", (e) => handleSearch(e.target.value));
   }
 
-  // Check URL hash (e.g. #2026-10-19) or search query (?date=2026-10-19)
-  const hash = window.location.hash.replace('#', '').trim();
-  const urlParams = new URLSearchParams(window.location.search);
-  const paramDate = urlParams.get('date');
-
-  const targetDate = hash || paramDate;
-  if (targetDate && DISPATCHES[targetDate]) {
-    selectDate(targetDate, false);
+  // Load from URL hash or default to Oct 20
+  const initial = window.location.hash.replace('#', '').trim();
+  if (initial && DISPATCHES[initial]) {
+    selectDate(initial, false);
   } else {
     selectDate("2026-10-20", false);
   }
 });
 
-</script>
-</body>
-</html>
