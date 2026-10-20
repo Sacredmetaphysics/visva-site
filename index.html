@@ -626,11 +626,11 @@ footer.bottom-red-footer strong{
         <div class="cal-cell">13</div>
         <div class="cal-cell">14</div>
         <div class="cal-cell">15</div>
-        <div class="cal-cell has-dispatch" data-date="2026-10-16" title="Dispatch: Oct 16 (Hormuz Asymmetric Standoff)" onclick="selectDate('2026-10-16')">16</div>
-        <div class="cal-cell has-dispatch" data-date="2026-10-17" title="Dispatch: Oct 17 (Continental Rail Compact)" onclick="selectDate('2026-10-17')">17</div>
-        <div class="cal-cell has-dispatch" data-date="2026-10-18" title="Dispatch: Oct 18 (AI Hardware Embargo)" onclick="selectDate('2026-10-18')">18</div>
-        <div class="cal-cell has-dispatch" data-date="2026-10-19" title="Dispatch: Oct 19 (Fracture of Global Clearing Grid)" onclick="selectDate('2026-10-19')">19</div>
-        <div class="cal-cell today" data-date="2026-10-20" title="Dispatch: Oct 20 (The Arctic Sovereign Perimeter)" onclick="selectDate('2026-10-20')">20</div>
+        <div class="cal-cell">16</div>
+        <div class="cal-cell">17</div>
+        <div class="cal-cell">18</div>
+        <div class="cal-cell has-dispatch" data-date="2026-10-19" title="Edition 1 // Oct 19: The Fracture of the Global Clearing Grid" onclick="selectDate('2026-10-19')">19</div>
+        <div class="cal-cell today" data-date="2026-10-20" title="Edition 2 // Oct 20: The Arctic Sovereign Perimeter" onclick="selectDate('2026-10-20')">20</div>
         <div class="cal-cell">21</div>
         <div class="cal-cell">22</div>
         <div class="cal-cell">23</div>
@@ -649,12 +649,12 @@ footer.bottom-red-footer strong{
   <!-- Lead Report Header -->
   <article class="box" id="report">
     <div class="kicker-row">
-      <span class="kicker" data-i="todayKicker">The Move of the Day // October 19, 2026</span>
-      <span class="date-badge" id="todayDate">Monday, October 19, 2026 · GMT 00:00 Cycle</span>
+      <span class="kicker" data-i="todayKicker">The Move of the Day // Edition 2 · October 20, 2026</span>
+      <span class="date-badge" id="todayDate">Tuesday, October 20, 2026 · GMT 00:00 Cycle · Edition 2</span>
     </div>
-    <h2 class="report-title" data-i="todayTitle">The Fracture of the Global Clearing Grid: Bilateral Commodities Settle Outside the G7 Rail</h2>
-    <p class="report-lede" data-i="todayLede">Central bank digital clearing corridors bypass Western correspondent banking, anchoring new settlement liquidity in vaulted gold and direct bilateral energy swaps. Read through Protocol X-Y-Z and across three boards.</p>
-    <a href="editorial-2026-10-19.html" class="editorial-btn"><span data-i="readEditorialBtn">Read The Daily Editorial</span> →</a>
+    <h2 class="report-title" data-i="todayTitle">The Arctic Sovereign Perimeter: Canada and Nordic Allies Close the Circumpolar Optical & Defense Corridor</h2>
+    <p class="report-lede" data-i="todayLede">Joint circumpolar sovereign mandates deploy hardened fiber infrastructure, autonomous surveillance grids, and mineral logistics hubs across the High North, preempting maritime transit contestation. Read through Protocol X-Y-Z and across three boards.</p>
+    <a href="editorial-2026-10-20.html" class="editorial-btn"><span data-i="readEditorialBtn">Read The Daily Editorial</span> →</a>
   </article>
 
   <!-- Protocol X-Y-Z Players Section -->
@@ -877,9 +877,9 @@ const L = {
     tag:"One world. One move. Every day.",
     searchTitle:"Search the Record",searchPlaceholder:"Search dispatches, moves, or players...",searchBtn:"Search",quickFilters:"Quick filters:",
     calMonth:"October 2026",calLegend:"● Live Move",
-    todayKicker:"The Move of the Day // October 19, 2026",
-    todayTitle:"The Fracture of the Global Clearing Grid: Bilateral Commodities Settle Outside the G7 Rail",
-    todayLede:"Central bank digital clearing corridors bypass Western correspondent banking, anchoring new settlement liquidity in vaulted gold and direct bilateral energy swaps. Read through Protocol X-Y-Z and across three boards.",
+    todayKicker:"The Move of the Day // Edition 2 · October 20, 2026",
+    todayTitle:"The Arctic Sovereign Perimeter: Canada and Nordic Allies Close the Circumpolar Optical & Defense Corridor",
+    todayLede:"Joint circumpolar sovereign mandates deploy hardened fiber infrastructure, autonomous surveillance grids, and mineral logistics hubs across the High North, preempting maritime transit contestation. Read through Protocol X-Y-Z and across three boards.",
     xyzTitle:"Protocol X-Y-Z: The Operational Players",
     xName:"G7 Regulatory Axis",xDesc:"The enforcement rail operating under short horizons. Trapped in mandatory response cycles, forced to deploy emergency secondary sanctions that cause immediate friction but forfeit long-term surveillance visibility.",
     yName:"Bilateral Vault Arbiters",yDesc:"Central bank reserve managers and sovereign vaults across the Indian Ocean rim. Absorbing volatility by re-anchoring liquid balances into domestic physical bullion and direct local-currency energy clearing.",
@@ -986,7 +986,7 @@ function setLang(k) {
   // Update Editorial button to forward the selected language parameter
   const edBtn = document.querySelector(".editorial-btn");
   if (edBtn) {
-    edBtn.href = `editorial-2026-10-19.html?lang=${k}`;
+    edBtn.href = `editorial-2026-10-20.html?lang=${k}`;
   }
 
   pillsContainer.querySelectorAll("button").forEach(b => {
@@ -1017,9 +1017,9 @@ setLang(startLang);
 const DISPATCHES = {
   "2026-10-20": {
     "date_str": "Tuesday, October 20, 2026",
-    "cycle": "Tuesday, October 20, 2026 \u00b7 GMT 00:00 Cycle",
+    "cycle": "Tuesday, October 20, 2026 \u00b7 GMT 00:00 Cycle \u00b7 Edition 2",
     "day_num": 20,
-    "kicker": "The Move of the Day // October 20, 2026",
+    "kicker": "The Move of the Day // Edition 2 \u00b7 October 20, 2026",
     "title": "The Arctic Sovereign Perimeter: Canada and Nordic Allies Close the Circumpolar Optical & Defense Corridor",
     "lede": "Joint circumpolar sovereign mandates deploy hardened fiber infrastructure, autonomous surveillance grids, and mineral logistics hubs across the High North, preempting maritime transit contestation. Read through Protocol X-Y-Z and across three boards.",
     "editorial_url": "editorial-2026-10-20.html",
@@ -1064,12 +1064,12 @@ const DISPATCHES = {
   },
   "2026-10-19": {
     "date_str": "Monday, October 19, 2026",
-    "cycle": "Monday, October 19, 2026 \u00b7 GMT 00:00 Cycle",
+    "cycle": "Monday, October 19, 2026 \u00b7 GMT 00:00 Cycle \u00b7 Edition 1",
     "day_num": 19,
-    "kicker": "The Move of the Day // October 19, 2026",
-    "title": "The Fracture of the Global Clearing Grid: Bilateral Commodities Settle Outside the G7 Rail",
-    "lede": "Central bank digital clearing corridors bypass Western correspondent banking, anchoring new settlement liquidity in vaulted gold and direct bilateral energy swaps. Read through Protocol X-Y-Z and across three boards.",
-    "editorial_url": "editorial-2026-10-19.html",
+    "kicker": "The Move of the Day // Edition 1 \u00b7 October 19, 2026",
+    "title": "The Arctic Sovereign Perimeter: Canada and Nordic Allies Close the Circumpolar Optical & Defense Corridor",
+    "lede": "Joint circumpolar sovereign mandates deploy hardened fiber infrastructure, autonomous surveillance grids, and mineral logistics hubs across the High North, preempting maritime transit contestation. Read through Protocol X-Y-Z and across three boards.",
+    "editorial_url": "editorial-2026-10-20.html",
     "xyz": {
       "x_name": "G7 Regulatory Axis",
       "x_desc": "The enforcement rail operating under short horizons. Trapped in mandatory response cycles, forced to deploy emergency secondary sanctions that cause immediate friction but forfeit long-term surveillance visibility.",
@@ -1108,147 +1108,6 @@ const DISPATCHES = {
       "p2": "Today's move means major resource and industrial powers have officially activated a parallel digital payment system backed by real, vaulted gold and direct barter rather than dollars. When Western regulators try to punish these intermediaries, the new system keeps operating untouched. The referee is still blowing the whistle, but the players have moved to an entirely different field where the whistle cannot be heard."
     },
     "verdict": "What the western news cycle reports as a tactical sanctions dispute is, on the deep board, the terminal loss of geographic and settlement liberties. You do not win Go by shouting on the television; you win it by quietly placing the stone where the opponent will eventually need to breathe."
-  },
-  "2026-10-18": {
-    "date_str": "Sunday, October 18, 2026",
-    "cycle": "Sunday, October 18, 2026 \u00b7 GMT 00:00 Cycle",
-    "day_num": 18,
-    "kicker": "The Move of the Day // October 18, 2026",
-    "title": "The Sovereign AI Hardware Embargo: Domestic Silicon Fabrication Enters Strategic Zugzwang",
-    "lede": "Allied export controls freeze extreme-ultraviolet component maintenance while alternative foundries deploy sovereign multi-die packaging to maintain autonomous computing clusters. Read across three boards.",
-    "editorial_url": "editorial-2026-10-19.html",
-    "xyz": {
-      "x_name": "Export Enforcement Directives",
-      "x_desc": "Tactical bureaucratic freezes attempting to halt component spares at container ports, causing friction while driving accelerated reverse engineering.",
-      "y_name": "Sovereign Foundry Capital",
-      "y_desc": "State-backed sovereign investment funds financing parallel semiconductor fabrication lines and domestic EDA software stacks.",
-      "z_name": "Rare Earth Refining Nodes",
-      "z_desc": "Physical processing facilities for gallium, germanium, and refined silicon controlling the essential atomic inputs of advanced computation."
-    },
-    "regions": {
-      "r1": "East Asia Semiconductor Arc: High-yield fabrication lines operating under continuous allied export monitoring.",
-      "r2": "North American Compute Hubs: Hyperscale data center buildouts straining sovereign power grids and nuclear baseload.",
-      "r3": "Mineral Refining Basins: Export licensing bottlenecks restricting raw semiconductor materials to allied manufacturing chains."
-    },
-    "beats": {
-      "b1": "Advanced artificial intelligence compute has become the primary sovereign strategic commodity of the twenty-first century.",
-      "b2": "The hardware choke point is shifting from wafer fabrication tooling to raw material refining and advanced packaging architectures.",
-      "b3": "Sovereign technology programs achieve functional compute independence through modular multi-chip clustering.",
-      "b4": "Allied technology containment policies face terminal enforcement limits as domestic production matures."
-    },
-    "boards": {
-      "b1_title": "Checkers: Port Inspections & Seizures",
-      "b1_sub": "Tactical seizures \u00b7 Immediate friction \u00b7 Customs delays",
-      "b1_move": "Customs authorities impound high-end GPU accelerator shipments at maritime transit hubs.",
-      "b1_cost": "Short-term supply disruptions create immediate black-market premiums while expediting sovereign domestic chip substitutions.",
-      "b2_title": "Chess: Foundry Capital Allocation",
-      "b2_sub": "Capital concentration \u00b7 Subsidized foundries \u00b7 Strategic zugzwang",
-      "b2_move": "National strategic investment funds underwrite twenty-billion-dollar domestic lithography development consortia.",
-      "b2_cost": "Capital is permanently committed to domestic manufacturing sovereignty, insulating the industrial base from foreign embargoes.",
-      "b3_title": "Go: Atomic Material Enclosure",
-      "b3_sub": "Raw material chokepoints \u00b7 Deep supply chains \u00b7 Silent monopoly",
-      "b3_move": "Refining cartels coordinate multi-year contracts for critical optical and dielectric gases across Eurasia.",
-      "b3_cost": "The foundational chemical inputs for silicon fabrication are enclosed, making offshore factories vulnerable to silent supply interruptions."
-    },
-    "plain": {
-      "p1": "Every advanced computer chip in modern phones, missiles, and AI data centers relies on a tiny handful of specialized machines and rare chemical elements.",
-      "p2": "When western powers tried to cut off competitors from buying these finished chips, competitors responded by taking control of the rare minerals needed to build them and funding their own factories. The tech race is now a fight over physical dirt and electricity."
-    },
-    "verdict": "You cannot monopolize intelligence by locking the software drawer when the opponent holds the physical minerals required to power the machine."
-  },
-  "2026-10-17": {
-    "date_str": "Saturday, October 17, 2026",
-    "cycle": "Saturday, October 17, 2026 \u00b7 GMT 00:00 Cycle",
-    "day_num": 17,
-    "kicker": "The Move of the Day // October 17, 2026",
-    "title": "The Continental Rail Compact: Central Asian Mineral Transit Decouples from Maritime Insurance",
-    "lede": "New overland multimodal freight arteries establish sovereign reinsurance pools, completely bypassing London and European maritime underwriters for bulk mineral flows.",
-    "editorial_url": "editorial-2026-10-19.html",
-    "xyz": {
-      "x_name": "Maritime Underwriting Cartels",
-      "x_desc": "Western insurance syndicates refusing risk coverage on non-compliant tanker and bulk carrier fleets.",
-      "y_name": "Sovereign Reinsurance Funds",
-      "y_desc": "Central bank backstops providing state guarantees for continental rail freight and inland waterway barges.",
-      "z_name": "Gauge-Break Rail Terminals",
-      "z_desc": "Automated container transfer stations along the Eurasian land bridge locking in overland freight speeds."
-    },
-    "regions": {
-      "r1": "North Sea Insurance Hubs: Loss of premium fee revenue as sovereign rail corridors capture dry-bulk transit volume.",
-      "r2": "Central Asian Steppe: Transformation into the primary heavy logistics turnpike between resource basins and industrial factories.",
-      "r3": "Pacific Terminals: Shifting container logistics from maritime sea lanes directly to inland multimodal rail heads."
-    },
-    "beats": {
-      "b1": "Overland rail transport combined with state-backed reinsurance neutralizes maritime sanctions entirely.",
-      "b2": "Maritime shipping choke points (Malacca, Suez) lose leverage over landlocked bulk trade.",
-      "b3": "Dry-bulk transit times between major industrial hubs are cut by sixty percent compared to ocean shipping.",
-      "b4": "Sovereign mutual guarantee pools replace centuries-old European maritime risk underwriting."
-    },
-    "boards": {
-      "b1_title": "Checkers: Maritime Vessel Detentions",
-      "b1_sub": "Port state control \u00b7 Inspection mandates \u00b7 Flag state disputes",
-      "b1_move": "Maritime authorities issue safety detentions against uninsured coastal cargo vessels.",
-      "b1_cost": "Shippers permanently divert cargo off the water and onto overland high-speed rail lines.",
-      "b2_title": "Chess: State Reinsurance Reserves",
-      "b2_sub": "Balance-sheet guarantees \u00b7 Capital fortification",
-      "b2_move": "Allied central banks establish a shared gold-backed mutual reinsurance fund for cross-border freight.",
-      "b2_cost": "Risk is socialized across sovereign balance sheets, rendering private Western insurance bans completely ineffective.",
-      "b3_title": "Go: Steel on Ground Corridor",
-      "b3_sub": "Physical rail lines \u00b7 Permanent connectivity",
-      "b3_move": "Completion of double-tracked standard gauge rail spurs connecting remote mineral pits to processing plants.",
-      "b3_cost": "The physical geography of trade is permanently anchored to the dirt, immune to naval carrier groups."
-    },
-    "plain": {
-      "p1": "Most global trade travels on giant ships, and almost all of those ships have to buy insurance from companies in London or Europe. If those companies refuse to insure a ship, it cannot enter ports.",
-      "p2": "Countries have solved this problem by moving their cargo off ships and onto high-speed trains running directly across the land, backed by government-guaranteed insurance. You cannot blockade a train moving through the middle of a continent."
-    },
-    "verdict": "Trade that travels on steel rails through the heartland cannot be governed by rules written for the sea."
-  },
-  "2026-10-16": {
-    "date_str": "Friday, October 16, 2026",
-    "cycle": "Friday, October 16, 2026 \u00b7 GMT 00:00 Cycle",
-    "day_num": 16,
-    "kicker": "The Move of the Day // October 16, 2026",
-    "title": "The Strait of Hormuz Asymmetric Standoff: Surface Escort Friction vs. Undersea Liberty Closures",
-    "lede": "Naval escort coalitions face asymmetric drone swarms while regional coastal defense arrays lock down the narrow shipping lanes of the Persian Gulf.",
-    "editorial_url": "editorial-2026-10-19.html",
-    "xyz": {
-      "x_name": "Naval Task Force Command",
-      "x_desc": "High-cost Aegis air defense destroyers intercepting low-cost loitering munitions to keep commercial tanker lanes open.",
-      "y_name": "Energy Risk Re-Pricers",
-      "y_desc": "Commodity desks and tanker charterers pricing war-risk premiums into every barrel passing through the strait.",
-      "z_name": "Shore-Based Missile Batteries",
-      "z_desc": "Mobile anti-ship cruise missile launchers hidden in coastal mountain redoubts overlooking the maritime passage."
-    },
-    "regions": {
-      "r1": "Persian Gulf Chokepoints: Extreme risk premiums on crude and LNG transit through the Strait of Hormuz.",
-      "r2": "European Energy Import Hubs: Heightened vulnerability to spot-market energy supply interruptions.",
-      "r3": "East Asian Refining Centers: Accelerated reliance on overland pipeline contracts to diversify away from Gulf crude."
-    },
-    "beats": {
-      "b1": "The cost curve of air defense has inverted: million-dollar interceptors are consumed by twenty-thousand-dollar drones.",
-      "b2": "Commercial shipping companies refuse transit without sovereign military convoys, cutting effective tanker throughput.",
-      "b3": "Overland pipeline bypasses (East-West pipelines) operate at maximum physical capacity.",
-      "b4": "Asymmetric coastal defense weapons achieve regional sea denial without deploying a conventional navy."
-    },
-    "boards": {
-      "b1_title": "Checkers: Drone Swarm Interceptions",
-      "b1_sub": "Tactical missile firings \u00b7 Munition depletion \u00b7 Optical skirmishes",
-      "b1_move": "Allied destroyers expend surface-to-air missiles against waves of autonomous strike drones.",
-      "b1_cost": "Severe naval stockpile exhaustion: high-end guided missiles are expended far faster than defense industrial factories can produce them.",
-      "b2_title": "Chess: Crude Transit Reinsurance",
-      "b2_sub": "Surging insurance rates \u00b7 Tanker routing",
-      "b2_move": "Underwriters raise war risk premiums by four hundred percent, freezing unescorted merchant shipping.",
-      "b2_cost": "Global shipping costs spike, transmitting immediate inflationary shocks into consumer economies.",
-      "b3_title": "Go: Coastal Missile Redoubts",
-      "b3_sub": "Territorial sea denial \u00b7 Chokepoint enclosure",
-      "b3_move": "Deployment of hardened mobile anti-ship batteries along every dominant promontory of the strait.",
-      "b3_cost": "The waterway is permanently held under physical artillery crosshairs, establishing total asymmetric sea denial."
-    },
-    "plain": {
-      "p1": "A huge portion of the world's daily oil and gas supply must squeeze through a narrow body of water called the Strait of Hormuz.",
-      "p2": "Small, cheap drones and shore missiles can now threaten billion-dollar aircraft carriers and cargo ships. Even though powerful warships are in the area, shooting down endless waves of cheap drones costs too much money and ammunition. The entire trade route has become too dangerous for ordinary ships."
-    },
-    "verdict": "When a ten-thousand-dollar drone forces a two-million-dollar missile into the sky, the player launching the missile is losing the war of economic attrition."
   }
 };
 
