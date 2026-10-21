@@ -4,11 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>visva — One world. One move. Every day.</title>
-<meta name="description" content="Each day, visva identifies the one event moving the world and reads it through Protocol X-Y-Z across three boards: Checkers, Chess, and Go. In ten languages.">
-<meta property="og:title" content="visva.world — One world. One move. Every day.">
-<meta property="og:description" content="Isolating the single tectonic geopolitical move at GMT 00:00 across three boards: Checkers, Chess, and Go.">
-<meta property="og:image" content="banner.jpg">
-<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="Each day, visva identifies the one event moving the world and reads it through Protocol X-Y-Z across three boards: Checkers, Chess, and Go.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -26,509 +22,93 @@
   --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{
-  background:var(--bg);
-  color:var(--text-primary);
-  font-family:var(--sans);
-  line-height:1.55;
-  -webkit-font-smoothing:antialiased;
-}
-.wrap{
-  max-width:1080px;
-  margin:0 auto;
-  padding:0 20px;
-}
+body{background:var(--bg);color:var(--text-primary);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased;}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px;}
 a{color:inherit;text-decoration:none}
 
 /* Top Red Header Bar */
-.top-red-bar{
-  background:var(--accent-red);
-  color:#ffffff;
-  font-size:13px;
-  font-weight:600;
-  letter-spacing:.02em;
-  margin-bottom:24px;
-}
-.top-red-bar .wrap{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  min-height:42px;
-  flex-wrap:wrap;
-  gap:12px;
-  padding-top:4px;
-  padding-bottom:4px;
-}
-.gmt-clock-wrap{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  font-feature-settings:"tnum";
-  font-variant-numeric:tabular-nums;
-}
-.gmt-clock-wrap .live-indicator{
-  width:7px;
-  height:7px;
-  border-radius:50%;
-  background:#ffffff;
-  animation:blink 1.8s infinite;
-}
+.top-red-bar{background:var(--accent-red);color:#ffffff;font-size:13px;font-weight:600;letter-spacing:.02em;margin-bottom:24px;}
+.top-red-bar .wrap{display:flex;justify-content:space-between;align-items:center;min-height:42px;flex-wrap:wrap;gap:12px;padding-top:4px;padding-bottom:4px;}
+.gmt-clock-wrap{display:flex;align-items:center;gap:8px;font-feature-settings:"tnum";font-variant-numeric:tabular-nums;}
+.gmt-clock-wrap .live-indicator{width:7px;height:7px;border-radius:50%;background:#ffffff;animation:blink 1.8s infinite;}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
-.top-nav{
-  display:flex;
-  align-items:center;
-  gap:22px;
-  list-style:none;
-}
-.top-nav a{
-  color:#ffffff;
-  transition:opacity .15s ease;
-  font-weight:600;
-}
-.top-nav a:hover{
-  opacity:0.8;
-  text-decoration:underline;
-}
+.top-nav{display:flex;align-items:center;gap:22px;list-style:none;}
+.top-nav a{color:#ffffff;transition:opacity .15s ease;font-weight:600;}
+.top-nav a:hover{opacity:0.8;text-decoration:underline;}
 
-/* Site Banner / Hero Graphic */
-.site-banner-wrap{
-  max-width:1080px;
-  margin:0 auto 16px;
-  padding:0 20px;
-}
-.site-banner{
-  width:100%;
-  height:auto;
-  border-radius:12px;
-  display:block;
-  box-shadow:0 12px 32px rgba(0,0,0,0.5);
-  border:1px solid #22201c;
-}
+/* Site Banner / Hero Graphic (Links back to English home) */
+.site-banner-wrap{max-width:1080px;margin:0 auto 16px;padding:0 20px;}
+.site-banner{width:100%;height:auto;border-radius:12px;display:block;box-shadow:0 12px 32px rgba(0,0,0,0.5);border:1px solid #22201c;}
 
-/* Language Selection Strip & Compiler Status */
-.lang-strip{
-  padding:8px 0 24px;
-  text-align:center;
-}
-.lang-pills{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:8px;
-}
-.lang-btn{
-  background:var(--surface);
-  color:var(--text-muted);
-  border:1px solid transparent;
-  outline:none;
-  border-radius:999px;
-  padding:6px 14px;
-  font-family:var(--sans);
-  font-size:13px;
-  font-weight:500;
-  cursor:pointer;
-  transition:all 0.15s ease;
-}
-.lang-btn:hover{
-  color:var(--text-primary);
-  background:#201e18;
-}
-.lang-btn[aria-pressed="true"]{
-  background:var(--card-bg);
-  color:var(--card-ink);
-  font-weight:700;
-}
-.compiler-status{
-  display:inline-block;
-  margin-top:10px;
-  font-size:11px;
-  font-family:monospace;
-  letter-spacing:.08em;
-  color:var(--accent-red);
-  background:#1a1211;
-  border:1px solid #3d1b18;
-  padding:4px 12px;
-  border-radius:999px;
-  opacity:0;
-  transition:opacity 0.2s ease;
-  pointer-events:none;
-}
-.compiler-status.active{
-  opacity:1;
-}
+/* 10-Language Navigation Bar */
+.lang-strip{padding:8px 0 28px;text-align:center;}
+.lang-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;}
+.lang-btn{background:var(--surface);color:var(--text-muted);border:1px solid transparent;outline:none;border-radius:999px;padding:6px 14px;font-family:var(--sans);font-size:13px;font-weight:500;cursor:pointer;transition:all 0.15s ease;}
+.lang-btn:hover{color:var(--text-primary);background:#201e18;}
+.lang-btn.active{background:var(--card-bg);color:var(--card-ink);font-weight:700;}
 
 /* Control Hub: Search & Calendar */
-.control-hub{
-  display:grid;
-  grid-template-columns:1.45fr 1fr;
-  gap:24px;
-  margin-bottom:32px;
-}
-.hub-card{
-  background:var(--card-bg);
-  color:var(--card-ink);
-  border-radius:12px;
-  padding:24px 28px;
-}
-.hub-card h3{
-  font-family:var(--serif);
-  font-size:19px;
-  font-weight:700;
-  margin-bottom:14px;
-  letter-spacing:-.01em;
-}
-.search-form{
-  display:flex;
-  gap:10px;
-}
-.search-input{
-  flex:1;
-  background:#f5f2eb;
-  border:none;
-  outline:none;
-  border-radius:8px;
-  padding:12px 16px;
-  font-family:var(--sans);
-  font-size:15px;
-  color:var(--card-ink);
-}
-.search-btn{
-  background:var(--card-ink);
-  color:var(--card-bg);
-  border:none;
-  outline:none;
-  border-radius:8px;
-  padding:12px 20px;
-  font-family:var(--sans);
-  font-size:14px;
-  font-weight:600;
-  cursor:pointer;
-}
-.search-hints{
-  display:flex;
-  gap:8px;
-  margin-top:14px;
-  font-size:12px;
-  color:var(--card-muted);
-  align-items:center;
-  flex-wrap:wrap;
-}
-.search-tag{
-  background:#ece8dc;
-  color:var(--card-ink);
-  padding:3px 8px;
-  border-radius:4px;
-  cursor:pointer;
-}
-.cal-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:12px;
-  font-weight:600;
-  font-family:var(--serif);
-  font-size:15px;
-}
-.cal-grid{
-  display:grid;
-  grid-template-columns:repeat(7,1fr);
-  gap:4px;
-  text-align:center;
-}
-.cal-cell{
-  padding:6px 0;
-  border-radius:4px;
-  font-weight:500;
-  user-select:none;
-}
-.cal-day-name{
-  color:var(--card-muted);
-  font-size:11px;
-  font-weight:600;
-  text-transform:uppercase;
-  padding-bottom:4px;
-}
-.cal-cell.has-dispatch{
-  background:var(--card-ink);
-  color:var(--card-bg);
-  cursor:pointer;
-  font-weight:700;
-}
-.cal-cell.today{
-  background:var(--accent-red);
-  color:#fff;
-  font-weight:700;
-  cursor:pointer;
-}
-.cal-cell.empty{
-  opacity:0.25;
-}
+.control-hub{display:grid;grid-template-columns:1.45fr 1fr;gap:24px;margin-bottom:32px;}
+.hub-card{background:var(--card-bg);color:var(--card-ink);border-radius:12px;padding:24px 28px;}
+.hub-card h3{font-family:var(--serif);font-size:19px;font-weight:700;margin-bottom:14px;letter-spacing:-.01em;}
+.search-form{display:flex;gap:10px;}
+.search-input{flex:1;background:#f5f2eb;border:none;outline:none;border-radius:8px;padding:12px 16px;font-family:var(--sans);font-size:15px;color:var(--card-ink);}
+.search-btn{background:var(--card-ink);color:var(--card-bg);border:none;outline:none;border-radius:8px;padding:12px 20px;font-family:var(--sans);font-size:14px;font-weight:600;cursor:pointer;}
+.search-hints{display:flex;gap:8px;margin-top:14px;font-size:12px;color:var(--card-muted);align-items:center;flex-wrap:wrap;}
+.search-tag{background:#ece8dc;color:var(--card-ink);padding:3px 8px;border-radius:4px;cursor:pointer;}
+.cal-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-weight:600;font-family:var(--serif);font-size:15px;}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center;}
+.cal-cell{padding:6px 0;border-radius:4px;font-weight:500;user-select:none;}
+.cal-day-name{color:var(--card-muted);font-size:11px;font-weight:600;text-transform:uppercase;padding-bottom:4px;}
+.cal-cell.has-dispatch{background:var(--card-ink);color:var(--card-bg);cursor:pointer;font-weight:700;}
+.cal-cell.today{background:var(--accent-red);color:#fff;font-weight:700;cursor:pointer;}
+.cal-cell.empty{opacity:0.25;}
 
 /* White Content Cards */
-.box{
-  background:var(--card-bg);
-  color:var(--card-ink);
-  border-radius:12px;
-  padding:36px 40px;
-  margin-bottom:28px;
-}
-.kicker-row{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:12px;
-  flex-wrap:wrap;
-  gap:8px;
-}
-.kicker{
-  color:var(--accent-red);
-  font-size:12px;
-  font-weight:700;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-}
-.date-badge{
-  font-size:13px;
-  color:var(--card-muted);
-  font-weight:500;
-}
-h2.report-title{
-  font-family:var(--serif);
-  font-weight:700;
-  font-size:clamp(26px,4vw,38px);
-  line-height:1.15;
-  margin-bottom:16px;
-  letter-spacing:-.01em;
-}
-p.report-lede{
-  font-size:17px;
-  color:var(--card-muted);
-  line-height:1.6;
-}
-.matrix-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
-  margin-bottom:28px;
-}
-.matrix-card{
-  background:var(--card-bg);
-  color:var(--card-ink);
-  border-radius:10px;
-  padding:24px;
-}
-.matrix-badge{
-  display:inline-block;
-  font-size:11px;
-  font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:.1em;
-  padding:3px 8px;
-  border-radius:4px;
-  margin-bottom:12px;
-}
+.box{background:var(--card-bg);color:var(--card-ink);border-radius:12px;padding:36px 40px;margin-bottom:28px;}
+.kicker-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px;}
+.kicker{color:var(--accent-red);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;}
+.date-badge{font-size:13px;color:var(--card-muted);font-weight:500;}
+h2.report-title{font-family:var(--serif);font-weight:700;font-size:clamp(26px,4vw,38px);line-height:1.15;margin-bottom:16px;letter-spacing:-.01em;}
+p.report-lede{font-size:17px;color:var(--card-muted);line-height:1.6;}
+.matrix-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:28px;}
+.matrix-card{background:var(--card-bg);color:var(--card-ink);border-radius:10px;padding:24px;}
+.matrix-badge{display:inline-block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:3px 8px;border-radius:4px;margin-bottom:12px;}
 .badge-x{background:#fee2e2;color:var(--accent-red)}
 .badge-y{background:#fef3c7;color:#92400e}
 .badge-z{background:#e0f2fe;color:#075985}
-.matrix-card h4{
-  font-family:var(--serif);
-  font-size:18px;
-  font-weight:700;
-  margin-bottom:8px;
-}
-.matrix-card p{
-  font-size:14px;
-  color:var(--card-muted);
-  line-height:1.55;
-}
-.regional-card{
-  background:var(--card-bg);
-  color:var(--card-ink);
-  border-radius:12px;
-  padding:30px 36px;
-  margin-bottom:28px;
-}
-.regional-card h3{
-  font-family:var(--serif);
-  font-size:20px;
-  font-weight:700;
-  margin-bottom:16px;
-}
-.region-table{
-  width:100%;
-  border-collapse:collapse;
-  font-size:14px;
-}
-.region-table th{
-  text-align:left;
-  padding:10px 12px;
-  background:#f5f2eb;
-  font-weight:600;
-  font-size:12px;
-  text-transform:uppercase;
-  letter-spacing:.05em;
-  color:var(--card-ink);
-}
-.region-table td{
-  padding:12px;
-  border-bottom:1px solid #f0ede4;
-  vertical-align:top;
-}
-.region-table tr:last-child td{
-  border-bottom:none;
-}
-.beats-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:16px;
-  margin-bottom:28px;
-}
-.beat-card{
-  background:var(--card-bg);
-  color:var(--card-ink);
-  border-radius:10px;
-  padding:20px;
-}
-.beat-card b{
-  display:block;
-  font-size:11px;
-  text-transform:uppercase;
-  letter-spacing:.08em;
-  margin-bottom:8px;
-  color:var(--card-ink);
-}
-.beat-card b::before{
-  content:"▸ ";
-  color:var(--accent-red);
-}
-.beat-card p{
-  font-size:13.5px;
-  color:var(--card-muted);
-  line-height:1.5;
-}
-.section-headline{
-  font-family:var(--serif);
-  font-size:24px;
-  font-weight:700;
-  color:var(--text-primary);
-  margin:40px 0 20px;
-}
-.board-card-in-depth{
-  background:var(--card-bg);
-  color:var(--card-ink);
-  border-radius:12px;
-  padding:32px 36px;
-  margin-bottom:24px;
-}
-.board-header{
-  display:flex;
-  align-items:center;
-  gap:18px;
-  margin-bottom:18px;
-}
-.board-header svg{
-  width:56px;
-  height:56px;
-  flex-shrink:0;
-}
-.board-header h3{
-  font-family:var(--serif);
-  font-size:22px;
-  font-weight:700;
-}
-.board-header .sub{
-  font-size:12px;
-  color:var(--accent-red);
-  text-transform:uppercase;
-  letter-spacing:.08em;
-  font-weight:600;
-  margin-top:3px;
-}
-.board-body p{
-  font-size:15px;
-  color:var(--card-ink);
-  line-height:1.65;
-  margin-bottom:12px;
-}
+.matrix-card h4{font-family:var(--serif);font-size:18px;font-weight:700;margin-bottom:8px;}
+.matrix-card p{font-size:14px;color:var(--card-muted);line-height:1.55;}
+.regional-card{background:var(--card-bg);color:var(--card-ink);border-radius:12px;padding:30px 36px;margin-bottom:28px;}
+.regional-card h3{font-family:var(--serif);font-size:20px;font-weight:700;margin-bottom:16px;}
+.region-table{width:100%;border-collapse:collapse;font-size:14px;}
+.region-table th{text-align:left;padding:10px 12px;background:#f5f2eb;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--card-ink);}
+.region-table td{padding:12px;border-bottom:1px solid #f0ede4;vertical-align:top;}
+.region-table tr:last-child td{border-bottom:none;}
+.beats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px;}
+.beat-card{background:var(--card-bg);color:var(--card-ink);border-radius:10px;padding:20px;}
+.beat-card b{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;color:var(--card-ink);}
+.beat-card b::before{content:"▸ ";color:var(--accent-red);}
+.beat-card p{font-size:13.5px;color:var(--card-muted);line-height:1.5;}
+.section-headline{font-family:var(--serif);font-size:24px;font-weight:700;color:var(--text-primary);margin:40px 0 20px;}
+.board-card-in-depth{background:var(--card-bg);color:var(--card-ink);border-radius:12px;padding:32px 36px;margin-bottom:24px;}
+.board-header{display:flex;align-items:center;gap:18px;margin-bottom:18px;}
+.board-header svg{width:56px;height:56px;flex-shrink:0;}
+.board-header h3{font-family:var(--serif);font-size:22px;font-weight:700;}
+.board-header .sub{font-size:12px;color:var(--accent-red);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-top:3px;}
+.board-body p{font-size:15px;color:var(--card-ink);line-height:1.65;margin-bottom:12px;}
 .board-body p:last-child{margin-bottom:0}
-.verdict-box{
-  background:var(--card-bg);
-  color:var(--card-ink);
-  border-radius:12px;
-  padding:32px 36px;
-  margin-bottom:44px;
-  border-left:5px solid var(--accent-red);
-}
-.verdict-box h4{
-  font-family:var(--serif);
-  font-size:18px;
-  font-weight:700;
-  margin-bottom:10px;
-  text-transform:uppercase;
-  letter-spacing:.05em;
-  color:var(--card-ink);
-}
-.verdict-box p{
-  font-family:var(--serif);
-  font-size:17px;
-  font-style:italic;
-  color:var(--card-muted);
-  line-height:1.6;
-}
-footer.bottom-red-footer{
-  background:var(--accent-red);
-  color:#ffffff;
-  padding:32px 0 36px;
-  font-size:13px;
-  margin-top:40px;
-}
-footer.bottom-red-footer .wrap{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:16px;
-}
-footer.bottom-red-footer a{
-  color:#ffffff;
-  text-decoration:underline;
-  font-weight:600;
-}
-footer.bottom-red-footer strong{
-  font-family:var(--serif);
-  color:#ffffff;
-  font-size:14px;
-}
-.editorial-btn{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  background:#11110f;
-  color:#ffffff;
-  border-radius:999px;
-  padding:11px 24px;
-  font-size:14px;
-  font-weight:600;
-  margin-top:20px;
-  transition:all 0.15s ease;
-  border:none;
-  cursor:pointer;
-}
-.editorial-btn:hover{
-  background:var(--accent-red);
-  color:#ffffff;
-  transform:translateX(3px);
-}
-@media(max-width:880px){
-  .control-hub{grid-template-columns:1fr}
-  .matrix-grid{grid-template-columns:1fr}
-  .beats-grid{grid-template-columns:1fr 1fr}
-  .box, .board-card-in-depth, .regional-card{padding:26px 20px}
-}
-@media(max-width:540px){
-  .beats-grid{grid-template-columns:1fr}
-  .top-red-bar .wrap{flex-direction:column;align-items:flex-start}
-}
+.verdict-box{background:var(--card-bg);color:var(--card-ink);border-radius:12px;padding:32px 36px;margin-bottom:44px;border-left:5px solid var(--accent-red);}
+.verdict-box h4{font-family:var(--serif);font-size:18px;font-weight:700;margin-bottom:10px;text-transform:uppercase;letter-spacing:.05em;color:var(--card-ink);}
+.verdict-box p{font-family:var(--serif);font-size:17px;font-style:italic;color:var(--card-muted);line-height:1.6;}
+footer.bottom-red-footer{background:var(--accent-red);color:#ffffff;padding:32px 0 36px;font-size:13px;margin-top:40px;}
+footer.bottom-red-footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
+footer.bottom-red-footer a{color:#ffffff;text-decoration:underline;font-weight:600;}
+footer.bottom-red-footer strong{font-family:var(--serif);color:#ffffff;font-size:14px;}
+.editorial-btn{display:inline-flex;align-items:center;gap:8px;background:#11110f;color:#ffffff;border-radius:999px;padding:11px 24px;font-size:14px;font-weight:600;margin-top:20px;transition:all 0.15s ease;border:none;cursor:pointer;}
+.editorial-btn:hover{background:var(--accent-red);color:#ffffff;transform:translateX(3px);}
+@media(max-width:880px){.control-hub{grid-template-columns:1fr}.matrix-grid{grid-template-columns:1fr}.beats-grid{grid-template-columns:1fr 1fr}.box,.board-card-in-depth,.regional-card{padding:26px 20px}}
+@media(max-width:540px){.beats-grid{grid-template-columns:1fr}.top-red-bar .wrap{flex-direction:column;align-items:flex-start}}
 </style>
 </head>
 <body>
@@ -540,24 +120,34 @@ footer.bottom-red-footer strong{
       <span id="gmtClock">UTC --:--:-- | ---, -- --- ----</span>
     </div>
     <ul class="top-nav">
-      <li><a href="index.html" data-i="navToday">Today</a></li>
-      <li><a href="about.html" data-i="navAbout">About</a></li>
-      <li><a href="about.html#contact" data-i="navContact">Contact</a></li>
+      <li><a href="index.html">Today</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="about.html#contact">Contact</a></li>
     </ul>
   </div>
 </div>
 
-<!-- Banner Graphic Container (Home Link) -->
+<!-- Banner Graphic Container (Links back to English home) -->
 <div class="site-banner-wrap">
   <a href="index.html" title="visva.world Home">
     <img src="banner.jpg" alt="visva.world Three Boards Banner" class="site-banner">
   </a>
 </div>
 
-<!-- 10-Language Selection Strip + 0protocol Compiler Status -->
+<!-- 10-Language Navigation Bar -->
 <div class="lang-strip wrap">
-  <div class="lang-pills" id="langPills"></div>
-  <div id="compilerStatus" class="compiler-status">0protocol.ai // compiling AST...</div>
+  <div class="lang-pills">
+    <a href="index.html" class="lang-btn active">English</a>
+    <a href="fr.html" class="lang-btn">Français</a>
+    <a href="es.html" class="lang-btn">Español</a>
+    <a href="pt.html" class="lang-btn">Português</a>
+    <a href="de.html" class="lang-btn">Deutsch</a>
+    <a href="ru.html" class="lang-btn">Русский</a>
+    <a href="zh.html" class="lang-btn">中文</a>
+    <a href="ja.html" class="lang-btn">日本語</a>
+    <a href="hi.html" class="lang-btn">हिन्दी</a>
+    <a href="ar.html" class="lang-btn">العربية</a>
+  </div>
 </div>
 
 <main class="wrap">
@@ -565,14 +155,14 @@ footer.bottom-red-footer strong{
   <!-- Search & Calendar Hub -->
   <section class="control-hub">
     <div class="hub-card">
-      <h3 data-i="searchTitle">Search the Record</h3>
+      <h3>Search the Record</h3>
       <form class="search-form" onsubmit="event.preventDefault(); executeSearchSubmit();">
-        <input type="text" class="search-input" id="searchInput" data-i-placeholder="searchPlaceholder" placeholder="Search dispatches, moves, or players..." autocomplete="off">
-        <button type="submit" class="search-btn" data-i="searchBtn">Search</button>
+        <input type="text" class="search-input" id="searchInput" placeholder="Search dispatches, moves, or players..." autocomplete="off">
+        <button type="submit" class="search-btn">Search</button>
       </form>
       <div id="searchResults" style="display:none;background:#ffffff;border:1px solid #e5e0d3;border-radius:8px;margin-top:8px;max-height:240px;overflow-y:auto;box-shadow:0 8px 24px rgba(0,0,0,0.12);z-index:99;position:relative;"></div>
       <div class="search-hints">
-        <span data-i="quickFilters">Quick filters:</span>
+        <span>Quick filters:</span>
         <span class="search-tag" onclick="filterBy('checkers')">Checkers</span>
         <span class="search-tag" onclick="filterBy('chess')">Chess</span>
         <span class="search-tag" onclick="filterBy('go')">Go</span>
@@ -582,8 +172,8 @@ footer.bottom-red-footer strong{
 
     <div class="hub-card">
       <div class="cal-header">
-        <span data-i="calMonth">October 2026</span>
-        <span style="font-size:12px;color:var(--card-muted);" data-i="calLegend">● Live Move</span>
+        <span>October 2026</span>
+        <span style="font-size:12px;color:var(--card-muted);">● Live Move</span>
       </div>
       <div class="cal-grid" id="calGrid">
         <div class="cal-cell cal-day-name">S</div>
@@ -615,9 +205,9 @@ footer.bottom-red-footer strong{
         <div class="cal-cell">16</div>
         <div class="cal-cell">17</div>
         <div class="cal-cell">18</div>
-        <div class="cal-cell has-dispatch" id="cal19" data-date="2026-10-19" title="Edition 1 // Oct 19" onclick="selectDate('2026-10-19')">19</div>
-        <div class="cal-cell has-dispatch" id="cal20" data-date="2026-10-20" title="Edition 2 // Oct 20" onclick="selectDate('2026-10-20')">20</div>
-        <div class="cal-cell today" id="cal21" data-date="2026-10-21" title="Edition 3 // Oct 21" onclick="selectDate('2026-10-21')">21</div>
+        <div class="cal-cell has-dispatch" id="cal19" onclick="selectDate('2026-10-19')">19</div>
+        <div class="cal-cell has-dispatch" id="cal20" onclick="selectDate('2026-10-20')">20</div>
+        <div class="cal-cell today" id="cal21" onclick="selectDate('2026-10-21')">21</div>
         <div class="cal-cell">22</div>
         <div class="cal-cell">23</div>
         <div class="cal-cell">24</div>
@@ -635,199 +225,94 @@ footer.bottom-red-footer strong{
   <!-- Lead Report Header -->
   <article class="box" id="report">
     <div class="kicker-row">
-      <span class="kicker" data-ast="todayKicker">The Move of the Day // Edition 3 · October 21, 2026</span>
-      <span class="date-badge" id="todayDate" data-ast="todayDate">Wednesday, October 21, 2026 · GMT 00:00 Cycle · Edition 3</span>
+      <span class="kicker" id="kicker">The Move of the Day // Edition 3 · October 21, 2026</span>
+      <span class="date-badge" id="todayDate">Wednesday, October 21, 2026 · GMT 00:00 Cycle · Edition 3</span>
     </div>
-    <h2 class="report-title" data-ast="todayTitle">The West Asian Defense Realignment: Bilateral Gulf Pacts and Multi-Tiered Regional Deterrence</h2>
-    <p class="report-lede" data-ast="todayLede">Accelerated defense integration pacts and forward fighter deployments across the Gulf basin reshape regional security architectures, bypassing unilateral diplomatic frameworks. Read through Protocol X-Y-Z and across three boards.</p>
-    <a href="editorial-2026-10-21.html" class="editorial-btn"><span data-i="readEditorialBtn">Read The Daily Editorial</span> →</a>
+    <h2 class="report-title" id="title">The West Asian Defense Realignment: Bilateral Gulf Pacts and Multi-Tiered Regional Deterrence</h2>
+    <p class="report-lede" id="lede">Accelerated defense integration pacts and forward fighter deployments across the Gulf basin reshape regional security architectures, bypassing unilateral diplomatic frameworks. Read through Protocol X-Y-Z and across three boards.</p>
+    <a href="editorial-2026-10-21.html" id="editorialBtn" class="editorial-btn">Read The Daily Editorial →</a>
   </article>
 
   <!-- Protocol X-Y-Z Players Section -->
-  <h3 class="section-headline" data-i="xyzTitle">Protocol X-Y-Z: The Operational Players</h3>
+  <h3 class="section-headline">Protocol X-Y-Z: The Operational Players</h3>
   <section class="matrix-grid">
     <div class="matrix-card">
-      <span class="matrix-badge badge-x" data-i="badgeX">x · Tactical Driver</span>
-      <h4 data-ast="xName">Forward Air Interceptor Deployments</h4>
-      <p data-ast="xDesc">Rapid-response fighter wings and missile defense batteries rushed into Gulf airspace to establish immediate tactical deterrence.</p>
+      <span class="matrix-badge badge-x">x · Tactical Driver</span>
+      <h4 id="xName">Forward Air Interceptor Deployments</h4>
+      <p id="xDesc">Rapid-response fighter wings and missile defense batteries rushed into Gulf airspace to establish immediate tactical deterrence.</p>
     </div>
-
     <div class="matrix-card">
-      <span class="matrix-badge badge-y" data-i="badgeY">y · Sovereign Fulcrum</span>
-      <h4 data-ast="yName">The Bilateral Defense Pact Architect</h4>
-      <p data-ast="yDesc">Sovereign defense ministries forging binding multi-state military personnel deployments and joint security mandates.</p>
+      <span class="matrix-badge badge-y">y · Sovereign Fulcrum</span>
+      <h4 id="yName">The Bilateral Defense Pact Architect</h4>
+      <p id="yDesc">Sovereign defense ministries forging binding multi-state military personnel deployments and joint security mandates.</p>
     </div>
-
     <div class="matrix-card">
-      <span class="matrix-badge badge-z" data-i="badgeZ">z · Ground Reality</span>
-      <h4 data-ast="zName">Energy Chokepoint & Radar Grid</h4>
-      <p data-ast="zDesc">The physical nodes: critical shipping lanes, Gulf oil terminals, and integrated regional early-warning radar arrays.</p>
-    </div>
-  </section>
-
-  <!-- Regional Impact / Friction Grid -->
-  <article class="regional-card">
-    <h3 data-i="regTitle">Regional Exposure & Strategic Friction</h3>
-    <table class="region-table">
-      <thead>
-        <tr>
-          <th data-i="thRegion">Geopolitical Basin</th>
-          <th data-i="thRole">Vector Role</th>
-          <th data-i="thImpact">Operational Impact</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong data-ast="r1Name">Gulf Security Basin</strong></td>
-          <td><span class="matrix-badge badge-x" style="margin:0" data-i="vecX">Vector x</span></td>
-          <td data-ast="r1Text">Immediate air defense posture adjustments and tactical intercept readiness.</td>
-        </tr>
-        <tr>
-          <td><strong data-ast="r2Name">Bilateral Defense Corridors</strong></td>
-          <td><span class="matrix-badge badge-y" style="margin:0" data-i="vecY">Vector y</span></td>
-          <td data-ast="r2Text">Formalization of joint military personnel deployments and regional pacts.</td>
-        </tr>
-        <tr>
-          <td><strong data-ast="r3Name">Strait of Hormuz / Energy Nodes</strong></td>
-          <td><span class="matrix-badge badge-z" style="margin:0" data-i="vecZ">Vector z</span></td>
-          <td data-ast="r3Text">Hardening of maritime transit lanes against asymmetric disruption.</td>
-        </tr>
-      </tbody>
-    </table>
-  </article>
-
-  <!-- Four Beats Grid -->
-  <h3 class="section-headline" data-i="beatsTitle">Anatomy of the Daily Move</h3>
-  <section class="beats-grid">
-    <div class="beat-card">
-      <b data-i="b1t">Why It Matters</b>
-      <p data-ast="b1d">Regional defense architecture is shifting from generalized security guarantees to explicit, bilateral, and inter-state military pacts.</p>
-    </div>
-    <div class="beat-card">
-      <b data-i="b2t">The Substrate</b>
-      <p data-ast="b2d">Simultaneous maneuvers across tactical air defense, sovereign treaty commitments, and energy chokepoint protection.</p>
-    </div>
-    <div class="beat-card">
-      <b data-i="b3t">The Move</b>
-      <p data-ast="b3d">Deployment of allied fighter jets and parliamentary authorization of joint military personnel into Gulf defense frameworks.</p>
-    </div>
-    <div class="beat-card">
-      <b data-i="b4t">What to Watch</b>
-      <p data-ast="b4d">Escalation dynamics across regional proxy networks and sovereign airspace contestation thresholds.</p>
+      <span class="matrix-badge badge-z">z · Ground Reality</span>
+      <h4 id="zName">Energy Chokepoint & Radar Grid</h4>
+      <p id="zDesc">The physical nodes: critical shipping lanes, Gulf oil terminals, and integrated regional early-warning radar arrays.</p>
     </div>
   </section>
 
   <!-- Three Boards Deep Dive -->
-  <h3 class="section-headline" data-i="boardsTitle">Read Across Three Boards</h3>
+  <h3 class="section-headline">Read Across Three Boards</h3>
 
   <article class="board-card-in-depth" id="checkers">
     <div class="board-header">
-      <svg viewBox="0 0 72 72" aria-hidden="true">
-        <rect width="72" height="72" fill="#f5f2eb"/>
-        <g fill="#11110f" opacity=".85">
-          <rect x="18" width="18" height="18"/><rect x="54" width="18" height="18"/>
-          <rect y="18" width="18" height="18"/><rect x="36" y="18" width="18" height="18"/>
-          <rect x="18" y="36" width="18" height="18"/><rect x="54" y="36" width="18" height="18"/>
-          <rect y="54" width="18" height="18"/><rect x="36" y="54" width="18" height="18"/>
-        </g>
-        <circle cx="27" cy="45" r="7" fill="var(--accent-red)"/>
-        <circle cx="45" cy="27" r="7" fill="#fff"/>
-      </svg>
+      <svg viewBox="0 0 72 72" aria-hidden="true"><rect width="72" height="72" fill="#f5f2eb"/><g fill="#11110f" opacity=".85"><rect x="18" width="18" height="18"/><rect x="54" width="18" height="18"/><rect y="18" width="18" height="18"/><rect x="36" y="18" width="18" height="18"/><rect x="18" y="36" width="18" height="18"/><rect x="54" y="36" width="18" height="18"/><rect y="54" width="18" height="18"/><rect x="36" y="54" width="18" height="18"/></g><circle cx="27" cy="45" r="7" fill="var(--accent-red)"/><circle cx="45" cy="27" r="7" fill="#fff"/></svg>
       <div>
-        <h3 data-ast="board1Title">Checkers: The Rapid Air Sortie</h3>
-        <div class="sub" data-i="board1Sub">Short horizons · Mandatory capture · Immediate friction</div>
+        <h3 id="board1Title">Checkers: The Rapid Air Sortie</h3>
+        <div class="sub">Short horizons · Tactical deterrence · Immediate friction</div>
       </div>
     </div>
     <div class="board-body">
-      <p><strong data-i="lblMove">The Move:</strong> <span data-ast="cMove">External allied air forces rush fighter wings into theater airbases to provide immediate defense cover against inbound drone and missile threats.</span></p>
-      <p><strong data-i="lblCost">The Cost:</strong> <span data-ast="cCost">A high-burn tactical posture. Continuous air patrols consume massive logistical resources and create acute operational fatigue, reacting to immediate threats while deep political friction remains unresolved.</span></p>
+      <p><strong>The Move:</strong> <span id="cMove">External allied air forces rush fighter wings into theater airbases to provide immediate defense cover against inbound drone and missile threats.</span></p>
+      <p><strong>The Cost:</strong> <span id="cCost">A high-burn tactical posture. Continuous air patrols consume massive logistical resources and create acute operational fatigue, reacting to immediate threats while deep political friction remains unresolved.</span></p>
     </div>
   </article>
 
   <article class="board-card-in-depth" id="chess">
     <div class="board-header">
-      <svg viewBox="0 0 72 72" aria-hidden="true">
-        <rect width="72" height="72" fill="#f5f2eb"/>
-        <g fill="#d8d4c7">
-          <rect x="9" width="9" height="9"/><rect x="27" width="9" height="9"/><rect x="45" width="9" height="9"/><rect x="63" width="9" height="9"/>
-          <rect y="9" width="9" height="9"/><rect x="18" y="9" width="9" height="9"/><rect x="36" y="9" width="9" height="9"/><rect x="54" y="9" width="9" height="9"/>
-          <rect x="9" y="18" width="9" height="9"/><rect x="27" y="18" width="9" height="9"/><rect x="45" y="18" width="9" height="9"/><rect x="63" y="18" width="9" height="9"/>
-          <rect y="27" width="9" height="9"/><rect x="18" y="27" width="9" height="9"/><rect x="36" y="27" width="9" height="9"/><rect x="54" y="27" width="9" height="9"/>
-          <rect x="9" y="36" width="9" height="9"/><rect x="27" y="36" width="9" height="9"/><rect x="45" y="36" width="9" height="9"/><rect x="63" y="36" width="9" height="9"/>
-          <rect y="45" width="9" height="9"/><rect x="18" y="45" width="9" height="9"/><rect x="36" y="45" width="9" height="9"/><rect x="54" y="45" width="9" height="9"/>
-          <rect x="9" y="54" width="9" height="9"/><rect x="27" y="54" width="9" height="9"/><rect x="45" y="54" width="9" height="9"/><rect x="63" y="54" width="9" height="9"/>
-          <rect y="63" width="9" height="9"/><rect x="18" y="63" width="9" height="9"/><rect x="36" y="63" width="9" height="9"/><rect x="54" y="63" width="9" height="9"/>
-        </g>
-        <text x="36" y="48" text-anchor="middle" font-size="34" fill="#11110f" font-family="serif">♚</text>
-      </svg>
+      <svg viewBox="0 0 72 72" aria-hidden="true"><rect width="72" height="72" fill="#f5f2eb"/><g fill="#d8d4c7"><rect x="9" width="9" height="9"/><rect x="27" width="9" height="9"/><rect x="45" width="9" height="9"/><rect x="63" width="9" height="9"/><rect y="9" width="9" height="9"/><rect x="18" y="9" width="9" height="9"/><rect x="36" y="9" width="9" height="9"/><rect x="54" y="9" width="9" height="9"/><rect x="9" y="18" width="9" height="9"/><rect x="27" y="18" width="9" height="9"/><rect x="45" y="18" width="9" height="9"/><rect x="63" y="18" width="9" height="9"/><rect y="27" width="9" height="9"/><rect x="18" y="27" width="9" height="9"/><rect x="36" y="27" width="9" height="9"/><rect x="54" y="27" width="9" height="9"/><rect x="9" y="36" width="9" height="9"/><rect x="27" y="36" width="9" height="9"/><rect x="45" y="36" width="9" height="9"/><rect x="63" y="36" width="9" height="9"/><rect y="45" width="9" height="9"/><rect x="18" y="45" width="9" height="9"/><rect x="36" y="45" width="9" height="9"/><rect x="54" y="45" width="9" height="9"/><rect x="9" y="54" width="9" height="9"/><rect x="27" y="54" width="9" height="9"/><rect x="45" y="54" width="9" height="9"/><rect x="63" y="54" width="9" height="9"/><rect y="63" width="9" height="9"/><rect x="18" y="63" width="9" height="9"/><rect x="36" y="63" width="9" height="9"/><rect x="54" y="63" width="9" height="9"/></g><text x="36" y="48" text-anchor="middle" font-size="34" fill="#11110f" font-family="serif">♚</text></svg>
       <div>
-        <h3 data-ast="board2Title">Chess: The Sovereign Treaty Architecture</h3>
-        <div class="sub" data-i="board2Sub">Positional restructuring · Balance-sheet fortress · Checkmate trajectory</div>
+        <h3 id="board2Title">Chess: The Sovereign Treaty Architecture</h3>
+        <div class="sub">Positional restructuring · Balance-sheet fortress · Checkmate trajectory</div>
       </div>
     </div>
     <div class="board-body">
-      <p><strong data-i="lblMove">The Move:</strong> <span data-ast="chMove">Middle Eastern and allied governments ratify binding parliamentary defense mandates and mutual assistance pacts, permanently tying their security postures together.</span></p>
-      <p><strong data-i="lblPos">The Position:</strong> <span data-ast="chPos">The pieces on the strategic board lock into formal defensive alignments. Adversarial regional actors face zugzwang: continuing direct escalations triggers consolidated multi-state retaliation, while backing down cedes regional security dominance.</span></p>
+      <p><strong>The Move:</strong> <span id="chMove">Middle Eastern and allied governments ratify binding parliamentary defense mandates and mutual assistance pacts, permanently tying their security postures together.</span></p>
+      <p><strong>The Position:</strong> <span id="chPos">The pieces on the strategic board lock into formal defensive alignments. Adversarial regional actors face zugzwang: continuing direct escalations triggers consolidated multi-state retaliation, while backing down cedes regional security dominance.</span></p>
     </div>
   </article>
 
   <article class="board-card-in-depth" id="go">
     <div class="board-header">
-      <svg viewBox="0 0 72 72" aria-hidden="true">
-        <rect width="72" height="72" fill="#efebe1"/>
-        <g stroke="#11110f" stroke-width="1" opacity=".7">
-          <line x1="8" y1="8" x2="8" y2="64"/><line x1="22" y1="8" x2="22" y2="64"/><line x1="36" y1="8" x2="36" y2="64"/><line x1="50" y1="8" x2="50" y2="64"/><line x1="64" y1="8" x2="64" y2="64"/>
-          <line x1="8" y1="8" x2="64" y2="8"/><line x1="8" y1="22" x2="64" y2="22"/><line x1="8" y1="36" x2="64" y2="36"/><line x1="8" y1="50" x2="64" y2="50"/><line x1="8" y1="64" x2="64" y2="64"/>
-        </g>
-        <circle cx="36" cy="36" r="6" fill="#fff"/>
-        <circle cx="22" cy="36" r="6" fill="#11110f"/>
-        <circle cx="50" cy="36" r="6" fill="#11110f"/>
-        <circle cx="36" cy="22" r="6" fill="#11110f"/>
-        <circle cx="36" cy="50" r="6" fill="#11110f"/>
-      </svg>
+      <svg viewBox="0 0 72 72" aria-hidden="true"><rect width="72" height="72" fill="#efebe1"/><g stroke="#11110f" stroke-width="1" opacity=".7"><line x1="8" y1="8" x2="8" y2="64"/><line x1="22" y1="8" x2="22" y2="64"/><line x1="36" y1="8" x2="36" y2="64"/><line x1="50" y1="8" x2="50" y2="64"/><line x1="64" y1="8" x2="64" y2="64"/><line x1="8" y1="8" x2="64" y2="8"/><line x1="8" y1="22" x2="64" y2="22"/><line x1="8" y1="36" x2="64" y2="36"/><line x1="8" y1="50" x2="64" y2="50"/><line x1="8" y1="64" x2="64" y2="64"/></g><circle cx="36" cy="36" r="6" fill="#fff"/><circle cx="22" cy="36" r="6" fill="#11110f"/><circle cx="50" cy="36" r="6" fill="#11110f"/><circle cx="36" cy="22" r="6" fill="#11110f"/><circle cx="36" cy="50" r="6" fill="#11110f"/></svg>
       <div>
-        <h3 data-ast="board3Title">Go (Weiqi): The Basin Enclosure</h3>
-        <div class="sub" data-i="board3Sub">Deep time · Closing of liberties · Silent spatial hegemony</div>
+        <h3 id="board3Title">Go (Weiqi): The Basin Enclosure</h3>
+        <div class="sub">Deep time · Closing of liberties · Silent spatial hegemony</div>
       </div>
     </div>
     <div class="board-body">
-      <p><strong data-i="lblMove">The Move:</strong> <span data-ast="goMove">The long-term knitting together of radar architectures, intelligence-sharing grids, and joint naval patrols across the entire Gulf and Arabian Sea basin.</span></p>
-      <p><strong data-i="lblPos">The Position:</strong> <span data-ast="goPos">Countless empty liberties across regional airspace and shipping lanes are quietly sealed by allied defense integration. Territorial control is established through permanent institutional architecture rather than temporary skirmishes.</span></p>
+      <p><strong>The Move:</strong> <span id="goMove">The long-term knitting together of radar architectures, intelligence-sharing grids, and joint naval patrols across the entire Gulf and Arabian Sea basin.</span></p>
+      <p><strong>The Position:</strong> <span id="goPos">Countless empty liberties across regional airspace and shipping lanes are quietly sealed by allied defense integration. Territorial control is established through permanent institutional architecture rather than temporary skirmishes.</span></p>
     </div>
   </article>
-
-  <!-- In Plain Language Box -->
-  <article class="box" id="plain-language" style="border-left:5px solid #11110f; margin-bottom:28px;">
-    <div class="kicker-row">
-      <span class="kicker" style="color:var(--card-ink);" data-i="plainKicker">In Plain Language // What This Actually Means</span>
-      <span class="date-badge" data-i="plainBadge">The Non-Technical Reality</span>
-    </div>
-    <h3 style="font-family:var(--serif);font-size:22px;font-weight:700;margin-bottom:14px;" data-i="plainTitle">Stripping Away the Jargon</h3>
-    <p style="font-size:16px;color:var(--card-ink);line-height:1.7;margin-bottom:14px;" data-ast="plainP1">For years, security in West Asia relied heavily on distant superpowers stepping in only when crises boiled over. Today, regional powers and key allies are cutting out the middleman—signing direct defense pacts, deploying jets locally, and locking down joint military frameworks themselves.</p>
-    <p style="font-size:16px;color:var(--card-ink);line-height:1.7;" data-ast="plainP2">Today's move means the security of the Gulf is being rewritten into permanent, binding bilateral treaties and shared radar grids. Instead of waiting for a crisis, nations are physically and legally walling off the region against aggression.</p>
-  </article>
-
-  <!-- Terminal Strategic Verdict -->
-  <div class="verdict-box">
-    <h4 data-i="verdictHead">Terminal Verdict</h4>
-    <p data-ast="verdictBody">The future of West Asian security is not determined by temporary ceasefire talks or rhetorical posturing. It is sealed by whoever permanently embeds their defense treaties, air interceptors, and radar nodes into the sovereign bedrock of the Gulf basin.</p>
-  </div>
 
 </main>
 
 <footer class="bottom-red-footer">
   <div class="wrap">
-    <span data-i="footerText">The daily move is free. The archive is the record.</span>
+    <span>The daily move is free. The archive is the record.</span>
     <div>
-      <a href="about.html" style="margin-right:16px;" data-i="navAbout">About visva</a>
-      <a href="about.html#contact" style="margin-right:20px;" data-i="navContact">Contact & Signals</a>
-      <span><strong>visva.world</strong> · 0protocol.ai · © <span id="yr">2026</span></span>
+      <a href="about.html" style="margin-right:16px;">About visva</a>
+      <a href="about.html#contact" style="margin-right:20px;">Contact & Signals</a>
+      <span><strong>visva.world</strong> · 0protocol.ai · © 2026</span>
     </div>
   </div>
 </footer>
 
 <script>
-// 1. Live GMT/UTC Clock
+// Live GMT/UTC Clock
 function updateGMTClock() {
   const now = new Date();
   const utcHours = String(now.getUTCHours()).padStart(2, '0');
@@ -843,384 +328,99 @@ function updateGMTClock() {
 setInterval(updateGMTClock, 1000);
 updateGMTClock();
 
-// 2. Immutable Board Lexicon & UI Chrome (Hardcoded across 10 languages for forensic precision)
-const UI_CHROME = {
-  en: { name:"English", dir:"ltr", navToday:"Today", navAbout:"About", navContact:"Contact", searchTitle:"Search the Record", searchPlaceholder:"Search dispatches, moves, or players...", searchBtn:"Search", quickFilters:"Quick filters:", calMonth:"October 2026", calLegend:"● Live Move", xyzTitle:"Protocol X-Y-Z: The Operational Players", badgeX:"x · Tactical Driver", badgeY:"y · Sovereign Fulcrum", badgeZ:"z · Ground Reality", regTitle:"Regional Exposure & Strategic Friction", thRegion:"Geopolitical Basin", thRole:"Vector Role", thImpact:"Operational Impact", vecX:"Vector x", vecY:"Vector y", vecZ:"Vector z", beatsTitle:"Anatomy of the Daily Move", b1t:"Why It Matters", b2t:"The Substrate", b3t:"The Move", b4t:"What to Watch", boardsTitle:"Read Across Three Boards", board1Sub:"Short horizons · Mandatory capture · Immediate friction", board2Sub:"Positional restructuring · Balance-sheet fortress · Checkmate trajectory", board3Sub:"Deep time · Closing of liberties · Silent spatial hegemony", lblMove:"The Move:", lblCost:"The Cost:", lblPos:"The Position:", plainKicker:"In Plain Language // What This Actually Means", plainBadge:"The Non-Technical Reality", plainTitle:"Stripping Away the Jargon", verdictHead:"Terminal Verdict", readEditorialBtn:"Read The Daily Editorial", footerText:"The daily move is free. The archive is the record." },
-  fr: { name:"Français", dir:"ltr", navToday:"Aujourd'hui", navAbout:"À propos", navContact:"Contact", searchTitle:"Consulter le registre", searchPlaceholder:"Rechercher dépêches, acteurs, mouvements...", searchBtn:"Rechercher", quickFilters:"Filtres rapides :", calMonth:"Octobre 2026", calLegend:"● Coup du jour", xyzTitle:"Protocole X-Y-Z : Les Acteurs Opérationnels", badgeX:"x · Vecteur Tactique", badgeY:"y · Pivot Souverain", badgeZ:"z · Réalité du Terrain", regTitle:"Exposition Régionale & Friction Stratégique", thRegion:"Bassin Géopolitique", thRole:"Rôle Vectoriel", thImpact:"Impact Opérationnel", vecX:"Vecteur x", vecY:"Vecteur y", vecZ:"Vecteur z", beatsTitle:"Anatomie du coup quotidien", b1t:"Pourquoi c'est important", b2t:"Le substrat", b3t:"Le coup", b4t:"À surveiller", boardsTitle:"Lecture sur trois plateaux", board1Sub:"Horizons courts · Capture obligatoire · Friction immédiate", board2Sub:"Restructuration de bilan · Forteresse souveraine · Zugzwang", board3Sub:"Temps long · Fermeture des libertés · Hégémonie spatiale silencieuse", lblMove:"Le coup :", lblCost:"Le coût :", lblPos:"La position :", plainKicker:"En clair // Ce que cela signifie vraiment", plainBadge:"La réalité sans jargon", plainTitle:"Dépouillé de tout vocabulaire technique", verdictHead:"Verdict Terminal", readEditorialBtn:"Lire l'éditorial quotidien", footerText:"Le coup du jour est gratuit. L'archive est le registre." },
-  es: { name:"Español", dir:"ltr", navToday:"Hoy", navAbout:"Acerca de", navContact:"Contacto", searchTitle:"Buscar en el registro", searchPlaceholder:"Buscar despachos, jugadores...", searchBtn:"Buscar", quickFilters:"Filtros rápidos:", calMonth:"Octubre 2026", calLegend:"● Jugada del día", xyzTitle:"Protocolo X-Y-Z: Jugadores Operativos", badgeX:"x · Impulsor Táctico", badgeY:"y · Fulcro Soberano", badgeZ:"z · Realidad Terrestre", regTitle:"Exposición Regional y Fricción Estratégica", thRegion:"Cuenca Geopolítica", thRole:"Rol Vectorial", thImpact:"Impacto Operacional", vecX:"Vector x", vecY:"Vector y", vecZ:"Vector z", beatsTitle:"Anatomía de la jugada diaria", b1t:"Por qué importa", b2t:"El sustrato", b3t:"La jugada", b4t:"Qué vigilar", boardsTitle:"Lectura en tres tableros", board1Sub:"Corto plazo · Captura obligatoria · Fricción inmediata", board2Sub:"Reestructuración posicional · Fortaleza de balance · Zugzwang", board3Sub:"Tiempo profundo · Cierre de libertades · Hegemonía espacial", lblMove:"La jugada:", lblCost:"El coste:", lblPos:"La posición:", plainKicker:"En lenguaje sencillo // Qué significa realmente", plainBadge:"La realidad sin tecnicismos", plainTitle:"Sin rodeos ni jerga", verdictHead:"Veredicto Terminal", readEditorialBtn:"Leer el editorial diario", footerText:"La jugada diaria es gratuita. El archivo es el registro." },
-  pt: { name:"Português", dir:"ltr", navToday:"Hoje", navAbout:"Sobre", navContact:"Contacto", searchTitle:"Consultar o registo", searchPlaceholder:"Pesquisar despachos...", searchBtn:"Pesquisar", quickFilters:"Filtros rápidos:", calMonth:"Outubro 2026", calLegend:"● Lance do dia", xyzTitle:"Protocolo X-Y-Z: Intervenientes Operacionais", badgeX:"x · Motor Tático", badgeY:"y · Fulcro Soberano", badgeZ:"z · Realidade Física", regTitle:"Exposição Regional & Fricção Estratégica", thRegion:"Bacia Geopolítica", thRole:"Função Vetorial", thImpact:"Impacto Operacional", vecX:"Vetor x", vecY:"Vetor y", vecZ:"Vetor z", beatsTitle:"Anatomia do lance diário", b1t:"Por que importa", b2t:"O tabuleiro", b3t:"O lance", b4t:"O que observar", boardsTitle:"Leitura nos Três Tabuleiros", board1Sub:"Curto prazo · Captura obrigatória · Fricção imediata", board2Sub:"Fortaleza de balanço · Zugzwang estrutural", board3Sub:"Tempo profundo · Fechamento de liberdades · Hegemonia espacial", lblMove:"O lance:", lblCost:"O custo:", lblPos:"A posição:", plainKicker:"Em linguagem simples // O que isto significa na prática", plainBadge:"A realidade sem termos técnicos", plainTitle:"Direto ao ponto", verdictHead:"Veredicto Terminal", readEditorialBtn:"Ler o editorial do dia", footerText:"O lance do dia é gratuito. O arquivo é o registro." },
-  de: { name:"Deutsch", dir:"ltr", navToday:"Heute", navAbout:"Über uns", navContact:"Kontakt", searchTitle:"Archiv durchsuchen", searchPlaceholder:"Depeschen, Akteure...", searchBtn:"Suchen", quickFilters:"Schnellfilter:", calMonth:"Oktober 2026", calLegend:"● Zug des Tages", xyzTitle:"Protokoll X-Y-Z: Die Akteure", badgeX:"x · Taktischer Treiber", badgeY:"y · Souveräner Angelpunkt", badgeZ:"z · Bodenrealität", regTitle:"Regionale Exposition & Reibung", thRegion:"Geopolitischer Raum", thRole:"Vektor", thImpact:"Operative Wirkung", vecX:"Vektor x", vecY:"Vektor y", vecZ:"Vektor z", beatsTitle:"Anatomie des täglichen Zuges", b1t:"Warum es zählt", b2t:"Das Brett", b3t:"Der Zug", b4t:"Worauf zu achten ist", boardsTitle:"Auf drei Brettern gelesen", board1Sub:"Kurzer Horizont · Schlagzwang · Unmittelbare Reibung", board2Sub:"Bilanzfestung · Struktureller Zugzwang · Schachmatt-Trajektorie", board3Sub:"Tiefe Zeit · Schließen der Freiheiten · Stille Raumhegemonie", lblMove:"Der Zug:", lblCost:"Die Kosten:", lblPos:"Die Stellung:", plainKicker:"Im Klartext // Was das wirklich bedeutet", plainBadge:"Ohne Fachjargon", plainTitle:"Die einfache Wahrheit", verdictHead:"Terminales Urteil", readEditorialBtn:"Den Leitartikel des Tages lesen", footerText:"Der tägliche Zug ist frei. Das Archiv ist das Protokoll." },
-  ru: { name:"Русский", dir:"ltr", navToday:"Сегодня", navAbout:"О проекте", navContact:"Контакты", searchTitle:"Поиск по летописи", searchPlaceholder:"Поиск депеш, игроков...", searchBtn:"Найти", quickFilters:"Фильтры:", calMonth:"Октябрь 2026", calLegend:"● Ход дня", xyzTitle:"Протокол X-Y-Z: Действующие Силы", badgeX:"x · Тактический Драйвер", badgeY:"y · Суверенный Опорный Пункт", badgeZ:"z · Реальность на Земле", regTitle:"Региональное Влияние и Трение", thRegion:"Геополитический Бассейн", thRole:"Вектор", thImpact:"Практический Итог", vecX:"Вектор x", vecY:"Вектор y", vecZ:"Вектор z", beatsTitle:"Анатомия ежедневного хода", b1t:"Почему это важно", b2t:"Среда", b3t:"Ход", b4t:"За чем следить", boardsTitle:"Чтение по трем доскам", board1Sub:"Короткий горизонт · Обязательный бой · Немедленное трение", board2Sub:"Крепость баланса · Позиционный цугцванг", board3Sub:"Глубокое время · Закрытие дыханий · Пространственная гегемония", lblMove:"Ход:", lblCost:"Цена:", lblPos:"Позиция:", plainKicker:"Простыми словами // Что это значит на самом деле", plainBadge:"Суть без сложной терминологии", plainTitle:"Очищено от финансового жаргона", verdictHead:"Окончательный Вердикт", readEditorialBtn:"Читать редакционную статью", footerText:"Ход дня открыт для всех. Архив — это летопись." },
-  zh: { name:"中文", dir:"ltr", navToday:"今日", navAbout:"关于我们", navContact:"联系与信号", searchTitle:"检索历史记录", searchPlaceholder:"搜索快讯、参与者...", searchBtn:"搜索", quickFilters:"快捷分类：", calMonth:"2026年 10月", calLegend:"● 今日棋步", xyzTitle:"XYZ协议：核心博弈实体", badgeX:"x · 战术驱动方", badgeY:"y · 主权支点", badgeZ:"z · 地面实体主权", regTitle:"地缘区域敞口与战略摩擦", thRegion:"地缘区域", thRole:"协议角色", thImpact:"运营影响", vecX:"向量 x", vecY:"向量 y", vecZ:"向量 z", beatsTitle:"每日一步的解构", b1t:"为何重要", b2t:"博弈基底", b3t:"这一步", b4t:"关注什么", boardsTitle:"三种棋盘审视全局", board1Sub:"短周期 · 强制应手 · 即时摩擦", board2Sub:"资产负债表堡垒 · 结构性迫移局（Zugzwang）", board3Sub:"深远周期 · 紧气 · 静默空间霸权", lblMove:"棋步：", lblCost:"代价：", lblPos:"局面：", plainKicker:"通俗解读 // 这究竟意味着什么", plainBadge:"剥离术语的实质真相", plainTitle:"用大白话讲透实质", verdictHead:"终极裁定", readEditorialBtn:"阅读今日深度社论", footerText:"当日快讯免费开放。档案库即是终极记录。" },
-  ja: { name:"日本語", dir:"ltr", navToday:"今日", navAbout:"概要", navContact:"連絡先", searchTitle:"アーカイブ検索", searchPlaceholder:"ディスパッチ、プレイヤーを検索...", searchBtn:"検索", quickFilters:"クイック抽出:", calMonth:"2026年 10月", calLegend:"● 本日の一手", xyzTitle:"プロトコル X-Y-Z：中核プレイヤー", badgeX:"x · 戦術ドライバー", badgeY:"y · 主権の支点", badgeZ:"z · 物理的現実", regTitle:"地域別エクスポージャーと摩擦", thRegion:"地縁ブロック", thRole:"ベクトル", thImpact:"実質的影響", vecX:"ベクトル x", vecY:"ベクトル y", vecZ:"ベクトル z", beatsTitle:"一手のアナトミー", b1t:"なぜ重要か", b2t:"盤の選択", b3t:"今の一手", b4t:"注目点", boardsTitle:"三つの盤で読み解く", board1Sub:"短期的視界 · 強制応手 · 即時摩擦", board2Sub:"バランスシート要塞 · ツークツワンクの軌跡", board3Sub:"深遠な時間 · 駄目を詰める · 静かな空間覇権", lblMove:"一手:", lblCost:"代償:", lblPos:"局面:", plainKicker:"平易な言葉で // これが意味する本質", plainBadge:"専門用語を排した現実", plainTitle:"核心をわかりやすく", verdictHead:"最終的裁定", readEditorialBtn:"本日の社説を読む", footerText:"最新の一手は無料公開。アーカイブこそが真の記録。" },
-  hi: { name:"हिन्दी", dir:"ltr", navToday:"आज", navAbout:"परिचय", navContact:"संपर्क", searchTitle:"अभिलेख में खोजें", searchPlaceholder:"खोजें...", searchBtn:"खोजें", quickFilters:"त्वरित फ़िल्टर:", calMonth:"अक्टूबर 2026", calLegend:"● आज की चाल", xyzTitle:"प्रोटोकॉल X-Y-Z: प्रमुख रणनीतिक खिलाड़ी", badgeX:"x · सामरिक चालक", badgeY:"y · संप्रभु धुरी", badgeZ:"z · जमीनी हकीकत", regTitle:"क्षेत्रीय प्रभाव और रणनीतिक घर्षण", thRegion:"क्षेत्र", thRole:"भूमिका", thImpact:"परिणाम", vecX:"वेक्टर x", vecY:"वेक्टर y", vecZ:"वेक्टर z", beatsTitle:"दैनिक चाल का विश्लेषण", b1t:"यह क्यों मायने रखता है", b2t:"बिसात", b3t:"चाल", b4t:"किस पर नज़र रखें", boardsTitle:"तीन बिसातों पर विश्लेषण", board1Sub:"अल्पकालिक क्षितिज · अनिवार्य चाल · तत्काल घर्षण", board2Sub:"संपत्ति पुनर्गठन · बैलेंस-शीट किला · जुगज़वांग", board3Sub:"दीर्घकाल · शांति से घेराव · स्थानिक वर्चस्व", lblMove:"चाल:", lblCost:"लागत:", lblPos:"स्थिति:", plainKicker:"सरल भाषा में // इसका वास्तविक अर्थ क्या है", plainBadge:"तकनीकी शब्दों से परे यथार्थ", plainTitle:"सीधी और स्पष्ट बात", verdictHead:"अंतिम निष्कर्ष", readEditorialBtn:"आज का संपादकीय पढ़ें", footerText:"आज की चाल निःशुल्क है। संग्रह ही वास्तविक अभिलेख है।" },
-  ar: { name:"العربية", dir:"rtl", navToday:"اليوم", navAbout:"عن المشروع", navContact:"اتصال", searchTitle:"البحث في السجل", searchPlaceholder:"ابحث...", searchBtn:"بحث", quickFilters:"تصفية سريعة:", calMonth:"أكتوبر 2026", calLegend:"● نقلة اليوم", xyzTitle:"بروتوكول X-Y-Z: اللاعبون الفاعلون", badgeX:"x · المحرك التكتيكي", badgeY:"y · المرتكز السيادي", badgeZ:"z · الواقع الميداني", regTitle:"الانكشاف الإقليمي والاحتكاك الاستراتيجي", thRegion:"الحوض الجيوسياسي", thRole:"المسار", thImpact:"الأثر التشغيلي", vecX:"المتجه x", vecY:"المتجه y", vecZ:"المتجه z", beatsTitle:"تشريح النقلة اليومية", b1t:"لماذا يهم", b2t:"الرقعة", b3t:"النقلة", b4t:"ما يجب مراقبته", boardsTitle:"قراءة عبر ثلاث رقع", board1Sub:"أفق قصير · أكل إجباري · احتكاك فوري", board2Sub:"إعادة هيكلة الميزانيات · قلعة سيادية · تسوغتسفانغ", board3Sub:"زمن عميق · خنق المنافذ · هيمنة مكانية صامتة", lblMove:"النقلة:", lblCost:"الثمن:", lblPos:"الوضعية:", plainKicker:"بلغة مبسطة // ماذا يعني هذا عملياً", plainBadge:"الواقع مجرداً من التعقيد التقني", plainTitle:"جوهر الأمر بدون مصطلحات معقدة", verdictHead:"الحكم النهائي", readEditorialBtn:"قراءة الافتتاحية اليومية", footerText:"نقلة اليوم مجانية. الأرشيف هو السجل الحقيقي." }
-};
-
-// 3. Canonical English Root Store (AST Nodes for Editions 1, 2, and 3)
-// Daily publishing requires ONLY adding the English object here.
-const DISPATCHES_ROOT = {
+// Object-Oriented Daily Dispatch Store
+const DAILY_STORE = {
   "2026-10-19": {
     editorial_url: "editorial-2026-10-19.html",
-    ast: {
-      todayDate:"Monday, October 19, 2026 · GMT 00:00 Cycle · Edition 1",
-      todayKicker:"The Move of the Day // Edition 1 · October 19, 2026",
-      todayTitle:"The Fracture of the Global Clearing Grid: Bilateral Commodities Settle Outside the G7 Rail",
-      todayLede:"Central bank digital clearing corridors bypass Western correspondent banking, anchoring new settlement liquidity in vaulted gold and direct bilateral energy swaps. Read through Protocol X-Y-Z and across three boards.",
-      xName:"G7 Regulatory Axis",
-      xDesc:"The enforcement rail operating under short horizons. Trapped in mandatory response cycles, forced to deploy emergency secondary sanctions that cause immediate friction but forfeit long-term surveillance visibility.",
-      yName:"Bilateral Vault Arbiters",
-      yDesc:"Central bank reserve managers and sovereign vaults across the Indian Ocean rim. Absorbing volatility by re-anchoring liquid balances into domestic physical bullion and direct local-currency energy clearing.",
-      zName:"Eurasian Corridor Sovereign",
-      zDesc:"The physical infrastructure powers: port terminals, overland pipeline operators, and critical mineral cartels. Closing physical liberties across space and deep time without relying on Western banking rails.",
-      r1Name:"Atlantic / G7 Axis",
-      r1Text:"Secondary sanctions exhaustion, diminishing clearing leverage, and permanent blindness to parallel trade volumes.",
-      r2Name:"Indian Ocean Rim",
-      r2Text:"Massive liquidity capture in physical bullion vaults and rapid expansion of bilateral digital ledger clearing.",
-      r3Name:"Eurasian Land Bridge",
-      r3Text:"Total enclosure of overland hydrocarbon corridors; immunizing physical supply chains against maritime disruption.",
-      b1d:"The global financial grid has officially fractured into two non-interoperable settlement zones. Bilateral commodities clearing without Western correspondent banking ceases to be an ideological experiment and becomes an everyday commercial reality.",
-      b2d:"A simultaneous divergence across all three boards: a forced tactical jump in sanctions enforcement, structural sovereign reserve repositioning, and deep-time physical logistics encirclement.",
-      b3d:"Multilateral central bank corridors activate instant bilateral asset settlement collateralized directly by vaulted bullion and long-term hydrocarbon delivery contracts.",
-      b4d:"Accelerated sovereign reserve repatriation, secondary banking freezes that fail to bite, and the onset of institutional balance-sheet zugzwang.",
-      board1Title:"Checkers: The Tactical Forced Jump",
-      cMove:"Western financial authorities announce immediate emergency sanctions and secondary asset freezes against intermediary commercial banks facilitating non-dollar local-currency oil and rare earth settlements.",
-      cCost:"A classic forced jump. Under domestic political theater, the regulator has no legal or optic alternative but to strike the jumping square. However, the mandatory capture sacrifices long-term strategic visibility: every institution frozen out of the SWIFT/CHIPS clearing system is permanently converted into a dedicated clearing hub for the parallel corridor.",
-      board2Title:"Chess: The Strategic King Maneuver",
-      chMove:"Non-aligned central banks reallocate liquid foreign exchange reserves away from sovereign debt instruments and into vaulted physical bullion held strictly within domestic territorial borders.",
-      chPos:"The rooks and knights of sovereign finance are shifted from active offensive deployment in foreign money markets back to an unbreachable defensive castle. The opposing side enters zugzwang: any hike in interest rates deteriorates sovereign debt valuations, while expanding liquidity accelerates bullion flight.",
-      board3Title:"Go (Weiqi): The Encirclement of Territory",
-      goMove:"A quiet multilateral coordination linking deepwater port concessions, pipeline terminal nodes, and undersea fiber optic cable landings across the Indian Ocean rim and Eurasian land bridge.",
-      goPos:"No pieces were captured; no public ultimatums were broadcast on television. Yet fifty subtle liberties were closed around maritime chokepoints and physical trade conduits.",
-      plainP1:"For decades, whenever two countries wanted to buy or sell oil, metals, or grain, they were practically forced to trade in US dollars and clear the money through Western banks.",
-      plainP2:"Today's move means major resource and industrial powers have officially activated a parallel digital payment system backed by real, vaulted gold and direct barter rather than dollars.",
-      verdictBody:"What the western news cycle reports as a tactical sanctions dispute is, on the deep board, the terminal loss of geographic and settlement liberties. You do not win Go by shouting on the television; you win it by quietly placing the stone where the opponent will eventually need to breathe."
-    }
+    kicker: "The Move of the Day // Edition 1 · October 19, 2026",
+    todayDate: "Monday, October 19, 2026 · GMT 00:00 Cycle · Edition 1",
+    title: "The Fracture of the Global Clearing Grid: Bilateral Commodities Settle Outside the G7 Rail",
+    lede: "Central bank digital clearing corridors bypass Western correspondent banking, anchoring new settlement liquidity in vaulted gold and direct bilateral energy swaps.",
+    xName: "G7 Regulatory Axis", xDesc: "The enforcement rail operating under short horizons and mandatory response cycles.",
+    yName: "Bilateral Vault Arbiters", yDesc: "Central bank reserve managers and sovereign vaults across the Indian Ocean rim.",
+    zName: "Eurasian Corridor Sovereign", zDesc: "The physical infrastructure powers closing physical liberties across space and time.",
+    board1Title: "Checkers: The Tactical Forced Jump",
+    cMove: "Western financial authorities announce immediate emergency sanctions against intermediary commercial banks.",
+    cCost: "A classic forced jump sacrificing long-term strategic visibility for immediate friction.",
+    board2Title: "Chess: The Strategic King Maneuver",
+    chMove: "Non-aligned central banks reallocate liquid foreign exchange reserves into vaulted physical bullion.",
+    chPos: "The opposing side enters zugzwang as sovereign debt valuations deteriorate.",
+    board3Title: "Go (Weiqi): The Encirclement of Territory",
+    goMove: "A quiet multilateral coordination linking deepwater port concessions and undersea fiber optics.",
+    goPos: "Fifty subtle liberties closed around maritime chokepoints without public ultimatums."
   },
   "2026-10-20": {
     editorial_url: "editorial-2026-10-20.html",
-    ast: {
-      todayDate:"Tuesday, October 20, 2026 · GMT 00:00 Cycle · Edition 2",
-      todayKicker:"The Move of the Day // Edition 2 · October 20, 2026",
-      todayTitle:"The Arctic Sovereign Perimeter: Canada and Nordic Allies Close the Circumpolar Optical & Defense Corridor",
-      todayLede:"Joint circumpolar sovereign mandates deploy hardened fiber infrastructure, autonomous surveillance grids, and mineral logistics hubs across the High North, preempting maritime transit contestation. Read through Protocol X-Y-Z and across three boards.",
-      xName:"Tactical Air & Surface Scramble",
-      xDesc:"Air defense interception wings operating on short tactical notification cycles, expending alert sorties to counter gray-zone reconnaissance along circumpolar boundaries.",
-      yName:"The Sovereign Arctic Capital Allocator",
-      yDesc:"Sovereign balance sheets and infrastructure banks allocating multi-decade capital to icebreakers, dual-use deepwater berths, and critical mineral processing hubs.",
-      zName:"Circumpolar Ground & Seabed Array",
-      zDesc:"The physical sensor network: subsea fiber, radar arrays, and permanent northern garrisons sealing the physical passages across deep time.",
-      r1Name:"Circumpolar NATO Flank",
-      r1Text:"Arctic surveillance grid consolidation and northern maritime interdiction readiness.",
-      r2Name:"Northwest Passage / Beaufort",
-      r2Text:"Subsea fiber deployment anchoring domestic sovereignty to physical seabed bedrock.",
-      r3Name:"Nordic & Barents Basin",
-      r3Text:"Forward dual-use deepwater logistics hubs closing unmonitored Arctic surface lanes.",
-      b1d:"The High North has transitioned from an unmonitored frozen buffer into an active, sovereign-secured infrastructure corridor.",
-      b2d:"Simultaneous execution across three boards: tactical air intercepts, sovereign infrastructure capital allocation, and seabed fiber enclosure.",
-      b3d:"Permanent deployment of dual-use sensory cables and autonomous radar stations along the circumpolar perimeter.",
-      b4d:"Revisionist maritime claims face structural exclusion before seasonal ice melt permits surface fleet transit.",
-      board1Title:"Checkers: The High-Latitude Intercept",
-      cMove:"Allied air commands scramble rapid interception sorties following unannounced high-altitude sensory sweeps along the Beaufort Sea rim and Greenland airspace.",
-      cCost:"A reactive tactical exchange. Surface defense interceptors fire high-cost patrol cycles for low-cost unmanned intrusions, creating short-term tactical alert fatigue while missing the permanent seabed fiber deployment beneath the ice.",
-      board2Title:"Chess: The Circumpolar Fortress",
-      chMove:"Canada and Nordic allies reallocate sovereign wealth capital into hardened dual-use deepwater ports and icebreaker fleet recapitalization, locking Arctic logistics directly to sovereign balance sheets.",
-      chPos:"Strategic pieces shift to defend the northern flank. The opposing revisionist forces face zugzwang: contesting sovereign circumpolar jurisdiction requires unsustainable naval logistics in freeze-up conditions, while standing down ratifies allied perimeter hegemony.",
-      board3Title:"Go (Weiqi): The Seabed Perimeter",
-      goMove:"A synchronized, silent deployment of sovereign optical subsea cables and seabed acoustic arrays anchoring the Northwest Passage directly to the North Atlantic defense loop.",
-      goPos:"Fifty strategic maritime liberties across the circumpolar high north are quietly occupied. Territory is held by physical fiber, deep berths, and unjammable seabed acoustic nodes long before international navigational disputes reach legal tribunals.",
-      plainP1:"For decades, the Arctic was treated as a frozen, remote buffer that countries didn't need to actively police. As ice recedes and international superpowers eye northern trade shortcuts and untapped minerals, the Arctic has suddenly become the most contested frontier on Earth.",
-      plainP2:"Today's move means Canada and its northern allies have permanently activated a combined network of subsea cables, deepwater ports, and radar barriers. Instead of arguing about who owns the waters, they have physically occupied the routes with infrastructure.",
-      verdictBody:"The true battle for the High North is not waged through rhetorical diplomatic communiqués or symbolic icebreaker flags. It is won by whoever anchors the fiber to the bedrock and places the acoustic stone where the transit route must navigate."
-    }
+    kicker: "The Move of the Day // Edition 2 · October 20, 2026",
+    todayDate: "Tuesday, October 20, 2026 · GMT 00:00 Cycle · Edition 2",
+    title: "The Arctic Sovereign Perimeter: Canada and Nordic Allies Close the Circumpolar Optical & Defense Corridor",
+    lede: "Joint circumpolar sovereign mandates deploy hardened fiber infrastructure, autonomous surveillance grids, and mineral logistics hubs across the High North.",
+    xName: "Tactical Air & Surface Scramble", xDesc: "Air defense interception wings operating on short tactical notification cycles.",
+    yName: "The Sovereign Arctic Capital Allocator", yDesc: "Sovereign balance sheets allocating multi-decade capital to icebreakers and berths.",
+    zName: "Circumpolar Ground & Seabed Array", zDesc: "The physical sensor network sealing physical passages across deep time.",
+    board1Title: "Checkers: The High-Latitude Intercept",
+    cMove: "Allied air commands scramble rapid interception sorties along the Beaufort Sea rim.",
+    cCost: "A reactive tactical exchange creating alert fatigue while missing seabed fiber deployment.",
+    board2Title: "Chess: The Circumpolar Fortress",
+    chMove: "Canada and Nordic allies reallocate sovereign wealth capital into hardened deepwater ports.",
+    chPos: "Revisionist forces face zugzwang contesting sovereign circumpolar jurisdiction.",
+    board3Title: "Go (Weiqi): The Seabed Perimeter",
+    goMove: "Synchronized silent deployment of sovereign optical subsea cables and acoustic arrays.",
+    goPos: "Fifty strategic maritime liberties across the high north are quietly occupied."
   },
   "2026-10-21": {
     editorial_url: "editorial-2026-10-21.html",
-    ast: {
-      todayDate:"Wednesday, October 21, 2026 · GMT 00:00 Cycle · Edition 3",
-      todayKicker:"The Move of the Day // Edition 3 · October 21, 2026",
-      todayTitle:"The West Asian Defense Realignment: Bilateral Gulf Pacts and Multi-Tiered Regional Deterrence",
-      todayLede:"Accelerated defense integration pacts and forward fighter deployments across the Gulf basin reshape regional security architectures, bypassing unilateral diplomatic frameworks. Read through Protocol X-Y-Z and across three boards.",
-      xName:"Forward Air Interceptor Deployments",
-      xDesc:"Rapid-response fighter wings and missile defense batteries rushed into Gulf airspace to establish immediate tactical deterrence.",
-      yName:"The Bilateral Defense Pact Architect",
-      yDesc:"Sovereign defense ministries forging binding multi-state military personnel deployments and joint security mandates.",
-      zName:"Energy Chokepoint & Radar Grid",
-      zDesc:"The physical nodes: critical shipping lanes, Gulf oil terminals, and integrated regional early-warning radar arrays.",
-      r1Name:"Gulf Security Basin",
-      r1Text:"Immediate air defense posture adjustments and tactical intercept readiness.",
-      r2Name:"Bilateral Defense Corridors",
-      r2Text:"Formalization of joint military personnel deployments and regional pacts.",
-      r3Name:"Strait of Hormuz / Energy Nodes",
-      r3Text:"Hardening of maritime transit lanes against asymmetric disruption.",
-      b1d:"Regional defense architecture is shifting from generalized security guarantees to explicit, bilateral, and inter-state military pacts.",
-      b2d:"Simultaneous maneuvers across tactical air defense, sovereign treaty commitments, and energy chokepoint protection.",
-      b3d:"Deployment of allied fighter jets and parliamentary authorization of joint military personnel into Gulf defense frameworks.",
-      b4d:"Escalation dynamics across regional proxy networks and sovereign airspace contestation thresholds.",
-      board1Title:"Checkers: The Rapid Air Sortie",
-      cMove:"External allied air forces rush fighter wings into theater airbases to provide immediate defense cover against inbound drone and missile threats.",
-      cCost:"A high-burn tactical posture. Continuous air patrols consume massive logistical resources and create acute operational fatigue, reacting to immediate threats while deep political friction remains unresolved.",
-      board2Title:"Chess: The Sovereign Treaty Architecture",
-      chMove:"Middle Eastern and allied governments ratify binding parliamentary defense mandates and mutual assistance pacts, permanently tying their security postures together.",
-      chPos:"The pieces on the strategic board lock into formal defensive alignments. Adversarial regional actors face zugzwang: continuing direct escalations triggers consolidated multi-state retaliation, while backing down cedes regional security dominance.",
-      board3Title:"Go (Weiqi): The Basin Enclosure",
-      goMove:"The long-term knitting together of radar architectures, intelligence-sharing grids, and joint naval patrols across the entire Gulf and Arabian Sea basin.",
-      goPos:"Countless empty liberties across regional airspace and shipping lanes are quietly sealed by allied defense integration. Territorial control is established through permanent institutional architecture rather than temporary skirmishes.",
-      plainP1:"For years, security in West Asia relied heavily on distant superpowers stepping in only when crises boiled over. Today, regional powers and key allies are cutting out the middleman—signing direct defense pacts, deploying jets locally, and locking down joint military frameworks themselves.",
-      plainP2:"Today's move means the security of the Gulf is being rewritten into permanent, binding bilateral treaties and shared radar grids. Instead of waiting for a crisis, nations are physically and legally walling off the region against aggression.",
-      verdictBody:"The future of West Asian security is not determined by temporary ceasefire talks or rhetorical posturing. It is sealed by whoever permanently embeds their defense treaties, air interceptors, and radar nodes into the sovereign bedrock of the Gulf basin."
-    }
+    kicker: "The Move of the Day // Edition 3 · October 21, 2026",
+    todayDate: "Wednesday, October 21, 2026 · GMT 00:00 Cycle · Edition 3",
+    title: "The West Asian Defense Realignment: Bilateral Gulf Pacts and Multi-Tiered Regional Deterrence",
+    lede: "Accelerated defense integration pacts and forward fighter deployments across the Gulf basin reshape regional security architectures.",
+    xName: "Forward Air Interceptor Deployments", xDesc: "Rapid-response fighter wings rushed into Gulf airspace to establish tactical deterrence.",
+    yName: "The Bilateral Defense Pact Architect", yDesc: "Sovereign defense ministries forging binding multi-state military personnel deployments.",
+    zName: "Energy Chokepoint & Radar Grid", zDesc: "Critical shipping lanes, oil terminals, and integrated regional early-warning radar arrays.",
+    board1Title: "Checkers: The Rapid Air Sortie",
+    cMove: "External allied air forces rush fighter wings into theater airbases for defense cover.",
+    cCost: "A high-burn tactical posture consuming massive logistical resources and operational fatigue.",
+    board2Title: "Chess: The Sovereign Treaty Architecture",
+    chMove: "Middle Eastern and allied governments ratify binding parliamentary defense mandates.",
+    chPos: "Adversarial regional actors face zugzwang against consolidated multi-state retaliation.",
+    board3Title: "Go (Weiqi): The Basin Enclosure",
+    goMove: "Long-term knitting together of radar architectures and joint naval patrols across the Gulf.",
+    goPos: "Empty liberties across regional airspace and shipping lanes quietly sealed by defense integration."
   }
 };
 
-// 4. 0protocol.ai Cloud AST Compiler Engine
-const ORDER = ["en","fr","es","pt","de","ru","zh","ja","hi","ar"];
-const pillsContainer = document.getElementById("langPills");
-const statusBadge = document.getElementById("compilerStatus");
-let currentLangKey = "en";
-let activeDate = "2026-10-21";
-const MEMORY_AST_CACHE = {};
+// Object-Oriented Property Mapper Loader
+function selectDate(dateKey) {
+  const d = DAILY_STORE[dateKey];
+  if (!d) return;
 
-if (pillsContainer) {
-  ORDER.forEach(k => {
-    const btn = document.createElement("button");
-    btn.className = "lang-btn";
-    btn.type = "button";
-    btn.textContent = UI_CHROME[k].name;
-    btn.dataset.l = k;
-    btn.onclick = () => setLang(k);
-    pillsContainer.appendChild(btn);
-  });
-}
-
-// Applies static UI Chrome translations immediately
-function applyChrome(langKey) {
-  const chrome = UI_CHROME[langKey] || UI_CHROME.en;
-  document.documentElement.lang = langKey;
-  document.documentElement.dir = chrome.dir;
-
-  document.querySelectorAll("[data-i]").forEach(el => {
-    const key = el.dataset.i;
-    if (chrome[key]) el.textContent = chrome[key];
-  });
-
-  document.querySelectorAll("[data-i-placeholder]").forEach(el => {
-    const key = el.dataset.iPlaceholder;
-    if (chrome[key]) el.placeholder = chrome[key];
-  });
-
-  if (pillsContainer) {
-    pillsContainer.querySelectorAll("button").forEach(b => {
-      b.setAttribute("aria-pressed", b.dataset.l === langKey);
-    });
-  }
-}
-
-// Applies the 27 dynamic AST nodes to the DOM
-function applyASTNodes(astObj, editorialUrl, langKey) {
-  document.querySelectorAll("[data-ast]").forEach(el => {
-    const key = el.dataset.ast;
-    if (astObj[key]) el.textContent = astObj[key];
-  });
-
-  const edBtn = document.querySelector(".editorial-btn");
-  if (edBtn && editorialUrl) {
-    edBtn.href = `${editorialUrl}?lang=${langKey}`;
-  }
-}
-
-// Cloud Neural Translation Bridge (Prototype hook for 0protocol.ai Sanskrit Compiler)
-async function compileDispatchToLang(dateKey, targetLang) {
-  const rootDispatch = DISPATCHES_ROOT[dateKey] || DISPATCHES_ROOT["2026-10-21"];
-  const sourceAST = rootDispatch.ast;
-
-  if (targetLang === "en") {
-    return sourceAST;
-  }
-
-  const cacheKey = `visva_ast_v2_${dateKey}_${targetLang}`;
-  if (MEMORY_AST_CACHE[cacheKey]) {
-    return MEMORY_AST_CACHE[cacheKey];
-  }
-
-  try {
-    const saved = localStorage.getItem(cacheKey);
-    if (saved) {
-      const parsed = JSON.parse(saved);
-      MEMORY_AST_CACHE[cacheKey] = parsed;
-      return parsed;
-    }
-  } catch (e) {}
-
-  // Show compiler indicator
-  if (statusBadge) {
-    statusBadge.textContent = `0protocol.ai // compiling [${targetLang.toUpperCase()}] AST...`;
-    statusBadge.classList.add("active");
-  }
-
-  const keys = Object.keys(sourceAST);
-  const delimiter = " ||| ";
-  const combinedPayload = keys.map(k => sourceAST[k]).join("\n===NODE===\n");
-
-  try {
-    const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=${encodeURIComponent(targetLang)}&dt=t&q=${encodeURIComponent(combinedPayload)}`;
-    const res = await fetch(url);
-    const data = await res.json();
-
-    // Reconstruct full translated text from sentence chunks
-    let fullTranslated = "";
-    if (data && Array.isArray(data[0])) {
-      data[0].forEach(chunk => {
-        if (chunk[0]) fullTranslated += chunk[0];
-      });
-    }
-
-    const parts = fullTranslated.split(/\n*===\s*NODE\s*===\n*/i);
-    const compiledAST = {};
-
-    keys.forEach((k, idx) => {
-      compiledAST[k] = (parts[idx] && parts[idx].trim()) ? parts[idx].trim() : sourceAST[k];
-    });
-
-    MEMORY_AST_CACHE[cacheKey] = compiledAST;
-    try {
-      localStorage.setItem(cacheKey, JSON.stringify(compiledAST));
-    } catch (e) {}
-
-    if (statusBadge) statusBadge.classList.remove("active");
-    return compiledAST;
-
-  } catch (err) {
-    console.warn("0protocol Cloud Bridge fallback to canonical EN:", err);
-    if (statusBadge) statusBadge.classList.remove("active");
-    return sourceAST;
-  }
-}
-
-async function renderAll() {
-  const reqDate = activeDate;
-  const reqLang = currentLangKey;
-  const rootDispatch = DISPATCHES_ROOT[reqDate] || DISPATCHES_ROOT["2026-10-21"];
-
-  // 1. Flip UI Chrome immediately
-  applyChrome(reqLang);
-
-  // 2. If English or cached, apply immediately; otherwise show English while compiling
-  const compiledAST = await compileDispatchToLang(reqDate, reqLang);
-
-  // Guard against race conditions if user clicked another pill rapidly
-  if (activeDate === reqDate && currentLangKey === reqLang) {
-    applyASTNodes(compiledAST, rootDispatch.editorial_url, reqLang);
-  }
-}
-
-function setLang(k) {
-  if (!UI_CHROME[k]) k = "en";
-  currentLangKey = k;
-  try { localStorage.setItem("visva-lang", k); } catch(e) {}
-  renderAll();
-}
-
-function selectDate(dateKey, shouldScroll = true) {
-  if (!DISPATCHES_ROOT[dateKey]) return;
-  activeDate = dateKey;
-
-  ['19', '20', '21'].forEach(d => {
-    const cell = document.getElementById("cal" + d);
-    if (cell) {
-      if (d === dateKey.split('-')[2]) {
-        cell.className = "cal-cell today";
+  Object.keys(d).forEach(key => {
+    const el = document.getElementById(key);
+    if (el) {
+      if (key === 'editorial_url') {
+        el.href = `${d[key]}?lang=en`;
       } else {
-        cell.className = "cal-cell has-dispatch";
+        el.textContent = d[key];
       }
     }
   });
 
-  renderAll();
-
-  if (history.replaceState) {
-    history.replaceState(null, null, '#' + dateKey);
-  } else {
-    location.hash = '#' + dateKey;
-  }
-
-  if (shouldScroll) {
-    const target = document.getElementById("report");
-    if (target) window.scrollTo({ top: target.offsetTop - 60, behavior: 'smooth' });
-  }
-}
-
-function filterBy(term) {
-  const input = document.getElementById("searchInput");
-  if (input) {
-    input.value = term;
-    handleSearch(term);
-  }
-}
-
-function handleSearch(q) {
-  const query = (q || "").trim().toLowerCase();
-  const box = document.getElementById("searchResults");
-  if (!box) return;
-  if (!query) { box.style.display = "none"; box.innerHTML = ""; return; }
-
-  const hits = [];
-  for (const [dateKey, dateObj] of Object.entries(DISPATCHES_ROOT)) {
-    const en = dateObj.ast;
-    const text = `${en.todayTitle} ${en.todayLede} ${en.xName} ${en.yName} ${en.zName} ${en.cMove} ${en.chMove} ${en.goMove}`.toLowerCase();
-    if (text.includes(query)) hits.push({ key: dateKey, item: en });
-  }
-
-  if (hits.length === 0) {
-    box.style.display = "block";
-    box.innerHTML = `<div style="padding:12px;color:var(--card-muted);font-size:13px;">No dispatches found matching "${q}".</div>`;
-    return;
-  }
-
-  box.style.display = "block";
-  box.innerHTML = hits.map(h => `
-    <div onclick="selectDate('${h.key}'); document.getElementById('searchResults').style.display='none';" style="padding:10px 14px;border-bottom:1px solid #eeeae0;cursor:pointer;">
-      <div style="font-size:11px;color:var(--accent-red);font-weight:700;text-transform:uppercase;">${h.item.todayKicker}</div>
-      <div style="font-family:var(--serif);font-size:14px;font-weight:700;color:var(--card-ink);margin:2px 0;">${h.item.todayTitle}</div>
-    </div>
-  `).join('');
-}
-
-function executeSearchSubmit() {
-  const input = document.getElementById("searchInput");
-  if (!input) return;
-  const q = input.value.trim().toLowerCase();
-  if (!q) return;
-  for (const [dateKey, dateObj] of Object.entries(DISPATCHES_ROOT)) {
-    const en = dateObj.ast;
-    const text = `${en.todayTitle} ${en.todayLede} ${en.xName} ${en.yName} ${en.zName}`.toLowerCase();
-    if (text.includes(q)) {
-      selectDate(dateKey, true);
-      const box = document.getElementById("searchResults");
-      if (box) box.style.display = "none";
-      return;
+  ['19', '20', '21'].forEach(day => {
+    const cell = document.getElementById("cal" + day);
+    if (cell) {
+      cell.className = (day === dateKey.split('-')[2]) ? "cal-cell today" : "cal-cell has-dispatch";
     }
-  }
+  });
+
+  if (history.replaceState) history.replaceState(null, null, '#' + dateKey);
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-  const searchInput = document.getElementById("searchInput");
-  if (searchInput) {
-    searchInput.addEventListener("input", (e) => handleSearch(e.target.value));
-  }
-
-  try {
-    const saved = localStorage.getItem("visva-lang");
-    if (saved && UI_CHROME[saved]) currentLangKey = saved;
-  } catch(e) {}
-
   const hash = window.location.hash.replace('#', '').trim();
-  if (hash === "2026-10-19") {
-    selectDate("2026-10-19", false);
-  } else if (hash === "2026-10-20") {
-    selectDate("2026-10-20", false);
+  if (DAILY_STORE[hash]) {
+    selectDate(hash);
   } else {
-    selectDate("2026-10-21", false);
+    selectDate("2026-10-21");
   }
 });
 </script>
