@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>visva — One world. One move. Every day.</title>
 <meta name="description" content="Each day, visva identifies the one event moving the world and reads it through Protocol X-Y-Z across three boards: Checkers, Chess, and Go. In ten languages.">
+<meta property="og:title" content="visva.world — One world. One move. Every day.">
+<meta property="og:description" content="Isolating the single tectonic geopolitical move at GMT 00:00 across three boards: Checkers, Chess, and Go.">
+<meta property="og:image" content="banner.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -89,7 +93,7 @@ a{color:inherit;text-decoration:none}
 /* Site Banner / Hero Graphic */
 .site-banner-wrap{
   max-width:1080px;
-  margin:0 auto 20px;
+  margin:0 auto 16px;
   padding:0 20px;
 }
 .site-banner{
@@ -101,9 +105,10 @@ a{color:inherit;text-decoration:none}
   border:1px solid #22201c;
 }
 
-/* Language Selection Strip */
+/* Language Selection Strip & Compiler Status */
 .lang-strip{
-  padding:12px 0 28px;
+  padding:8px 0 24px;
+  text-align:center;
 }
 .lang-pills{
   display:flex;
@@ -114,7 +119,7 @@ a{color:inherit;text-decoration:none}
 .lang-btn{
   background:var(--surface);
   color:var(--text-muted);
-  border:none;
+  border:1px solid transparent;
   outline:none;
   border-radius:999px;
   padding:6px 14px;
@@ -132,6 +137,24 @@ a{color:inherit;text-decoration:none}
   background:var(--card-bg);
   color:var(--card-ink);
   font-weight:700;
+}
+.compiler-status{
+  display:inline-block;
+  margin-top:10px;
+  font-size:11px;
+  font-family:monospace;
+  letter-spacing:.08em;
+  color:var(--accent-red);
+  background:#1a1211;
+  border:1px solid #3d1b18;
+  padding:4px 12px;
+  border-radius:999px;
+  opacity:0;
+  transition:opacity 0.2s ease;
+  pointer-events:none;
+}
+.compiler-status.active{
+  opacity:1;
 }
 
 /* Control Hub: Search & Calendar */
@@ -254,6 +277,8 @@ a{color:inherit;text-decoration:none}
   justify-content:space-between;
   align-items:center;
   margin-bottom:12px;
+  flex-wrap:wrap;
+  gap:8px;
 }
 .kicker{
   color:var(--accent-red);
@@ -522,14 +547,17 @@ footer.bottom-red-footer strong{
   </div>
 </div>
 
-<!-- Banner Graphic Container -->
+<!-- Banner Graphic Container (Home Link) -->
 <div class="site-banner-wrap">
-  <img src="banner.jpg" alt="visva.world Three Boards Banner" class="site-banner">
+  <a href="index.html" title="visva.world Home">
+    <img src="banner.jpg" alt="visva.world Three Boards Banner" class="site-banner">
+  </a>
 </div>
 
-<!-- Language Selection Strip -->
+<!-- 10-Language Selection Strip + 0protocol Compiler Status -->
 <div class="lang-strip wrap">
   <div class="lang-pills" id="langPills"></div>
+  <div id="compilerStatus" class="compiler-status">0protocol.ai // compiling AST...</div>
 </div>
 
 <main class="wrap">
@@ -587,9 +615,9 @@ footer.bottom-red-footer strong{
         <div class="cal-cell">16</div>
         <div class="cal-cell">17</div>
         <div class="cal-cell">18</div>
-        <div class="cal-cell has-dispatch" id="cal19" data-date="2026-10-19" title="Edition 1 // Oct 19" style="cursor:pointer;" onclick="selectDate('2026-10-19')">19</div>
-        <div class="cal-cell has-dispatch" id="cal20" data-date="2026-10-20" title="Edition 2 // Oct 20" style="cursor:pointer;" onclick="selectDate('2026-10-20')">20</div>
-        <div class="cal-cell today" id="cal21" data-date="2026-10-21" title="Edition 3 // Oct 21" style="cursor:pointer;" onclick="selectDate('2026-10-21')">21</div>
+        <div class="cal-cell has-dispatch" id="cal19" data-date="2026-10-19" title="Edition 1 // Oct 19" onclick="selectDate('2026-10-19')">19</div>
+        <div class="cal-cell has-dispatch" id="cal20" data-date="2026-10-20" title="Edition 2 // Oct 20" onclick="selectDate('2026-10-20')">20</div>
+        <div class="cal-cell today" id="cal21" data-date="2026-10-21" title="Edition 3 // Oct 21" onclick="selectDate('2026-10-21')">21</div>
         <div class="cal-cell">22</div>
         <div class="cal-cell">23</div>
         <div class="cal-cell">24</div>
@@ -607,11 +635,11 @@ footer.bottom-red-footer strong{
   <!-- Lead Report Header -->
   <article class="box" id="report">
     <div class="kicker-row">
-      <span class="kicker" data-i="todayKicker">The Move of the Day // Edition 3 · October 21, 2026</span>
-      <span class="date-badge" id="todayDate" data-i="todayDate">Wednesday, October 21, 2026 · GMT 00:00 Cycle · Edition 3</span>
+      <span class="kicker" data-ast="todayKicker">The Move of the Day // Edition 3 · October 21, 2026</span>
+      <span class="date-badge" id="todayDate" data-ast="todayDate">Wednesday, October 21, 2026 · GMT 00:00 Cycle · Edition 3</span>
     </div>
-    <h2 class="report-title" data-i="todayTitle">The West Asian Defense Realignment: Bilateral Gulf Pacts and Multi-Tiered Regional Deterrence</h2>
-    <p class="report-lede" data-i="todayLede">Accelerated defense integration pacts and forward fighter deployments across the Gulf basin reshape regional security architectures, bypassing unilateral diplomatic frameworks. Read through Protocol X-Y-Z and across three boards.</p>
+    <h2 class="report-title" data-ast="todayTitle">The West Asian Defense Realignment: Bilateral Gulf Pacts and Multi-Tiered Regional Deterrence</h2>
+    <p class="report-lede" data-ast="todayLede">Accelerated defense integration pacts and forward fighter deployments across the Gulf basin reshape regional security architectures, bypassing unilateral diplomatic frameworks. Read through Protocol X-Y-Z and across three boards.</p>
     <a href="editorial-2026-10-21.html" class="editorial-btn"><span data-i="readEditorialBtn">Read The Daily Editorial</span> →</a>
   </article>
 
@@ -620,20 +648,20 @@ footer.bottom-red-footer strong{
   <section class="matrix-grid">
     <div class="matrix-card">
       <span class="matrix-badge badge-x" data-i="badgeX">x · Tactical Driver</span>
-      <h4 data-i="xName">Forward Air Interceptor Deployments</h4>
-      <p data-i="xDesc">Rapid-response fighter wings and missile defense batteries rushed into Gulf airspace to establish immediate tactical deterrence.</p>
+      <h4 data-ast="xName">Forward Air Interceptor Deployments</h4>
+      <p data-ast="xDesc">Rapid-response fighter wings and missile defense batteries rushed into Gulf airspace to establish immediate tactical deterrence.</p>
     </div>
 
     <div class="matrix-card">
       <span class="matrix-badge badge-y" data-i="badgeY">y · Sovereign Fulcrum</span>
-      <h4 data-i="yName">The Bilateral Defense Pact Architect</h4>
-      <p data-i="yDesc">Sovereign defense ministries forging binding multi-state military personnel deployments and joint security mandates.</p>
+      <h4 data-ast="yName">The Bilateral Defense Pact Architect</h4>
+      <p data-ast="yDesc">Sovereign defense ministries forging binding multi-state military personnel deployments and joint security mandates.</p>
     </div>
 
     <div class="matrix-card">
       <span class="matrix-badge badge-z" data-i="badgeZ">z · Ground Reality</span>
-      <h4 data-i="zName">Energy Chokepoint & Radar Grid</h4>
-      <p data-i="zDesc">The physical nodes: critical shipping lanes, Gulf oil terminals, and integrated regional early-warning radar arrays.</p>
+      <h4 data-ast="zName">Energy Chokepoint & Radar Grid</h4>
+      <p data-ast="zDesc">The physical nodes: critical shipping lanes, Gulf oil terminals, and integrated regional early-warning radar arrays.</p>
     </div>
   </section>
 
@@ -650,19 +678,19 @@ footer.bottom-red-footer strong{
       </thead>
       <tbody>
         <tr>
-          <td><strong data-i="r1Name">Gulf Security Basin</strong></td>
+          <td><strong data-ast="r1Name">Gulf Security Basin</strong></td>
           <td><span class="matrix-badge badge-x" style="margin:0" data-i="vecX">Vector x</span></td>
-          <td data-i="r1Text">Immediate air defense posture adjustments and tactical intercept readiness.</td>
+          <td data-ast="r1Text">Immediate air defense posture adjustments and tactical intercept readiness.</td>
         </tr>
         <tr>
-          <td><strong data-i="r2Name">Bilateral Defense Corridors</strong></td>
+          <td><strong data-ast="r2Name">Bilateral Defense Corridors</strong></td>
           <td><span class="matrix-badge badge-y" style="margin:0" data-i="vecY">Vector y</span></td>
-          <td data-i="r2Text">Formalization of joint military personnel deployments and regional pacts.</td>
+          <td data-ast="r2Text">Formalization of joint military personnel deployments and regional pacts.</td>
         </tr>
         <tr>
-          <td><strong data-i="r3Name">Strait of Hormuz / Energy Nodes</strong></td>
+          <td><strong data-ast="r3Name">Strait of Hormuz / Energy Nodes</strong></td>
           <td><span class="matrix-badge badge-z" style="margin:0" data-i="vecZ">Vector z</span></td>
-          <td data-i="r3Text">Hardening of maritime transit lanes against asymmetric disruption.</td>
+          <td data-ast="r3Text">Hardening of maritime transit lanes against asymmetric disruption.</td>
         </tr>
       </tbody>
     </table>
@@ -673,19 +701,19 @@ footer.bottom-red-footer strong{
   <section class="beats-grid">
     <div class="beat-card">
       <b data-i="b1t">Why It Matters</b>
-      <p data-i="b1d">Regional defense architecture is shifting from generalized security guarantees to explicit, bilateral, and inter-state military pacts.</p>
+      <p data-ast="b1d">Regional defense architecture is shifting from generalized security guarantees to explicit, bilateral, and inter-state military pacts.</p>
     </div>
     <div class="beat-card">
       <b data-i="b2t">The Substrate</b>
-      <p data-i="b2d">Simultaneous maneuvers across tactical air defense, sovereign treaty commitments, and energy chokepoint protection.</p>
+      <p data-ast="b2d">Simultaneous maneuvers across tactical air defense, sovereign treaty commitments, and energy chokepoint protection.</p>
     </div>
     <div class="beat-card">
       <b data-i="b3t">The Move</b>
-      <p data-i="b3d">Deployment of allied fighter jets and parliamentary authorization of joint military personnel into Gulf defense frameworks.</p>
+      <p data-ast="b3d">Deployment of allied fighter jets and parliamentary authorization of joint military personnel into Gulf defense frameworks.</p>
     </div>
     <div class="beat-card">
       <b data-i="b4t">What to Watch</b>
-      <p data-i="b4d">Escalation dynamics across regional proxy networks and sovereign airspace contestation thresholds.</p>
+      <p data-ast="b4d">Escalation dynamics across regional proxy networks and sovereign airspace contestation thresholds.</p>
     </div>
   </section>
 
@@ -706,13 +734,13 @@ footer.bottom-red-footer strong{
         <circle cx="45" cy="27" r="7" fill="#fff"/>
       </svg>
       <div>
-        <h3 data-i="board1Title">Checkers: The Rapid Air Sortie</h3>
-        <div class="sub" data-i="board1Sub">Short horizons · Tactical deterrence · Immediate friction</div>
+        <h3 data-ast="board1Title">Checkers: The Rapid Air Sortie</h3>
+        <div class="sub" data-i="board1Sub">Short horizons · Mandatory capture · Immediate friction</div>
       </div>
     </div>
     <div class="board-body">
-      <p><strong data-i="lblMove">The Move:</strong> <span data-i="cMove">External allied air forces rush fighter wings into theater airbases to provide immediate defense cover against inbound drone and missile threats.</span></p>
-      <p><strong data-i="lblCost">The Cost:</strong> <span data-i="cCost">A high-burn tactical posture. Continuous air patrols consume massive logistical resources and create acute operational fatigue, reacting to immediate threats while deep political friction remains unresolved.</span></p>
+      <p><strong data-i="lblMove">The Move:</strong> <span data-ast="cMove">External allied air forces rush fighter wings into theater airbases to provide immediate defense cover against inbound drone and missile threats.</span></p>
+      <p><strong data-i="lblCost">The Cost:</strong> <span data-ast="cCost">A high-burn tactical posture. Continuous air patrols consume massive logistical resources and create acute operational fatigue, reacting to immediate threats while deep political friction remains unresolved.</span></p>
     </div>
   </article>
 
@@ -733,13 +761,13 @@ footer.bottom-red-footer strong{
         <text x="36" y="48" text-anchor="middle" font-size="34" fill="#11110f" font-family="serif">♚</text>
       </svg>
       <div>
-        <h3 data-i="board2Title">Chess: The Sovereign Treaty Architecture</h3>
-        <div class="sub" data-i="board2Sub">Positional restructuring · Treaty solvency · Strategic zugzwang</div>
+        <h3 data-ast="board2Title">Chess: The Sovereign Treaty Architecture</h3>
+        <div class="sub" data-i="board2Sub">Positional restructuring · Balance-sheet fortress · Checkmate trajectory</div>
       </div>
     </div>
     <div class="board-body">
-      <p><strong data-i="lblMove">The Move:</strong> <span data-i="chMove">Middle Eastern and allied governments ratify binding parliamentary defense mandates and mutual assistance pacts, permanently tying their security postures together.</span></p>
-      <p><strong data-i="lblPos">The Position:</strong> <span data-i="chPos">The pieces on the strategic board lock into formal defensive alignments. Adversarial regional actors face zugzwang: continuing direct escalations triggers consolidated multi-state retaliation, while backing down cedes regional security dominance.</span></p>
+      <p><strong data-i="lblMove">The Move:</strong> <span data-ast="chMove">Middle Eastern and allied governments ratify binding parliamentary defense mandates and mutual assistance pacts, permanently tying their security postures together.</span></p>
+      <p><strong data-i="lblPos">The Position:</strong> <span data-ast="chPos">The pieces on the strategic board lock into formal defensive alignments. Adversarial regional actors face zugzwang: continuing direct escalations triggers consolidated multi-state retaliation, while backing down cedes regional security dominance.</span></p>
     </div>
   </article>
 
@@ -758,13 +786,13 @@ footer.bottom-red-footer strong{
         <circle cx="36" cy="50" r="6" fill="#11110f"/>
       </svg>
       <div>
-        <h3 data-i="board3Title">Go (Weiqi): The Basin Enclosure</h3>
-        <div class="sub" data-i="board3Sub">Deep time · Territorial integration · Silent spatial control</div>
+        <h3 data-ast="board3Title">Go (Weiqi): The Basin Enclosure</h3>
+        <div class="sub" data-i="board3Sub">Deep time · Closing of liberties · Silent spatial hegemony</div>
       </div>
     </div>
     <div class="board-body">
-      <p><strong data-i="lblMove">The Move:</strong> <span data-i="goMove">The long-term knitting together of radar architectures, intelligence-sharing grids, and joint naval patrols across the entire Gulf and Arabian Sea basin.</span></p>
-      <p><strong data-i="lblPos">The Position:</strong> <span data-i="goPos">Countless empty liberties across regional airspace and shipping lanes are quietly sealed by allied defense integration. Territorial control is established through permanent institutional architecture rather than temporary skirmishes.</span></p>
+      <p><strong data-i="lblMove">The Move:</strong> <span data-ast="goMove">The long-term knitting together of radar architectures, intelligence-sharing grids, and joint naval patrols across the entire Gulf and Arabian Sea basin.</span></p>
+      <p><strong data-i="lblPos">The Position:</strong> <span data-ast="goPos">Countless empty liberties across regional airspace and shipping lanes are quietly sealed by allied defense integration. Territorial control is established through permanent institutional architecture rather than temporary skirmishes.</span></p>
     </div>
   </article>
 
@@ -775,14 +803,14 @@ footer.bottom-red-footer strong{
       <span class="date-badge" data-i="plainBadge">The Non-Technical Reality</span>
     </div>
     <h3 style="font-family:var(--serif);font-size:22px;font-weight:700;margin-bottom:14px;" data-i="plainTitle">Stripping Away the Jargon</h3>
-    <p style="font-size:16px;color:var(--card-ink);line-height:1.7;margin-bottom:14px;" data-i="plainP1">For years, security in West Asia relied heavily on distant superpowers stepping in only when crises boiled over. Today, regional powers and key allies are cutting out the middleman—signing direct defense pacts, deploying jets locally, and locking down joint military frameworks themselves.</p>
-    <p style="font-size:16px;color:var(--card-ink);line-height:1.7;" data-i="plainP2">Today's move means the security of the Gulf is being rewritten into permanent, binding bilateral treaties and shared radar grids. Instead of waiting for a crisis, nations are physically and legally walling off the region against aggression.</p>
+    <p style="font-size:16px;color:var(--card-ink);line-height:1.7;margin-bottom:14px;" data-ast="plainP1">For years, security in West Asia relied heavily on distant superpowers stepping in only when crises boiled over. Today, regional powers and key allies are cutting out the middleman—signing direct defense pacts, deploying jets locally, and locking down joint military frameworks themselves.</p>
+    <p style="font-size:16px;color:var(--card-ink);line-height:1.7;" data-ast="plainP2">Today's move means the security of the Gulf is being rewritten into permanent, binding bilateral treaties and shared radar grids. Instead of waiting for a crisis, nations are physically and legally walling off the region against aggression.</p>
   </article>
 
   <!-- Terminal Strategic Verdict -->
   <div class="verdict-box">
     <h4 data-i="verdictHead">Terminal Verdict</h4>
-    <p data-i="verdictBody">The future of West Asian security is not determined by temporary ceasefire talks or rhetorical posturing. It is sealed by whoever permanently embeds their defense treaties, air interceptors, and radar nodes into the sovereign bedrock of the Gulf basin.</p>
+    <p data-ast="verdictBody">The future of West Asian security is not determined by temporary ceasefire talks or rhetorical posturing. It is sealed by whoever permanently embeds their defense treaties, air interceptors, and radar nodes into the sovereign bedrock of the Gulf basin.</p>
   </div>
 
 </main>
@@ -799,7 +827,7 @@ footer.bottom-red-footer strong{
 </footer>
 
 <script>
-// Live GMT/UTC Clock
+// 1. Live GMT/UTC Clock
 function updateGMTClock() {
   const now = new Date();
   const utcHours = String(now.getUTCHours()).padStart(2, '0');
@@ -815,46 +843,53 @@ function updateGMTClock() {
 setInterval(updateGMTClock, 1000);
 updateGMTClock();
 
-// Shared UI Chrome Translations across 10 Languages
+// 2. Immutable Board Lexicon & UI Chrome (Hardcoded across 10 languages for forensic precision)
 const UI_CHROME = {
-  en: { name:"English", dir:"ltr", navToday:"Today", navAbout:"About", navContact:"Contact", searchTitle:"Search the Record", searchPlaceholder:"Search dispatches, moves, or players...", searchBtn:"Search", quickFilters:"Quick filters:", calMonth:"October 2026", calLegend:"● Live Move", xyzTitle:"Protocol X-Y-Z: The Operational Players", badgeX:"x · Tactical Driver", badgeY:"y · Sovereign Fulcrum", badgeZ:"z · Ground Reality", regTitle:"Regional Exposure & Strategic Friction", thRegion:"Geopolitical Basin", thRole:"Vector Role", thImpact:"Operational Impact", vecX:"Vector x", vecY:"Vector y", vecZ:"Vector z", beatsTitle:"Anatomy of the Daily Move", b1t:"Why It Matters", b2t:"The Substrate", b3t:"The Move", b4t:"What to Watch", boardsTitle:"Read Across Three Boards", lblMove:"The Move:", lblCost:"The Cost:", lblPos:"The Position:", plainKicker:"In Plain Language // What This Actually Means", plainBadge:"The Non-Technical Reality", plainTitle:"Stripping Away the Jargon", verdictHead:"Terminal Verdict", readEditorialBtn:"Read The Daily Editorial", footerText:"The daily move is free. The archive is the record." },
-  fr: { name:"Français", dir:"ltr", navToday:"Aujourd'hui", navAbout:"À propos", navContact:"Contact", searchTitle:"Consulter le registre", searchPlaceholder:"Rechercher dépêches, acteurs, mouvements...", searchBtn:"Rechercher", quickFilters:"Filtres rapides :", calMonth:"Octobre 2026", calLegend:"● Coup du jour", xyzTitle:"Protocole X-Y-Z : Les Acteurs Opérationnels", badgeX:"x · Vecteur Tactique", badgeY:"y · Pivot Souverain", badgeZ:"z · Réalité du Terrain", regTitle:"Exposition Régionale & Friction Stratégique", thRegion:"Bassin Géopolitique", thRole:"Rôle Vectoriel", thImpact:"Impact Opérationnel", vecX:"Vecteur x", vecY:"Vecteur y", vecZ:"Vecteur z", beatsTitle:"Anatomie du coup quotidien", b1t:"Pourquoi c'est important", b2t:"Le substrat", b3t:"Le coup", b4t:"À surveiller", boardsTitle:"Lecture sur trois plateaux", lblMove:"Le coup :", lblCost:"Le coût :", lblPos:"La position :", plainKicker:"En clair // Ce que cela signifie vraiment", plainBadge:"La réalité sans jargon", plainTitle:"Dépouillé de tout vocabulaire technique", verdictHead:"Verdict Terminal", readEditorialBtn:"Lire l'éditorial quotidien", footerText:"Le coup du jour est gratuit. L'archive est le registre." },
-  es: { name:"Español", dir:"ltr", navToday:"Hoy", navAbout:"Acerca de", navContact:"Contacto", searchTitle:"Buscar en el registro", searchPlaceholder:"Buscar despachos, jugadores...", searchBtn:"Buscar", quickFilters:"Filtros rápidos:", calMonth:"Octubre 2026", calLegend:"● Jugada del día", xyzTitle:"Protocolo X-Y-Z: Jugadores Operativos", badgeX:"x · Impulsor Táctico", badgeY:"y · Fulcro Soberano", badgeZ:"z · Realidad Terrestre", regTitle:"Exposición Regional y Fricción Estratégica", thRegion:"Cuenca Geopolítica", thRole:"Rol Vectorial", thImpact:"Impacto Operacional", vecX:"Vector x", vecY:"Vector y", vecZ:"Vector z", beatsTitle:"Anatomía de la jugada diaria", b1t:"Por qué importa", b2t:"El sustrato", b3t:"La jugada", b4t:"Qué vigilar", boardsTitle:"Lectura en tres tableros", lblMove:"La jugada:", lblCost:"El coste:", lblPos:"La posición:", plainKicker:"En lenguaje sencillo // Qué significa realmente", plainBadge:"La realidad sin tecnicismos", plainTitle:"Sin rodeos ni jerga", verdictHead:"Veredicto Terminal", readEditorialBtn:"Leer el editorial diario", footerText:"La jugada diaria es gratuita. El archivo es el registro." },
-  pt: { name:"Português", dir:"ltr", navToday:"Hoje", navAbout:"Sobre", navContact:"Contacto", searchTitle:"Consultar o registo", searchPlaceholder:"Pesquisar despachos...", searchBtn:"Pesquisar", quickFilters:"Filtros rápidos:", calMonth:"Outubro 2026", calLegend:"● Lance do dia", xyzTitle:"Protocolo X-Y-Z: Intervenientes Operacionais", badgeX:"x · Motor Tático", badgeY:"y · Fulcro Soberano", badgeZ:"z · Realidade Física", regTitle:"Exposição Regional & Fricção Estratégica", thRegion:"Bacia Geopolítica", thRole:"Função Vetorial", thImpact:"Impacto Operacional", vecX:"Vetor x", vecY:"Vetor y", vecZ:"Vetor z", beatsTitle:"Anatomia do lance diário", b1t:"Por que importa", b2t:"O tabuleiro", b3t:"O lance", b4t:"O que observar", boardsTitle:"Leitura nos Três Tabuleiros", lblMove:"O lance:", lblCost:"O custo:", lblPos:"A posição:", plainKicker:"Em linguagem simples // O que isto significa na prática", plainBadge:"A realidade sem termos técnicos", plainTitle:"Direto ao ponto", verdictHead:"Veredicto Terminal", readEditorialBtn:"Ler o editorial do dia", footerText:"O lance do dia é gratuito. O arquivo é o registro." },
-  de: { name:"Deutsch", dir:"ltr", navToday:"Heute", navAbout:"Über uns", navContact:"Kontakt", searchTitle:"Archiv durchsuchen", searchPlaceholder:"Depeschen, Akteure...", searchBtn:"Suchen", quickFilters:"Schnellfilter:", calMonth:"Oktober 2026", calLegend:"● Zug des Tages", xyzTitle:"Protokoll X-Y-Z: Die Akteure", badgeX:"x · Taktischer Treiber", badgeY:"y · Souveräner Angelpunkt", badgeZ:"z · Bodenrealität", regTitle:"Regionale Exposition & Reibung", thRegion:"Geopolitischer Raum", thRole:"Vektor", thImpact:"Operative Wirkung", vecX:"Vektor x", vecY:"Vektor y", vecZ:"Vektor z", beatsTitle:"Anatomie des täglichen Zuges", b1t:"Warum es zählt", b2t:"Das Brett", b3t:"Der Zug", b4t:"Worauf zu achten ist", boardsTitle:"Auf drei Brettern gelesen", lblMove:"Der Zug:", lblCost:"Die Kosten:", lblPos:"Die Stellung:", plainKicker:"Im Klartext // Was das wirklich bedeutet", plainBadge:"Ohne Fachjargon", plainTitle:"Die einfache Wahrheit", verdictHead:"Terminales Urteil", readEditorialBtn:"Den Leitartikel des Tages lesen", footerText:"Der tägliche Zug ist frei. Das Archiv ist das Protokoll." },
-  ru: { name:"Русский", dir:"ltr", navToday:"Сегодня", navAbout:"О проекте", navContact:"Контакты", searchTitle:"Поиск по летописи", searchPlaceholder:"Поиск депеш, игроков...", searchBtn:"Найти", quickFilters:"Фильтры:", calMonth:"Октябрь 2026", calLegend:"● Ход дня", xyzTitle:"Протокол X-Y-Z: Действующие Силы", badgeX:"x · Тактический Драйвер", badgeY:"y · Суверенный Опорный Пункт", badgeZ:"z · Реальность на Земле", regTitle:"Региональное Влияние и Трение", thRegion:"Геополитический Бассейн", thRole:"Вектор", thImpact:"Практический Итог", vecX:"Вектор x", vecY:"Вектор y", vecZ:"Вектор z", beatsTitle:"Анатомия ежедневного хода", b1t:"Почему это важно", b2t:"Среда", b3t:"Ход", b4t:"За чем следить", boardsTitle:"Чтение по трем доскам", lblMove:"Ход:", lblCost:"Цена:", lblPos:"Позиция:", plainKicker:"Простыми словами // Что это значит на самом деле", plainBadge:"Суть без сложной терминологии", plainTitle:"Очищено от финансового жаргона", verdictHead:"Окончательный Вердикт", readEditorialBtn:"Читать редакционную статью", footerText:"Ход дня открыт для всех. Архив — это летопись." },
-  zh: { name:"中文", dir:"ltr", navToday:"今日", navAbout:"关于我们", navContact:"联系与信号", searchTitle:"检索历史记录", searchPlaceholder:"搜索快讯、参与者...", searchBtn:"搜索", quickFilters:"快捷分类：", calMonth:"2026年 10月", calLegend:"● 今日棋步", xyzTitle:"XYZ协议：核心博弈实体", badgeX:"x · 战术驱动方", badgeY:"y · 主权支点", badgeZ:"z · 地面实体主权", regTitle:"地缘区域敞口与战略摩擦", thRegion:"地缘区域", thRole:"协议角色", thImpact:"运营影响", vecX:"向量 x", vecY:"向量 y", vecZ:"向量 z", beatsTitle:"每日一步的解构", b1t:"为何重要", b2t:"博弈基底", b3t:"这一步", b4t:"关注什么", boardsTitle:"三种棋盘审视全局", lblMove:"棋步：", lblCost:"代价：", lblPos:"局面：", plainKicker:"通俗解读 // 这究竟意味着什么", plainBadge:"剥离术语的实质真相", plainTitle:"用大白话讲透实质", verdictHead:"终极裁定", readEditorialBtn:"阅读今日深度社论", footerText:"当日快讯免费开放。档案库即是终极记录。" },
-  ja: { name:"日本語", dir:"ltr", navToday:"今日", navAbout:"概要", navContact:"連絡先", tag:"ひとつの世界。ひとつの一手。毎日。", searchTitle:"アーカイブ検索", searchPlaceholder:"ディスパッチ、プレイヤーを検索...", searchBtn:"検索", quickFilters:"クイック抽出:", calMonth:"2026年 10月", calLegend:"● 本日の一手", xyzTitle:"プロトコル X-Y-Z：中核プレイヤー", badgeX:"x · 戦術ドライバー", badgeY:"y · 主権の支点", badgeZ:"z · 物理的現実", regTitle:"地域別エクスポージャーと摩擦", thRegion:"地縁ブロック", thRole:"ベクトル", thImpact:"実質的影響", vecX:"ベクトル x", vecY:"ベクトル y", vecZ:"ベクトル z", beatsTitle:"一手のアナトミー", b1t:"なぜ重要か", b2t:"盤の選択", b3t:"今の一手", b4t:"注目点", boardsTitle:"三つの盤で読み解く", lblMove:"一手:", lblCost:"代償:", lblPos:"局面:", plainKicker:"平易な言葉で // これが意味する本質", plainBadge:"専門用語を排した現実", plainTitle:"核心をわかりやすく", verdictHead:"最終的裁定", readEditorialBtn:"本日の社説を読む", footerText:"最新の一手は無料公開。アーカイブこそが真の記録。" },
-  hi: { name:"हिन्दी", dir:"ltr", navToday:"आज", navAbout:"परिचय", navContact:"संपर्क", searchTitle:"अभिलेख में खोजें", searchPlaceholder:"खोजें...", searchBtn:"खोजें", quickFilters:"त्वरित फ़िल्टर:", calMonth:"अक्टूबर 2026", calLegend:"● आज की चाल", xyzTitle:"प्रोटोकॉल X-Y-Z: प्रमुख रणनीतिक खिलाड़ी", badgeX:"x · सामरिक चालक", badgeY:"y · संप्रभु धुरी", badgeZ:"z · जमीनी हकीकत", regTitle:"क्षेत्रीय प्रभाव और रणनीतिक घर्षण", thRegion:"क्षेत्र", thRole:"भूमिका", thImpact:"परिणाम", vecX:"वेक्टर x", vecY:"वेक्टर y", vecZ:"वेक्टर z", beatsTitle:"दैनिक चाल का विश्लेषण", b1t:"यह क्यों मायने रखता है", b2t:"बिसात", b3t:"चाल", b4t:"किस पर नज़र रखें", boardsTitle:"तीन बिसातों पर विश्लेषण", lblMove:"चाल:", lblCost:"लागत:", lblPos:"स्थिति:", plainKicker:"सरल भाषा में // इसका वास्तविक अर्थ क्या है", plainBadge:"तकनीकी शब्दों से परे यथार्थ", plainTitle:"सीधी और स्पष्ट बात", verdictHead:"अंतिम निष्कर्ष", readEditorialBtn:"आज का संपादकीय पढ़ें", footerText:"आज की चाल निःशुल्क है। संग्रह ही वास्तविक अभिलेख है।" },
-  ar: { name:"العربية", dir:"rtl", navToday:"اليوم", navAbout:"عن المشروع", navContact:"اتصال", searchTitle:"البحث في السجل", searchPlaceholder:"ابحث...", searchBtn:"بحث", quickFilters:"تصفية سريعة:", calMonth:"أكتوبر 2026", calLegend:"● نقلة اليوم", xyzTitle:"بروتوكول X-Y-Z: اللاعبون الفاعلون", badgeX:"x · المحرك التكتيكي", badgeY:"y · المرتكز السيادي", badgeZ:"z · الواقع الميداني", regTitle:"الانكشاف الإقليمي والاحتكاك الاستراتيجي", thRegion:"الحوض الجيوسياسي", thRole:"المسار", thImpact:"الأثر التشغيلي", vecX:"المتجه x", vecY:"المتجه y", vecZ:"المتجه z", beatsTitle:"تشريح النقلة اليومية", b1t:"لماذا يهم", b2t:"الرقعة", b3t:"النقلة", b4t:"ما يجب مراقبته", boardsTitle:"قراءة عبر ثلاث رقع", lblMove:"النقلة:", lblCost:"الثمن:", lblPos:"الوضعية:", plainKicker:"بلغة مبسطة // ماذا يعني هذا عملياً", plainBadge:"الواقع مجرداً من التعقيد التقني", plainTitle:"جوهر الأمر بدون مصطلحات معقدة", verdictHead:"الحكم النهائي", readEditorialBtn:"قراءة الافتتاحية اليومية", footerText:"نقلة اليوم مجانية. الأرشيف هو السجل الحقيقي." }
+  en: { name:"English", dir:"ltr", navToday:"Today", navAbout:"About", navContact:"Contact", searchTitle:"Search the Record", searchPlaceholder:"Search dispatches, moves, or players...", searchBtn:"Search", quickFilters:"Quick filters:", calMonth:"October 2026", calLegend:"● Live Move", xyzTitle:"Protocol X-Y-Z: The Operational Players", badgeX:"x · Tactical Driver", badgeY:"y · Sovereign Fulcrum", badgeZ:"z · Ground Reality", regTitle:"Regional Exposure & Strategic Friction", thRegion:"Geopolitical Basin", thRole:"Vector Role", thImpact:"Operational Impact", vecX:"Vector x", vecY:"Vector y", vecZ:"Vector z", beatsTitle:"Anatomy of the Daily Move", b1t:"Why It Matters", b2t:"The Substrate", b3t:"The Move", b4t:"What to Watch", boardsTitle:"Read Across Three Boards", board1Sub:"Short horizons · Mandatory capture · Immediate friction", board2Sub:"Positional restructuring · Balance-sheet fortress · Checkmate trajectory", board3Sub:"Deep time · Closing of liberties · Silent spatial hegemony", lblMove:"The Move:", lblCost:"The Cost:", lblPos:"The Position:", plainKicker:"In Plain Language // What This Actually Means", plainBadge:"The Non-Technical Reality", plainTitle:"Stripping Away the Jargon", verdictHead:"Terminal Verdict", readEditorialBtn:"Read The Daily Editorial", footerText:"The daily move is free. The archive is the record." },
+  fr: { name:"Français", dir:"ltr", navToday:"Aujourd'hui", navAbout:"À propos", navContact:"Contact", searchTitle:"Consulter le registre", searchPlaceholder:"Rechercher dépêches, acteurs, mouvements...", searchBtn:"Rechercher", quickFilters:"Filtres rapides :", calMonth:"Octobre 2026", calLegend:"● Coup du jour", xyzTitle:"Protocole X-Y-Z : Les Acteurs Opérationnels", badgeX:"x · Vecteur Tactique", badgeY:"y · Pivot Souverain", badgeZ:"z · Réalité du Terrain", regTitle:"Exposition Régionale & Friction Stratégique", thRegion:"Bassin Géopolitique", thRole:"Rôle Vectoriel", thImpact:"Impact Opérationnel", vecX:"Vecteur x", vecY:"Vecteur y", vecZ:"Vecteur z", beatsTitle:"Anatomie du coup quotidien", b1t:"Pourquoi c'est important", b2t:"Le substrat", b3t:"Le coup", b4t:"À surveiller", boardsTitle:"Lecture sur trois plateaux", board1Sub:"Horizons courts · Capture obligatoire · Friction immédiate", board2Sub:"Restructuration de bilan · Forteresse souveraine · Zugzwang", board3Sub:"Temps long · Fermeture des libertés · Hégémonie spatiale silencieuse", lblMove:"Le coup :", lblCost:"Le coût :", lblPos:"La position :", plainKicker:"En clair // Ce que cela signifie vraiment", plainBadge:"La réalité sans jargon", plainTitle:"Dépouillé de tout vocabulaire technique", verdictHead:"Verdict Terminal", readEditorialBtn:"Lire l'éditorial quotidien", footerText:"Le coup du jour est gratuit. L'archive est le registre." },
+  es: { name:"Español", dir:"ltr", navToday:"Hoy", navAbout:"Acerca de", navContact:"Contacto", searchTitle:"Buscar en el registro", searchPlaceholder:"Buscar despachos, jugadores...", searchBtn:"Buscar", quickFilters:"Filtros rápidos:", calMonth:"Octubre 2026", calLegend:"● Jugada del día", xyzTitle:"Protocolo X-Y-Z: Jugadores Operativos", badgeX:"x · Impulsor Táctico", badgeY:"y · Fulcro Soberano", badgeZ:"z · Realidad Terrestre", regTitle:"Exposición Regional y Fricción Estratégica", thRegion:"Cuenca Geopolítica", thRole:"Rol Vectorial", thImpact:"Impacto Operacional", vecX:"Vector x", vecY:"Vector y", vecZ:"Vector z", beatsTitle:"Anatomía de la jugada diaria", b1t:"Por qué importa", b2t:"El sustrato", b3t:"La jugada", b4t:"Qué vigilar", boardsTitle:"Lectura en tres tableros", board1Sub:"Corto plazo · Captura obligatoria · Fricción inmediata", board2Sub:"Reestructuración posicional · Fortaleza de balance · Zugzwang", board3Sub:"Tiempo profundo · Cierre de libertades · Hegemonía espacial", lblMove:"La jugada:", lblCost:"El coste:", lblPos:"La posición:", plainKicker:"En lenguaje sencillo // Qué significa realmente", plainBadge:"La realidad sin tecnicismos", plainTitle:"Sin rodeos ni jerga", verdictHead:"Veredicto Terminal", readEditorialBtn:"Leer el editorial diario", footerText:"La jugada diaria es gratuita. El archivo es el registro." },
+  pt: { name:"Português", dir:"ltr", navToday:"Hoje", navAbout:"Sobre", navContact:"Contacto", searchTitle:"Consultar o registo", searchPlaceholder:"Pesquisar despachos...", searchBtn:"Pesquisar", quickFilters:"Filtros rápidos:", calMonth:"Outubro 2026", calLegend:"● Lance do dia", xyzTitle:"Protocolo X-Y-Z: Intervenientes Operacionais", badgeX:"x · Motor Tático", badgeY:"y · Fulcro Soberano", badgeZ:"z · Realidade Física", regTitle:"Exposição Regional & Fricção Estratégica", thRegion:"Bacia Geopolítica", thRole:"Função Vetorial", thImpact:"Impacto Operacional", vecX:"Vetor x", vecY:"Vetor y", vecZ:"Vetor z", beatsTitle:"Anatomia do lance diário", b1t:"Por que importa", b2t:"O tabuleiro", b3t:"O lance", b4t:"O que observar", boardsTitle:"Leitura nos Três Tabuleiros", board1Sub:"Curto prazo · Captura obrigatória · Fricção imediata", board2Sub:"Fortaleza de balanço · Zugzwang estrutural", board3Sub:"Tempo profundo · Fechamento de liberdades · Hegemonia espacial", lblMove:"O lance:", lblCost:"O custo:", lblPos:"A posição:", plainKicker:"Em linguagem simples // O que isto significa na prática", plainBadge:"A realidade sem termos técnicos", plainTitle:"Direto ao ponto", verdictHead:"Veredicto Terminal", readEditorialBtn:"Ler o editorial do dia", footerText:"O lance do dia é gratuito. O arquivo é o registro." },
+  de: { name:"Deutsch", dir:"ltr", navToday:"Heute", navAbout:"Über uns", navContact:"Kontakt", searchTitle:"Archiv durchsuchen", searchPlaceholder:"Depeschen, Akteure...", searchBtn:"Suchen", quickFilters:"Schnellfilter:", calMonth:"Oktober 2026", calLegend:"● Zug des Tages", xyzTitle:"Protokoll X-Y-Z: Die Akteure", badgeX:"x · Taktischer Treiber", badgeY:"y · Souveräner Angelpunkt", badgeZ:"z · Bodenrealität", regTitle:"Regionale Exposition & Reibung", thRegion:"Geopolitischer Raum", thRole:"Vektor", thImpact:"Operative Wirkung", vecX:"Vektor x", vecY:"Vektor y", vecZ:"Vektor z", beatsTitle:"Anatomie des täglichen Zuges", b1t:"Warum es zählt", b2t:"Das Brett", b3t:"Der Zug", b4t:"Worauf zu achten ist", boardsTitle:"Auf drei Brettern gelesen", board1Sub:"Kurzer Horizont · Schlagzwang · Unmittelbare Reibung", board2Sub:"Bilanzfestung · Struktureller Zugzwang · Schachmatt-Trajektorie", board3Sub:"Tiefe Zeit · Schließen der Freiheiten · Stille Raumhegemonie", lblMove:"Der Zug:", lblCost:"Die Kosten:", lblPos:"Die Stellung:", plainKicker:"Im Klartext // Was das wirklich bedeutet", plainBadge:"Ohne Fachjargon", plainTitle:"Die einfache Wahrheit", verdictHead:"Terminales Urteil", readEditorialBtn:"Den Leitartikel des Tages lesen", footerText:"Der tägliche Zug ist frei. Das Archiv ist das Protokoll." },
+  ru: { name:"Русский", dir:"ltr", navToday:"Сегодня", navAbout:"О проекте", navContact:"Контакты", searchTitle:"Поиск по летописи", searchPlaceholder:"Поиск депеш, игроков...", searchBtn:"Найти", quickFilters:"Фильтры:", calMonth:"Октябрь 2026", calLegend:"● Ход дня", xyzTitle:"Протокол X-Y-Z: Действующие Силы", badgeX:"x · Тактический Драйвер", badgeY:"y · Суверенный Опорный Пункт", badgeZ:"z · Реальность на Земле", regTitle:"Региональное Влияние и Трение", thRegion:"Геополитический Бассейн", thRole:"Вектор", thImpact:"Практический Итог", vecX:"Вектор x", vecY:"Вектор y", vecZ:"Вектор z", beatsTitle:"Анатомия ежедневного хода", b1t:"Почему это важно", b2t:"Среда", b3t:"Ход", b4t:"За чем следить", boardsTitle:"Чтение по трем доскам", board1Sub:"Короткий горизонт · Обязательный бой · Немедленное трение", board2Sub:"Крепость баланса · Позиционный цугцванг", board3Sub:"Глубокое время · Закрытие дыханий · Пространственная гегемония", lblMove:"Ход:", lblCost:"Цена:", lblPos:"Позиция:", plainKicker:"Простыми словами // Что это значит на самом деле", plainBadge:"Суть без сложной терминологии", plainTitle:"Очищено от финансового жаргона", verdictHead:"Окончательный Вердикт", readEditorialBtn:"Читать редакционную статью", footerText:"Ход дня открыт для всех. Архив — это летопись." },
+  zh: { name:"中文", dir:"ltr", navToday:"今日", navAbout:"关于我们", navContact:"联系与信号", searchTitle:"检索历史记录", searchPlaceholder:"搜索快讯、参与者...", searchBtn:"搜索", quickFilters:"快捷分类：", calMonth:"2026年 10月", calLegend:"● 今日棋步", xyzTitle:"XYZ协议：核心博弈实体", badgeX:"x · 战术驱动方", badgeY:"y · 主权支点", badgeZ:"z · 地面实体主权", regTitle:"地缘区域敞口与战略摩擦", thRegion:"地缘区域", thRole:"协议角色", thImpact:"运营影响", vecX:"向量 x", vecY:"向量 y", vecZ:"向量 z", beatsTitle:"每日一步的解构", b1t:"为何重要", b2t:"博弈基底", b3t:"这一步", b4t:"关注什么", boardsTitle:"三种棋盘审视全局", board1Sub:"短周期 · 强制应手 · 即时摩擦", board2Sub:"资产负债表堡垒 · 结构性迫移局（Zugzwang）", board3Sub:"深远周期 · 紧气 · 静默空间霸权", lblMove:"棋步：", lblCost:"代价：", lblPos:"局面：", plainKicker:"通俗解读 // 这究竟意味着什么", plainBadge:"剥离术语的实质真相", plainTitle:"用大白话讲透实质", verdictHead:"终极裁定", readEditorialBtn:"阅读今日深度社论", footerText:"当日快讯免费开放。档案库即是终极记录。" },
+  ja: { name:"日本語", dir:"ltr", navToday:"今日", navAbout:"概要", navContact:"連絡先", searchTitle:"アーカイブ検索", searchPlaceholder:"ディスパッチ、プレイヤーを検索...", searchBtn:"検索", quickFilters:"クイック抽出:", calMonth:"2026年 10月", calLegend:"● 本日の一手", xyzTitle:"プロトコル X-Y-Z：中核プレイヤー", badgeX:"x · 戦術ドライバー", badgeY:"y · 主権の支点", badgeZ:"z · 物理的現実", regTitle:"地域別エクスポージャーと摩擦", thRegion:"地縁ブロック", thRole:"ベクトル", thImpact:"実質的影響", vecX:"ベクトル x", vecY:"ベクトル y", vecZ:"ベクトル z", beatsTitle:"一手のアナトミー", b1t:"なぜ重要か", b2t:"盤の選択", b3t:"今の一手", b4t:"注目点", boardsTitle:"三つの盤で読み解く", board1Sub:"短期的視界 · 強制応手 · 即時摩擦", board2Sub:"バランスシート要塞 · ツークツワンクの軌跡", board3Sub:"深遠な時間 · 駄目を詰める · 静かな空間覇権", lblMove:"一手:", lblCost:"代償:", lblPos:"局面:", plainKicker:"平易な言葉で // これが意味する本質", plainBadge:"専門用語を排した現実", plainTitle:"核心をわかりやすく", verdictHead:"最終的裁定", readEditorialBtn:"本日の社説を読む", footerText:"最新の一手は無料公開。アーカイブこそが真の記録。" },
+  hi: { name:"हिन्दी", dir:"ltr", navToday:"आज", navAbout:"परिचय", navContact:"संपर्क", searchTitle:"अभिलेख में खोजें", searchPlaceholder:"खोजें...", searchBtn:"खोजें", quickFilters:"त्वरित फ़िल्टर:", calMonth:"अक्टूबर 2026", calLegend:"● आज की चाल", xyzTitle:"प्रोटोकॉल X-Y-Z: प्रमुख रणनीतिक खिलाड़ी", badgeX:"x · सामरिक चालक", badgeY:"y · संप्रभु धुरी", badgeZ:"z · जमीनी हकीकत", regTitle:"क्षेत्रीय प्रभाव और रणनीतिक घर्षण", thRegion:"क्षेत्र", thRole:"भूमिका", thImpact:"परिणाम", vecX:"वेक्टर x", vecY:"वेक्टर y", vecZ:"वेक्टर z", beatsTitle:"दैनिक चाल का विश्लेषण", b1t:"यह क्यों मायने रखता है", b2t:"बिसात", b3t:"चाल", b4t:"किस पर नज़र रखें", boardsTitle:"तीन बिसातों पर विश्लेषण", board1Sub:"अल्पकालिक क्षितिज · अनिवार्य चाल · तत्काल घर्षण", board2Sub:"संपत्ति पुनर्गठन · बैलेंस-शीट किला · जुगज़वांग", board3Sub:"दीर्घकाल · शांति से घेराव · स्थानिक वर्चस्व", lblMove:"चाल:", lblCost:"लागत:", lblPos:"स्थिति:", plainKicker:"सरल भाषा में // इसका वास्तविक अर्थ क्या है", plainBadge:"तकनीकी शब्दों से परे यथार्थ", plainTitle:"सीधी और स्पष्ट बात", verdictHead:"अंतिम निष्कर्ष", readEditorialBtn:"आज का संपादकीय पढ़ें", footerText:"आज की चाल निःशुल्क है। संग्रह ही वास्तविक अभिलेख है।" },
+  ar: { name:"العربية", dir:"rtl", navToday:"اليوم", navAbout:"عن المشروع", navContact:"اتصال", searchTitle:"البحث في السجل", searchPlaceholder:"ابحث...", searchBtn:"بحث", quickFilters:"تصفية سريعة:", calMonth:"أكتوبر 2026", calLegend:"● نقلة اليوم", xyzTitle:"بروتوكول X-Y-Z: اللاعبون الفاعلون", badgeX:"x · المحرك التكتيكي", badgeY:"y · المرتكز السيادي", badgeZ:"z · الواقع الميداني", regTitle:"الانكشاف الإقليمي والاحتكاك الاستراتيجي", thRegion:"الحوض الجيوسياسي", thRole:"المسار", thImpact:"الأثر التشغيلي", vecX:"المتجه x", vecY:"المتجه y", vecZ:"المتجه z", beatsTitle:"تشريح النقلة اليومية", b1t:"لماذا يهم", b2t:"الرقعة", b3t:"النقلة", b4t:"ما يجب مراقبته", boardsTitle:"قراءة عبر ثلاث رقع", board1Sub:"أفق قصير · أكل إجباري · احتكاك فوري", board2Sub:"إعادة هيكلة الميزانيات · قلعة سيادية · تسوغتسفانغ", board3Sub:"زمن عميق · خنق المنافذ · هيمنة مكانية صامتة", lblMove:"النقلة:", lblCost:"الثمن:", lblPos:"الوضعية:", plainKicker:"بلغة مبسطة // ماذا يعني هذا عملياً", plainBadge:"الواقع مجرداً من التعقيد التقني", plainTitle:"جوهر الأمر بدون مصطلحات معقدة", verdictHead:"الحكم النهائي", readEditorialBtn:"قراءة الافتتاحية اليومية", footerText:"نقلة اليوم مجانية. الأرشيف هو السجل الحقيقي." }
 };
 
-// Multi-Language Dispatches Store for Editions 1, 2, and 3
-const DISPATCHES_I18N = {
+// 3. Canonical English Root Store (AST Nodes for Editions 1, 2, and 3)
+// Daily publishing requires ONLY adding the English object here.
+const DISPATCHES_ROOT = {
   "2026-10-19": {
     editorial_url: "editorial-2026-10-19.html",
-    en: {
+    ast: {
       todayDate:"Monday, October 19, 2026 · GMT 00:00 Cycle · Edition 1",
       todayKicker:"The Move of the Day // Edition 1 · October 19, 2026",
       todayTitle:"The Fracture of the Global Clearing Grid: Bilateral Commodities Settle Outside the G7 Rail",
       todayLede:"Central bank digital clearing corridors bypass Western correspondent banking, anchoring new settlement liquidity in vaulted gold and direct bilateral energy swaps. Read through Protocol X-Y-Z and across three boards.",
-      xName:"G7 Regulatory Axis", xDesc:"The enforcement rail operating under short horizons. Trapped in mandatory response cycles, forced to deploy emergency secondary sanctions that cause immediate friction but forfeit long-term surveillance visibility.",
-      yName:"Bilateral Vault Arbiters", yDesc:"Central bank reserve managers and sovereign vaults across the Indian Ocean rim. Absorbing volatility by re-anchoring liquid balances into domestic physical bullion and direct local-currency energy clearing.",
-      zName:"Eurasian Corridor Sovereign", zDesc:"The physical infrastructure powers: port terminals, overland pipeline operators, and critical mineral cartels. Closing physical liberties across space and deep time without relying on Western banking rails.",
-      r1Name:"Atlantic / G7 Axis", r1Text:"Secondary sanctions exhaustion, diminishing clearing leverage, and permanent blindness to parallel trade volumes.",
-      r2Name:"Indian Ocean Rim", r2Text:"Massive liquidity capture in physical bullion vaults and rapid expansion of bilateral digital ledger clearing.",
-      r3Name:"Eurasian Land Bridge", r3Text:"Total enclosure of overland hydrocarbon corridors; immunizing physical supply chains against maritime disruption.",
+      xName:"G7 Regulatory Axis",
+      xDesc:"The enforcement rail operating under short horizons. Trapped in mandatory response cycles, forced to deploy emergency secondary sanctions that cause immediate friction but forfeit long-term surveillance visibility.",
+      yName:"Bilateral Vault Arbiters",
+      yDesc:"Central bank reserve managers and sovereign vaults across the Indian Ocean rim. Absorbing volatility by re-anchoring liquid balances into domestic physical bullion and direct local-currency energy clearing.",
+      zName:"Eurasian Corridor Sovereign",
+      zDesc:"The physical infrastructure powers: port terminals, overland pipeline operators, and critical mineral cartels. Closing physical liberties across space and deep time without relying on Western banking rails.",
+      r1Name:"Atlantic / G7 Axis",
+      r1Text:"Secondary sanctions exhaustion, diminishing clearing leverage, and permanent blindness to parallel trade volumes.",
+      r2Name:"Indian Ocean Rim",
+      r2Text:"Massive liquidity capture in physical bullion vaults and rapid expansion of bilateral digital ledger clearing.",
+      r3Name:"Eurasian Land Bridge",
+      r3Text:"Total enclosure of overland hydrocarbon corridors; immunizing physical supply chains against maritime disruption.",
       b1d:"The global financial grid has officially fractured into two non-interoperable settlement zones. Bilateral commodities clearing without Western correspondent banking ceases to be an ideological experiment and becomes an everyday commercial reality.",
       b2d:"A simultaneous divergence across all three boards: a forced tactical jump in sanctions enforcement, structural sovereign reserve repositioning, and deep-time physical logistics encirclement.",
       b3d:"Multilateral central bank corridors activate instant bilateral asset settlement collateralized directly by vaulted bullion and long-term hydrocarbon delivery contracts.",
       b4d:"Accelerated sovereign reserve repatriation, secondary banking freezes that fail to bite, and the onset of institutional balance-sheet zugzwang.",
-      board1Title:"Checkers: The Tactical Forced Jump", board1Sub:"Short horizons · Mandatory capture · Immediate friction",
+      board1Title:"Checkers: The Tactical Forced Jump",
       cMove:"Western financial authorities announce immediate emergency sanctions and secondary asset freezes against intermediary commercial banks facilitating non-dollar local-currency oil and rare earth settlements.",
       cCost:"A classic forced jump. Under domestic political theater, the regulator has no legal or optic alternative but to strike the jumping square. However, the mandatory capture sacrifices long-term strategic visibility: every institution frozen out of the SWIFT/CHIPS clearing system is permanently converted into a dedicated clearing hub for the parallel corridor.",
-      board2Title:"Chess: The Strategic King Maneuver", board2Sub:"Positional restructuring · Balance-sheet fortress · Checkmate trajectory",
+      board2Title:"Chess: The Strategic King Maneuver",
       chMove:"Non-aligned central banks reallocate liquid foreign exchange reserves away from sovereign debt instruments and into vaulted physical bullion held strictly within domestic territorial borders.",
       chPos:"The rooks and knights of sovereign finance are shifted from active offensive deployment in foreign money markets back to an unbreachable defensive castle. The opposing side enters zugzwang: any hike in interest rates deteriorates sovereign debt valuations, while expanding liquidity accelerates bullion flight.",
-      board3Title:"Go (Weiqi): The Encirclement of Territory", board3Sub:"Deep time · Closing of liberties · Silent spatial hegemony",
+      board3Title:"Go (Weiqi): The Encirclement of Territory",
       goMove:"A quiet multilateral coordination linking deepwater port concessions, pipeline terminal nodes, and undersea fiber optic cable landings across the Indian Ocean rim and Eurasian land bridge.",
       goPos:"No pieces were captured; no public ultimatums were broadcast on television. Yet fifty subtle liberties were closed around maritime chokepoints and physical trade conduits.",
       plainP1:"For decades, whenever two countries wanted to buy or sell oil, metals, or grain, they were practically forced to trade in US dollars and clear the money through Western banks.",
@@ -864,28 +899,34 @@ const DISPATCHES_I18N = {
   },
   "2026-10-20": {
     editorial_url: "editorial-2026-10-20.html",
-    en: {
+    ast: {
       todayDate:"Tuesday, October 20, 2026 · GMT 00:00 Cycle · Edition 2",
       todayKicker:"The Move of the Day // Edition 2 · October 20, 2026",
       todayTitle:"The Arctic Sovereign Perimeter: Canada and Nordic Allies Close the Circumpolar Optical & Defense Corridor",
       todayLede:"Joint circumpolar sovereign mandates deploy hardened fiber infrastructure, autonomous surveillance grids, and mineral logistics hubs across the High North, preempting maritime transit contestation. Read through Protocol X-Y-Z and across three boards.",
-      xName:"Tactical Air & Surface Scramble", xDesc:"Air defense interception wings operating on short tactical notification cycles, expending alert sorties to counter gray-zone reconnaissance along circumpolar boundaries.",
-      yName:"The Sovereign Arctic Capital Allocator", yDesc:"Sovereign balance sheets and infrastructure banks allocating multi-decade capital to icebreakers, dual-use deepwater berths, and critical mineral processing hubs.",
-      zName:"Circumpolar Ground & Seabed Array", zDesc:"The physical sensor network: subsea fiber, radar arrays, and permanent northern garrisons sealing the physical passages across deep time.",
-      r1Name:"Circumpolar NATO Flank", r1Text:"Arctic surveillance grid consolidation and northern maritime interdiction readiness.",
-      r2Name:"Northwest Passage / Beaufort", r2Text:"Subsea fiber deployment anchoring domestic sovereignty to physical seabed bedrock.",
-      r3Name:"Nordic & Barents Basin", r3Text:"Forward dual-use deepwater logistics hubs closing unmonitored Arctic surface lanes.",
+      xName:"Tactical Air & Surface Scramble",
+      xDesc:"Air defense interception wings operating on short tactical notification cycles, expending alert sorties to counter gray-zone reconnaissance along circumpolar boundaries.",
+      yName:"The Sovereign Arctic Capital Allocator",
+      yDesc:"Sovereign balance sheets and infrastructure banks allocating multi-decade capital to icebreakers, dual-use deepwater berths, and critical mineral processing hubs.",
+      zName:"Circumpolar Ground & Seabed Array",
+      zDesc:"The physical sensor network: subsea fiber, radar arrays, and permanent northern garrisons sealing the physical passages across deep time.",
+      r1Name:"Circumpolar NATO Flank",
+      r1Text:"Arctic surveillance grid consolidation and northern maritime interdiction readiness.",
+      r2Name:"Northwest Passage / Beaufort",
+      r2Text:"Subsea fiber deployment anchoring domestic sovereignty to physical seabed bedrock.",
+      r3Name:"Nordic & Barents Basin",
+      r3Text:"Forward dual-use deepwater logistics hubs closing unmonitored Arctic surface lanes.",
       b1d:"The High North has transitioned from an unmonitored frozen buffer into an active, sovereign-secured infrastructure corridor.",
       b2d:"Simultaneous execution across three boards: tactical air intercepts, sovereign infrastructure capital allocation, and seabed fiber enclosure.",
       b3d:"Permanent deployment of dual-use sensory cables and autonomous radar stations along the circumpolar perimeter.",
       b4d:"Revisionist maritime claims face structural exclusion before seasonal ice melt permits surface fleet transit.",
-      board1Title:"Checkers: The High-Latitude Intercept", board1Sub:"Short horizons · Mandatory capture · Immediate friction",
+      board1Title:"Checkers: The High-Latitude Intercept",
       cMove:"Allied air commands scramble rapid interception sorties following unannounced high-altitude sensory sweeps along the Beaufort Sea rim and Greenland airspace.",
       cCost:"A reactive tactical exchange. Surface defense interceptors fire high-cost patrol cycles for low-cost unmanned intrusions, creating short-term tactical alert fatigue while missing the permanent seabed fiber deployment beneath the ice.",
-      board2Title:"Chess: The Circumpolar Fortress", board2Sub:"Positional restructuring · Balance-sheet fortress · Checkmate trajectory",
+      board2Title:"Chess: The Circumpolar Fortress",
       chMove:"Canada and Nordic allies reallocate sovereign wealth capital into hardened dual-use deepwater ports and icebreaker fleet recapitalization, locking Arctic logistics directly to sovereign balance sheets.",
       chPos:"Strategic pieces shift to defend the northern flank. The opposing revisionist forces face zugzwang: contesting sovereign circumpolar jurisdiction requires unsustainable naval logistics in freeze-up conditions, while standing down ratifies allied perimeter hegemony.",
-      board3Title:"Go (Weiqi): The Seabed Perimeter", board3Sub:"Deep time · Closing of liberties · Silent spatial hegemony",
+      board3Title:"Go (Weiqi): The Seabed Perimeter",
       goMove:"A synchronized, silent deployment of sovereign optical subsea cables and seabed acoustic arrays anchoring the Northwest Passage directly to the North Atlantic defense loop.",
       goPos:"Fifty strategic maritime liberties across the circumpolar high north are quietly occupied. Territory is held by physical fiber, deep berths, and unjammable seabed acoustic nodes long before international navigational disputes reach legal tribunals.",
       plainP1:"For decades, the Arctic was treated as a frozen, remote buffer that countries didn't need to actively police. As ice recedes and international superpowers eye northern trade shortcuts and untapped minerals, the Arctic has suddenly become the most contested frontier on Earth.",
@@ -895,28 +936,34 @@ const DISPATCHES_I18N = {
   },
   "2026-10-21": {
     editorial_url: "editorial-2026-10-21.html",
-    en: {
+    ast: {
       todayDate:"Wednesday, October 21, 2026 · GMT 00:00 Cycle · Edition 3",
       todayKicker:"The Move of the Day // Edition 3 · October 21, 2026",
       todayTitle:"The West Asian Defense Realignment: Bilateral Gulf Pacts and Multi-Tiered Regional Deterrence",
       todayLede:"Accelerated defense integration pacts and forward fighter deployments across the Gulf basin reshape regional security architectures, bypassing unilateral diplomatic frameworks. Read through Protocol X-Y-Z and across three boards.",
-      xName:"Forward Air Interceptor Deployments", xDesc:"Rapid-response fighter wings and missile defense batteries rushed into Gulf airspace to establish immediate tactical deterrence.",
-      yName:"The Bilateral Defense Pact Architect", yDesc:"Sovereign defense ministries forging binding multi-state military personnel deployments and joint security mandates.",
-      zName:"Energy Chokepoint & Radar Grid", zDesc:"The physical nodes: critical shipping lanes, Gulf oil terminals, and integrated regional early-warning radar arrays.",
-      r1Name:"Gulf Security Basin", r1Text:"Immediate air defense posture adjustments and tactical intercept readiness.",
-      r2Name:"Bilateral Defense Corridors", r2Text:"Formalization of joint military personnel deployments and regional pacts.",
-      r3Name:"Strait of Hormuz / Energy Nodes", r3Text:"Hardening of maritime transit lanes against asymmetric disruption.",
+      xName:"Forward Air Interceptor Deployments",
+      xDesc:"Rapid-response fighter wings and missile defense batteries rushed into Gulf airspace to establish immediate tactical deterrence.",
+      yName:"The Bilateral Defense Pact Architect",
+      yDesc:"Sovereign defense ministries forging binding multi-state military personnel deployments and joint security mandates.",
+      zName:"Energy Chokepoint & Radar Grid",
+      zDesc:"The physical nodes: critical shipping lanes, Gulf oil terminals, and integrated regional early-warning radar arrays.",
+      r1Name:"Gulf Security Basin",
+      r1Text:"Immediate air defense posture adjustments and tactical intercept readiness.",
+      r2Name:"Bilateral Defense Corridors",
+      r2Text:"Formalization of joint military personnel deployments and regional pacts.",
+      r3Name:"Strait of Hormuz / Energy Nodes",
+      r3Text:"Hardening of maritime transit lanes against asymmetric disruption.",
       b1d:"Regional defense architecture is shifting from generalized security guarantees to explicit, bilateral, and inter-state military pacts.",
       b2d:"Simultaneous maneuvers across tactical air defense, sovereign treaty commitments, and energy chokepoint protection.",
       b3d:"Deployment of allied fighter jets and parliamentary authorization of joint military personnel into Gulf defense frameworks.",
       b4d:"Escalation dynamics across regional proxy networks and sovereign airspace contestation thresholds.",
-      board1Title:"Checkers: The Rapid Air Sortie", board1Sub:"Short horizons · Tactical deterrence · Immediate friction",
+      board1Title:"Checkers: The Rapid Air Sortie",
       cMove:"External allied air forces rush fighter wings into theater airbases to provide immediate defense cover against inbound drone and missile threats.",
       cCost:"A high-burn tactical posture. Continuous air patrols consume massive logistical resources and create acute operational fatigue, reacting to immediate threats while deep political friction remains unresolved.",
-      board2Title:"Chess: The Sovereign Treaty Architecture", board2Sub:"Positional restructuring · Treaty solvency · Strategic zugzwang",
+      board2Title:"Chess: The Sovereign Treaty Architecture",
       chMove:"Middle Eastern and allied governments ratify binding parliamentary defense mandates and mutual assistance pacts, permanently tying their security postures together.",
       chPos:"The pieces on the strategic board lock into formal defensive alignments. Adversarial regional actors face zugzwang: continuing direct escalations triggers consolidated multi-state retaliation, while backing down cedes regional security dominance.",
-      board3Title:"Go (Weiqi): The Basin Enclosure", board3Sub:"Deep time · Territorial integration · Silent spatial control",
+      board3Title:"Go (Weiqi): The Basin Enclosure",
       goMove:"The long-term knitting together of radar architectures, intelligence-sharing grids, and joint naval patrols across the entire Gulf and Arabian Sea basin.",
       goPos:"Countless empty liberties across regional airspace and shipping lanes are quietly sealed by allied defense integration. Territorial control is established through permanent institutional architecture rather than temporary skirmishes.",
       plainP1:"For years, security in West Asia relied heavily on distant superpowers stepping in only when crises boiled over. Today, regional powers and key allies are cutting out the middleman—signing direct defense pacts, deploying jets locally, and locking down joint military frameworks themselves.",
@@ -926,10 +973,13 @@ const DISPATCHES_I18N = {
   }
 };
 
+// 4. 0protocol.ai Cloud AST Compiler Engine
 const ORDER = ["en","fr","es","pt","de","ru","zh","ja","hi","ar"];
 const pillsContainer = document.getElementById("langPills");
+const statusBadge = document.getElementById("compilerStatus");
 let currentLangKey = "en";
 let activeDate = "2026-10-21";
+const MEMORY_AST_CACHE = {};
 
 if (pillsContainer) {
   ORDER.forEach(k => {
@@ -943,38 +993,124 @@ if (pillsContainer) {
   });
 }
 
-function renderAll() {
-  const chrome = UI_CHROME[currentLangKey] || UI_CHROME.en;
-  const dateObj = DISPATCHES_I18N[activeDate] || DISPATCHES_I18N["2026-10-21"];
-  const content = dateObj[currentLangKey] || dateObj.en;
-
-  document.documentElement.lang = currentLangKey;
+// Applies static UI Chrome translations immediately
+function applyChrome(langKey) {
+  const chrome = UI_CHROME[langKey] || UI_CHROME.en;
+  document.documentElement.lang = langKey;
   document.documentElement.dir = chrome.dir;
-
-  const merged = Object.assign({}, chrome, content);
 
   document.querySelectorAll("[data-i]").forEach(el => {
     const key = el.dataset.i;
-    if (merged[key]) el.textContent = merged[key];
+    if (chrome[key]) el.textContent = chrome[key];
   });
 
   document.querySelectorAll("[data-i-placeholder]").forEach(el => {
     const key = el.dataset.iPlaceholder;
-    if (merged[key]) el.placeholder = merged[key];
+    if (chrome[key]) el.placeholder = chrome[key];
   });
-
-  const dateEl = document.getElementById("todayDate");
-  if (dateEl && content.todayDate) dateEl.textContent = content.todayDate;
-
-  const edBtn = document.querySelector(".editorial-btn");
-  if (edBtn) {
-    edBtn.href = `${dateObj.editorial_url}?lang=${currentLangKey}`;
-  }
 
   if (pillsContainer) {
     pillsContainer.querySelectorAll("button").forEach(b => {
-      b.setAttribute("aria-pressed", b.dataset.l === currentLangKey);
+      b.setAttribute("aria-pressed", b.dataset.l === langKey);
     });
+  }
+}
+
+// Applies the 27 dynamic AST nodes to the DOM
+function applyASTNodes(astObj, editorialUrl, langKey) {
+  document.querySelectorAll("[data-ast]").forEach(el => {
+    const key = el.dataset.ast;
+    if (astObj[key]) el.textContent = astObj[key];
+  });
+
+  const edBtn = document.querySelector(".editorial-btn");
+  if (edBtn && editorialUrl) {
+    edBtn.href = `${editorialUrl}?lang=${langKey}`;
+  }
+}
+
+// Cloud Neural Translation Bridge (Prototype hook for 0protocol.ai Sanskrit Compiler)
+async function compileDispatchToLang(dateKey, targetLang) {
+  const rootDispatch = DISPATCHES_ROOT[dateKey] || DISPATCHES_ROOT["2026-10-21"];
+  const sourceAST = rootDispatch.ast;
+
+  if (targetLang === "en") {
+    return sourceAST;
+  }
+
+  const cacheKey = `visva_ast_v2_${dateKey}_${targetLang}`;
+  if (MEMORY_AST_CACHE[cacheKey]) {
+    return MEMORY_AST_CACHE[cacheKey];
+  }
+
+  try {
+    const saved = localStorage.getItem(cacheKey);
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      MEMORY_AST_CACHE[cacheKey] = parsed;
+      return parsed;
+    }
+  } catch (e) {}
+
+  // Show compiler indicator
+  if (statusBadge) {
+    statusBadge.textContent = `0protocol.ai // compiling [${targetLang.toUpperCase()}] AST...`;
+    statusBadge.classList.add("active");
+  }
+
+  const keys = Object.keys(sourceAST);
+  const delimiter = " ||| ";
+  const combinedPayload = keys.map(k => sourceAST[k]).join("\n===NODE===\n");
+
+  try {
+    const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=${encodeURIComponent(targetLang)}&dt=t&q=${encodeURIComponent(combinedPayload)}`;
+    const res = await fetch(url);
+    const data = await res.json();
+
+    // Reconstruct full translated text from sentence chunks
+    let fullTranslated = "";
+    if (data && Array.isArray(data[0])) {
+      data[0].forEach(chunk => {
+        if (chunk[0]) fullTranslated += chunk[0];
+      });
+    }
+
+    const parts = fullTranslated.split(/\n*===\s*NODE\s*===\n*/i);
+    const compiledAST = {};
+
+    keys.forEach((k, idx) => {
+      compiledAST[k] = (parts[idx] && parts[idx].trim()) ? parts[idx].trim() : sourceAST[k];
+    });
+
+    MEMORY_AST_CACHE[cacheKey] = compiledAST;
+    try {
+      localStorage.setItem(cacheKey, JSON.stringify(compiledAST));
+    } catch (e) {}
+
+    if (statusBadge) statusBadge.classList.remove("active");
+    return compiledAST;
+
+  } catch (err) {
+    console.warn("0protocol Cloud Bridge fallback to canonical EN:", err);
+    if (statusBadge) statusBadge.classList.remove("active");
+    return sourceAST;
+  }
+}
+
+async function renderAll() {
+  const reqDate = activeDate;
+  const reqLang = currentLangKey;
+  const rootDispatch = DISPATCHES_ROOT[reqDate] || DISPATCHES_ROOT["2026-10-21"];
+
+  // 1. Flip UI Chrome immediately
+  applyChrome(reqLang);
+
+  // 2. If English or cached, apply immediately; otherwise show English while compiling
+  const compiledAST = await compileDispatchToLang(reqDate, reqLang);
+
+  // Guard against race conditions if user clicked another pill rapidly
+  if (activeDate === reqDate && currentLangKey === reqLang) {
+    applyASTNodes(compiledAST, rootDispatch.editorial_url, reqLang);
   }
 }
 
@@ -986,7 +1122,7 @@ function setLang(k) {
 }
 
 function selectDate(dateKey, shouldScroll = true) {
-  if (!DISPATCHES_I18N[dateKey]) return;
+  if (!DISPATCHES_ROOT[dateKey]) return;
   activeDate = dateKey;
 
   ['19', '20', '21'].forEach(d => {
@@ -1029,11 +1165,10 @@ function handleSearch(q) {
   if (!query) { box.style.display = "none"; box.innerHTML = ""; return; }
 
   const hits = [];
-  for (const [dateKey, dateObj] of Object.entries(DISPATCHES_I18N)) {
-    const loc = dateObj[currentLangKey] || dateObj.en;
-    const en = dateObj.en;
-    const text = `${loc.todayTitle} ${loc.todayLede} ${loc.xName} ${loc.yName} ${loc.zName} ${en.todayTitle} ${en.todayLede}`.toLowerCase();
-    if (text.includes(query)) hits.push({ key: dateKey, item: loc });
+  for (const [dateKey, dateObj] of Object.entries(DISPATCHES_ROOT)) {
+    const en = dateObj.ast;
+    const text = `${en.todayTitle} ${en.todayLede} ${en.xName} ${en.yName} ${en.zName} ${en.cMove} ${en.chMove} ${en.goMove}`.toLowerCase();
+    if (text.includes(query)) hits.push({ key: dateKey, item: en });
   }
 
   if (hits.length === 0) {
@@ -1056,10 +1191,9 @@ function executeSearchSubmit() {
   if (!input) return;
   const q = input.value.trim().toLowerCase();
   if (!q) return;
-  for (const [dateKey, dateObj] of Object.entries(DISPATCHES_I18N)) {
-    const loc = dateObj[currentLangKey] || dateObj.en;
-    const en = dateObj.en;
-    const text = `${loc.todayTitle} ${loc.todayLede} ${en.todayTitle} ${en.todayLede}`.toLowerCase();
+  for (const [dateKey, dateObj] of Object.entries(DISPATCHES_ROOT)) {
+    const en = dateObj.ast;
+    const text = `${en.todayTitle} ${en.todayLede} ${en.xName} ${en.yName} ${en.zName}`.toLowerCase();
     if (text.includes(q)) {
       selectDate(dateKey, true);
       const box = document.getElementById("searchResults");
