@@ -25,8 +25,6 @@
 body{background:var(--bg);color:var(--text-primary);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased;}
 .wrap{max-width:1080px;margin:0 auto;padding:0 20px;}
 a{color:inherit;text-decoration:none}
-
-/* Top Red Header Bar */
 .top-red-bar{background:var(--accent-red);color:#ffffff;font-size:13px;font-weight:600;letter-spacing:.02em;margin-bottom:24px;}
 .top-red-bar .wrap{display:flex;justify-content:space-between;align-items:center;min-height:42px;flex-wrap:wrap;gap:12px;padding-top:4px;padding-bottom:4px;}
 .gmt-clock-wrap{display:flex;align-items:center;gap:8px;font-feature-settings:"tnum";font-variant-numeric:tabular-nums;}
@@ -35,19 +33,13 @@ a{color:inherit;text-decoration:none}
 .top-nav{display:flex;align-items:center;gap:22px;list-style:none;}
 .top-nav a{color:#ffffff;transition:opacity .15s ease;font-weight:600;}
 .top-nav a:hover{opacity:0.8;text-decoration:underline;}
-
-/* Site Banner / Hero Graphic (Links back to English home) */
 .site-banner-wrap{max-width:1080px;margin:0 auto 16px;padding:0 20px;}
 .site-banner{width:100%;height:auto;border-radius:12px;display:block;box-shadow:0 12px 32px rgba(0,0,0,0.5);border:1px solid #22201c;}
-
-/* 10-Language Navigation Bar */
 .lang-strip{padding:8px 0 28px;text-align:center;}
 .lang-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;}
 .lang-btn{background:var(--surface);color:var(--text-muted);border:1px solid transparent;outline:none;border-radius:999px;padding:6px 14px;font-family:var(--sans);font-size:13px;font-weight:500;cursor:pointer;transition:all 0.15s ease;}
 .lang-btn:hover{color:var(--text-primary);background:#201e18;}
 .lang-btn.active{background:var(--card-bg);color:var(--card-ink);font-weight:700;}
-
-/* Control Hub: Search & Calendar */
 .control-hub{display:grid;grid-template-columns:1.45fr 1fr;gap:24px;margin-bottom:32px;}
 .hub-card{background:var(--card-bg);color:var(--card-ink);border-radius:12px;padding:24px 28px;}
 .hub-card h3{font-family:var(--serif);font-size:19px;font-weight:700;margin-bottom:14px;letter-spacing:-.01em;}
@@ -63,8 +55,6 @@ a{color:inherit;text-decoration:none}
 .cal-cell.has-dispatch{background:var(--card-ink);color:var(--card-bg);cursor:pointer;font-weight:700;}
 .cal-cell.today{background:var(--accent-red);color:#fff;font-weight:700;cursor:pointer;}
 .cal-cell.empty{opacity:0.25;}
-
-/* White Content Cards */
 .box{background:var(--card-bg);color:var(--card-ink);border-radius:12px;padding:36px 40px;margin-bottom:28px;}
 .kicker-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px;}
 .kicker{color:var(--accent-red);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;}
@@ -79,17 +69,6 @@ p.report-lede{font-size:17px;color:var(--card-muted);line-height:1.6;}
 .badge-z{background:#e0f2fe;color:#075985}
 .matrix-card h4{font-family:var(--serif);font-size:18px;font-weight:700;margin-bottom:8px;}
 .matrix-card p{font-size:14px;color:var(--card-muted);line-height:1.55;}
-.regional-card{background:var(--card-bg);color:var(--card-ink);border-radius:12px;padding:30px 36px;margin-bottom:28px;}
-.regional-card h3{font-family:var(--serif);font-size:20px;font-weight:700;margin-bottom:16px;}
-.region-table{width:100%;border-collapse:collapse;font-size:14px;}
-.region-table th{text-align:left;padding:10px 12px;background:#f5f2eb;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--card-ink);}
-.region-table td{padding:12px;border-bottom:1px solid #f0ede4;vertical-align:top;}
-.region-table tr:last-child td{border-bottom:none;}
-.beats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px;}
-.beat-card{background:var(--card-bg);color:var(--card-ink);border-radius:10px;padding:20px;}
-.beat-card b{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px;color:var(--card-ink);}
-.beat-card b::before{content:"▸ ";color:var(--accent-red);}
-.beat-card p{font-size:13.5px;color:var(--card-muted);line-height:1.5;}
 .section-headline{font-family:var(--serif);font-size:24px;font-weight:700;color:var(--text-primary);margin:40px 0 20px;}
 .board-card-in-depth{background:var(--card-bg);color:var(--card-ink);border-radius:12px;padding:32px 36px;margin-bottom:24px;}
 .board-header{display:flex;align-items:center;gap:18px;margin-bottom:18px;}
@@ -98,17 +77,13 @@ p.report-lede{font-size:17px;color:var(--card-muted);line-height:1.6;}
 .board-header .sub{font-size:12px;color:var(--accent-red);text-transform:uppercase;letter-spacing:.08em;font-weight:600;margin-top:3px;}
 .board-body p{font-size:15px;color:var(--card-ink);line-height:1.65;margin-bottom:12px;}
 .board-body p:last-child{margin-bottom:0}
-.verdict-box{background:var(--card-bg);color:var(--card-ink);border-radius:12px;padding:32px 36px;margin-bottom:44px;border-left:5px solid var(--accent-red);}
-.verdict-box h4{font-family:var(--serif);font-size:18px;font-weight:700;margin-bottom:10px;text-transform:uppercase;letter-spacing:.05em;color:var(--card-ink);}
-.verdict-box p{font-family:var(--serif);font-size:17px;font-style:italic;color:var(--card-muted);line-height:1.6;}
 footer.bottom-red-footer{background:var(--accent-red);color:#ffffff;padding:32px 0 36px;font-size:13px;margin-top:40px;}
 footer.bottom-red-footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;}
 footer.bottom-red-footer a{color:#ffffff;text-decoration:underline;font-weight:600;}
 footer.bottom-red-footer strong{font-family:var(--serif);color:#ffffff;font-size:14px;}
 .editorial-btn{display:inline-flex;align-items:center;gap:8px;background:#11110f;color:#ffffff;border-radius:999px;padding:11px 24px;font-size:14px;font-weight:600;margin-top:20px;transition:all 0.15s ease;border:none;cursor:pointer;}
 .editorial-btn:hover{background:var(--accent-red);color:#ffffff;transform:translateX(3px);}
-@media(max-width:880px){.control-hub{grid-template-columns:1fr}.matrix-grid{grid-template-columns:1fr}.beats-grid{grid-template-columns:1fr 1fr}.box,.board-card-in-depth,.regional-card{padding:26px 20px}}
-@media(max-width:540px){.beats-grid{grid-template-columns:1fr}.top-red-bar .wrap{flex-direction:column;align-items:flex-start}}
+@media(max-width:880px){.control-hub{grid-template-columns:1fr}.matrix-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -127,14 +102,12 @@ footer.bottom-red-footer strong{font-family:var(--serif);color:#ffffff;font-size
   </div>
 </div>
 
-<!-- Banner Graphic Container (Links back to English home) -->
 <div class="site-banner-wrap">
   <a href="index.html" title="visva.world Home">
     <img src="banner.jpg" alt="visva.world Three Boards Banner" class="site-banner">
   </a>
 </div>
 
-<!-- 10-Language Navigation Bar -->
 <div class="lang-strip wrap">
   <div class="lang-pills">
     <a href="index.html" class="lang-btn active">English</a>
@@ -151,25 +124,14 @@ footer.bottom-red-footer strong{font-family:var(--serif);color:#ffffff;font-size
 </div>
 
 <main class="wrap">
-
-  <!-- Search & Calendar Hub -->
   <section class="control-hub">
     <div class="hub-card">
       <h3>Search the Record</h3>
-      <form class="search-form" onsubmit="event.preventDefault(); executeSearchSubmit();">
+      <form class="search-form" onsubmit="event.preventDefault();">
         <input type="text" class="search-input" id="searchInput" placeholder="Search dispatches, moves, or players..." autocomplete="off">
         <button type="submit" class="search-btn">Search</button>
       </form>
-      <div id="searchResults" style="display:none;background:#ffffff;border:1px solid #e5e0d3;border-radius:8px;margin-top:8px;max-height:240px;overflow-y:auto;box-shadow:0 8px 24px rgba(0,0,0,0.12);z-index:99;position:relative;"></div>
-      <div class="search-hints">
-        <span>Quick filters:</span>
-        <span class="search-tag" onclick="filterBy('checkers')">Checkers</span>
-        <span class="search-tag" onclick="filterBy('chess')">Chess</span>
-        <span class="search-tag" onclick="filterBy('go')">Go</span>
-        <span class="search-tag" onclick="filterBy('gold')">Gold & Rails</span>
-      </div>
     </div>
-
     <div class="hub-card">
       <div class="cal-header">
         <span>October 2026</span>
@@ -187,117 +149,85 @@ footer.bottom-red-footer strong{font-family:var(--serif);color:#ffffff;font-size
         <div class="cal-cell empty">28</div>
         <div class="cal-cell empty">29</div>
         <div class="cal-cell empty">30</div>
-        <div class="cal-cell">1</div>
-        <div class="cal-cell">2</div>
-        <div class="cal-cell">3</div>
-        <div class="cal-cell">4</div>
-        <div class="cal-cell">5</div>
-        <div class="cal-cell">6</div>
-        <div class="cal-cell">7</div>
-        <div class="cal-cell">8</div>
-        <div class="cal-cell">9</div>
-        <div class="cal-cell">10</div>
-        <div class="cal-cell">11</div>
-        <div class="cal-cell">12</div>
-        <div class="cal-cell">13</div>
-        <div class="cal-cell">14</div>
-        <div class="cal-cell">15</div>
-        <div class="cal-cell">16</div>
-        <div class="cal-cell">17</div>
-        <div class="cal-cell">18</div>
-        <div class="cal-cell has-dispatch" id="cal19" onclick="selectDate('2026-10-19')">19</div>
-        <div class="cal-cell has-dispatch" id="cal20" onclick="selectDate('2026-10-20')">20</div>
-        <div class="cal-cell today" id="cal21" onclick="selectDate('2026-10-21')">21</div>
-        <div class="cal-cell">22</div>
-        <div class="cal-cell">23</div>
-        <div class="cal-cell">24</div>
-        <div class="cal-cell">25</div>
-        <div class="cal-cell">26</div>
-        <div class="cal-cell">27</div>
-        <div class="cal-cell">28</div>
-        <div class="cal-cell">29</div>
-        <div class="cal-cell">30</div>
-        <div class="cal-cell">31</div>
+        <div class="cal-cell">1</div><div class="cal-cell">2</div><div class="cal-cell">3</div><div class="cal-cell">4</div><div class="cal-cell">5</div><div class="cal-cell">6</div><div class="cal-cell">7</div>
+        <div class="cal-cell">8</div><div class="cal-cell">9</div><div class="cal-cell">10</div><div class="cal-cell">11</div><div class="cal-cell">12</div><div class="cal-cell">13</div><div class="cal-cell">14</div>
+        <div class="cal-cell">15</div><div class="cal-cell">16</div><div class="cal-cell">17</div><div class="cal-cell">18</div>
+        <div class="cal-cell has-dispatch" id="cal19" onclick="loadDispatch('2026-10-19')">19</div>
+        <div class="cal-cell has-dispatch" id="cal20" onclick="loadDispatch('2026-10-20')">20</div>
+        <div class="cal-cell today" id="cal21" onclick="loadDispatch('2026-10-21')">21</div>
+        <div class="cal-cell">22</div><div class="cal-cell">23</div><div class="cal-cell">24</div><div class="cal-cell">25</div><div class="cal-cell">26</div><div class="cal-cell">27</div><div class="cal-cell">28</div><div class="cal-cell">29</div><div class="cal-cell">30</div><div class="cal-cell">31</div>
       </div>
     </div>
   </section>
 
-  <!-- Lead Report Header -->
   <article class="box" id="report">
     <div class="kicker-row">
-      <span class="kicker" id="kicker">The Move of the Day // Edition 3 · October 21, 2026</span>
-      <span class="date-badge" id="todayDate">Wednesday, October 21, 2026 · GMT 00:00 Cycle · Edition 3</span>
+      <span class="kicker" id="kicker">Loading...</span>
+      <span class="date-badge" id="todayDate">Loading...</span>
     </div>
-    <h2 class="report-title" id="title">The West Asian Defense Realignment: Bilateral Gulf Pacts and Multi-Tiered Regional Deterrence</h2>
-    <p class="report-lede" id="lede">Accelerated defense integration pacts and forward fighter deployments across the Gulf basin reshape regional security architectures, bypassing unilateral diplomatic frameworks. Read through Protocol X-Y-Z and across three boards.</p>
-    <a href="editorial-2026-10-21.html" id="editorialBtn" class="editorial-btn">Read The Daily Editorial →</a>
+    <h2 class="report-title" id="title">Loading dispatch record...</h2>
+    <p class="report-lede" id="lede">Please select a date from the calendar matrix.</p>
+    <a href="#" id="editorialBtn" class="editorial-btn">Read The Daily Editorial →</a>
   </article>
 
-  <!-- Protocol X-Y-Z Players Section -->
   <h3 class="section-headline">Protocol X-Y-Z: The Operational Players</h3>
   <section class="matrix-grid">
     <div class="matrix-card">
       <span class="matrix-badge badge-x">x · Tactical Driver</span>
-      <h4 id="xName">Forward Air Interceptor Deployments</h4>
-      <p id="xDesc">Rapid-response fighter wings and missile defense batteries rushed into Gulf airspace to establish immediate tactical deterrence.</p>
+      <h4 id="xName">Loading...</h4>
+      <p id="xDesc">Loading...</p>
     </div>
     <div class="matrix-card">
       <span class="matrix-badge badge-y">y · Sovereign Fulcrum</span>
-      <h4 id="yName">The Bilateral Defense Pact Architect</h4>
-      <p id="yDesc">Sovereign defense ministries forging binding multi-state military personnel deployments and joint security mandates.</p>
+      <h4 id="yName">Loading...</h4>
+      <p id="yDesc">Loading...</p>
     </div>
     <div class="matrix-card">
       <span class="matrix-badge badge-z">z · Ground Reality</span>
-      <h4 id="zName">Energy Chokepoint & Radar Grid</h4>
-      <p id="zDesc">The physical nodes: critical shipping lanes, Gulf oil terminals, and integrated regional early-warning radar arrays.</p>
+      <h4 id="zName">Loading...</h4>
+      <p id="zDesc">Loading...</p>
     </div>
   </section>
 
-  <!-- Three Boards Deep Dive -->
   <h3 class="section-headline">Read Across Three Boards</h3>
-
-  <article class="board-card-in-depth" id="checkers">
+  <article class="board-card-in-depth">
     <div class="board-header">
-      <svg viewBox="0 0 72 72" aria-hidden="true"><rect width="72" height="72" fill="#f5f2eb"/><g fill="#11110f" opacity=".85"><rect x="18" width="18" height="18"/><rect x="54" width="18" height="18"/><rect y="18" width="18" height="18"/><rect x="36" y="18" width="18" height="18"/><rect x="18" y="36" width="18" height="18"/><rect x="54" y="36" width="18" height="18"/><rect y="54" width="18" height="18"/><rect x="36" y="54" width="18" height="18"/></g><circle cx="27" cy="45" r="7" fill="var(--accent-red)"/><circle cx="45" cy="27" r="7" fill="#fff"/></svg>
       <div>
-        <h3 id="board1Title">Checkers: The Rapid Air Sortie</h3>
-        <div class="sub">Short horizons · Tactical deterrence · Immediate friction</div>
+        <h3 id="board1Title">Checkers Board</h3>
+        <div class="sub">Short horizons · Immediate friction</div>
       </div>
     </div>
     <div class="board-body">
-      <p><strong>The Move:</strong> <span id="cMove">External allied air forces rush fighter wings into theater airbases to provide immediate defense cover against inbound drone and missile threats.</span></p>
-      <p><strong>The Cost:</strong> <span id="cCost">A high-burn tactical posture. Continuous air patrols consume massive logistical resources and create acute operational fatigue, reacting to immediate threats while deep political friction remains unresolved.</span></p>
+      <p><strong>The Move:</strong> <span id="cMove">Loading...</span></p>
+      <p><strong>The Cost:</strong> <span id="cCost">Loading...</span></p>
     </div>
   </article>
 
-  <article class="board-card-in-depth" id="chess">
+  <article class="board-card-in-depth">
     <div class="board-header">
-      <svg viewBox="0 0 72 72" aria-hidden="true"><rect width="72" height="72" fill="#f5f2eb"/><g fill="#d8d4c7"><rect x="9" width="9" height="9"/><rect x="27" width="9" height="9"/><rect x="45" width="9" height="9"/><rect x="63" width="9" height="9"/><rect y="9" width="9" height="9"/><rect x="18" y="9" width="9" height="9"/><rect x="36" y="9" width="9" height="9"/><rect x="54" y="9" width="9" height="9"/><rect x="9" y="18" width="9" height="9"/><rect x="27" y="18" width="9" height="9"/><rect x="45" y="18" width="9" height="9"/><rect x="63" y="18" width="9" height="9"/><rect y="27" width="9" height="9"/><rect x="18" y="27" width="9" height="9"/><rect x="36" y="27" width="9" height="9"/><rect x="54" y="27" width="9" height="9"/><rect x="9" y="36" width="9" height="9"/><rect x="27" y="36" width="9" height="9"/><rect x="45" y="36" width="9" height="9"/><rect x="63" y="36" width="9" height="9"/><rect y="45" width="9" height="9"/><rect x="18" y="45" width="9" height="9"/><rect x="36" y="45" width="9" height="9"/><rect x="54" y="45" width="9" height="9"/><rect x="9" y="54" width="9" height="9"/><rect x="27" y="54" width="9" height="9"/><rect x="45" y="54" width="9" height="9"/><rect x="63" y="54" width="9" height="9"/><rect y="63" width="9" height="9"/><rect x="18" y="63" width="9" height="9"/><rect x="36" y="63" width="9" height="9"/><rect x="54" y="63" width="9" height="9"/></g><text x="36" y="48" text-anchor="middle" font-size="34" fill="#11110f" font-family="serif">♚</text></svg>
       <div>
-        <h3 id="board2Title">Chess: The Sovereign Treaty Architecture</h3>
-        <div class="sub">Positional restructuring · Balance-sheet fortress · Checkmate trajectory</div>
+        <h3 id="board2Title">Chess Board</h3>
+        <div class="sub">Positional restructuring · Strategic trajectory</div>
       </div>
     </div>
     <div class="board-body">
-      <p><strong>The Move:</strong> <span id="chMove">Middle Eastern and allied governments ratify binding parliamentary defense mandates and mutual assistance pacts, permanently tying their security postures together.</span></p>
-      <p><strong>The Position:</strong> <span id="chPos">The pieces on the strategic board lock into formal defensive alignments. Adversarial regional actors face zugzwang: continuing direct escalations triggers consolidated multi-state retaliation, while backing down cedes regional security dominance.</span></p>
+      <p><strong>The Move:</strong> <span id="chMove">Loading...</span></p>
+      <p><strong>The Position:</strong> <span id="chPos">Loading...</span></p>
     </div>
   </article>
 
-  <article class="board-card-in-depth" id="go">
+  <article class="board-card-in-depth">
     <div class="board-header">
-      <svg viewBox="0 0 72 72" aria-hidden="true"><rect width="72" height="72" fill="#efebe1"/><g stroke="#11110f" stroke-width="1" opacity=".7"><line x1="8" y1="8" x2="8" y2="64"/><line x1="22" y1="8" x2="22" y2="64"/><line x1="36" y1="8" x2="36" y2="64"/><line x1="50" y1="8" x2="50" y2="64"/><line x1="64" y1="8" x2="64" y2="64"/><line x1="8" y1="8" x2="64" y2="8"/><line x1="8" y1="22" x2="64" y2="22"/><line x1="8" y1="36" x2="64" y2="36"/><line x1="8" y1="50" x2="64" y2="50"/><line x1="8" y1="64" x2="64" y2="64"/></g><circle cx="36" cy="36" r="6" fill="#fff"/><circle cx="22" cy="36" r="6" fill="#11110f"/><circle cx="50" cy="36" r="6" fill="#11110f"/><circle cx="36" cy="22" r="6" fill="#11110f"/><circle cx="36" cy="50" r="6" fill="#11110f"/></svg>
       <div>
-        <h3 id="board3Title">Go (Weiqi): The Basin Enclosure</h3>
-        <div class="sub">Deep time · Closing of liberties · Silent spatial hegemony</div>
+        <h3 id="board3Title">Go Board</h3>
+        <div class="sub">Deep time · Silent spatial hegemony</div>
       </div>
     </div>
     <div class="board-body">
-      <p><strong>The Move:</strong> <span id="goMove">The long-term knitting together of radar architectures, intelligence-sharing grids, and joint naval patrols across the entire Gulf and Arabian Sea basin.</span></p>
-      <p><strong>The Position:</strong> <span id="goPos">Countless empty liberties across regional airspace and shipping lanes are quietly sealed by allied defense integration. Territorial control is established through permanent institutional architecture rather than temporary skirmishes.</span></p>
+      <p><strong>The Move:</strong> <span id="goMove">Loading...</span></p>
+      <p><strong>The Position:</strong> <span id="goPos">Loading...</span></p>
     </div>
   </article>
-
 </main>
 
 <footer class="bottom-red-footer">
@@ -312,7 +242,6 @@ footer.bottom-red-footer strong{font-family:var(--serif);color:#ffffff;font-size
 </footer>
 
 <script>
-// Live GMT/UTC Clock
 function updateGMTClock() {
   const now = new Date();
   const utcHours = String(now.getUTCHours()).padStart(2, '0');
@@ -328,100 +257,48 @@ function updateGMTClock() {
 setInterval(updateGMTClock, 1000);
 updateGMTClock();
 
-// Object-Oriented Daily Dispatch Store
-const DAILY_STORE = {
-  "2026-10-19": {
-    editorial_url: "editorial-2026-10-19.html",
-    kicker: "The Move of the Day // Edition 1 · October 19, 2026",
-    todayDate: "Monday, October 19, 2026 · GMT 00:00 Cycle · Edition 1",
-    title: "The Fracture of the Global Clearing Grid: Bilateral Commodities Settle Outside the G7 Rail",
-    lede: "Central bank digital clearing corridors bypass Western correspondent banking, anchoring new settlement liquidity in vaulted gold and direct bilateral energy swaps.",
-    xName: "G7 Regulatory Axis", xDesc: "The enforcement rail operating under short horizons and mandatory response cycles.",
-    yName: "Bilateral Vault Arbiters", yDesc: "Central bank reserve managers and sovereign vaults across the Indian Ocean rim.",
-    zName: "Eurasian Corridor Sovereign", zDesc: "The physical infrastructure powers closing physical liberties across space and time.",
-    board1Title: "Checkers: The Tactical Forced Jump",
-    cMove: "Western financial authorities announce immediate emergency sanctions against intermediary commercial banks.",
-    cCost: "A classic forced jump sacrificing long-term strategic visibility for immediate friction.",
-    board2Title: "Chess: The Strategic King Maneuver",
-    chMove: "Non-aligned central banks reallocate liquid foreign exchange reserves into vaulted physical bullion.",
-    chPos: "The opposing side enters zugzwang as sovereign debt valuations deteriorate.",
-    board3Title: "Go (Weiqi): The Encirclement of Territory",
-    goMove: "A quiet multilateral coordination linking deepwater port concessions and undersea fiber optics.",
-    goPos: "Fifty subtle liberties closed around maritime chokepoints without public ultimatums."
-  },
-  "2026-10-20": {
-    editorial_url: "editorial-2026-10-20.html",
-    kicker: "The Move of the Day // Edition 2 · October 20, 2026",
-    todayDate: "Tuesday, October 20, 2026 · GMT 00:00 Cycle · Edition 2",
-    title: "The Arctic Sovereign Perimeter: Canada and Nordic Allies Close the Circumpolar Optical & Defense Corridor",
-    lede: "Joint circumpolar sovereign mandates deploy hardened fiber infrastructure, autonomous surveillance grids, and mineral logistics hubs across the High North.",
-    xName: "Tactical Air & Surface Scramble", xDesc: "Air defense interception wings operating on short tactical notification cycles.",
-    yName: "The Sovereign Arctic Capital Allocator", yDesc: "Sovereign balance sheets allocating multi-decade capital to icebreakers and berths.",
-    zName: "Circumpolar Ground & Seabed Array", zDesc: "The physical sensor network sealing physical passages across deep time.",
-    board1Title: "Checkers: The High-Latitude Intercept",
-    cMove: "Allied air commands scramble rapid interception sorties along the Beaufort Sea rim.",
-    cCost: "A reactive tactical exchange creating alert fatigue while missing seabed fiber deployment.",
-    board2Title: "Chess: The Circumpolar Fortress",
-    chMove: "Canada and Nordic allies reallocate sovereign wealth capital into hardened deepwater ports.",
-    chPos: "Revisionist forces face zugzwang contesting sovereign circumpolar jurisdiction.",
-    board3Title: "Go (Weiqi): The Seabed Perimeter",
-    goMove: "Synchronized silent deployment of sovereign optical subsea cables and acoustic arrays.",
-    goPos: "Fifty strategic maritime liberties across the high north are quietly occupied."
-  },
-  "2026-10-21": {
-    editorial_url: "editorial-2026-10-21.html",
-    kicker: "The Move of the Day // Edition 3 · October 21, 2026",
-    todayDate: "Wednesday, October 21, 2026 · GMT 00:00 Cycle · Edition 3",
-    title: "The West Asian Defense Realignment: Bilateral Gulf Pacts and Multi-Tiered Regional Deterrence",
-    lede: "Accelerated defense integration pacts and forward fighter deployments across the Gulf basin reshape regional security architectures.",
-    xName: "Forward Air Interceptor Deployments", xDesc: "Rapid-response fighter wings rushed into Gulf airspace to establish tactical deterrence.",
-    yName: "The Bilateral Defense Pact Architect", yDesc: "Sovereign defense ministries forging binding multi-state military personnel deployments.",
-    zName: "Energy Chokepoint & Radar Grid", zDesc: "Critical shipping lanes, oil terminals, and integrated regional early-warning radar arrays.",
-    board1Title: "Checkers: The Rapid Air Sortie",
-    cMove: "External allied air forces rush fighter wings into theater airbases for defense cover.",
-    cCost: "A high-burn tactical posture consuming massive logistical resources and operational fatigue.",
-    board2Title: "Chess: The Sovereign Treaty Architecture",
-    chMove: "Middle Eastern and allied governments ratify binding parliamentary defense mandates.",
-    chPos: "Adversarial regional actors face zugzwang against consolidated multi-state retaliation.",
-    board3Title: "Go (Weiqi): The Basin Enclosure",
-    goMove: "Long-term knitting together of radar architectures and joint naval patrols across the Gulf.",
-    goPos: "Empty liberties across regional airspace and shipping lanes quietly sealed by defense integration."
-  }
-};
+// Dynamic Loader Function using separate dispatch files
+function loadDispatch(dateKey) {
+  const scriptId = "dynamic-dispatch-script";
+  const oldScript = document.getElementById(scriptId);
+  if (oldScript) oldScript.remove();
 
-// Object-Oriented Property Mapper Loader
-function selectDate(dateKey) {
-  const d = DAILY_STORE[dateKey];
-  if (!d) return;
+  const script = document.createElement("script");
+  script.id = scriptId;
+  script.src = `dispatch-${dateKey}.js`;
 
-  Object.keys(d).forEach(key => {
-    const el = document.getElementById(key);
-    if (el) {
-      if (key === 'editorial_url') {
-        el.href = `${d[key]}?lang=en`;
-      } else {
-        el.textContent = d[key];
+  script.onload = () => {
+    const d = window.DAILY_DISPATCH && window.DAILY_DISPATCH.index;
+    if (!d) return;
+
+    Object.keys(d).forEach(key => {
+      const el = document.getElementById(key);
+      if (el) {
+        if (key === 'editorial_url') {
+          el.href = `${d[key]}?lang=en`;
+        } else {
+          el.textContent = d[key];
+        }
       }
-    }
-  });
+    });
 
-  ['19', '20', '21'].forEach(day => {
-    const cell = document.getElementById("cal" + day);
-    if (cell) {
-      cell.className = (day === dateKey.split('-')[2]) ? "cal-cell today" : "cal-cell has-dispatch";
-    }
-  });
+    ['19', '20', '21'].forEach(day => {
+      const cell = document.getElementById("cal" + day);
+      if (cell) {
+        cell.className = (day === dateKey.split('-')[2]) ? "cal-cell today" : "cal-cell has-dispatch";
+      }
+    });
 
-  if (history.replaceState) history.replaceState(null, null, '#' + dateKey);
+    if (history.replaceState) history.replaceState(null, null, '#' + dateKey);
+  };
+
+  document.body.appendChild(script);
 }
 
 window.addEventListener("DOMContentLoaded", () => {
   const hash = window.location.hash.replace('#', '').trim();
-  if (DAILY_STORE[hash]) {
-    selectDate(hash);
-  } else {
-    selectDate("2026-10-21");
-  }
+  const initialDate = (hash && (hash === "2026-10-19" || hash === "2026-10-20" || hash === "2026-10-21")) ? hash : "2026-10-21";
+  loadDispatch(initialDate);
 });
 </script>
 </body>
